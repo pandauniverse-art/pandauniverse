@@ -86,7 +86,7 @@
         .exp-item p { color: var(--text-color); font-size: 0.85rem; font-weight: var(--fw-thin); line-height: 1.5; }
         .sub-title { color: rgba(255,255,255,0.15); text-transform: uppercase; margin-bottom: 30px; display: block; font-weight: 400; font-size: 0.7rem; letter-spacing: 2.5px; }
 
-        /* Modal Player & Page */
+        /* Modal System */
         #modal {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.98); z-index: 2000; flex-direction: column; align-items: center; justify-content: center; padding: 40px;
@@ -95,11 +95,10 @@
         .content-wrapper { width: 100%; aspect-ratio: 16/9; background: #080808; position: relative; border: 1px solid #222; overflow: hidden;}
         .content-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         
-        /* 텍스트 컨텐츠용 스타일 (인프런 등) */
-        .text-content { height: 100%; padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+        .inflearn-content { height: 100%; padding: 60px; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(45deg, #000, #111); }
         .btn-link { 
-            display: inline-block; margin-top: 30px; padding: 15px 40px; border: 1px solid rgba(255,255,255,0.3);
-            color: #fff; text-decoration: none; font-weight: 100; letter-spacing: 2px; transition: 0.3s; width: fit-content;
+            display: inline-block; margin-top: 30px; padding: 18px 50px; border: 1px solid rgba(255,255,255,0.3);
+            color: #fff; text-decoration: none; font-weight: 200; letter-spacing: 2px; transition: 0.3s; width: fit-content; font-size: 1rem;
         }
         .btn-link:hover { background: #fff; color: #000; }
 
@@ -133,9 +132,9 @@
             <div class="project-card" onclick="openVideo('sxAyP7wK7DA', '2025 SHOWREEL', 'Full version of 3D Motion & Media Art Portfolio.')"><p>2025 SHOWREEL</p></div>
             <div class="project-card" onclick="openVideo('_FiQtCwXH6M', 'JEONJU CATHEDRAL', 'Projection Mapping Project. Role: 3D Motion Graphics')"><p>JEONJU CATHEDRAL</p></div>
             
-            <div class="project-card" onclick="openPage('Cinema 4D 기초 강의', '판다유니버스의 입문자를 위한 C4D 기초 완성 코스입니다.', 'https://www.inflearn.com/course/cinema-4d-기초')">
+            <div class="project-card" onclick="openInflearn()">
                 <p>INFLEARN LECTURE</p>
-                <small style="color:rgba(255,255,255,0.3); font-weight:100;">C4D 기초 강의</small>
+                <small style="color:rgba(255,255,255,0.3); font-weight:100;">C4D 기초 강의 | 판다유니버스</small>
             </div>
 
             <div class="project-card" onclick="openVideo('kJtE4o17MqM', 'PARADISE CITY', 'Paradise City Internal LED Media Content.')"><p>PARADISE CITY</p></div>
@@ -156,8 +155,8 @@
             </div>
             <div>
                 <span class="sub-title">Lecture</span>
-                <div class="exp-item" style="cursor:pointer;" onclick="openPage('Inflearn Lecture', '실무 3D 그래픽 노하우를 전달하는 온라인 강의입니다.', 'https://www.inflearn.com')">
-                    <h3>Online Course Instructor</h3><p>인프런(Inflearn)에서 Cinema 4D 실무 강의를 진행 중입니다.</p>
+                <div class="exp-item" style="cursor:pointer;" onclick="openInflearn()">
+                    <h3>Online Course Instructor</h3><p>인프런(Inflearn)에서 Cinema 4D 기초 강의를 진행 중입니다.</p>
                 </div>
                 <span class="sub-title">Book</span>
                 <div class="exp-item"><h3>Published Author</h3><p>『CINEMA 4D & OctaneRender』 전문 서적 집필.</p></div>
@@ -174,8 +173,7 @@
     <div id="modal" onclick="closeModal()">
         <div class="modal-container" onclick="event.stopPropagation()">
             <span class="close-btn" onclick="closeModal()">CLOSE</span>
-            <div id="modal-content-area" class="content-wrapper">
-                </div>
+            <div id="modal-content-area" class="content-wrapper"></div>
             <div class="modal-info">
                 <h3 id="modal-title"></h3>
                 <p id="modal-desc"></p>
@@ -189,7 +187,6 @@
         const modalTitle = document.getElementById('modal-title');
         const modalDesc = document.getElementById('modal-desc');
 
-        // 유튜브 영상용 모달 열기
         function openVideo(videoId, title, desc) {
             modalTitle.innerText = title;
             modalDesc.innerText = desc;
@@ -197,16 +194,21 @@
             displayModal();
         }
 
-        // 웹페이지(인프런 등) 소개용 모달 열기
-        function openPage(title, desc, url) {
+        // 인프런 강의용 전용 함수 (공유해주신 링크 적용)
+        function openInflearn() {
+            const title = "Cinema 4D 기초 강의 | 판다유니버스";
+            const desc = "판다유니버스가 제안하는 입문자를 위한 가장 직관적인 C4D 가이드입니다.";
+            const url = "https://www.inflearn.com/course/cinema-4d-기초";
+            
             modalTitle.innerText = title;
             modalDesc.innerText = desc;
-            // 인프런은 iframe 거부가 많으므로 소개 레이아웃으로 대체
             contentArea.innerHTML = `
-                <div class="text-content">
-                    <h1 style="font-size:3rem; font-weight:100; margin-bottom:20px;">${title}</h1>
-                    <p style="font-size:1.2rem; font-weight:100; opacity:0.6; line-height:1.6;">${desc}</p>
-                    <a href="${url}" target="_blank" class="btn-link">강의 바로가기</a>
+                <div class="inflearn-content">
+                    <h1 style="font-size:3.5rem; font-weight:100; margin-bottom:20px; letter-spacing:-2px;">${title}</h1>
+                    <p style="font-size:1.2rem; font-weight:100; opacity:0.7; line-height:1.6; max-width:800px;">
+                        단순한 기능 설명이 아닌, 실무에서 즉시 활용 가능한 워크플로우를 담았습니다.<br>인프런에서 지금 바로 확인해보세요.
+                    </p>
+                    <a href="${url}" target="_blank" class="btn-link">강의 페이지로 바로 접속하기</a>
                 </div>`;
             displayModal();
         }
