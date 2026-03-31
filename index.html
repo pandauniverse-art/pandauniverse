@@ -9,7 +9,6 @@
 
         :root {
             --bg-color: #000000;
-            /* 투명도 85%로 상향 조정 */
             --text-color: rgba(255, 255, 255, 0.85); 
             --accent-color: rgba(255, 255, 255, 0.45);
             --h1-size: 8rem;
@@ -35,133 +34,83 @@
             position: fixed;
             top: 0; width: 100%;
             padding: 35px 50px;
-            display: flex;
-            justify-content: flex-end;
-            gap: 45px;
+            display: flex; justify-content: flex-end; gap: 45px;
             z-index: 1000;
             background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
         }
         nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: var(--fw-light);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: opacity 0.4s;
+            color: var(--text-color); text-decoration: none;
+            font-size: 0.85rem; font-weight: var(--fw-light);
+            text-transform: uppercase; letter-spacing: 1px; transition: opacity 0.4s;
         }
         nav a:hover { opacity: 0.3; }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
         }
-        .video-background {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -2;
-        }
+        .video-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
         .video-background iframe {
-            width: 100vw; height: 56.25vw;
-            min-height: 100vh; min-width: 177.77vh;
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
+            width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh;
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none;
         }
-        .video-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.75); 
-            z-index: -1;
-        }
+        .video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); z-index: -1; }
         .hero-content h1 { font-size: var(--h1-size); font-weight: 400; letter-spacing: var(--letter-spacing); opacity: 0.95; }
         .hero-content p { font-size: 1.4rem; font-weight: var(--fw-thin); margin-top: -10px; text-align: center; }
 
-        /* General Section Style */
+        /* Section Style */
         section { padding: 120px 60px; max-width: 1400px; margin: 0 auto; }
         h2 { 
-            font-size: var(--h2-size); 
-            font-weight: var(--fw-light);
-            letter-spacing: -1.5px; 
-            margin-bottom: 50px; 
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 15px;
+            font-size: var(--h2-size); font-weight: var(--fw-light); letter-spacing: -1.5px; 
+            margin-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;
         }
 
         /* Work Grid */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 30px; }
         .project-card {
-            background: #080808;
-            aspect-ratio: 16/9;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-            border: 1px solid #111;
+            background: #080808; aspect-ratio: 16/9; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid #111;
         }
         .project-card:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-5px); }
         .project-card p { font-weight: var(--fw-thin); font-size: 0.95rem; opacity: 0.85; }
 
         /* About Section */
         .about-intro { margin-bottom: 100px; max-width: 950px; }
-        .about-intro p { 
-            font-size: 1.6rem; 
-            font-weight: 100; 
-            line-height: 1.65; 
-            color: rgba(255,255,255,0.9); 
-            word-break: keep-all;
-            letter-spacing: -0.5px;
-        }
-        .about-intro .highlight { color: #fff; font-weight: 300; }
-
+        .about-intro p { font-size: 1.6rem; font-weight: 100; line-height: 1.65; color: rgba(255,255,255,0.9); letter-spacing: -0.5px; word-break: keep-all;}
+        .highlight { color: #fff; font-weight: 300; }
         .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 100px; }
         .exp-item { margin-bottom: 40px; }
         .exp-item h3 { font-size: 1.3rem; font-weight: 300; margin-bottom: 8px; color: #fff; }
         .exp-item p { color: var(--text-color); font-size: 0.85rem; font-weight: var(--fw-thin); line-height: 1.5; }
         .sub-title { color: rgba(255,255,255,0.15); text-transform: uppercase; margin-bottom: 30px; display: block; font-weight: 400; font-size: 0.7rem; letter-spacing: 2.5px; }
-        .desc-list { margin-top: 10px; list-style: none; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 18px; }
-        .desc-list li { font-size: 0.85rem; font-weight: var(--fw-thin); color: var(--text-color); margin-bottom: 6px; }
 
-        /* Contact Section */
-        #contact { padding: 180px 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
-        .contact-wrap p { font-size: 2.5rem; font-weight: var(--fw-light); letter-spacing: -1.5px; margin-bottom: 10px; color: #fff; }
-        .contact-wrap span { font-size: 1.1rem; font-weight: 100; color: var(--text-color); }
-
-        /* Video Modal */
+        /* Modal Player & Page */
         #modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.98);
-            z-index: 2000;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.98); z-index: 2000; flex-direction: column; align-items: center; justify-content: center; padding: 40px;
         }
         .modal-container { width: 92vw; max-width: 1750px; display: flex; flex-direction: column; gap: 20px; }
-        .video-wrapper { width: 100%; aspect-ratio: 16/9; background: #000; position: relative; }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        .modal-info { color: #fff; padding: 10px 0; }
-        .modal-info h3 { font-size: 1.7rem; font-weight: 300; letter-spacing: -1px; margin-bottom: 8px; color: #fff; }
-        .modal-info p { font-size: 0.95rem; font-weight: 100; color: rgba(255,255,255,0.5); line-height: 1.5; }
-        .close-btn { align-self: flex-end; color: rgba(255,255,255,0.5); cursor: pointer; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; transition: color 0.3s; }
-        .close-btn:hover { color: #fff; }
-
-        @media (max-width: 768px) {
-            :root { --h1-size: 3.5rem; --h2-size: 1.8rem; }
-            .about-intro p { font-size: 1.25rem; }
-            .about-grid { grid-template-columns: 1fr; gap: 60px; }
-            section { padding: 80px 30px; }
-            .contact-wrap p { font-size: 1.8rem; }
+        .content-wrapper { width: 100%; aspect-ratio: 16/9; background: #080808; position: relative; border: 1px solid #222; overflow: hidden;}
+        .content-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        
+        /* 텍스트 컨텐츠용 스타일 (인프런 등) */
+        .text-content { height: 100%; padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+        .btn-link { 
+            display: inline-block; margin-top: 30px; padding: 15px 40px; border: 1px solid rgba(255,255,255,0.3);
+            color: #fff; text-decoration: none; font-weight: 100; letter-spacing: 2px; transition: 0.3s; width: fit-content;
         }
+        .btn-link:hover { background: #fff; color: #000; }
+
+        .modal-info { color: #fff; padding: 10px 0; }
+        .modal-info h3 { font-size: 1.7rem; font-weight: 300; margin-bottom: 8px; }
+        .modal-info p { font-size: 0.95rem; font-weight: 100; color: rgba(255,255,255,0.5); line-height: 1.5; }
+        .close-btn { align-self: flex-end; color: rgba(255,255,255,0.5); cursor: pointer; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; }
+
+        /* Contact */
+        #contact { padding: 180px 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        .contact-wrap p { font-size: 2.5rem; font-weight: var(--fw-light); letter-spacing: -1.5px; margin-bottom: 10px; color: #fff; }
     </style>
 </head>
 <body>
@@ -173,112 +122,60 @@
     </nav>
 
     <section class="hero">
-        <div class="video-background">
-            <iframe src="https://www.youtube.com/embed/sxAyP7wK7DA?autoplay=1&mute=1&loop=1&playlist=sxAyP7wK7DA&controls=0" frameborder="0"></iframe>
-        </div>
+        <div class="video-background"><iframe src="https://www.youtube.com/embed/sxAyP7wK7DA?autoplay=1&mute=1&loop=1&playlist=sxAyP7wK7DA&controls=0" frameborder="0"></iframe></div>
         <div class="video-overlay"></div>
-        <div class="hero-content">
-            <h1>LEE DEOK JUN</h1>
-            <p>3D Motion & Media Artist</p>
-        </div>
+        <div class="hero-content"><h1>LEE DEOK JUN</h1><p>3D Motion & Media Artist</p></div>
     </section>
 
     <section id="work">
         <h2>SELECTED WORKS</h2>
         <div class="grid">
-            <div class="project-card" onclick="openModal('sxAyP7wK7DA', '2025 SHOWREEL', 'Full version of 3D Motion & Media Art Portfolio.')">
-                <p>2025 SHOWREEL</p>
+            <div class="project-card" onclick="openVideo('sxAyP7wK7DA', '2025 SHOWREEL', 'Full version of 3D Motion & Media Art Portfolio.')"><p>2025 SHOWREEL</p></div>
+            <div class="project-card" onclick="openVideo('_FiQtCwXH6M', 'JEONJU CATHEDRAL', 'Projection Mapping Project. Role: 3D Motion Graphics')"><p>JEONJU CATHEDRAL</p></div>
+            
+            <div class="project-card" onclick="openPage('Cinema 4D 기초 강의', '판다유니버스의 입문자를 위한 C4D 기초 완성 코스입니다.', 'https://www.inflearn.com/course/cinema-4d-기초')">
+                <p>INFLEARN LECTURE</p>
+                <small style="color:rgba(255,255,255,0.3); font-weight:100;">C4D 기초 강의</small>
             </div>
-            <div class="project-card" onclick="openModal('_FiQtCwXH6M', 'JEONJU CATHEDRAL', 'Projection Mapping Project at Jeonju Cathedral. Role: 3D Motion Graphics')">
-                <p>JEONJU CATHEDRAL</p>
-            </div>
-            <div class="project-card" onclick="openModal('kJtE4o17MqM', 'PARADISE CITY', 'Paradise City Internal LED Media Content. Role: 3D Artist')">
-                <p>PARADISE CITY</p>
-            </div>
-            <div class="project-card" onclick="openModal('TLYGn5Se8sQ', 'AI VISUALIZATION', 'Motion Graphics for AI System Visualization.')">
-                <p>AI VISUALIZATION</p>
-            </div>
+
+            <div class="project-card" onclick="openVideo('kJtE4o17MqM', 'PARADISE CITY', 'Paradise City Internal LED Media Content.')"><p>PARADISE CITY</p></div>
         </div>
     </section>
 
     <section id="about">
         <h2>ABOUT</h2>
         <div class="about-intro">
-            <p>
-                안녕하세요, 6년 차 3D 모션 그래픽 아티스트 <span class="highlight">이덕준</span>입니다.<br><br>
-                Cinema 4D와 Unreal Engine을 기반으로 한 감도 높은 3D 비주얼 제작을 전문으로 하며, 대형 브랜드를 포함한 다수의 상업 프로젝트를 성공적으로 완수했습니다.<br><br>
-                단순히 작품을 만드는 것을 넘어, 지식 공유를 통해 업계의 성장에 기여하고자 노력하고 있습니다.
-            </p>
+            <p>안녕하세요, 6년 차 3D 모션 그래픽 아티스트 <span class="highlight">이덕준</span>입니다.<br><br>Cinema 4D와 Unreal Engine을 기반으로 한 감도 높은 3D 비주얼 제작을 전문으로 하며, 지식 공유를 통해 업계의 성장에 기여하고자 노력하고 있습니다.</p>
         </div>
-
         <div class="about-grid">
             <div>
                 <span class="sub-title">Experience</span>
-                <div class="exp-item">
-                    <h3>(주)에이플랜컴퍼니</h3>
-                    <p>2024.04 - 2025.09 | 미디어팀 사원 (팀장 업무 수행)</p>
-                    <ul class="desc-list">
-                        <li>유니세프&아시아나, 전주 전동성당, 랑콤 갈라디너쇼 등 기획 및 제작</li>
-                    </ul>
-                </div>
-                <div class="exp-item">
-                    <h3>파라다이스세가사미</h3>
-                    <p>2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</p>
-                    <ul class="desc-list">
-                        <li>호텔 내부 대형 LED 미디어 및 공간 전시용 3D 그래픽 제작</li>
-                    </ul>
-                </div>
-                <div class="exp-item">
-                    <h3>코스믹 블랙 / 디피넛</h3>
-                    <p>2019.04 - 2022.01 | 제작팀 주임</p>
-                    <ul class="desc-list">
-                        <li>광고 포스트 프로덕션 참여 및 이러닝 모션 그래픽 제작</li>
-                    </ul>
-                </div>
+                <div class="exp-item"><h3>(주)에이플랜컴퍼니</h3><p>2024.04 - 2025.09 | 미디어팀 사원 (팀장 업무 수행)</p></div>
+                <div class="exp-item"><h3>파라다이스세가사미</h3><p>2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</p></div>
+                <div class="exp-item"><h3>코스믹 블랙 / 디피넛</h3><p>2019.04 - 2022.01 | 제작팀 주임</p></div>
             </div>
-
             <div>
-                <span class="sub-title">Lecture(Inflearn)</span>
-                <div class="exp-item">
-                    <h3>Online Course Instructor</h3>
-                    <p>인프런(Inflearn)에서 Cinema 4D 및 Octane Render를 활용한 실무 3D 그래픽 강의를 진행하고 있습니다.</p>
+                <span class="sub-title">Lecture</span>
+                <div class="exp-item" style="cursor:pointer;" onclick="openPage('Inflearn Lecture', '실무 3D 그래픽 노하우를 전달하는 온라인 강의입니다.', 'https://www.inflearn.com')">
+                    <h3>Online Course Instructor</h3><p>인프런(Inflearn)에서 Cinema 4D 실무 강의를 진행 중입니다.</p>
                 </div>
-
                 <span class="sub-title">Book</span>
-                <div class="exp-item">
-                    <h3>Published Author</h3>
-                    <p>『CINEMA 4D & OctaneRender』 전문 서적 집필을 통해 입문자부터 실무자까지 아우르는 기술 노하우를 제공합니다.</p>
-                </div>
-
-                <span class="sub-title">Blog & Social</span>
-                <div class="exp-item">
-                    <h3>YouTube & Tech Blog</h3>
-                    <p>4,000명 이상의 구독자와 소통하며 최신 그래픽 트렌드와 제작 튜토리얼을 연재 중입니다.</p>
-                </div>
-
-                <span class="sub-title">Education</span>
-                <div class="exp-item" style="margin-bottom:0;">
-                    <h3>서울 사이버대학교</h3>
-                    <p>2023.03 - Present | 멀티미디어 디자인학과 재학 중</p>
-                </div>
+                <div class="exp-item"><h3>Published Author</h3><p>『CINEMA 4D & OctaneRender』 전문 서적 집필.</p></div>
+                <span class="sub-title">Blog</span>
+                <div class="exp-item"><h3>YouTube & Blog</h3><p>4,000명 이상의 구독자와 소통하며 튜토리얼을 연재 중입니다.</p></div>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2>CONTACT</h2>
-        <div class="contact-wrap">
-            <p>010-8862-0286</p>
-            <span>led3268@naver.com</span>
-        </div>
+        <div class="contact-wrap"><p>010-8862-0286</p><span>led3268@naver.com</span></div>
     </section>
 
     <div id="modal" onclick="closeModal()">
         <div class="modal-container" onclick="event.stopPropagation()">
             <span class="close-btn" onclick="closeModal()">CLOSE</span>
-            <div class="video-wrapper">
-                <div id="player"></div>
-            </div>
+            <div id="modal-content-area" class="content-wrapper">
+                </div>
             <div class="modal-info">
                 <h3 id="modal-title"></h3>
                 <p id="modal-desc"></p>
@@ -287,25 +184,43 @@
     </div>
 
     <script>
-        function openModal(videoId, title, desc) {
-            const modal = document.getElementById('modal');
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-desc').innerText = desc;
-            document.getElementById('player').innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; 
+        const modal = document.getElementById('modal');
+        const contentArea = document.getElementById('modal-content-area');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+
+        // 유튜브 영상용 모달 열기
+        function openVideo(videoId, title, desc) {
+            modalTitle.innerText = title;
+            modalDesc.innerText = desc;
+            contentArea.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+            displayModal();
         }
+
+        // 웹페이지(인프런 등) 소개용 모달 열기
+        function openPage(title, desc, url) {
+            modalTitle.innerText = title;
+            modalDesc.innerText = desc;
+            // 인프런은 iframe 거부가 많으므로 소개 레이아웃으로 대체
+            contentArea.innerHTML = `
+                <div class="text-content">
+                    <h1 style="font-size:3rem; font-weight:100; margin-bottom:20px;">${title}</h1>
+                    <p style="font-size:1.2rem; font-weight:100; opacity:0.6; line-height:1.6;">${desc}</p>
+                    <a href="${url}" target="_blank" class="btn-link">강의 바로가기</a>
+                </div>`;
+            displayModal();
+        }
+
+        function displayModal() {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
         function closeModal() {
-            const modal = document.getElementById('modal');
-            document.getElementById('player').innerHTML = '';
+            contentArea.innerHTML = '';
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
     </script>
-
-    <footer style="padding: 60px 0; color: rgba(255,255,255,0.05); font-size: 0.7rem; font-weight: 100; text-align: center; border-top: 1px solid rgba(255,255,255,0.02);">
-        &copy; 2026 LEE DEOK JUN. ALL RIGHTS RESERVED.
-    </footer>
-
 </body>
 </html>
