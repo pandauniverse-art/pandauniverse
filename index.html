@@ -53,21 +53,20 @@
         .card p { font-size: 0.9rem; font-weight: var(--fw-thin); opacity: 0.8; padding: 0 20px; }
         .card span { font-size: 0.7rem; opacity: 0.3; text-transform: uppercase; margin-top: 5px; }
 
-        /* Experience Section (간격 50% 축소 상태 유지) */
-        .experience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px 100px; }
+        /* Experience Section Layout */
+        .exp-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px 100px; }
+        .exp-category-title { color: rgba(255,255,255,0.2); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 30px; display: block; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 10px; }
+        
         .exp-item { margin-bottom: 25px; }
         .exp-item h3 { font-size: 1.25rem; font-weight: 300; margin-bottom: 4px; color: #fff; }
         .exp-item .comp-info { font-size: 0.85rem; color: var(--accent-color); margin-bottom: 8px; font-weight: 100; }
         .desc-list { list-style: none; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 15px; }
         .desc-list li { font-size: 0.8rem; font-weight: var(--fw-thin); color: var(--text-color); margin-bottom: 6px; line-height: 1.4; }
 
-        /* About Section (설명글 40% 슬림화 유지) */
         .about-intro { max-width: 600px; }
         .about-intro p { font-size: 1.05rem; font-weight: 100; line-height: 1.6; color: rgba(255,255,255,0.8); word-break: keep-all; margin-bottom: 20px; }
         .highlight { color: #fff; font-weight: 300; }
-        .sub-title { color: rgba(255,255,255,0.15); text-transform: uppercase; margin-bottom: 20px; display: block; font-weight: 400; font-size: 0.75rem; letter-spacing: 2px; }
 
-        /* Modal */
         #modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 2000; align-items: center; justify-content: center; padding: 40px; }
         .modal-container { width: 90vw; max-width: 1700px; display: flex; flex-direction: column; gap: 20px; }
         .video-wrapper { width: 100%; aspect-ratio: 16/9; background: #000; position: relative; }
@@ -77,7 +76,8 @@
         #contact { text-align: center; padding: 120px 60px; border-top: 1px solid rgba(255,255,255,0.05); }
         .contact-wrap p { font-size: 2.2rem; font-weight: var(--fw-light); letter-spacing: -1.5px; margin-bottom: 10px; }
 
-        @media (max-width: 768px) { :root { --h1-size: 3.5rem; --h2-size: 1.8rem; } .experience-grid { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr; } .about-intro { max-width: 100%; } }
+        @media (max-width: 1024px) { .exp-container { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { :root { --h1-size: 3.5rem; --h2-size: 1.8rem; } .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -110,70 +110,86 @@
 
 <section id="experience">
     <h2>EXPERIENCE</h2>
-    <div class="experience-grid">
+    <div class="exp-container">
         
-        <div class="exp-item">
-            <h3>(주)에이플랜컴퍼니</h3>
-            <div class="comp-info">2024.04 - 2025.09 | 미디어팀 사원 (팀장, PM 업무 수행)</div>
-            <ul class="desc-list">
-                <li>유니세프&아시아나, 신풍역 청년주택, 전주 전동성당, 랑콤 갈라디너쇼, 대전 사이언스 페스티벌 등 미디어 아트 총괄</li>
-            </ul>
+        <div>
+            <span class="exp-category-title">Corporate Experience</span>
+            
+            <div class="exp-item">
+                <h3>(주)에이플랜컴퍼니</h3>
+                <div class="comp-info">2024.04 - 2025.09 | 미디어팀 사원 (팀장, PM 업무 수행)</div>
+                <ul class="desc-list">
+                    <li>유니세프&아시아나, 신풍역 청년주택, 전주 전동성당, 대전 사이언스 페스티벌 등 총괄</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>파라다이스세가사미</h3>
+                <div class="comp-info">2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</div>
+                <ul class="desc-list">
+                    <li>3Window media, cimer 프로젝트 제작, F&B 및 내부 보고 영상 촬영/편집</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>코스믹 블랙</h3>
+                <div class="comp-info">2021.05 - 2022.01 | 제작팀 주임</div>
+                <ul class="desc-list">
+                    <li>이러닝 프로젝트 PD: 촬영 및 편집 총괄, 외주 인력 관리</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>바이인터네셔널</h3>
+                <div class="comp-info">2020.07 - 2020.11 | 아트팀 사원</div>
+                <ul class="desc-list">
+                    <li>브랜드 SNS 콘텐츠 그래픽 디자인 및 아트워크 제작</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>디피넛</h3>
+                <div class="comp-info">2019.04 - 2020.04 | 컨텐츠 제작팀 주임</div>
+                <ul class="desc-list">
+                    <li>광고 포스트 프로덕션 참여 및 이러닝 그래픽 제작</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="exp-item">
-            <h3>파라다이스세가사미</h3>
-            <div class="comp-info">2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</div>
-            <ul class="desc-list">
-                <li>3Window media, cimer 프로젝트, F&B 음식 촬영, 호텔 내부 보고 영상 촬영 및 편집</li>
-            </ul>
-        </div>
+        <div>
+            <span class="exp-category-title">Publication & Education</span>
 
-        <div class="exp-item">
-            <h3>YouTube (유튜브)</h3>
-            <div class="comp-info">Content Creator | Panda Universe (판다유니버스)</div>
-            <ul class="desc-list">
-                <li>4,000명 이상의 구독자와 소통하며 최신 3D 그래픽 트렌드 및 제작 튜토리얼 연재</li>
-            </ul>
-        </div>
+            <div class="exp-item">
+                <h3>Book Publication</h3>
+                <div class="comp-info">Author | 『CINEMA 4D & OctaneRender』</div>
+                <ul class="desc-list">
+                    <li>기초부터 마스터하는 3D 렌더링 튜토리얼 북 집필 (세종도서 선정)</li>
+                </ul>
+            </div>
 
-        <div class="exp-item" style="cursor:pointer;" onclick="window.open('https://www.inflearn.com/course/%EC%8B%9C%EB%84%A4%EB%A7%88-4d-%EA%B8%B0%EC%B4%88?inst=8517607e&utm_source=instructor&utm_medium=referral&utm_campaign=inflearn_%ED%8A%B8%EB%9E%98%ED%94%BD_promotion-link')">
-            <h3>Inflearn (인프런)</h3>
-            <div class="comp-info">Online Instructor | 실무 3D 그래픽 교육</div>
-            <ul class="desc-list">
-                <li>Cinema 4D 기초 강의 제작 및 아티스트를 위한 실무 워크플로우 전수</li>
-            </ul>
-        </div>
+            <div class="exp-item" style="cursor:pointer;" onclick="window.open('https://www.inflearn.com/course/%EC%8B%9C%EB%84%A4%EB%A7%88-4d-%EA%B8%B0%EC%B4%88?inst=8517607e&utm_source=instructor&utm_medium=referral&utm_campaign=inflearn_%ED%8A%B8%EB%9E%98%ED%94%BD_promotion-link')">
+                <h3>Inflearn (인프런)</h3>
+                <div class="comp-info">Online Instructor | 실무 3D 그래픽 교육</div>
+                <ul class="desc-list">
+                    <li>Cinema 4D 기초 및 실무 워크플로우 온라인 강의 진행</li>
+                </ul>
+            </div>
 
-        <div class="exp-item">
-            <h3>코스믹 블랙</h3>
-            <div class="comp-info">2021.05 - 2022.01 | 제작팀 주임</div>
-            <ul class="desc-list">
-                <li>이러닝 프로젝트 PD: 촬영 및 편집 총괄, 외주 인력 관리</li>
-            </ul>
-        </div>
+            <div class="exp-item">
+                <h3>YouTube</h3>
+                <div class="comp-info">Content Creator | Panda Universe (판다유니버스)</div>
+                <ul class="desc-list">
+                    <li>4,000명 이상의 구독자와 소통하며 최신 그래픽 트렌드 및 튜토리얼 연재</li>
+                </ul>
+            </div>
 
-        <div class="exp-item">
-            <h3>바이인터네셔널</h3>
-            <div class="comp-info">2020.07 - 2020.11 | 아트팀 사원</div>
-            <ul class="desc-list">
-                <li>콘텐츠 그래픽 디자인 및 브랜드 아트워크 제작</li>
-            </ul>
-        </div>
-
-        <div class="exp-item">
-            <h3>디피넛</h3>
-            <div class="comp-info">2019.04 - 2020.04 | 컨텐츠 제작팀 주임</div>
-            <ul class="desc-list">
-                <li>광고 포스트 프로덕션 참여 및 이러닝 컨텐츠 그래픽 제작</li>
-            </ul>
-        </div>
-
-        <div class="exp-item">
-            <h3>서울 사이버대학교</h3>
-            <div class="comp-info">2023.03 - Present | 멀티미디어 디자인학과 재학</div>
-            <ul class="desc-list">
-                <li>디자인 이론 및 멀티미디어 제작 기술 심화 학습</li>
-            </ul>
+            <div class="exp-item">
+                <h3>Education</h3>
+                <div class="comp-info">Seoul Cyber University</div>
+                <ul class="desc-list">
+                    <li>멀티미디어 디자인학과 학사 과정 재학 중</li>
+                </ul>
+            </div>
         </div>
 
     </div>
@@ -184,15 +200,14 @@
     <div class="about-intro">
         <p>
             안녕하세요, 6년 차 3D 모션 그래픽 아티스트 <span class="highlight">이덕준</span>입니다.<br><br>
-            Cinema 4D와 Unreal Engine을 활용해 대형 브랜드의 상업 프로젝트를 성공적으로 완수해왔습니다.<br><br>
-            저서 <span class="highlight">『CINEMA 4D & OctaneRender』</span>(세종도서 선정)를 통해 지식을 공유하며 업계 발전에 기여하고 있습니다.
+            Cinema 4D와 Unreal Engine을 활용해 상업 프로젝트를 성공적으로 완수해왔으며, 저서와 강의를 통해 업계 발전에 기여하고 있습니다.
         </p>
     </div>
 </section>
 
 <section id="contact">
     <div class="contact-wrap">
-        <span class="sub-title">Get in touch</span>
+        <span class="sub-title" style="color:rgba(255,255,255,0.2); text-transform:uppercase; font-size:0.7rem; letter-spacing:2px; margin-bottom:15px; display:block;">Get in touch</span>
         <p>010-8862-0286</p>
         <p style="font-size: 1.1rem; opacity: 0.5;">led3268@naver.com</p>
     </div>
