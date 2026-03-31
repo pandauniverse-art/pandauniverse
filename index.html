@@ -11,7 +11,6 @@
             --bg-color: #000000;
             --text-color: rgba(255, 255, 255, 0.85); 
             --accent-color: rgba(255, 255, 255, 0.45);
-            /* 이름 폰트 사이즈 2.1rem 축소 유지 */
             --h1-size: 2.1rem;   
             --p-size: 1.2rem;    
             --letter-spacing: -1px; 
@@ -50,13 +49,11 @@
         section { padding: 100px 60px; max-width: 1600px; margin: 0 auto; }
         h2 { font-size: 2.2rem; font-weight: 200; letter-spacing: -1.5px; margin-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
         
-        /* Toolset Section Styles - 배경 칸 높이 축소 (50% 스케일 효과) 반영 */
-        .tool-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; /* 콤팩트한 갭 유지 */ margin-bottom: 40px; }
-        .tool-group { background: rgba(15, 15, 15, 1); /* 약간 옅은색 칸 */ border: 1px solid #111; /* 상하 높이 축소를 위해 padding 최소화 및 마진 정리 */ padding: 8px 15px; margin-bottom: 0; display: flex; flex-direction: column; justify-content: flex-start; }
-        .tool-group h4 { font-size: 0.75rem; color: var(--accent-color); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; /* 헤딩 마진 축소 */ font-weight: 400; /* 칸 내부 인덴트 제거 */ }
-        .tool-group p { font-size: 0.9rem; color: var(--text-color); font-weight: 200; line-height: 1.5; /* 콤팩트한 줄간격 유지 */ margin-left: 0; }
+        .tool-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 40px; }
+        .tool-group { background: rgba(15, 15, 15, 1); border: 1px solid #111; padding: 8px 15px; margin-bottom: 0; display: flex; flex-direction: column; justify-content: flex-start; }
+        .tool-group h4 { font-size: 0.75rem; color: var(--accent-color); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; font-weight: 400; }
+        .tool-group p { font-size: 0.9rem; color: var(--text-color); font-weight: 200; line-height: 1.5; margin-left: 0; }
 
-        /* Grid System */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 60px 30px; margin-bottom: 80px; }
         .card { background: #080808; border: 1px solid #111; aspect-ratio: 16/9; cursor: pointer; transition: 0.4s; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
         .card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-5px); }
@@ -67,7 +64,6 @@
         .card-title { font-size: 0.95rem; font-weight: 300; color: #fff; margin-bottom: 4px; }
         .card-tag { font-size: 0.75rem; font-weight: 100; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Experience Layout */
         .exp-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px 100px; }
         .exp-category-title { color: rgba(255,255,255,0.2); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 30px; display: block; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 10px; }
         .exp-item { margin-bottom: 40px; }
@@ -76,7 +72,6 @@
         .desc-list { list-style: none; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 15px; }
         .desc-list li { font-size: 0.85rem; font-weight: 100; color: var(--text-color); margin-bottom: 8px; line-height: 1.6; }
 
-        /* Modal Styles */
         .full-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 3000; overflow-y: auto; padding: 60px 0; }
         .modal-inner { width: 90%; max-width: 1400px; margin: 0 auto; }
         .video-box { width: 100%; aspect-ratio: 16/9; background: #000; margin-bottom: 40px; }
@@ -196,7 +191,7 @@
             <div class="card-info"><div class="card-title">A Media Art Odyssey</div><div class="card-tag">Personal Artwork</div></div>
         </div>
         <div onclick="openProject('particles')">
-            <div class="card"><img src="images/Personal/Particles universe Media Art/Particles universe Media Art_04.png" alt="Particles universe Media Art" onerror="this.src='https://via.placeholder.com/1600x900/080808/333333?text=Particles+Media+Art'"></div>
+            <div class="card"><img src="images/Personal/24.04_Particles universe Media Artv/Particles universe Media Art_04.png" alt="Particles universe Media Art"></div>
             <div class="card-info"><div class="card-title">Particles universe Media Art</div><div class="card-tag">Personal Artwork</div></div>
         </div>
     </div>
@@ -328,7 +323,6 @@
 
 <script>
     const projectData = {
-        // --- Company Projects ---
         science: {
             video: "a_dn_9OKv5I",
             role: "그래픽팀 팀장 (업무 스케줄, 퀄리티 조율) / PM (클라이언트 소통)",
@@ -380,14 +374,13 @@
             images: ["Pink Spring_01.gif", "Pink Spring_02.gif", "Pink Spring_03.gif", "Pink Spring_04.gif", "Pink Spring_05.gif", "Pink Spring_06.gif", "Pink Spring_07.gif", "Pink Spring_08.gif", "Pink Spring_09.gif", "Pink Spring_10.gif", "Pink Spring_10.png", "Pink Spring_11.png", "Pink Spring_12.gif", "Pink Spring_13.gif", "Pink Spring_14.gif", "Pink Spring_15.png", "Pink Spring_16.png"]
         },
         purpool: {
-            video: "1qmuRc5dCho", 
+            video: "1qmuRc5dCho",
             role: "제작 비중 90% (기획, 제작, 사운드 총괄)\n*유튜브용 사운드는 행사 DJ 곡 활용",
             desc: "파라다이스 시티 호텔의 여름 풀파티를 기념하여 신나는 음악과 '퍼풀파티'라는 보라색 컨셉에 맞춰 제작한 영상입니다.",
             folder: "Company/23.04_Purpool Party",
             images: ["Purpool Party_01.png", "Purpool Party_02.gif", "Purpool Party_03.png", "Purpool Party_04.gif"]
         },
 
-        // --- Personal Projects ---
         multiple: {
             videos: ["4tavRr29Fmo", "pMBceJxxi0k"],
             role: "개인 작업 (Personal Artwork)",
@@ -413,9 +406,25 @@
             video: "wjkUzeLqQjU",
             role: "개인 작업 (Personal Artwork)",
             desc: "Overview\n\nAs the first media art work, not the existing motion graphics, I started with the idea of\nmaintaining the existing style and decorating the space created by the graphics.\nI kept thinking about how it would feel to have such a space, and I made the most of the\nsenses that could be felt in those spaces.\n\n기존의 모션그래픽이 아닌 첫 미디어 아트 작업으로써 기존에 스타일을 유지하며\n직접 그래픽으로 제작한 공간을 꾸며보고 싶다는 생각으로 시작하게 되었습니다.\n실제로 저런 공간이 있으면 어떤 느낌이 날까 하는 고민을 계속 했으며, 그 공간에서\n느낄 수 있는 감각을 최대한 살려서 제작했습니다.",
-            // 반영: 실제 폴더 경로 및 확장자 포함 파일 리스트 업데이트 완료
-            folder: "Personal/Particles universe Media Art",
-            images: ["Particles universe Media Art_01.png", "Particles universe Media Art_02.gif", "Particles universe Media Art_03.gif", "Particles universe Media Art_04.png", "Particles universe Media Art_05.png"]
+            // 파티클 프로젝트 경로 및 파일명 완벽하게 수정됨
+            folder: "Personal/24.04_Particles universe Media Artv",
+            images: [
+                "Particles universe Media Art_01.gif",
+                "Particles universe Media Art_02_1.gif",
+                "Particles universe Media Art_03.png",
+                "Particles universe Media Art_04.png",
+                "Particles universe Media Art_05.png",
+                "Particles universe Media Art_06.png",
+                "Particles universe Media Art_07.png",
+                "Particles universe Media Art_08.png",
+                "Particles universe Media Art_09.png",
+                "Particles universe Media Art_10.png",
+                "Particles universe Media Art_11.png",
+                "Particles universe Media Art_12.png",
+                "Particles universe Media Art_13.png",
+                "Particles universe Media Art_14.png",
+                "Particles universe Media Art_15.png"
+            ]
         }
     };
 
@@ -438,10 +447,12 @@
 
         if(data) {
             if (data.videos && data.videos.length > 0) {
-                data.videos.forEach(vid => {
+                data.videos.forEach((vid, index) => {
                     const wrapper = document.createElement('div');
                     wrapper.className = 'video-box';
-                    wrapper.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${vid}?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+                    // 첫 번째 영상은 자동재생(사운드 On), 두 번째 영상은 자동재생 Off로 에코 방지
+                    const autoPlayParam = (index === 0) ? "?autoplay=1" : "?autoplay=0";
+                    wrapper.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${vid}${autoPlayParam}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
                     videoContainer.appendChild(wrapper);
                 });
             } else if (data.video) {
