@@ -9,8 +9,9 @@
 
         :root {
             --bg-color: #000000;
-            --text-color: rgba(255, 255, 255, 0.7); 
-            --accent-color: rgba(255, 255, 255, 0.35);
+            /* 투명도 85%로 상향 조정 */
+            --text-color: rgba(255, 255, 255, 0.85); 
+            --accent-color: rgba(255, 255, 255, 0.45);
             --h1-size: 8rem;
             --h2-size: 2.2rem;
             --letter-spacing: -4px; 
@@ -78,7 +79,7 @@
             background: rgba(0, 0, 0, 0.75); 
             z-index: -1;
         }
-        .hero-content h1 { font-size: var(--h1-size); font-weight: 400; letter-spacing: var(--letter-spacing); opacity: 0.9; }
+        .hero-content h1 { font-size: var(--h1-size); font-weight: 400; letter-spacing: var(--letter-spacing); opacity: 0.95; }
         .hero-content p { font-size: 1.4rem; font-weight: var(--fw-thin); margin-top: -10px; text-align: center; }
 
         /* General Section Style */
@@ -88,7 +89,7 @@
             font-weight: var(--fw-light);
             letter-spacing: -1.5px; 
             margin-bottom: 50px; 
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             padding-bottom: 15px;
         }
 
@@ -106,7 +107,7 @@
             border: 1px solid #111;
         }
         .project-card:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-5px); }
-        .project-card p { font-weight: var(--fw-thin); font-size: 0.95rem; opacity: 0.7; }
+        .project-card p { font-weight: var(--fw-thin); font-size: 0.95rem; opacity: 0.85; }
 
         /* About Section */
         .about-intro { margin-bottom: 100px; max-width: 950px; }
@@ -114,7 +115,7 @@
             font-size: 1.6rem; 
             font-weight: 100; 
             line-height: 1.65; 
-            color: rgba(255,255,255,0.85); 
+            color: rgba(255,255,255,0.9); 
             word-break: keep-all;
             letter-spacing: -0.5px;
         }
@@ -122,16 +123,16 @@
 
         .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 100px; }
         .exp-item { margin-bottom: 40px; }
-        .exp-item h3 { font-size: 1.3rem; font-weight: 300; margin-bottom: 8px; color: rgba(255,255,255,0.9); }
-        .exp-item p { color: var(--accent-color); font-size: 0.85rem; font-weight: var(--fw-thin); line-height: 1.5; }
-        .sub-title { color: rgba(255,255,255,0.12); text-transform: uppercase; margin-bottom: 30px; display: block; font-weight: 400; font-size: 0.7rem; letter-spacing: 2.5px; }
-        .desc-list { margin-top: 10px; list-style: none; border-left: 1px solid rgba(255,255,255,0.05); padding-left: 18px; }
-        .desc-list li { font-size: 0.85rem; font-weight: var(--fw-thin); color: var(--accent-color); margin-bottom: 6px; }
+        .exp-item h3 { font-size: 1.3rem; font-weight: 300; margin-bottom: 8px; color: #fff; }
+        .exp-item p { color: var(--text-color); font-size: 0.85rem; font-weight: var(--fw-thin); line-height: 1.5; }
+        .sub-title { color: rgba(255,255,255,0.15); text-transform: uppercase; margin-bottom: 30px; display: block; font-weight: 400; font-size: 0.7rem; letter-spacing: 2.5px; }
+        .desc-list { margin-top: 10px; list-style: none; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 18px; }
+        .desc-list li { font-size: 0.85rem; font-weight: var(--fw-thin); color: var(--text-color); margin-bottom: 6px; }
 
         /* Contact Section */
-        #contact { padding: 180px 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.03); }
+        #contact { padding: 180px 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
         .contact-wrap p { font-size: 2.5rem; font-weight: var(--fw-light); letter-spacing: -1.5px; margin-bottom: 10px; color: #fff; }
-        .contact-wrap span { font-size: 1.1rem; font-weight: 100; color: var(--accent-color); }
+        .contact-wrap span { font-size: 1.1rem; font-weight: 100; color: var(--text-color); }
 
         /* Video Modal */
         #modal {
@@ -149,9 +150,9 @@
         .video-wrapper { width: 100%; aspect-ratio: 16/9; background: #000; position: relative; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         .modal-info { color: #fff; padding: 10px 0; }
-        .modal-info h3 { font-size: 1.7rem; font-weight: 300; letter-spacing: -1px; margin-bottom: 8px; color: rgba(255,255,255,0.9); }
-        .modal-info p { font-size: 0.95rem; font-weight: 100; color: rgba(255,255,255,0.4); line-height: 1.5; }
-        .close-btn { align-self: flex-end; color: rgba(255,255,255,0.3); cursor: pointer; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; transition: color 0.3s; }
+        .modal-info h3 { font-size: 1.7rem; font-weight: 300; letter-spacing: -1px; margin-bottom: 8px; color: #fff; }
+        .modal-info p { font-size: 0.95rem; font-weight: 100; color: rgba(255,255,255,0.5); line-height: 1.5; }
+        .close-btn { align-self: flex-end; color: rgba(255,255,255,0.5); cursor: pointer; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; transition: color 0.3s; }
         .close-btn:hover { color: #fff; }
 
         @media (max-width: 768px) {
@@ -302,7 +303,7 @@
         }
     </script>
 
-    <footer style="padding: 60px 0; color: rgba(255,255,255,0.03); font-size: 0.7rem; font-weight: 100; text-align: center; border-top: 1px solid rgba(255,255,255,0.02);">
+    <footer style="padding: 60px 0; color: rgba(255,255,255,0.05); font-size: 0.7rem; font-weight: 100; text-align: center; border-top: 1px solid rgba(255,255,255,0.02);">
         &copy; 2026 LEE DEOK JUN. ALL RIGHTS RESERVED.
     </footer>
 
