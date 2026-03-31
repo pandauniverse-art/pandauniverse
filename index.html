@@ -11,7 +11,7 @@
             --bg-color: #000000;
             --text-color: rgba(255, 255, 255, 0.85); 
             --accent-color: rgba(255, 255, 255, 0.45);
-            /* 이름 폰트 사이즈를 기존 6.8rem의 30% 수준인 2.1rem으로 축소 */
+            /* 이름 폰트 사이즈 2.1rem 축소 유지 */
             --h1-size: 2.1rem;   
             --p-size: 1.2rem;    
             --letter-spacing: -1px; 
@@ -50,6 +50,12 @@
         section { padding: 100px 60px; max-width: 1600px; margin: 0 auto; }
         h2 { font-size: 2.2rem; font-weight: 200; letter-spacing: -1.5px; margin-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
         
+        /* Toolset Section Styles */
+        .tool-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .tool-group h4 { font-size: 0.75rem; color: var(--accent-color); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; font-weight: 400; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 10px; }
+        .tool-group p { font-size: 0.9rem; color: var(--text-color); font-weight: 200; line-height: 1.8; margin-left: 10px; }
+
+        /* Grid System */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 60px 30px; margin-bottom: 80px; }
         .card { background: #080808; border: 1px solid #111; aspect-ratio: 16/9; cursor: pointer; transition: 0.4s; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
         .card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-5px); }
@@ -60,6 +66,7 @@
         .card-title { font-size: 0.95rem; font-weight: 300; color: #fff; margin-bottom: 4px; }
         .card-tag { font-size: 0.75rem; font-weight: 100; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; }
 
+        /* Experience Layout */
         .exp-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px 100px; }
         .exp-category-title { color: rgba(255,255,255,0.2); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 30px; display: block; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 10px; }
         .exp-item { margin-bottom: 40px; }
@@ -68,6 +75,7 @@
         .desc-list { list-style: none; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 15px; }
         .desc-list li { font-size: 0.85rem; font-weight: 100; color: var(--text-color); margin-bottom: 8px; line-height: 1.6; }
 
+        /* Modal Styles */
         .full-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 3000; overflow-y: auto; padding: 60px 0; }
         .modal-inner { width: 90%; max-width: 1400px; margin: 0 auto; }
         .video-box { width: 100%; aspect-ratio: 16/9; background: #000; margin-bottom: 40px; }
@@ -95,6 +103,7 @@
 <body>
 
 <nav>
+    <a href="#toolset">Toolset</a>
     <a href="#company">Company</a>
     <a href="#personal">Personal</a>
     <a href="#experience">Experience</a>
@@ -111,6 +120,28 @@
         <h1>LEE DEOK JUN</h1>
         <p>3D Motion & Media Artist</p>
         <span>시각적 경계를 허무는 3D 모션 & 미디어 아트</span>
+    </div>
+</section>
+
+<section id="toolset" style="background: #050505;">
+    <h2>TOOLSET</h2>
+    <div class="tool-container">
+        <div class="tool-group">
+            <h4>3D</h4>
+            <p>Cinema 4D<br>Unreal Engine</p>
+        </div>
+        <div class="tool-group">
+            <h4>Render</h4>
+            <p>Octane Render<br>Redshift Render</p>
+        </div>
+        <div class="tool-group">
+            <h4>2D / Motion</h4>
+            <p>After Effects<br>Premiere Pro<br>Photoshop<br>Illustrator</p>
+        </div>
+        <div class="tool-group">
+            <h4>AI / Dev</h4>
+            <p>Midjourney<br>Adobe Firefly<br>Kling<br>Vibe Coding</p>
+        </div>
     </div>
 </section>
 
@@ -212,6 +243,15 @@
                 <ul class="desc-list">
                     <li>이러닝 사이트 업로드용 온라인 강의 제작 (아이스크림 원격 교육 연수원, 학교자치 등)</li>
                     <li>촬영, 가편-종편, 인아웃트로 그래픽 제작</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>엘리엇</h3>
+                <div class="comp-info">2018.06 - 2018.09 | 인턴</div>
+                <ul class="desc-list">
+                    <li>로고 및 텍스트 애니메이션, 합성 작업</li>
+                    <li>넥슨 던전앤파이터 광고, 워너원 비타500 캠페인, 잡코리아 광고 포스트 프로덕션 참여</li>
                 </ul>
             </div>
         </div>
@@ -331,7 +371,7 @@
             images: ["Pink Spring_01.gif", "Pink Spring_02.gif", "Pink Spring_03.gif", "Pink Spring_04.gif", "Pink Spring_05.gif", "Pink Spring_06.gif", "Pink Spring_07.gif", "Pink Spring_08.gif", "Pink Spring_09.gif", "Pink Spring_10.gif", "Pink Spring_10.png", "Pink Spring_11.png", "Pink Spring_12.gif", "Pink Spring_13.gif", "Pink Spring_14.gif", "Pink Spring_15.png", "Pink Spring_16.png"]
         },
         purpool: {
-            video: "1qmuRc5dCho", // 퍼풀 파티 신규 링크 반영 완료
+            video: "1qmuRc5dCho",
             role: "제작 비중 90% (기획, 제작, 사운드 총괄)\n*유튜브용 사운드는 행사 DJ 곡 활용",
             desc: "파라다이스 시티 호텔의 여름 풀파티를 기념하여 신나는 음악과 '퍼풀파티'라는 보라색 컨셉에 맞춰 제작한 영상입니다.",
             folder: "23.04_Purpool Party",
@@ -368,7 +408,6 @@
                 img.src = `images/Company/${data.folder}/${fileName}`;
                 img.loading = "lazy";
                 
-                // 특정 이미지 (Purpool Party_03) 그리드 꽉 차게 (여백 없게) 설정
                 if (fileName.includes("Purpool Party_03")) {
                     img.style.gridColumn = "1 / -1";
                 }
