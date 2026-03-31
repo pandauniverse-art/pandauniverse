@@ -37,10 +37,40 @@
         nav a { color: var(--text-color); text-decoration: none; font-size: 0.85rem; font-weight: var(--fw-light); text-transform: uppercase; letter-spacing: 1px; transition: 0.4s; }
         nav a:hover { opacity: 0.3; }
 
-        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-        .hero iframe { width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); z-index: -1; }
-        .hero-content { text-align: center; }
+        /* Hero Section - 원본 비율 유지 수정 */
+        .hero { 
+            width: 100%;
+            position: relative; 
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-video-container {
+            width: 100%;
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            overflow: hidden;
+        }
+        .hero-video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+            pointer-events: none;
+        }
+        .hero-overlay { 
+            position: absolute; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%; 
+            background: rgba(0, 0, 0, 0.5); /* 50% 어둡게 유지 */
+            z-index: 1; 
+        }
+        .hero-content { 
+            position: absolute;
+            z-index: 2;
+            text-align: center; 
+        }
         .hero-content h1 { font-size: var(--h1-size); font-weight: 400; letter-spacing: var(--letter-spacing); }
         .hero-content p { font-size: 1.4rem; font-weight: var(--fw-thin); margin-top: -10px; }
 
@@ -53,10 +83,8 @@
         .card p { font-size: 0.9rem; font-weight: var(--fw-thin); opacity: 0.8; padding: 0 20px; }
         .card span { font-size: 0.7rem; opacity: 0.3; text-transform: uppercase; margin-top: 5px; }
 
-        /* Experience Section Layout */
-        .exp-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px 100px; }
+        .exp-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 100px; }
         .exp-category-title { color: rgba(255,255,255,0.2); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 30px; display: block; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 10px; }
-        
         .exp-item { margin-bottom: 25px; }
         .exp-item h3 { font-size: 1.25rem; font-weight: 300; margin-bottom: 4px; color: #fff; }
         .exp-item .comp-info { font-size: 0.85rem; color: var(--accent-color); margin-bottom: 8px; font-weight: 100; }
@@ -90,8 +118,10 @@
 </nav>
 
 <section class="hero">
-    <iframe src="https://www.youtube.com/embed/sxAyP7wK7DA?autoplay=1&mute=1&loop=1&playlist=sxAyP7wK7DA&controls=0&modestbranding=1" frameborder="0"></iframe>
-    <div class="hero-overlay"></div>
+    <div class="hero-video-container">
+        <iframe src="https://www.youtube.com/embed/sxAyP7wK7DA?autoplay=1&mute=1&loop=1&playlist=sxAyP7wK7DA&controls=0&modestbranding=1&rel=0" frameborder="0"></iframe>
+        <div class="hero-overlay"></div>
+    </div>
     <div class="hero-content">
         <h1>LEE DEOK JUN</h1>
         <p>3D Motion & Media Artist</p>
@@ -111,10 +141,8 @@
 <section id="experience">
     <h2>EXPERIENCE</h2>
     <div class="exp-container">
-        
         <div>
             <span class="exp-category-title">Corporate Experience</span>
-            
             <div class="exp-item">
                 <h3>(주)에이플랜컴퍼니</h3>
                 <div class="comp-info">2024.04 - 2025.09 | 미디어팀 사원 (팀장, PM 업무 수행)</div>
@@ -122,7 +150,6 @@
                     <li>유니세프&아시아나, 신풍역 청년주택, 전주 전동성당, 대전 사이언스 페스티벌 등 총괄</li>
                 </ul>
             </div>
-
             <div class="exp-item">
                 <h3>파라다이스세가사미</h3>
                 <div class="comp-info">2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</div>
@@ -130,7 +157,6 @@
                     <li>3Window media, cimer 프로젝트 제작, F&B 및 내부 보고 영상 촬영/편집</li>
                 </ul>
             </div>
-
             <div class="exp-item">
                 <h3>코스믹 블랙</h3>
                 <div class="comp-info">2021.05 - 2022.01 | 제작팀 주임</div>
@@ -138,7 +164,6 @@
                     <li>이러닝 프로젝트 PD: 촬영 및 편집 총괄, 외주 인력 관리</li>
                 </ul>
             </div>
-
             <div class="exp-item">
                 <h3>바이인터네셔널</h3>
                 <div class="comp-info">2020.07 - 2020.11 | 아트팀 사원</div>
@@ -146,7 +171,6 @@
                     <li>브랜드 SNS 콘텐츠 그래픽 디자인 및 아트워크 제작</li>
                 </ul>
             </div>
-
             <div class="exp-item">
                 <h3>디피넛</h3>
                 <div class="comp-info">2019.04 - 2020.04 | 컨텐츠 제작팀 주임</div>
@@ -155,10 +179,8 @@
                 </ul>
             </div>
         </div>
-
         <div>
             <span class="exp-category-title">Publication & Education</span>
-
             <div class="exp-item">
                 <h3>Book Publication</h3>
                 <div class="comp-info">Author | 『CINEMA 4D & OctaneRender』</div>
@@ -166,7 +188,6 @@
                     <li>기초부터 마스터하는 3D 렌더링 튜토리얼 북 집필 (세종도서 선정)</li>
                 </ul>
             </div>
-
             <div class="exp-item" style="cursor:pointer;" onclick="window.open('https://www.inflearn.com/course/%EC%8B%9C%EB%84%A4%EB%A7%88-4d-%EA%B8%B0%EC%B4%88?inst=8517607e&utm_source=instructor&utm_medium=referral&utm_campaign=inflearn_%ED%8A%B8%EB%9E%98%ED%94%BD_promotion-link')">
                 <h3>Inflearn (인프런)</h3>
                 <div class="comp-info">Online Instructor | 실무 3D 그래픽 교육</div>
@@ -174,7 +195,6 @@
                     <li>Cinema 4D 기초 및 실무 워크플로우 온라인 강의 진행</li>
                 </ul>
             </div>
-
             <div class="exp-item">
                 <h3>YouTube</h3>
                 <div class="comp-info">Content Creator | Panda Universe (판다유니버스)</div>
@@ -182,7 +202,6 @@
                     <li>4,000명 이상의 구독자와 소통하며 최신 그래픽 트렌드 및 튜토리얼 연재</li>
                 </ul>
             </div>
-
             <div class="exp-item">
                 <h3>Education</h3>
                 <div class="comp-info">Seoul Cyber University</div>
@@ -191,7 +210,6 @@
                 </ul>
             </div>
         </div>
-
     </div>
 </section>
 
