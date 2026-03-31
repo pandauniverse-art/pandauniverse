@@ -5,98 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEE DEOK JUN | 3D Artist</title>
     <style>
-        /* 기본 설정 */
+        /* 폰트 및 기본 설정 */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
         :root {
-            --bg-dark: #000;
-            --text-main: #ffffff;
-            /* 기존 대비 1.5배 커진 폰트 사이즈 및 50% 줄어든 자간 */
-            --font-size-hero: 6rem; 
-            --letter-spacing: -2px; 
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --accent-color: #888888;
+            /* 기존 대비 1.5배 크기, 자간 50% 축소 반영 */
+            --h1-size: 8rem;
+            --h2-size: 4rem;
+            --p-size: 1.5rem;
+            --letter-spacing: -4px; /* 자간 대폭 축소 */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            background-color: var(--bg-dark); 
-            color: var(--text-main); 
-            font-family: 'Pretendard', sans-serif;
-            scroll-behavior: smooth; /* 슬라이드 이동 효과 */
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            font-family: 'Inter', sans-serif;
+            line-height: 1.4;
+            scroll-behavior: smooth;
         }
 
-        /* 상단 네비게이션 */
+        /* 네비게이션 */
         nav {
             position: fixed;
             top: 0; width: 100%;
-            padding: 30px 50px;
+            padding: 40px 60px;
             display: flex;
             justify-content: flex-end;
-            z-index: 100;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+            gap: 50px;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
         }
         nav a {
-            color: white;
+            color: var(--text-color);
             text-decoration: none;
-            margin-left: 40px;
-            font-size: 1.2rem; /* 메뉴 글씨 크기 조정 */
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            transition: opacity 0.3s;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            transition: 0.3s;
         }
-        nav a:hover { opacity: 0.5; }
+        nav a:hover { color: var(--accent-color); }
 
-        /* 메인 히어로 섹션 */
+        /* 히어로 섹션 (쇼릴 배경) */
         .hero {
             height: 100vh;
-            width: 100%;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
             overflow: hidden;
         }
-
-        /* 영상 배경 및 50% 어둡게 처리 */
-        .video-container {
+        .video-background {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: -2;
         }
-        .video-container iframe {
+        .video-background iframe {
             width: 100vw; height: 56.25vw;
             min-height: 100vh; min-width: 177.77vh;
             position: absolute; top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             pointer-events: none;
         }
+        /* 배경 50% 더 어둡게 오버레이 */
         .video-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* 배경 50% 더 어둡게 */
+            background: rgba(0, 0, 0, 0.7); /* 명도를 낮추기 위해 0.7 적용 */
             z-index: -1;
         }
 
-        /* 텍스트 스타일 수정 (1.5배 크기, 자간 축소) */
         .hero-content { text-align: center; }
         .hero-content h1 {
-            font-size: var(--font-size-hero);
-            letter-spacing: var(--letter-spacing);
+            font-size: var(--h1-size);
             font-weight: 900;
+            letter-spacing: var(--letter-spacing);
             margin-bottom: 10px;
-            text-transform: uppercase;
         }
         .hero-content p {
-            font-size: 1.8rem; /* 기존 1.2rem에서 1.5배 */
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--accent-color);
             letter-spacing: -1px;
-            opacity: 0.8;
         }
 
-        /* 섹션 공통 스타일 */
-        section {
-            min-height: 100vh;
-            padding: 100px 50px;
-            border-top: 1px solid #222;
+        /* 공통 섹션 스타일 */
+        section { padding: 120px 60px; max-width: 1600px; margin: 0 auto; }
+        h2 { 
+            font-size: var(--h2-size); 
+            letter-spacing: -2px; 
+            margin-bottom: 60px; 
+            border-bottom: 2px solid #222;
+            padding-bottom: 20px;
         }
-        h2 { font-size: 3rem; margin-bottom: 50px; letter-spacing: -1.5px; }
 
+        /* Work 그리드 */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 30px; }
+        .project-card {
+            background: #111;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.4s;
+            border: 1px solid #222;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card:hover { border-color: #fff; transform: scale(1.02); }
+        .project-card span { font-size: 1.2rem; color: #444; }
+
+        /* About 섹션 레이아웃 */
+        .about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 100px; }
+        .exp-item { margin-bottom: 40px; }
+        .exp-item h3 { font-size: 1.8rem; margin-bottom: 5px; }
+        .exp-item p { color: var(--accent-color); font-size: 1.1rem; }
+        .edu-item { margin-bottom: 30px; }
+        .sub-title { color: #555; text-transform: uppercase; margin-bottom: 20px; display: block; font-weight: 700; }
+
+        /* Contact 섹션 */
+        .contact-info { text-align: center; padding: 100px 0; }
+        .contact-info h3 { font-size: 4rem; letter-spacing: -2px; margin-bottom: 20px; }
+        .contact-info p { font-size: 1.5rem; color: var(--accent-color); }
+
+        @media (max-width: 768px) {
+            :root { --h1-size: 4rem; --h2-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            nav { padding: 20px; gap: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -108,30 +149,78 @@
     </nav>
 
     <section class="hero">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/sxAyP7wK7DA?autoplay=1&mute=1&loop=1&playlist=sxAyP7wK7DA&controls=0&modestbranding=1" frameborder="0"></iframe>
+        <div class="video-background">
+            <iframe src="https://www.youtube.com/embed/sxAyP7wK7DA?autoplay=1&mute=1&loop=1&playlist=sxAyP7wK7DA&controls=0&modestbranding=1&rel=0" frameborder="0"></iframe>
         </div>
         <div class="video-overlay"></div>
         
         <div class="hero-content">
             <h1>LEE DEOK JUN</h1>
-            <p>3D Motion Artist & Media Artist</p>
+            <p>3D Motion & Media Artist</p>
         </div>
     </section>
 
     <section id="work">
-        <h2>WORK</h2>
-        </section>
+        <h2>SELECTED WORKS</h2>
+        <div class="grid">
+            <div class="project-card" onclick="window.open('https://youtu.be/sxAyP7wK7DA')">
+                <div style="text-align: center;">
+                    <p style="font-weight: 700;">2025 SHOWREEL</p>
+                    <small style="color:#555">Click to Watch</small>
+                </div>
+            </div>
+            <div class="project-card"><span>Coming Soon</span></div>
+            <div class="project-card"><span>Coming Soon</span></div>
+        </div>
+    </section>
 
     <section id="about">
         <h2>ABOUT</h2>
-        <p>6th-year 3D Motion Graphics Designer...</p>
+        <div class="about-grid">
+            <div>
+                <span class="sub-title">Experience</span>
+                <div class="exp-item">
+                    <h3>㈜에이플랜컴퍼니</h3>
+                    <p>2024.04 - 2025.09 | Media Art Team / PM</p>
+                </div>
+                <div class="exp-item">
+                    <h3>파라다이스세가사미</h3>
+                    <p>2022.01 - 2023.09 | Creative Content Team</p>
+                </div>
+                <div class="exp-item">
+                    <h3>코스믹 블랙</h3>
+                    <p>2021.05 - 2022.01 | Production Team Leader</p>
+                </div>
+                <div class="exp-item">
+                    <h3>바이인터네셔널 / 디피넛</h3>
+                    <p>2019.04 - 2020.11 | Content Creation</p>
+                </div>
+            </div>
+            <div>
+                <span class="sub-title">Education</span>
+                <div class="edu-item">
+                    <h3>서울 사이버대학교</h3>
+                    <p>2023.03 - Present | 멀티미디어 디자인학과 재학</p>
+                </div>
+                <div class="edu-item">
+                    <h3>전문 과정 수료</h3>
+                    <p>W컴퓨터아트 (C4D 과정)<br>방송정보국제교육원 (영상그래픽 양성 과정)</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
-        <h2>CONTACT</h2>
-        <p>Email: your-email@gmail.com</p>
+        <div class="contact-info">
+            <h3>GET IN TOUCH</h3>
+            <p style="font-size: 3rem; color: #fff; margin-bottom: 10px;">010-8862-0286</p>
+            <p>led3268@naver.com</p>
+        </div>
     </section>
+
+    <footer style="padding: 40px 60px; color: #333; font-size: 0.9rem;">
+        &copy; 2026 LEE DEOK JUN. All Rights Reserved.
+    </footer>
 
 </body>
 </html>
