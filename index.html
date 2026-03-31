@@ -47,32 +47,21 @@
         .hero-content p { font-size: var(--p-size); font-weight: var(--fw-normal); letter-spacing: -0.5px; color: rgba(255, 255, 255, 0.8); }
         .hero-content span { display: block; font-size: 0.95rem; font-weight: 100; margin-top: 20px; letter-spacing: 6px; opacity: 0.6; }
 
-        /* Section Common */
+        /* Sections */
         section { padding: 100px 60px; max-width: 1600px; margin: 0 auto; }
         h2 { font-size: 2.2rem; font-weight: 200; letter-spacing: -1.5px; margin-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
         
-        /* Grid System */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 60px 30px; margin-bottom: 100px; }
-        .card { background: #080808; border: 1px solid #111; aspect-ratio: 16/9; cursor: pointer; transition: 0.4s; overflow: hidden; position: relative; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 60px 30px; margin-bottom: 80px; }
+        .card { background: #080808; border: 1px solid #111; aspect-ratio: 16/9; cursor: pointer; transition: 0.4s; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
         .card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-5px); }
         .card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .card:hover img { transform: scale(1.05); }
 
-        .card-info { margin-top: 15px; }
+        .card-info { margin-top: 15px; text-align: left; }
         .card-title { font-size: 0.95rem; font-weight: 300; color: #fff; margin-bottom: 4px; }
         .card-tag { font-size: 0.75rem; font-weight: 100; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Experience Section */
-        .exp-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 100px; }
-        .exp-category-title { color: rgba(255,255,255,0.2); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 30px; display: block; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 10px; }
-        .exp-item { margin-bottom: 35px; }
-        .exp-item h3 { font-size: 1.25rem; font-weight: 300; margin-bottom: 4px; color: #fff; }
-        .exp-item .comp-info { font-size: 0.85rem; color: var(--accent-color); margin-bottom: 12px; font-weight: 100; }
-        .desc-list { list-style: none; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 15px; }
-        .desc-list li { font-size: 0.8rem; font-weight: 100; color: var(--text-color); margin-bottom: 8px; line-height: 1.6; }
-        .desc-list b { font-weight: 400; color: rgba(255,255,255,0.6); display: block; margin-bottom: 2px; }
-
-        /* Modal Styles */
+        /* Project Modal */
         .full-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 3000; overflow-y: auto; padding: 60px 0; }
         .modal-inner { width: 90%; max-width: 1400px; margin: 0 auto; }
         .video-box { width: 100%; aspect-ratio: 16/9; background: #000; margin-bottom: 40px; }
@@ -80,9 +69,17 @@
         .meta-group { margin-bottom: 30px; }
         .meta-group h4 { font-size: 0.75rem; font-weight: 400; color: var(--accent-color); letter-spacing: 2px; margin-bottom: 12px; text-transform: uppercase; }
         .meta-group p { font-size: 1rem; font-weight: 100; line-height: 1.7; color: #fff; opacity: 0.9; white-space: pre-line; }
-        .image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
         .image-grid img { width: 100%; height: auto; border: 1px solid #111; }
         .close-btn { position: fixed; top: 30px; right: 50px; color: #fff; cursor: pointer; font-size: 0.8rem; letter-spacing: 2px; z-index: 3100; opacity: 0.4; }
+
+        /* Experience Section */
+        .exp-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 100px; }
+        .exp-category-title { color: rgba(255,255,255,0.2); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 30px; display: block; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 10px; }
+        .exp-item { margin-bottom: 30px; }
+        .exp-item h3 { font-size: 1.25rem; font-weight: 300; margin-bottom: 4px; color: #fff; }
+        .desc-list { list-style: none; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 15px; }
+        .desc-list li { font-size: 0.8rem; font-weight: 100; color: var(--text-color); margin-bottom: 8px; line-height: 1.5; }
 
         #contact { text-align: center; padding: 150px 60px; border-top: 1px solid rgba(255,255,255,0.05); }
         .contact-wrap p { font-size: 2.2rem; font-weight: 200; letter-spacing: -1.5px; margin-bottom: 10px; }
@@ -93,10 +90,10 @@
 <body>
 
 <nav>
-    <a href="#work">Company</a>
+    <a href="#company">Company</a>
     <a href="#personal">Personal</a>
-    <a href="#vibe">Vibe Coding</a>
     <a href="#experience">Experience</a>
+    <a href="#about">About</a>
     <a href="#contact">Contact</a>
 </nav>
 
@@ -108,47 +105,60 @@
     <div class="hero-content">
         <h1>LEE DEOK JUN</h1>
         <p>6th Year 3D Motion & Media Artist</p>
-        <span>이미지와 코드로 시각적 서사를 설계하다</span>
+        <span>시각적 경계를 허무는 3D 모션 & 미디어 아트</span>
     </div>
 </section>
 
-<section id="work">
+<section id="company">
     <h2>COMPANY PROJECTS</h2>
     <div class="grid">
         <div onclick="openProject('science')">
-            <div class="card">
-                <img src="images/Company/25.03_Daejeon Science Festival/Daejeon Science_02.png" alt="Science Festival">
-            </div>
+            <div class="card"><img src="images/Company/25.03_Daejeon Science Festival/Daejeon Science_02.png"></div>
             <div class="card-info">
                 <div class="card-title">대전 사이언스 페스티벌 (사이언스 오디세이)</div>
-                <div class="card-tag">(주)에이플랜컴퍼니 | Media Art</div>
+                <div class="card-tag">A-Plan Company</div>
             </div>
         </div>
+        <div class="card-wrap">
+            <div class="card"><img src="images/Company/24.12_LANCOME/thumb.jpg" onerror="this.src='https://via.placeholder.com/1600x900/080808/333333?text=LANCOME+Gala+Dinner'"></div>
+            <div class="card-info"><div class="card-title">랑콤 (LANCOME) Gala Dinner</div><div class="card-tag">A-Plan Company</div></div>
         </div>
-</section>
-
-<section id="personal" style="background: #050505;">
-    <h2>PERSONAL ARTWORKS</h2>
-    <div class="grid">
-        <div class="card">
-            <p style="color:#333; font-size:0.8rem; padding:20px;">[개인 작업 이미지 업로드 예정]</p>
+        <div class="card-wrap">
+            <div class="card"><img src="images/Company/24.01_Youth Security Housing/thumb.jpg" onerror="this.src='https://via.placeholder.com/1600x900/080808/333333?text=Youth+Security+Housing'"></div>
+            <div class="card-info"><div class="card-title">신풍역 청년주택 미디어 아트</div><div class="card-tag">A-Plan Company</div></div>
         </div>
-        <div class="card">
-            <p style="color:#333; font-size:0.8rem; padding:20px;">[개인 작업 이미지 업로드 예정]</p>
+        <div class="card-wrap">
+            <div class="card"><img src="images/Company/24.07_Jeonju Cathedral/thumb.jpg" onerror="this.src='https://via.placeholder.com/1600x900/080808/333333?text=Jeonju+Cathedral'"></div>
+            <div class="card-info"><div class="card-title">전주 전동성당 미디어 파사드</div><div class="card-tag">A-Plan Company</div></div>
+        </div>
+        <div class="card-wrap">
+            <div class="card"><img src="images/Company/24.04_UNICEF-Asiana/thumb.jpg" onerror="this.src='https://via.placeholder.com/1600x900/080808/333333?text=UNICEF+x+Asiana'"></div>
+            <div class="card-info"><div class="card-title">유니세프 X 아시아나 30주년 행사</div><div class="card-tag">A-Plan Company</div></div>
+        </div>
+        <div class="card-wrap">
+            <div class="card"><img src="images/Company/23.01_Pink Spring/thumb.jpg" onerror="this.src='https://via.placeholder.com/1600x900/080808/333333?text=Pink+Spring'"></div>
+            <div class="card-info"><div class="card-title">파라다이스 시티 호텔 (Pink Spring)</div><div class="card-tag">Paradise City</div></div>
+        </div>
+        <div class="card-wrap">
+            <div class="card"><img src="images/Company/23.04_Purpool Party/thumb.jpg" onerror="this.src='https://via.placeholder.com/1600x900/080808/333333?text=Purpool+Party'"></div>
+            <div class="card-info"><div class="card-title">파라다이스 시티 호텔 (Purpool Party)</div><div class="card-tag">Paradise City</div></div>
         </div>
     </div>
 </section>
 
-<section id="vibe">
-    <h2>VIBE CODING & AI</h2>
+<section id="personal" style="background:#050505;">
+    <h2>PERSONAL ARTWORKS</h2>
     <div class="grid">
-        <div class="card">
-            <div class="card-info" style="padding:40px;">
-                <div class="card-title" style="font-size:1.5rem;">AI-Assisted Web Dev</div>
-                <div class="card-tag">Claude 3.5 & Cursor | Frontend</div>
-                <p style="font-size:0.8rem; margin-top:15px; font-weight:100; opacity:0.6;">AI를 활용한 고효율 웹 포트폴리오 및 대시보드 설계 연구</p>
-            </div>
-        </div>
+        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">MULTIPLE DIMENSIONS</div><div class="card-tag">Personal</div></div></div>
+        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Isometric Daily Spaces</div><div class="card-tag">3D Design</div></div></div>
+        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Nothing to Prove</div><div class="card-tag">Personal</div></div></div>
+        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Golden Flower: A Rhythm of Form</div><div class="card-tag">Abstract Art</div></div></div>
+        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">A Media Art Odyssey</div><div class="card-tag">Media Art</div></div></div>
+        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Personal Media Art Wall</div><div class="card-tag">Personal</div></div></div>
+        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">World of Imagination</div><div class="card-tag">Space Art</div></div></div>
+        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Personal Space Art Work</div><div class="card-tag">Space Art</div></div></div>
+        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">World Travel</div><div class="card-tag">Personal</div></div></div>
+        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Particles Media Art</div><div class="card-tag">Personal</div></div></div>
     </div>
 </section>
 
@@ -157,61 +167,26 @@
     <div class="exp-container">
         <div>
             <span class="exp-category-title">Corporate Experience</span>
-            
             <div class="exp-item">
-                <h3>(주)에이플랜컴퍼니</h3>
-                <div class="comp-info">2024.04 - 2025.09 | 미디어팀 사원 (팀장, PM 업무 수행)</div>
-                <ul class="desc-list">
-                    <li><b>주요 프로젝트</b>: 유니세프&아시아나 미디어 아트, 신풍역 청년주택 공공 미술, 전주 전동성당 미디어 파사드, 랑콤 갈라디너쇼 공간 연출</li>
-                </ul>
+                <h3>(주)에이플랜컴퍼니</h3><div class="comp-info">2024.04 - 2025.09 | 미디어팀 팀장</div>
+                <ul class="desc-list"><li>유니세프&아시아나 협업, 신풍역 청년주택, 전동성당 파사드, 랑콤 갈라디너쇼, 대전 사이언스 페스티벌 총괄</li></ul>
             </div>
-
             <div class="exp-item">
-                <h3>파라다이스세가사미</h3>
-                <div class="comp-info">2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</div>
-                <ul class="desc-list">
-                    <li><b>사내 컨텐츠</b>: 3Window Media 구축, Cimer 브랜드 컨텐츠, 호텔 F&B 및 프로모션 촬영/편집</li>
-                </ul>
+                <h3>파라다이스세가사미</h3><div class="comp-info">2022.01 - 2023.09 | 컨텐츠 크리에이티브</div>
+                <ul class="desc-list"><li>3Window Media, Cimer 브랜드 컨텐츠, F&B 및 프로모션 촬영/편집 총괄</li></ul>
             </div>
-
             <div class="exp-item">
-                <h3>코스믹 블랙 / 바이인터네셔널</h3>
-                <div class="comp-info">2020.07 - 2022.01 | 주임/사원</div>
-                <ul class="desc-list">
-                    <li><b>이러닝 & 광고</b>: 이러닝 컨텐츠 PD, 브랜드 SNS 모션 그래픽 및 마케팅 아트워크 제작</li>
-                </ul>
-            </div>
-
-            <div class="exp-item">
-                <h3>디피넛</h3>
-                <div class="comp-info">2019.04 - 2020.04 | 컨텐츠 제작팀 주임</div>
-                <ul class="desc-list">
-                    <li><b>Post Production</b>: 넥슨 던전앤파이터 광고, 워너원 비타500 캠페인, 잡코리아 광고 참여</li>
-                </ul>
+                <h3>디피넛</h3><div class="comp-info">2019.04 - 2020.04 | 컨텐츠 제작팀 주임</div>
+                <ul class="desc-list"><li>던전앤파이터, 워너원 비타500, 잡코리아 광고 포스트 프로덕션 참여</li></ul>
             </div>
         </div>
-
         <div>
-            <span class="exp-category-title">Publication & Education</span>
-            <div class="exp-item">
-                <h3>Book Publication</h3>
-                <div class="comp-info">Author | 『CINEMA 4D & OctaneRender』</div>
-                <ul class="desc-list"><li>2025 세종도서 기술과학 부문 선정 우수도서</li></ul>
+            <span class="exp-category-title">Education & Publication</span>
+            <div class="exp-item"><h3>Book Publication</h3><div class="comp-info">Author | 『CINEMA 4D & OctaneRender』</div>
+                <ul class="desc-list"><li>2025 세종도서 기술과학 부문 선정</li></ul>
             </div>
-
-            <div class="exp-item">
-                <h3>Online Education</h3>
-                <div class="comp-info">Instructor | Inflearn & YouTube (Panda Universe)</div>
-                <ul class="desc-list">
-                    <li>인프런 'Cinema 4D 기초' 강의 런칭</li>
-                    <li>유튜브 '판다유니버스' 채널 운영 (구독자 4,000명)</li>
-                </ul>
-            </div>
-
-            <div class="exp-item">
-                <h3>Academic</h3>
-                <div class="comp-info">Seoul Cyber University</div>
-                <ul class="desc-list"><li>멀티미디어 디자인학과 학사 과정 (2026 졸업 예정)</li></ul>
+            <div class="exp-item"><h3>Inflearn / YouTube</h3><div class="comp-info">Instructor | Panda Universe</div>
+                <ul class="desc-list"><li>인프런 Cinema 4D 강의 및 유튜브 채널 운영 (구독자 4,000명)</li></ul>
             </div>
         </div>
     </div>
@@ -220,34 +195,20 @@
 <div id="projectModal" class="full-modal" onclick="closeProject()">
     <div class="modal-inner" onclick="event.stopPropagation()">
         <span class="close-btn" onclick="closeProject()">CLOSE</span>
-        <div class="video-box">
-            <iframe id="projectVideo" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+        <div class="video-box"><iframe id="projectVideo" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
         <div class="project-meta">
-            <div class="meta-group">
-                <h4>참여 업무</h4>
-                <p>그래픽팀 팀장 (업무 스케줄, 퀄리티 조율) / PM (클라이언트 소통)</p>
-            </div>
-            <div class="meta-group">
-                <h4>제작 기획</h4>
-                <p>01 : 차원의 문이 열리다
-                   02 : 1970년대 대전, 대한민국 과학이 깨어나다
-                   03 : 연결된 과학, 연결된 세상
-                   04 : 차원을 넘어, 새로운 세계로!</p>
-            </div>
+            <div class="meta-group"><h4>참여 업무</h4><p>그래픽팀 팀장 (업무 스케줄, 퀄리티 조율) / PM (클라이언트 소통)</p></div>
+            <div class="meta-group"><h4>제작 기획</h4><p>01 : 차원의 문이 열리다
+               02 : 1970년대 대전, 대한민국 과학이 깨어나다
+               03 : 연결된 과학, 연결된 세상
+               04 : 차원을 넘어, 새로운 세계로!</p></div>
         </div>
-        <div class="image-feed">
-            <h3 style="font-weight:100; font-size:0.8rem; letter-spacing:3px; color:var(--accent-color); margin-bottom:30px;">PROJECT STILLS</h3>
-            <div id="projectImages" class="image-grid"></div>
-        </div>
+        <div id="projectImages" class="image-grid"></div>
     </div>
 </div>
 
 <section id="contact">
-    <div class="contact-wrap">
-        <p>010-8862-0286</p>
-        <p style="font-size: 1.1rem; opacity: 0.5;">led3268@naver.com</p>
-    </div>
+    <div class="contact-wrap"><p>010-8862-0286</p><p style="font-size:1.1rem; opacity:0.5;">led3268@naver.com</p></div>
 </section>
 
 <script>
@@ -274,13 +235,11 @@
     function closeProject() {
         const modal = document.getElementById('projectModal');
         const video = document.getElementById('projectVideo');
-        video.src = ""; 
-        modal.style.display = 'none';
+        video.src = ""; modal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
 </script>
 
-<footer style="padding: 40px; text-align: center; opacity: 0.1; font-size: 0.7rem;">&copy; 2026 LEE DEOK JUN.</footer>
-
+<footer style="padding:40px; text-align:center; opacity:0.1; font-size:0.7rem;">&copy; 2026 LEE DEOK JUN.</footer>
 </body>
 </html>
