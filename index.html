@@ -81,8 +81,8 @@
         .hero-content h1 { font-size: var(--h1-size); font-weight: 400; letter-spacing: var(--letter-spacing); opacity: 0.9; }
         .hero-content p { font-size: 1.4rem; font-weight: var(--fw-thin); margin-top: -10px; text-align: center; }
 
-        /* Work Section */
-        section { padding: 120px 60px; max-width: 1500px; margin: 0 auto; }
+        /* Work Grid - 이전의 미니멀한 크기로 복구 */
+        section { padding: 120px 60px; max-width: 1400px; margin: 0 auto; }
         h2 { 
             font-size: var(--h2-size); 
             font-weight: var(--fw-light);
@@ -91,7 +91,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.08);
             padding-bottom: 15px;
         }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 35px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 30px; }
         .project-card {
             background: #080808;
             aspect-ratio: 16/9;
@@ -106,7 +106,7 @@
         .project-card:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-5px); }
         .project-card p { font-weight: var(--fw-thin); font-size: 0.95rem; opacity: 0.7; }
 
-        /* Modal Player - 크기 대폭 확장 및 설명 추가 */
+        /* Video Modal - 영상 크기 극대화 (화면의 90%) */
         #modal {
             display: none;
             position: fixed;
@@ -116,10 +116,11 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: 40px;
         }
         .modal-container {
-            width: 90%; /* 화면의 90% 사용 */
-            max-width: 1600px;
+            width: 90vw; 
+            max-width: 1700px;
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -127,38 +128,44 @@
         .video-wrapper {
             width: 100%;
             aspect-ratio: 16/9;
-            position: relative;
             background: #000;
+            position: relative;
         }
-        .video-wrapper iframe { width: 100%; height: 100%; border: none; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         
-        .modal-info {
-            color: #fff;
-            padding: 10px 0;
-        }
-        .modal-info h3 { font-size: 1.5rem; font-weight: 300; letter-spacing: -1px; margin-bottom: 8px; }
-        .modal-info p { font-size: 0.9rem; font-weight: 100; color: rgba(255,255,255,0.5); line-height: 1.6; }
+        .modal-info { color: #fff; padding: 10px 0; }
+        .modal-info h3 { font-size: 1.6rem; font-weight: 300; letter-spacing: -1px; margin-bottom: 8px; color: rgba(255,255,255,0.9); }
+        .modal-info p { font-size: 0.95rem; font-weight: 100; color: rgba(255,255,255,0.4); line-height: 1.5; }
 
         .close-btn {
             align-self: flex-end;
-            color: rgba(255,255,255,0.4);
+            color: rgba(255,255,255,0.3);
             cursor: pointer;
             font-size: 0.8rem;
             letter-spacing: 2px;
             margin-bottom: 10px;
+            transition: 0.3s;
         }
+        .close-btn:hover { color: #fff; }
 
-        /* About Section (이미지 기준 재정리) */
-        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 100px; }
-        .exp-item { margin-bottom: 35px; }
+        /* About Section */
+        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; }
+        .exp-item { margin-bottom: 30px; }
         .exp-item h3 { font-size: 1.35rem; font-weight: 300; margin-bottom: 6px; color: rgba(255,255,255,0.9); }
         .exp-item p { color: var(--accent-color); font-size: 0.85rem; font-weight: var(--fw-thin); line-height: 1.4; }
         .sub-title { color: rgba(255,255,255,0.12); text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 400; font-size: 0.75rem; letter-spacing: 2px; }
         .desc-list { margin-top: 8px; list-style: none; border-left: 1px solid rgba(255,255,255,0.05); padding-left: 15px; }
         .desc-list li { font-size: 0.8rem; font-weight: var(--fw-thin); color: var(--accent-color); margin-bottom: 4px; }
 
-        .contact-info { text-align: center; padding: 80px 0; }
-        .contact-info p { font-size: 2.2rem; font-weight: var(--fw-light); letter-spacing: -1.5px; }
+        .contact-info { text-align: left; padding: 0; }
+        .contact-info p { font-size: 1.8rem; font-weight: var(--fw-light); letter-spacing: -1.5px; margin-bottom: 5px; }
+
+        @media (max-width: 768px) {
+            :root { --h1-size: 3.5rem; --h2-size: 1.8rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .modal-container { width: 100%; }
+            .grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -207,7 +214,7 @@
                     <h3>(주)에이플랜컴퍼니</h3>
                     <p>2024.04 - 2025.09 | 미디어팀 사원 (팀장 업무 수행)</p>
                     <ul class="desc-list">
-                        <li>유니세프&아시아나, 전주 전동성당, 랑콤 갈라디너쇼 등 미디어 아트 기획 및 제작</li>
+                        <li>유니세프&아시아나, 전주 전동성당, 랑콤 갈라디너쇼 등 제작</li>
                     </ul>
                 </div>
                 <div class="exp-item">
@@ -221,7 +228,7 @@
                     <h3>디피넛</h3>
                     <p>2019.04 - 2020.04 | 컨텐츠 제작팀 주임</p>
                     <ul class="desc-list">
-                        <li>이러닝 강의 및 그래픽 제작, 던전앤파이터/잡코리아 광고 포스트 프로덕션 참여</li>
+                        <li>이러닝 강의 및 그래픽 제작, 광고 포스트 프로덕션 참여</li>
                     </ul>
                 </div>
             </div>
@@ -235,9 +242,9 @@
                     <h3>Training</h3>
                     <p>After Effect, C4D | 더블유컴퓨터아트 (2018.11 - 2019.03)</p>
                 </div>
-                <span class="sub-title" style="margin-top:40px;">Contact</span>
-                <div class="contact-info" style="text-align: left; padding: 0;">
-                    <p style="font-size: 1.5rem;">010-8862-0286</p>
+                <span class="sub-title" id="contact" style="margin-top:40px;">Contact</span>
+                <div class="contact-info">
+                    <p>010-8862-0286</p>
                     <p style="font-size: 0.9rem; opacity: 0.4;">led3268@naver.com</p>
                 </div>
             </div>
@@ -263,7 +270,8 @@
             const player = document.getElementById('player');
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-desc').innerText = desc;
-            player.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+            // 유튜브 API 호출 (사운드 포함 자동재생)
+            player.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden'; 
         }
