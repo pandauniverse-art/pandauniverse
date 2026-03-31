@@ -37,7 +37,6 @@
         nav a { color: var(--text-color); text-decoration: none; font-size: 0.85rem; font-weight: 200; text-transform: uppercase; letter-spacing: 1px; transition: 0.4s; }
         nav a:hover { opacity: 0.3; }
 
-        /* Hero Section */
         .hero { width: 100%; position: relative; background: #000; display: flex; align-items: center; justify-content: center; }
         .hero-video-container { width: 100%; position: relative; padding-top: 56.25%; overflow: hidden; }
         .hero-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; }
@@ -50,7 +49,6 @@
         section { padding: 100px 60px; max-width: 1600px; margin: 0 auto; }
         h2 { font-size: 2.2rem; font-weight: 200; letter-spacing: -1.5px; margin-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
         
-        /* Grid System */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 60px 30px; margin-bottom: 80px; }
         .card { background: #080808; border: 1px solid #111; aspect-ratio: 16/9; cursor: pointer; transition: 0.4s; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
         .card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-5px); }
@@ -61,7 +59,6 @@
         .card-title { font-size: 0.95rem; font-weight: 300; color: #fff; margin-bottom: 4px; }
         .card-tag { font-size: 0.75rem; font-weight: 100; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Experience Layout */
         .exp-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px 100px; }
         .exp-category-title { color: rgba(255,255,255,0.2); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 30px; display: block; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 10px; }
         .exp-item { margin-bottom: 40px; }
@@ -70,7 +67,6 @@
         .desc-list { list-style: none; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 15px; }
         .desc-list li { font-size: 0.82rem; font-weight: 100; color: var(--text-color); margin-bottom: 10px; line-height: 1.6; }
 
-        /* Modal Styles */
         .full-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 3000; overflow-y: auto; padding: 60px 0; }
         .modal-inner { width: 90%; max-width: 1400px; margin: 0 auto; }
         .video-box { width: 100%; aspect-ratio: 16/9; background: #000; margin-bottom: 40px; }
@@ -79,13 +75,13 @@
         .meta-group h4 { font-size: 0.75rem; font-weight: 400; color: var(--accent-color); letter-spacing: 2px; margin-bottom: 12px; text-transform: uppercase; }
         .meta-group p { font-size: 1rem; font-weight: 100; line-height: 1.7; color: #fff; opacity: 0.9; white-space: pre-line; word-break: keep-all; }
         
-        /* 스페셜 텍스트 섹션 (청년주택 등) */
         .special-text-block { background: #080808; padding: 30px; border: 1px solid #111; margin-bottom: 20px; }
         .special-text-block h5 { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 15px; font-weight: 300; letter-spacing: 1px; }
         .special-text-block p { font-size: 0.9rem; font-weight: 100; line-height: 1.6; color: rgba(255,255,255,0.6); white-space: pre-line; }
 
         .image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .image-grid img { width: 100%; height: auto; border: 1px solid #111; }
+        .image-grid img { width: 100%; height: auto; border: 1px solid #111; display: block; }
+        
         .close-btn { position: fixed; top: 30px; right: 50px; color: #fff; cursor: pointer; font-size: 0.8rem; letter-spacing: 2px; z-index: 3100; opacity: 0.4; transition: 0.3s; }
         .close-btn:hover { opacity: 1; }
 
@@ -187,6 +183,20 @@
                 </ul>
             </div>
             <div class="exp-item">
+                <h3>코스믹 블랙</h3>
+                <div class="comp-info">2021.05 - 2022.01 | 제작팀 주임</div>
+                <ul class="desc-list">
+                    <li>프로젝트 PD로서 이러닝 컨텐츠 촬영 및 편집 프로세스 관리, 외주 파트너사 관리</li>
+                </ul>
+            </div>
+            <div class="exp-item">
+                <h3>바이인터네셔널</h3>
+                <div class="comp-info">2020.07 - 2020.11 | 아트팀 사원</div>
+                <ul class="desc-list">
+                    <li>브랜드 SNS 콘텐츠 모션 그래픽 제작 및 홍보용 아트워크 그래픽 디자인</li>
+                </ul>
+            </div>
+            <div class="exp-item">
                 <h3>디피넛</h3>
                 <div class="comp-info">2019.04 - 2020.04 | 컨텐츠 제작팀 주임</div>
                 <ul class="desc-list">
@@ -199,14 +209,20 @@
             <div class="exp-item">
                 <h3>Book Publication</h3>
                 <div class="comp-info">Author | 『CINEMA 4D & OctaneRender』</div>
-                <ul class="desc-list"><li>2025 세종도서 기술과학 부문 선정</li></ul>
+                <ul class="desc-list"><li>2025 세종도서 기술과학 부문 선정 우수도서 집필 및 마스터 가이드 제작</li></ul>
             </div>
             <div class="exp-item">
                 <h3>Online Education</h3>
                 <div class="comp-info">Instructor | Inflearn & YouTube (Panda Universe)</div>
                 <ul class="desc-list">
-                    <li>Cinema 4D 기초 강의 런칭, 유튜브 채널 운영 (구독자 4,000명)</li>
+                    <li>인프런 Cinema 4D 기초 강의 런칭 및 커리큘럼 설계</li>
+                    <li>유튜브 '판다유니버스' 채널 운영 (구독자 4,000명)</li>
                 </ul>
+            </div>
+            <div class="exp-item">
+                <h3>Academic</h3>
+                <div class="comp-info">Seoul Cyber University</div>
+                <ul class="desc-list"><li>멀티미디어 디자인학과 학사 과정 재학 (2026 졸업 예정)</li></ul>
             </div>
         </div>
     </div>
@@ -244,7 +260,6 @@
 </section>
 
 <script>
-    // 텍스트 데이터 복구 및 업데이트 완료
     const projectData = {
         science: {
             video: "a_dn_9OKv5I",
@@ -297,7 +312,7 @@
             images: ["Pink Spring_01.gif", "Pink Spring_02.gif", "Pink Spring_03.gif", "Pink Spring_04.gif", "Pink Spring_05.gif", "Pink Spring_06.gif", "Pink Spring_07.gif", "Pink Spring_08.gif", "Pink Spring_09.gif", "Pink Spring_10.gif", "Pink Spring_10.png", "Pink Spring_11.png", "Pink Spring_12.gif", "Pink Spring_13.gif", "Pink Spring_14.gif", "Pink Spring_15.png", "Pink Spring_16.png"]
         },
         purpool: {
-            video: "kJtE4o17MqM", // 퍼풀파티 유튜브 링크 미제공으로 핑크스프링 임시 연결 (나중에 수정 가능)
+            video: "1qmuRc5dCho", // 수정된 유튜브 링크 반영
             role: "제작 비중 90% (기획, 제작, 사운드 총괄)\n*유튜브용 사운드는 행사 DJ 곡 활용",
             desc: "파라다이스 시티 호텔의 여름 풀파티를 기념하여 신나는 음악과 '퍼풀파티'라는 보라색 컨셉에 맞춰 제작한 영상입니다.",
             folder: "23.04_Purpool Party",
@@ -315,15 +330,13 @@
         const data = projectData[type];
         
         imageContainer.innerHTML = ''; 
-        specialContainer.innerHTML = ''; // 초기화
+        specialContainer.innerHTML = ''; 
 
         if(data) {
-            // 유튜브 사운드 자동재생
             video.src = `https://www.youtube.com/embed/${data.video}?autoplay=1`;
             roleText.innerText = data.role;
             descText.innerText = data.desc;
 
-            // 스페셜 텍스트 섹션 (청년주택, 전동성당) 추가
             if(data.special) {
                 const block = document.createElement('div');
                 block.className = 'special-text-block';
@@ -331,11 +344,16 @@
                 specialContainer.appendChild(block);
             }
 
-            // 이미지/GIF 리스트 생성
             data.images.forEach(fileName => {
                 const img = document.createElement('img');
                 img.src = `images/Company/${data.folder}/${fileName}`;
                 img.loading = "lazy";
+                
+                // 특정 이미지 (Purpool Party_03) 그리드 꽉 차게 (여백 없게) 설정
+                if (fileName.includes("Purpool Party_03")) {
+                    img.style.gridColumn = "1 / -1";
+                }
+
                 imageContainer.appendChild(img);
             });
         }
