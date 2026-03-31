@@ -11,6 +11,7 @@
             --bg-color: #000000;
             --text-color: rgba(255, 255, 255, 0.85); 
             --accent-color: rgba(255, 255, 255, 0.45);
+            /* 이름 폰트 사이즈 2.1rem 축소 유지 */
             --h1-size: 2.1rem;   
             --p-size: 1.2rem;    
             --letter-spacing: -1px; 
@@ -49,10 +50,13 @@
         section { padding: 100px 60px; max-width: 1600px; margin: 0 auto; }
         h2 { font-size: 2.2rem; font-weight: 200; letter-spacing: -1.5px; margin-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
         
-        .tool-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
-        .tool-group h4 { font-size: 0.75rem; color: var(--accent-color); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; font-weight: 400; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 10px; }
-        .tool-group p { font-size: 0.9rem; color: var(--text-color); font-weight: 200; line-height: 1.8; margin-left: 10px; }
+        /* Toolset Section Styles - 배경 칸 높이 축소 (50% 스케일 효과) 반영 */
+        .tool-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; /* 콤팩트한 갭 유지 */ margin-bottom: 40px; }
+        .tool-group { background: rgba(15, 15, 15, 1); /* 약간 옅은색 칸 */ border: 1px solid #111; /* 상하 높이 축소를 위해 padding 최소화 및 마진 정리 */ padding: 8px 15px; margin-bottom: 0; display: flex; flex-direction: column; justify-content: flex-start; }
+        .tool-group h4 { font-size: 0.75rem; color: var(--accent-color); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; /* 헤딩 마진 축소 */ font-weight: 400; /* 칸 내부 인덴트 제거 */ }
+        .tool-group p { font-size: 0.9rem; color: var(--text-color); font-weight: 200; line-height: 1.5; /* 콤팩트한 줄간격 유지 */ margin-left: 0; }
 
+        /* Grid System */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 60px 30px; margin-bottom: 80px; }
         .card { background: #080808; border: 1px solid #111; aspect-ratio: 16/9; cursor: pointer; transition: 0.4s; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
         .card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-5px); }
@@ -63,6 +67,7 @@
         .card-title { font-size: 0.95rem; font-weight: 300; color: #fff; margin-bottom: 4px; }
         .card-tag { font-size: 0.75rem; font-weight: 100; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; }
 
+        /* Experience Layout */
         .exp-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px 100px; }
         .exp-category-title { color: rgba(255,255,255,0.2); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 30px; display: block; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 10px; }
         .exp-item { margin-bottom: 40px; }
@@ -71,6 +76,7 @@
         .desc-list { list-style: none; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 15px; }
         .desc-list li { font-size: 0.85rem; font-weight: 100; color: var(--text-color); margin-bottom: 8px; line-height: 1.6; }
 
+        /* Modal Styles */
         .full-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 3000; overflow-y: auto; padding: 60px 0; }
         .modal-inner { width: 90%; max-width: 1400px; margin: 0 auto; }
         .video-box { width: 100%; aspect-ratio: 16/9; background: #000; margin-bottom: 40px; }
@@ -102,6 +108,7 @@
     <a href="#company">Company</a>
     <a href="#personal">Personal</a>
     <a href="#experience">Experience</a>
+    <a href="#about">About</a>
     <a href="#contact">Contact</a>
 </nav>
 
@@ -177,11 +184,11 @@
     <h2>PERSONAL ARTWORKS</h2>
     <div class="grid">
         <div onclick="openProject('multiple')">
-            <div class="card"><img src="images/Personal/25.11_MULTIPLE DIMENSIONS/00_title_1.gif" alt="Multiple Dimensions"></div>
+            <div class="card"><img src="images/Personal/25.11_MULTIPLE DIMENSIONS/01_will_1_1.gif" alt="Multiple Dimensions"></div>
             <div class="card-info"><div class="card-title">MULTIPLE DIMENSIONS</div><div class="card-tag">Personal Artwork</div></div>
         </div>
         <div onclick="openProject('golden')">
-            <div class="card"><img src="images/Personal/25.06_Golden Flower A Rhythm of Form/Golden Flower A Rhythm of Form_01.png" alt="Golden Flower"></div>
+            <div class="card"><img src="images/Personal/25.06_Golden Flower A Rhythm of Form/Golden Flower A Rhythm of Form_07.png" alt="Golden Flower"></div>
             <div class="card-info"><div class="card-title">Golden Flower: A Rhythm of Form</div><div class="card-tag">Personal Artwork</div></div>
         </div>
         <div onclick="openProject('odyssey')">
@@ -189,8 +196,8 @@
             <div class="card-info"><div class="card-title">A Media Art Odyssey</div><div class="card-tag">Personal Artwork</div></div>
         </div>
         <div onclick="openProject('particles')">
-            <div class="card"><img src="images/Personal/Particles Media Art/01.png" alt="Particles Media Art" onerror="this.src='https://via.placeholder.com/1600x900/080808/333333?text=Particles+Media+Art'"></div>
-            <div class="card-info"><div class="card-title">Particles Media Art</div><div class="card-tag">Personal Artwork</div></div>
+            <div class="card"><img src="images/Personal/Particles universe Media Art/Particles universe Media Art_04.png" alt="Particles universe Media Art" onerror="this.src='https://via.placeholder.com/1600x900/080808/333333?text=Particles+Media+Art'"></div>
+            <div class="card-info"><div class="card-title">Particles universe Media Art</div><div class="card-tag">Personal Artwork</div></div>
         </div>
     </div>
 </section>
@@ -263,7 +270,7 @@
                 <h3>Book Publication</h3>
                 <div class="comp-info">Author | 『CINEMA 4D & OctaneRender』</div>
                 <ul class="desc-list">
-                    <li>2025 세종도서 기술과학 부문 선정 우수도서 집필 및 마스터 가이드 제작</li>
+                    <li>2024 세종도서 우수도서 선정 및 마스터 가이드 제작</li>
                 </ul>
             </div>
 
@@ -373,7 +380,7 @@
             images: ["Pink Spring_01.gif", "Pink Spring_02.gif", "Pink Spring_03.gif", "Pink Spring_04.gif", "Pink Spring_05.gif", "Pink Spring_06.gif", "Pink Spring_07.gif", "Pink Spring_08.gif", "Pink Spring_09.gif", "Pink Spring_10.gif", "Pink Spring_10.png", "Pink Spring_11.png", "Pink Spring_12.gif", "Pink Spring_13.gif", "Pink Spring_14.gif", "Pink Spring_15.png", "Pink Spring_16.png"]
         },
         purpool: {
-            video: "1qmuRc5dCho",
+            video: "1qmuRc5dCho", 
             role: "제작 비중 90% (기획, 제작, 사운드 총괄)\n*유튜브용 사운드는 행사 DJ 곡 활용",
             desc: "파라다이스 시티 호텔의 여름 풀파티를 기념하여 신나는 음악과 '퍼풀파티'라는 보라색 컨셉에 맞춰 제작한 영상입니다.",
             folder: "Company/23.04_Purpool Party",
@@ -382,14 +389,14 @@
 
         // --- Personal Projects ---
         multiple: {
-            videos: ["4tavRr29Fmo", "pMBceJxxi0k"], // 2개의 영상 처리
+            videos: ["4tavRr29Fmo", "pMBceJxxi0k"],
             role: "개인 작업 (Personal Artwork)",
             desc: "MULTIPLE DIMENSIONS | Immersive Media Art Collection\n\nI'm making what I need to see exist. Panda Universe needed new dimensions—not for clients, not for algorithms, just because these worlds wanted to exist. MULTIPLE DIMENSIONS expands into multiple realms that live independently: frozen sanctuaries, golden labyrinths, collapsing black holes, regenerating waves, transcendent gardens. Each uses different techniques—traditional rendering craft, real-time engines, AI partnerships—because each dimension demanded its own visual language and answered only to its own logic. The ultra-wide panoramic format refuses to fit standard screens. Chapters that don't follow, don't connect, just exist on their own terms.\n\n제가 존재하길 원하는 것을 만듭니다. 판다유니버스는 새로운 차원이 필요했습니다. 클라이언트를 위해서도, 알고리즘을 위해서도 아니라, 단지 이 세계들이 존재하길 원했기 때문입니다. MULTIPLE DIMENSIONS는 독립적으로 살아가는 여러 차원으로 확장됩니다: 얼어붙은 성소, 황금 미궁, 붕괴하는 블랙홀, 재생하는 파도, 초월한 정원. 각 세계는 전통 렌더링 장인정신, 실시간 엔진, AI 파트너십 등 서로 다른 기법을 사용합니다. 각 차원이 고유한 시각 언어를 요구했고 오직 자신만의 논리에 답하기 때문입니다. 초광각 파노라마 포맷은 표준 화면에 맞춰지길 거부합니다. 따라가지도 않고, 연결되지도 않고, 각자의 방식으로 존재하는 챕터들입니다.\n\nChapter 1: Frozen Purity | 얼음의 순수\n무수한 얼음 입자들이 공간을 가로질러 끝없이 떨어지는 결정의 세계. 빛이 얼어붙은 물질을 통과하며 굴절되는 방식을 완성하는 데 몇 시간을 보냈고, 순수하고 손대지 않은 고요의 성소를 만들어냈습니다. 모든 것이 시작되는 곳—형태 이전, 의미 이전, 그저 결정화된 가능성만이 존재합니다.\n\nChapter 2: Golden Codex | 황금의 서사\n바로크 건축이 동양의 만다라 기하학과 충돌하며, 제가 금박 텍스처와 회전 패턴에 집착하며 지어올린 궁전을 만듭니다. 모든 표면이 숨쉬고 레이어를 드러내며, 인류의 성취와 우주적 질서를 동시에 암시합니다. 정점에 도달한 문명, 제가 항상 상상했던 장엄함이 느껴져야 하는 방식.\n\nChapter 3: Event Horizon | 사건의 지평선\n제가 실시간으로 렌더링한 압도적인 블랙홀, 궤적을 조정하며 수백만 개의 파티클이 소멸을 향해 나선을 그리는 것을 지켜봤습니다. 돌이킬 수 없는 지점을 넘는 순간입니다. 끝이 아니라, 이전 챕터에서 제가 만든 모든 것이 순수한 중력으로 녹아드는 변화의 정점.\n\nChapter 4: Cosmic Waves | 우주의 파도\nAI에게 \"우주 파도\"를 상상해달라고 요청했고, AI는 제가 스스로 디자인할 수 없었던 무언가를 돌려줬습니다—재생의 힘으로 맥동하는 유기적 패턴. 이것을 레이어로 쪼개고, 모션을 추가하고, 흐르게 만들었습니다. 파괴의 여파가 다시 살아있다고 느껴지는 무언가로 변모합니다.\n\nChapter 5: Celestial Garden | 천상의 정원\nAI가 존재하도록 꿈꾼 생물발광 식물들—지구의 것도, 외계의 것도 아닌, 제가 수년간 시각화하려 했던 그 사이 어딘가의 것. 이들은 무중력에 떠 있으며, 모션 AI로 생성한 부드러운 펄스로 숨을 쉽니다. 물질이 제가 정확히 이름 붙일 수 없는 무언가가 되는 최후의 차원.",
             folder: "Personal/25.11_MULTIPLE DIMENSIONS",
             images: ["00_title_1.gif", "01_1.gif", "01_2_1.gif", "01_floor_1_1.gif", "01_will_1_1.gif", "02_1.gif", "02_2_1.gif", "03_1.gif", "03_2_1.gif", "04_1.gif", "04_2_1.gif", "05_1.gif", "05_2_1.gif"]
         },
         golden: {
-            video: null, // 영상 없음
+            video: null,
             role: "개인 작업 (Personal Artwork)",
             desc: "Golden Flower: A Rhythm of Form",
             folder: "Personal/25.06_Golden Flower A Rhythm of Form",
@@ -406,8 +413,9 @@
             video: "wjkUzeLqQjU",
             role: "개인 작업 (Personal Artwork)",
             desc: "Overview\n\nAs the first media art work, not the existing motion graphics, I started with the idea of\nmaintaining the existing style and decorating the space created by the graphics.\nI kept thinking about how it would feel to have such a space, and I made the most of the\nsenses that could be felt in those spaces.\n\n기존의 모션그래픽이 아닌 첫 미디어 아트 작업으로써 기존에 스타일을 유지하며\n직접 그래픽으로 제작한 공간을 꾸며보고 싶다는 생각으로 시작하게 되었습니다.\n실제로 저런 공간이 있으면 어떤 느낌이 날까 하는 고민을 계속 했으며, 그 공간에서\n느낄 수 있는 감각을 최대한 살려서 제작했습니다.",
-            folder: "Personal/Particles Media Art", /* [주의] 실제 깃허브의 Particles Media Art 폴더 경로를 맞춰주세요 */
-            images: ["01.png", "02.png"] /* [주의] 실제 해당 폴더 안의 이미지 파일명들로 변경해주세요 */
+            // 반영: 실제 폴더 경로 및 확장자 포함 파일 리스트 업데이트 완료
+            folder: "Personal/Particles universe Media Art",
+            images: ["Particles universe Media Art_01.png", "Particles universe Media Art_02.gif", "Particles universe Media Art_03.gif", "Particles universe Media Art_04.png", "Particles universe Media Art_05.png"]
         }
     };
 
@@ -429,12 +437,10 @@
         specialContainer.innerHTML = ''; 
 
         if(data) {
-            // 비디오 처리 (배열인 경우 여러 개 생성, 단일인 경우 1개, null인 경우 생성 안 함)
             if (data.videos && data.videos.length > 0) {
                 data.videos.forEach(vid => {
                     const wrapper = document.createElement('div');
                     wrapper.className = 'video-box';
-                    // 여러 영상일 경우 사운드 충돌을 막기 위해 autoplay 제외 권장, 여기서는 기본 적용
                     wrapper.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${vid}?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
                     videoContainer.appendChild(wrapper);
                 });
@@ -445,7 +451,6 @@
                 videoContainer.appendChild(wrapper);
             }
 
-            // 개인작업의 경우 타이틀 명칭을 다르게 처리할 수 있습니다.
             if (type === 'multiple' || type === 'golden' || type === 'odyssey' || type === 'particles') {
                 roleTitle.innerText = "프로젝트 유형";
                 descTitle.innerText = "프로젝트 설명";
@@ -457,7 +462,6 @@
             roleText.innerText = data.role;
             descText.innerText = data.desc;
 
-            // 스페셜 텍스트
             if(data.special) {
                 const block = document.createElement('div');
                 block.className = 'special-text-block';
@@ -465,13 +469,11 @@
                 specialContainer.appendChild(block);
             }
 
-            // 이미지 처리
             data.images.forEach(fileName => {
                 const img = document.createElement('img');
                 img.src = `images/${data.folder}/${fileName}`;
                 img.loading = "lazy";
                 
-                // 퍼풀 파티 3번 이미지 꽉 차게 설정
                 if (fileName.includes("Purpool Party_03")) {
                     img.style.gridColumn = "1 / -1";
                 }
@@ -487,7 +489,7 @@
     function closeProject() {
         const modal = document.getElementById('projectModal');
         const videoContainer = document.getElementById('videoContainer');
-        videoContainer.innerHTML = ''; // 모달 닫을 때 영상 요소 삭제 (사운드 중지)
+        videoContainer.innerHTML = ''; 
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
