@@ -29,7 +29,6 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0; width: 100%;
@@ -45,7 +44,6 @@
         }
         nav a:hover { opacity: 0.3; }
 
-        /* Hero */
         .hero {
             height: 100vh; display: flex; align-items: center; justify-content: center;
             position: relative; overflow: hidden;
@@ -59,14 +57,12 @@
         .hero-content h1 { font-size: var(--h1-size); font-weight: 400; letter-spacing: var(--letter-spacing); opacity: 0.95; }
         .hero-content p { font-size: 1.4rem; font-weight: var(--fw-thin); margin-top: -10px; text-align: center; }
 
-        /* Section Style */
         section { padding: 120px 60px; max-width: 1400px; margin: 0 auto; }
         h2 { 
             font-size: var(--h2-size); font-weight: var(--fw-light); letter-spacing: -1.5px; 
             margin-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;
         }
 
-        /* Work Grid */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 30px; }
         .project-card {
             background: #080808; aspect-ratio: 16/9; display: flex; flex-direction: column;
@@ -76,7 +72,6 @@
         .project-card:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-5px); }
         .project-card p { font-weight: var(--fw-thin); font-size: 0.95rem; opacity: 0.85; }
 
-        /* About Section */
         .about-intro { margin-bottom: 100px; max-width: 950px; }
         .about-intro p { font-size: 1.6rem; font-weight: 100; line-height: 1.65; color: rgba(255,255,255,0.9); letter-spacing: -0.5px; word-break: keep-all;}
         .highlight { color: #fff; font-weight: 300; }
@@ -86,7 +81,6 @@
         .exp-item p { color: var(--text-color); font-size: 0.85rem; font-weight: var(--fw-thin); line-height: 1.5; }
         .sub-title { color: rgba(255,255,255,0.15); text-transform: uppercase; margin-bottom: 30px; display: block; font-weight: 400; font-size: 0.7rem; letter-spacing: 2.5px; }
 
-        /* Modal System */
         #modal {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.98); z-index: 2000; flex-direction: column; align-items: center; justify-content: center; padding: 40px;
@@ -107,7 +101,6 @@
         .modal-info p { font-size: 0.95rem; font-weight: 100; color: rgba(255,255,255,0.5); line-height: 1.5; }
         .close-btn { align-self: flex-end; color: rgba(255,255,255,0.5); cursor: pointer; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; }
 
-        /* Contact */
         #contact { padding: 180px 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
         .contact-wrap p { font-size: 2.5rem; font-weight: var(--fw-light); letter-spacing: -1.5px; margin-bottom: 10px; color: #fff; }
     </style>
@@ -194,21 +187,20 @@
             displayModal();
         }
 
-        // 인프런 강의용 전용 함수 (공유해주신 링크 적용)
+        // 제공해주신 원본 트래킹 링크 절대 고정
         function openInflearn() {
-            const title = "Cinema 4D 기초 강의 | 판다유니버스";
-            const desc = "판다유니버스가 제안하는 입문자를 위한 가장 직관적인 C4D 가이드입니다.";
-            const url = "https://www.inflearn.com/course/cinema-4d-기초";
+            const INFLEARN_FULL_URL = "https://www.inflearn.com/course/%EC%8B%9C%EB%84%A4%EB%A7%88-4d-%EA%B8%B0%EC%B4%88?inst=8517607e&utm_source=instructor&utm_medium=referral&utm_campaign=inflearn_%ED%8A%B8%EB%9E%98%ED%94%BD_promotion-link";
             
-            modalTitle.innerText = title;
-            modalDesc.innerText = desc;
+            modalTitle.innerText = "Cinema 4D 기초 강의 | 판다유니버스";
+            modalDesc.innerText = "판다유니버스가 제안하는 입문자를 위한 가장 직관적인 C4D 가이드입니다.";
+            
             contentArea.innerHTML = `
                 <div class="inflearn-content">
-                    <h1 style="font-size:3.5rem; font-weight:100; margin-bottom:20px; letter-spacing:-2px;">${title}</h1>
+                    <h1 style="font-size:3.5rem; font-weight:100; margin-bottom:20px; letter-spacing:-2px;">Cinema 4D 기초 강의</h1>
                     <p style="font-size:1.2rem; font-weight:100; opacity:0.7; line-height:1.6; max-width:800px;">
-                        단순한 기능 설명이 아닌, 실무에서 즉시 활용 가능한 워크플로우를 담았습니다.<br>인프런에서 지금 바로 확인해보세요.
+                        실무에서 즉시 활용 가능한 판다유니버스의 핵심 노하우를 담았습니다.<br>인프런 강의 페이지에서 상세 커리큘럼을 확인하세요.
                     </p>
-                    <a href="${url}" target="_blank" class="btn-link">강의 페이지로 바로 접속하기</a>
+                    <a href="${INFLEARN_FULL_URL}" target="_blank" class="btn-link">강의 페이지로 바로가기</a>
                 </div>`;
             displayModal();
         }
