@@ -56,10 +56,14 @@
         .about-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; }
         .about-text p { font-size: 1.5rem; font-weight: 100; line-height: 1.7; color: rgba(255,255,255,0.9); word-break: keep-all; margin-bottom: 30px; }
         .highlight { color: #fff; font-weight: 300; }
+        
         .exp-item { margin-bottom: 35px; }
         .exp-item h3 { font-size: 1.3rem; font-weight: 300; margin-bottom: 5px; color: #fff; }
         .exp-item p { color: var(--text-color); font-size: 0.85rem; font-weight: var(--fw-thin); line-height: 1.4; }
         .sub-title { color: rgba(255,255,255,0.15); text-transform: uppercase; margin-bottom: 20px; display: block; font-weight: 400; font-size: 0.75rem; letter-spacing: 2px; }
+        
+        .desc-list { margin-top: 8px; list-style: none; border-left: 1px solid rgba(255,255,255,0.05); padding-left: 15px; }
+        .desc-list li { font-size: 0.8rem; font-weight: var(--fw-thin); color: var(--accent-color); margin-bottom: 4px; }
 
         #modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 2000; align-items: center; justify-content: center; padding: 40px; }
         .modal-container { width: 90vw; max-width: 1700px; display: flex; flex-direction: column; gap: 20px; }
@@ -127,25 +131,45 @@
 
         <div class="career-list">
             <span class="sub-title">Experience</span>
+            
             <div class="exp-item">
                 <h3>(주)에이플랜컴퍼니</h3>
-                <p>2024.04 - 2025.09 | 미디어팀 사원 (팀장 업무 수행)</p>
+                <p>2024.04 - 2025.09 | 미디어팀 사원 (팀장, PM 업무 수행)</p>
+                <ul class="desc-list">
+                    <li>미디어 아트 프로젝트: 유니세프&아시아나, 신풍역 청년주택, 전주 전동성당, 랑콤 갈라디너쇼, 대전 사이언스 페스티벌 등</li>
+                </ul>
             </div>
+
             <div class="exp-item">
                 <h3>파라다이스세가사미</h3>
                 <p>2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</p>
+                <ul class="desc-list">
+                    <li>호텔 내부 컨텐츠 제작: 3Window media, cimer, 음식 촬영, 보고 영상 촬영 및 편집</li>
+                </ul>
             </div>
+
             <div class="exp-item">
                 <h3>코스믹 블랙</h3>
                 <p>2021.05 - 2022.01 | 제작팀 주임</p>
+                <ul class="desc-list">
+                    <li>이러닝 프로젝트 PD: 촬영 및 편집 총괄, 외주 인력 관리</li>
+                </ul>
             </div>
+
             <div class="exp-item">
                 <h3>바이인터네셔널</h3>
                 <p>2020.07 - 2020.11 | 아트팀 사원</p>
+                <ul class="desc-list">
+                    <li>콘텐츠 그래픽 디자인 및 아트워크 제작</li>
+                </ul>
             </div>
+
             <div class="exp-item">
                 <h3>디피넛</h3>
                 <p>2019.04 - 2020.04 | 컨텐츠 제작팀 주임</p>
+                <ul class="desc-list">
+                    <li>이러닝 컨텐츠 제작 및 광고 포스트 프로덕션 참여 (던전앤파이터, 워너원 비타500, 잡코리아 등)</li>
+                </ul>
             </div>
             
             <span class="sub-title" style="margin-top:40px;">Education</span>
