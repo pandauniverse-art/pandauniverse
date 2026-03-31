@@ -37,6 +37,7 @@
         nav a { color: var(--text-color); text-decoration: none; font-size: 0.85rem; font-weight: 200; text-transform: uppercase; letter-spacing: 1px; transition: 0.4s; }
         nav a:hover { opacity: 0.3; }
 
+        /* Hero Section */
         .hero { width: 100%; position: relative; background: #000; display: flex; align-items: center; justify-content: center; }
         .hero-video-container { width: 100%; position: relative; padding-top: 56.25%; overflow: hidden; }
         .hero-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; }
@@ -68,7 +69,6 @@
         .exp-item .comp-info { font-size: 0.85rem; color: var(--accent-color); margin-bottom: 12px; font-weight: 100; }
         .desc-list { list-style: none; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 15px; }
         .desc-list li { font-size: 0.82rem; font-weight: 100; color: var(--text-color); margin-bottom: 10px; line-height: 1.6; }
-        .desc-list b { font-weight: 400; color: rgba(255,255,255,0.6); display: block; margin-bottom: 4px; }
 
         /* Modal Styles */
         .full-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 3000; overflow-y: auto; padding: 60px 0; }
@@ -117,12 +117,30 @@
             <div class="card"><img src="images/Company/25.03_Daejeon Science Festival/Daejeon Science_02.png" alt="Science Festival"></div>
             <div class="card-info"><div class="card-title">대전 사이언스 페스티벌 (사이언스 오디세이)</div><div class="card-tag">A-Plan Company</div></div>
         </div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">랑콤 (LANCOME) Gala Dinner</div><div class="card-tag">A-Plan Company</div></div></div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">신풍역 청년주택 미디어 아트</div><div class="card-tag">A-Plan Company</div></div></div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">전주 전동성당 미디어 파사드</div><div class="card-tag">A-Plan Company</div></div></div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">유니세프 X 아시아나 30주년</div><div class="card-tag">A-Plan Company</div></div></div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">파라다이스 시티 (Pink Spring)</div><div class="card-tag">Paradise City</div></div></div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">파라다이스 시티 (Purpool Party)</div><div class="card-tag">Paradise City</div></div></div>
+        <div onclick="openProject('lancome')">
+            <div class="card"><img src="images/Company/24.12_LANCOME/LANCOME_01.png" alt="Lancome"></div>
+            <div class="card-info"><div class="card-title">랑콤 (LANCOME) Gala Dinner</div><div class="card-tag">A-Plan Company</div></div>
+        </div>
+        <div onclick="openProject('housing')">
+            <div class="card"><img src="images/Company/24.01_Youth Security Housing/Housing_01.png" alt="Youth Housing"></div>
+            <div class="card-info"><div class="card-title">신풍역 청년주택 미디어 아트</div><div class="card-tag">A-Plan Company</div></div>
+        </div>
+        <div onclick="openProject('jeonju')">
+            <div class="card"><img src="images/Company/24.07_Jeonju Cathedral/Jeonju Cathedral_10.jpg" alt="Jeonju Cathedral"></div>
+            <div class="card-info"><div class="card-title">전주 전동성당 미디어 파사드</div><div class="card-tag">A-Plan Company</div></div>
+        </div>
+        <div onclick="openProject('unicef')">
+            <div class="card"><img src="images/Company/24.04_UNICEF-Asiana/UNICEF-Asiana_01.png" alt="UNICEF"></div>
+            <div class="card-info"><div class="card-title">유니세프 X 아시아나 30주년</div><div class="card-tag">A-Plan Company</div></div>
+        </div>
+        <div onclick="openProject('pinkspring')">
+            <div class="card"><img src="images/Company/23.01_Pink Spring/Pink Spring_10.png" alt="Pink Spring"></div>
+            <div class="card-info"><div class="card-title">파라다이스 시티 (Pink Spring)</div><div class="card-tag">Paradise City</div></div>
+        </div>
+        <div onclick="openProject('purpool')">
+            <div class="card"><img src="images/Company/23.04_Purpool Party/Purpool Party_01.png" alt="Purpool Party"></div>
+            <div class="card-info"><div class="card-title">파라다이스 시티 (Purpool Party)</div><div class="card-tag">Paradise City</div></div>
+        </div>
     </div>
 </section>
 
@@ -136,7 +154,7 @@
         <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">A Media Art Odyssey</div><div class="card-tag">Media Art</div></div></div>
         <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Personal Media Art Wall</div><div class="card-tag">Personal</div></div></div>
         <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">World of Imagination</div><div class="card-tag">Space Art</div></div></div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Personal Space Art Work (Blackhole)</div><div class="card-tag">Space Art</div></div></div>
+        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Personal Space Art Work</div><div class="card-tag">Space Art</div></div></div>
         <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">World Travel</div><div class="card-tag">Personal</div></div></div>
         <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Particles Media Art</div><div class="card-tag">Personal</div></div></div>
     </div>
@@ -147,54 +165,39 @@
     <div class="exp-container">
         <div>
             <span class="exp-category-title">Corporate Experience</span>
-            
             <div class="exp-item">
                 <h3>(주)에이플랜컴퍼니</h3>
                 <div class="comp-info">2024.04 - 2025.09 | 미디어팀 사원 (팀장, PM 업무 수행)</div>
                 <ul class="desc-list">
-                    <li><b>Media Art & PM</b>
-                        유니세프&아시아나 협업 미디어 아트, 신풍역 청년주택 공공 미술, 전주 전동성당 미디어 파사드, 랑콤(LANCOME) Gala Dinner 공간 연출, 대전 사이언스 페스티벌(사이언스 오디세이) 등 대형 프로젝트 총괄 기획 및 제작 리드
-                    </li>
+                    <li>유니세프&아시아나 협업 미디어 아트, 신풍역 청년주택 공공 미술, 전주 전동성당 미디어 파사드, 랑콤(LANCOME) Gala Dinner 공간 연출, 대전 사이언스 페스티벌(사이언스 오디세이) 등 대형 프로젝트 총괄 기획 및 제작 리드</li>
                 </ul>
             </div>
-
             <div class="exp-item">
                 <h3>파라다이스세가사미</h3>
                 <div class="comp-info">2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</div>
                 <ul class="desc-list">
-                    <li><b>Hotel Branding</b>
-                        3Window Media 구축 및 컨텐츠 제작, Cimer 브랜드 컨텐츠, 호텔 F&B 및 주요 행사 촬영/편집, 사내 보고 및 마케팅용 영상 촬영 및 편집 총괄
-                    </li>
+                    <li>3Window Media 구축 및 컨텐츠 제작, Cimer 브랜드 컨텐츠, 호텔 F&B 및 주요 행사 촬영/편집, 사내 보고 및 마케팅용 영상 촬영 및 편집 총괄</li>
                 </ul>
             </div>
-
             <div class="exp-item">
                 <h3>코스믹 블랙</h3>
                 <div class="comp-info">2021.05 - 2022.01 | 제작팀 주임</div>
                 <ul class="desc-list">
-                    <li><b>E-Learning PD</b>
-                        프로젝트 PD로서 이러닝 컨텐츠 촬영 및 편집 프로세스 관리, 외주 파트너사 및 인력 관리
-                    </li>
+                    <li>프로젝트 PD로서 이러닝 컨텐츠 촬영 및 편집 프로세스 관리, 외주 파트너사 관리</li>
                 </ul>
             </div>
-
             <div class="exp-item">
                 <h3>바이인터네셔널</h3>
                 <div class="comp-info">2020.07 - 2020.11 | 아트팀 사원</div>
                 <ul class="desc-list">
-                    <li><b>Graphic & Motion</b>
-                        브랜드 SNS 콘텐츠 모션 그래픽 제작 및 홍보용 아트워크 그래픽 디자인
-                    </li>
+                    <li>브랜드 SNS 콘텐츠 모션 그래픽 제작 및 홍보용 아트워크 그래픽 디자인</li>
                 </ul>
             </div>
-
             <div class="exp-item">
                 <h3>디피넛</h3>
                 <div class="comp-info">2019.04 - 2020.04 | 컨텐츠 제작팀 주임</div>
                 <ul class="desc-list">
-                    <li><b>Post Production & Ad</b>
-                        넥슨 던전앤파이터 광고, 워너원 비타500 캠페인, 잡코리아(Job Korea) 광고 참여, 이러닝 컨텐츠 그래픽 제작 및 광고 포스트 프로덕션 작업 수행
-                    </li>
+                    <li>넥슨 던전앤파이터 광고, 워너원 비타500 캠페인, 잡코리아(Job Korea) 광고 참여, 이러닝 컨텐츠 그래픽 제작 및 광고 포스트 프로덕션 작업 수행</li>
                 </ul>
             </div>
         </div>
@@ -206,7 +209,6 @@
                 <div class="comp-info">Author | 『CINEMA 4D & OctaneRender』</div>
                 <ul class="desc-list"><li>2025 세종도서 기술과학 부문 선정 우수도서 집필 및 마스터 가이드 제작</li></ul>
             </div>
-
             <div class="exp-item">
                 <h3>Online Education</h3>
                 <div class="comp-info">Instructor | Inflearn & YouTube (Panda Universe)</div>
@@ -215,7 +217,6 @@
                     <li>유튜브 '판다유니버스' 채널 운영 (구독자 4,000명)</li>
                 </ul>
             </div>
-
             <div class="exp-item">
                 <h3>Academic</h3>
                 <div class="comp-info">Seoul Cyber University</div>
@@ -232,14 +233,11 @@
         <div class="project-meta">
             <div class="meta-group">
                 <h4>참여 업무</h4>
-                <p>그래픽팀 팀장 (업무 스케줄, 퀄리티 조율) / PM (클라이언트 소통)</p>
+                <p id="projectRole"></p>
             </div>
             <div class="meta-group">
                 <h4>제작 기획</h4>
-                <p>01 : 차원의 문이 열리다
-                   02 : 1970년대 대전, 대한민국 과학이 깨어나다
-                   03 : 연결된 과학, 연결된 세상
-                   04 : 차원을 넘어, 새로운 세계로!</p>
+                <p id="projectDesc"></p>
             </div>
         </div>
         <div class="image-feed">
@@ -257,22 +255,82 @@
 </section>
 
 <script>
+    // 깃허브에 올라간 실제 폴더명과 파일명 리스트를 기반으로 구축된 데이터베이스
+    const projectData = {
+        science: {
+            video: "a_dn_9OKv5I",
+            role: "그래픽팀 팀장 (업무 스케줄, 퀄리티 조율) / PM (클라이언트 소통)",
+            desc: "01 : 차원의 문이 열리다\n02 : 1970년대 대전, 대한민국 과학이 깨어나다\n03 : 연결된 과학, 연결된 세상\n04 : 차원을 넘어, 새로운 세계로!",
+            folder: "25.03_Daejeon Science Festival",
+            images: Array.from({length: 21}, (_, i) => `Daejeon Science_${String(i+1).padStart(2, '0')}.png`)
+        },
+        lancome: {
+            video: "tM7U7Cmu9ZE",
+            role: "해당 프로젝트의 참여 업무 내용을 수정해주세요.",
+            desc: "해당 프로젝트의 제작 기획 내용을 수정해주세요.",
+            folder: "24.12_LANCOME",
+            images: ["LANCOME_01.png", "LANCOME_02.png", "LANCOME_03.png", "LANCOME_04.png", "LANCOME_05.png", "LANCOME_06.png"]
+        },
+        housing: {
+            video: "FUOCDv6eNKo",
+            role: "해당 프로젝트의 참여 업무 내용을 수정해주세요.",
+            desc: "해당 프로젝트의 제작 기획 내용을 수정해주세요.",
+            folder: "24.01_Youth Security Housing",
+            images: ["Housing_01.png", "Housing_02.png", "Housing_03.png", "Housing_04.png", "Housing_05.png", "Housing_06.png", "Housing_07.png", "Housing_08.png", "Housing_09.png", "Housing_10.png", "Housing_11.png", "Housing_12.png", "Housing_14.png", "Housing_15.png", "Housing_16.png", "Housing_17.png", "Housing_18.png", "Housing_19.png", "Housing_20.png"]
+        },
+        jeonju: {
+            video: "_FiQtCwXH6M",
+            role: "해당 프로젝트의 참여 업무 내용을 수정해주세요.",
+            desc: "해당 프로젝트의 제작 기획 내용을 수정해주세요.",
+            folder: "24.07_Jeonju Cathedral",
+            images: ["Jeonju Cathedral_01.gif", "Jeonju Cathedral_02.gif", "Jeonju Cathedral_03.gif", "Jeonju Cathedral_04.gif", "Jeonju Cathedral_05_1.gif", "Jeonju Cathedral_06.gif", "Jeonju Cathedral_07.gif", "Jeonju Cathedral_08_1.gif", "Jeonju Cathedral_10.jpg", "Jeonju Cathedral_11.jpg", "Jeonju Cathedral_12.jpg", "Jeonju Cathedral_13.jpg", "Jeonju Cathedral_14.jpg", "Jeonju Cathedral_15.jpg", "Jeonju Cathedral_16.jpg", "Jeonju Cathedral_17.jpg", "Jeonju Cathedral_18.jpg", "Jeonju Cathedral_19.jpg", "Jeonju Cathedral_20.jpg", "Jeonju Cathedral_21.jpg", "Jeonju Cathedral_22.jpg", "Jeonju Cathedral_23.jpg", "Jeonju Cathedral_24.jpg", "Jeonju Cathedral_25.jpg"]
+        },
+        unicef: {
+            video: "RQ2Z5zdNbLI",
+            role: "해당 프로젝트의 참여 업무 내용을 수정해주세요.",
+            desc: "해당 프로젝트의 제작 기획 내용을 수정해주세요.",
+            folder: "24.04_UNICEF-Asiana",
+            images: ["UNICEF-Asiana_01.png", "UNICEF-Asiana_02.png", "UNICEF-Asiana_03.png", "UNICEF-Asiana_04.png", "UNICEF-Asiana_05.gif", "UNICEF-Asiana_06.gif", "UNICEF-Asiana_07.gif", "UNICEF-Asiana_08.gif", "UNICEF-Asiana_09.gif", "UNICEF-Asiana_10.gif", "UNICEF-Asiana_11.png", "UNICEF-Asiana_12.png", "UNICEF-Asiana_13.png", "UNICEF-Asiana_14.png", "UNICEF-Asiana_15.png", "UNICEF-Asiana_16.png", "UNICEF-Asiana_17.png"]
+        },
+        pinkspring: {
+            video: "kJtE4o17MqM",
+            role: "해당 프로젝트의 참여 업무 내용을 수정해주세요.",
+            desc: "해당 프로젝트의 제작 기획 내용을 수정해주세요.",
+            folder: "23.01_Pink Spring",
+            images: ["Pink Spring_01.gif", "Pink Spring_02.gif", "Pink Spring_03.gif", "Pink Spring_04.gif", "Pink Spring_05.gif", "Pink Spring_06.gif", "Pink Spring_07.gif", "Pink Spring_08.gif", "Pink Spring_09.gif", "Pink Spring_10.gif", "Pink Spring_10.png", "Pink Spring_11.png", "Pink Spring_12.gif", "Pink Spring_13.gif", "Pink Spring_14.gif", "Pink Spring_15.png", "Pink Spring_16.png"]
+        },
+        purpool: {
+            video: "kJtE4o17MqM", // 퍼풀파티 유튜브 링크 미제공으로 핑크스프링 임시 연결
+            role: "해당 프로젝트의 참여 업무 내용을 수정해주세요.",
+            desc: "해당 프로젝트의 제작 기획 내용을 수정해주세요.",
+            folder: "23.04_Purpool Party",
+            images: ["Purpool Party_01.png", "Purpool Party_02.gif", "Purpool Party_03.png", "Purpool Party_04.gif"]
+        }
+    };
+
     function openProject(type) {
         const modal = document.getElementById('projectModal');
         const video = document.getElementById('projectVideo');
         const imageContainer = document.getElementById('projectImages');
+        const roleText = document.getElementById('projectRole');
+        const descText = document.getElementById('projectDesc');
+        const data = projectData[type];
+        
         imageContainer.innerHTML = ''; 
 
-        if(type === 'science') {
-            video.src = "https://www.youtube.com/embed/a_dn_9OKv5I?autoplay=1&si=ZOAvHCXW-w7nh_pA";
-            for(let i=1; i<=21; i++) {
-                const num = i < 10 ? '0' + i : i;
+        if(data) {
+            video.src = `https://www.youtube.com/embed/${data.video}?autoplay=1`;
+            roleText.innerText = data.role;
+            descText.innerText = data.desc;
+
+            data.images.forEach(fileName => {
                 const img = document.createElement('img');
-                img.src = `images/Company/25.03_Daejeon Science Festival/Daejeon Science_${num}.png`;
+                img.src = `images/Company/${data.folder}/${fileName}`;
                 img.loading = "lazy";
                 imageContainer.appendChild(img);
-            }
+            });
         }
+        
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
     }
@@ -280,7 +338,8 @@
     function closeProject() {
         const modal = document.getElementById('projectModal');
         const video = document.getElementById('projectVideo');
-        video.src = ""; modal.style.display = 'none';
+        video.src = ""; 
+        modal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
 </script>
