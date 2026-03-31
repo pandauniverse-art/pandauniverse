@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAE MIN | 3D Motion Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="hero">
+        <div class="video-background">
+            <iframe src="https://www.youtube.com/embed/sxAyP7wK7DA?autoplay=1&mute=1&loop=1&playlist=sxAyP7wK7DA&controls=0&showinfo=0&rel=0" 
+                    frameborder="0" allow="autoplay; fullscreen"></iframe>
+        </div>
+        <div class="hero-content">
+            <h1>TAE MIN</h1>
+            <p>3D Motion Graphics & Media Artist</p>
+        </div>
+    </section>
 
+    <section id="work" class="container">
+        <h2>Selected Works</h2>
+        <div id="project-grid" class="grid">
+            </div>
+    </section>
+
+    <script>
+        // 프로젝트 데이터를 로드하여 그리드 생성
+        const projects = [
+            {
+                title: "2025 Showreel",
+                category: "Motion Graphics",
+                thumb: "thumb_link.webp", // 직접 올린 이미지 혹은 GIF
+                tools: "C4D, Octane, AE",
+                link: "https://youtu.be/sxAyP7wK7DA"
+            },
+            // 추가 작업물 데이터를 여기에 넣으세요
+        ];
+
+        const grid = document.getElementById('project-grid');
+        projects.forEach(p => {
+            grid.innerHTML += `
+                <div class="card" onclick="window.open('${p.link}', '_blank')">
+                    <div class="thumb" style="background-image: url('${p.thumb}')"></div>
+                    <div class="info">
+                        <h3>${p.title}</h3>
+                        <span>${p.category}</span>
+                        <p>${p.tools}</p>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
