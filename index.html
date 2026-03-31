@@ -81,7 +81,7 @@
         .hero-content h1 { font-size: var(--h1-size); font-weight: 400; letter-spacing: var(--letter-spacing); opacity: 0.9; }
         .hero-content p { font-size: 1.4rem; font-weight: var(--fw-thin); margin-top: -10px; text-align: center; }
 
-        /* Work Grid - 이전의 미니멀한 크기로 복구 */
+        /* General Section Style */
         section { padding: 120px 60px; max-width: 1400px; margin: 0 auto; }
         h2 { 
             font-size: var(--h2-size); 
@@ -91,6 +91,8 @@
             border-bottom: 1px solid rgba(255,255,255,0.08);
             padding-bottom: 15px;
         }
+
+        /* Work Grid */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 30px; }
         .project-card {
             background: #080808;
@@ -106,7 +108,33 @@
         .project-card:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-5px); }
         .project-card p { font-weight: var(--fw-thin); font-size: 0.95rem; opacity: 0.7; }
 
-        /* Video Modal - 영상 크기 극대화 (화면의 90%) */
+        /* About Section - Intro & Career Split */
+        .about-intro { margin-bottom: 80px; max-width: 900px; }
+        .about-intro p { 
+            font-size: 1.6rem; 
+            font-weight: 100; 
+            line-height: 1.6; 
+            color: rgba(255,255,255,0.9); 
+            word-break: keep-all;
+            letter-spacing: -0.5px;
+        }
+        .about-intro .highlight { color: #fff; font-weight: 300; }
+
+        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; }
+        .exp-item { margin-bottom: 30px; }
+        .exp-item h3 { font-size: 1.35rem; font-weight: 300; margin-bottom: 6px; color: rgba(255,255,255,0.9); }
+        .exp-item p { color: var(--accent-color); font-size: 0.85rem; font-weight: var(--fw-thin); line-height: 1.4; }
+        .sub-title { color: rgba(255,255,255,0.12); text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 400; font-size: 0.75rem; letter-spacing: 2px; }
+        .desc-list { margin-top: 8px; list-style: none; border-left: 1px solid rgba(255,255,255,0.05); padding-left: 15px; }
+        .desc-list li { font-size: 0.8rem; font-weight: var(--fw-thin); color: var(--accent-color); margin-bottom: 4px; }
+
+        /* Contact Section - Isolated */
+        #contact { padding: 150px 60px; text-align: center; }
+        .contact-wrap { display: inline-block; text-align: left; }
+        .contact-wrap p { font-size: 2.5rem; font-weight: var(--fw-light); letter-spacing: -1.5px; margin-bottom: 10px; color: #fff; }
+        .contact-wrap span { font-size: 1.1rem; font-weight: 100; color: var(--accent-color); display: block; text-align: center; }
+
+        /* Video Modal */
         #modal {
             display: none;
             position: fixed;
@@ -118,53 +146,19 @@
             justify-content: center;
             padding: 40px;
         }
-        .modal-container {
-            width: 90vw; 
-            max-width: 1700px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .video-wrapper {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: #000;
-            position: relative;
-        }
+        .modal-container { width: 90vw; max-width: 1700px; display: flex; flex-direction: column; gap: 20px; }
+        .video-wrapper { width: 100%; aspect-ratio: 16/9; background: #000; position: relative; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        
         .modal-info { color: #fff; padding: 10px 0; }
         .modal-info h3 { font-size: 1.6rem; font-weight: 300; letter-spacing: -1px; margin-bottom: 8px; color: rgba(255,255,255,0.9); }
         .modal-info p { font-size: 0.95rem; font-weight: 100; color: rgba(255,255,255,0.4); line-height: 1.5; }
-
-        .close-btn {
-            align-self: flex-end;
-            color: rgba(255,255,255,0.3);
-            cursor: pointer;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            transition: 0.3s;
-        }
-        .close-btn:hover { color: #fff; }
-
-        /* About Section */
-        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; }
-        .exp-item { margin-bottom: 30px; }
-        .exp-item h3 { font-size: 1.35rem; font-weight: 300; margin-bottom: 6px; color: rgba(255,255,255,0.9); }
-        .exp-item p { color: var(--accent-color); font-size: 0.85rem; font-weight: var(--fw-thin); line-height: 1.4; }
-        .sub-title { color: rgba(255,255,255,0.12); text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 400; font-size: 0.75rem; letter-spacing: 2px; }
-        .desc-list { margin-top: 8px; list-style: none; border-left: 1px solid rgba(255,255,255,0.05); padding-left: 15px; }
-        .desc-list li { font-size: 0.8rem; font-weight: var(--fw-thin); color: var(--accent-color); margin-bottom: 4px; }
-
-        .contact-info { text-align: left; padding: 0; }
-        .contact-info p { font-size: 1.8rem; font-weight: var(--fw-light); letter-spacing: -1.5px; margin-bottom: 5px; }
+        .close-btn { align-self: flex-end; color: rgba(255,255,255,0.3); cursor: pointer; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; }
 
         @media (max-width: 768px) {
             :root { --h1-size: 3.5rem; --h2-size: 1.8rem; }
+            .about-intro p { font-size: 1.2rem; }
             .about-grid { grid-template-columns: 1fr; }
-            .modal-container { width: 100%; }
-            .grid { grid-template-columns: 1fr; }
+            .contact-wrap p { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -207,6 +201,14 @@
 
     <section id="about">
         <h2>ABOUT</h2>
+        <div class="about-intro">
+            <p>
+                안녕하세요, 6년 차 3D 모션 그래픽 아티스트 <span class="highlight">이덕준</span>입니다.<br><br>
+                Cinema 4D와 Unreal Engine을 기반으로 한 감도 높은 3D 비주얼 제작을 전문으로 하며, 대형 브랜드를 포함한 다수의 상업 프로젝트를 성공적으로 완수했습니다.<br><br>
+                작품 제작에 그치지 않고 <span class="highlight">4,000명 이상의 YouTube 구독자</span>와 인프런 강의를 통해 지식을 공유하며, 저서 <span class="highlight">『CINEMA 4D & OctaneRender』</span>를 통해 업계의 성장을 함께 고민하고 있습니다.
+            </p>
+        </div>
+
         <div class="about-grid">
             <div>
                 <span class="sub-title">Experience</span>
@@ -214,40 +216,48 @@
                     <h3>(주)에이플랜컴퍼니</h3>
                     <p>2024.04 - 2025.09 | 미디어팀 사원 (팀장 업무 수행)</p>
                     <ul class="desc-list">
-                        <li>유니세프&아시아나, 전주 전동성당, 랑콤 갈라디너쇼 등 제작</li>
+                        <li>유니세프&아시아나, 전주 전동성당, 랑콤 갈라디너쇼 등 기획 및 제작</li>
                     </ul>
                 </div>
                 <div class="exp-item">
                     <h3>파라다이스세가사미</h3>
                     <p>2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</p>
                     <ul class="desc-list">
-                        <li>3Window media, cimer, LED 전시용 3D 그래픽 제작 및 촬영/편집</li>
+                        <li>LED 전시용 3D 그래픽 제작, 호텔 내부 공간 미디어 및 F&B 컨텐츠 제작</li>
                     </ul>
                 </div>
                 <div class="exp-item">
-                    <h3>디피넛</h3>
-                    <p>2019.04 - 2020.04 | 컨텐츠 제작팀 주임</p>
+                    <h3>디피넛 / 바이인터네셔널</h3>
+                    <p>2019.04 - 2021.05 | 컨텐츠 제작팀 주임</p>
                     <ul class="desc-list">
-                        <li>이러닝 강의 및 그래픽 제작, 광고 포스트 프로덕션 참여</li>
+                        <li>던전앤파이터, 비타500, 잡코리아 광고 포스트 프로덕션 및 이러닝 그래픽 제작</li>
                     </ul>
                 </div>
             </div>
             <div>
-                <span class="sub-title">Education</span>
+                <span class="sub-title">Education & Others</span>
                 <div class="exp-item">
                     <h3>서울 사이버대학교</h3>
                     <p>2023.03 - Present | 멀티미디어 디자인학과 재학</p>
                 </div>
                 <div class="exp-item">
-                    <h3>Training</h3>
-                    <p>After Effect, C4D | 더블유컴퓨터아트 (2018.11 - 2019.03)</p>
+                    <h3>Professional Training</h3>
+                    <p>After Effect & C4D Specialist Course (2018-2019)</p>
                 </div>
-                <span class="sub-title" id="contact" style="margin-top:40px;">Contact</span>
-                <div class="contact-info">
-                    <p>010-8862-0286</p>
-                    <p style="font-size: 0.9rem; opacity: 0.4;">led3268@naver.com</p>
+                <div class="exp-item">
+                    <h3>Books & Lectures</h3>
+                    <p>『CINEMA 4D & OctaneRender』 저자</p>
+                    <p>Inflearn 온라인 강의 및 YouTube 채널 운영</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>CONTACT</h2>
+        <div class="contact-wrap">
+            <p>010-8862-0286</p>
+            <span>led3268@naver.com</span>
         </div>
     </section>
 
@@ -267,11 +277,9 @@
     <script>
         function openModal(videoId, title, desc) {
             const modal = document.getElementById('modal');
-            const player = document.getElementById('player');
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-desc').innerText = desc;
-            // 유튜브 API 호출 (사운드 포함 자동재생)
-            player.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+            document.getElementById('player').innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden'; 
         }
