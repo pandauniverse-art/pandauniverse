@@ -108,31 +108,30 @@
         .project-card:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-5px); }
         .project-card p { font-weight: var(--fw-thin); font-size: 0.95rem; opacity: 0.7; }
 
-        /* About Section - Intro & Career Split */
-        .about-intro { margin-bottom: 80px; max-width: 900px; }
+        /* About Section */
+        .about-intro { margin-bottom: 100px; max-width: 950px; }
         .about-intro p { 
             font-size: 1.6rem; 
             font-weight: 100; 
-            line-height: 1.6; 
-            color: rgba(255,255,255,0.9); 
+            line-height: 1.65; 
+            color: rgba(255,255,255,0.85); 
             word-break: keep-all;
             letter-spacing: -0.5px;
         }
         .about-intro .highlight { color: #fff; font-weight: 300; }
 
-        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; }
-        .exp-item { margin-bottom: 30px; }
-        .exp-item h3 { font-size: 1.35rem; font-weight: 300; margin-bottom: 6px; color: rgba(255,255,255,0.9); }
-        .exp-item p { color: var(--accent-color); font-size: 0.85rem; font-weight: var(--fw-thin); line-height: 1.4; }
-        .sub-title { color: rgba(255,255,255,0.12); text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 400; font-size: 0.75rem; letter-spacing: 2px; }
-        .desc-list { margin-top: 8px; list-style: none; border-left: 1px solid rgba(255,255,255,0.05); padding-left: 15px; }
-        .desc-list li { font-size: 0.8rem; font-weight: var(--fw-thin); color: var(--accent-color); margin-bottom: 4px; }
+        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 100px; }
+        .exp-item { margin-bottom: 40px; }
+        .exp-item h3 { font-size: 1.3rem; font-weight: 300; margin-bottom: 8px; color: rgba(255,255,255,0.9); }
+        .exp-item p { color: var(--accent-color); font-size: 0.85rem; font-weight: var(--fw-thin); line-height: 1.5; }
+        .sub-title { color: rgba(255,255,255,0.12); text-transform: uppercase; margin-bottom: 30px; display: block; font-weight: 400; font-size: 0.7rem; letter-spacing: 2.5px; }
+        .desc-list { margin-top: 10px; list-style: none; border-left: 1px solid rgba(255,255,255,0.05); padding-left: 18px; }
+        .desc-list li { font-size: 0.85rem; font-weight: var(--fw-thin); color: var(--accent-color); margin-bottom: 6px; }
 
-        /* Contact Section - Isolated */
-        #contact { padding: 150px 60px; text-align: center; }
-        .contact-wrap { display: inline-block; text-align: left; }
+        /* Contact Section */
+        #contact { padding: 180px 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.03); }
         .contact-wrap p { font-size: 2.5rem; font-weight: var(--fw-light); letter-spacing: -1.5px; margin-bottom: 10px; color: #fff; }
-        .contact-wrap span { font-size: 1.1rem; font-weight: 100; color: var(--accent-color); display: block; text-align: center; }
+        .contact-wrap span { font-size: 1.1rem; font-weight: 100; color: var(--accent-color); }
 
         /* Video Modal */
         #modal {
@@ -146,18 +145,20 @@
             justify-content: center;
             padding: 40px;
         }
-        .modal-container { width: 90vw; max-width: 1700px; display: flex; flex-direction: column; gap: 20px; }
+        .modal-container { width: 92vw; max-width: 1750px; display: flex; flex-direction: column; gap: 20px; }
         .video-wrapper { width: 100%; aspect-ratio: 16/9; background: #000; position: relative; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         .modal-info { color: #fff; padding: 10px 0; }
-        .modal-info h3 { font-size: 1.6rem; font-weight: 300; letter-spacing: -1px; margin-bottom: 8px; color: rgba(255,255,255,0.9); }
+        .modal-info h3 { font-size: 1.7rem; font-weight: 300; letter-spacing: -1px; margin-bottom: 8px; color: rgba(255,255,255,0.9); }
         .modal-info p { font-size: 0.95rem; font-weight: 100; color: rgba(255,255,255,0.4); line-height: 1.5; }
-        .close-btn { align-self: flex-end; color: rgba(255,255,255,0.3); cursor: pointer; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; }
+        .close-btn { align-self: flex-end; color: rgba(255,255,255,0.3); cursor: pointer; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; transition: color 0.3s; }
+        .close-btn:hover { color: #fff; }
 
         @media (max-width: 768px) {
             :root { --h1-size: 3.5rem; --h2-size: 1.8rem; }
-            .about-intro p { font-size: 1.2rem; }
-            .about-grid { grid-template-columns: 1fr; }
+            .about-intro p { font-size: 1.25rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 60px; }
+            section { padding: 80px 30px; }
             .contact-wrap p { font-size: 1.8rem; }
         }
     </style>
@@ -205,7 +206,7 @@
             <p>
                 안녕하세요, 6년 차 3D 모션 그래픽 아티스트 <span class="highlight">이덕준</span>입니다.<br><br>
                 Cinema 4D와 Unreal Engine을 기반으로 한 감도 높은 3D 비주얼 제작을 전문으로 하며, 대형 브랜드를 포함한 다수의 상업 프로젝트를 성공적으로 완수했습니다.<br><br>
-                작품 제작에 그치지 않고 <span class="highlight">4,000명 이상의 YouTube 구독자</span>와 인프런 강의를 통해 지식을 공유하며, 저서 <span class="highlight">『CINEMA 4D & OctaneRender』</span>를 통해 업계의 성장을 함께 고민하고 있습니다.
+                단순히 작품을 만드는 것을 넘어, 지식 공유를 통해 업계의 성장에 기여하고자 노력하고 있습니다.
             </p>
         </div>
 
@@ -223,31 +224,41 @@
                     <h3>파라다이스세가사미</h3>
                     <p>2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</p>
                     <ul class="desc-list">
-                        <li>LED 전시용 3D 그래픽 제작, 호텔 내부 공간 미디어 및 F&B 컨텐츠 제작</li>
+                        <li>호텔 내부 대형 LED 미디어 및 공간 전시용 3D 그래픽 제작</li>
                     </ul>
                 </div>
                 <div class="exp-item">
-                    <h3>디피넛 / 바이인터네셔널</h3>
-                    <p>2019.04 - 2021.05 | 컨텐츠 제작팀 주임</p>
+                    <h3>코스믹 블랙 / 디피넛</h3>
+                    <p>2019.04 - 2022.01 | 제작팀 주임</p>
                     <ul class="desc-list">
-                        <li>던전앤파이터, 비타500, 잡코리아 광고 포스트 프로덕션 및 이러닝 그래픽 제작</li>
+                        <li>광고 포스트 프로덕션 참여 및 이러닝 모션 그래픽 제작</li>
                     </ul>
                 </div>
             </div>
+
             <div>
-                <span class="sub-title">Education & Others</span>
+                <span class="sub-title">Lecture(Inflearn)</span>
                 <div class="exp-item">
+                    <h3>Online Course Instructor</h3>
+                    <p>인프런(Inflearn)에서 Cinema 4D 및 Octane Render를 활용한 실무 3D 그래픽 강의를 진행하고 있습니다.</p>
+                </div>
+
+                <span class="sub-title">Book</span>
+                <div class="exp-item">
+                    <h3>Published Author</h3>
+                    <p>『CINEMA 4D & OctaneRender』 전문 서적 집필을 통해 입문자부터 실무자까지 아우르는 기술 노하우를 제공합니다.</p>
+                </div>
+
+                <span class="sub-title">Blog & Social</span>
+                <div class="exp-item">
+                    <h3>YouTube & Tech Blog</h3>
+                    <p>4,000명 이상의 구독자와 소통하며 최신 그래픽 트렌드와 제작 튜토리얼을 연재 중입니다.</p>
+                </div>
+
+                <span class="sub-title">Education</span>
+                <div class="exp-item" style="margin-bottom:0;">
                     <h3>서울 사이버대학교</h3>
-                    <p>2023.03 - Present | 멀티미디어 디자인학과 재학</p>
-                </div>
-                <div class="exp-item">
-                    <h3>Professional Training</h3>
-                    <p>After Effect & C4D Specialist Course (2018-2019)</p>
-                </div>
-                <div class="exp-item">
-                    <h3>Books & Lectures</h3>
-                    <p>『CINEMA 4D & OctaneRender』 저자</p>
-                    <p>Inflearn 온라인 강의 및 YouTube 채널 운영</p>
+                    <p>2023.03 - Present | 멀티미디어 디자인학과 재학 중</p>
                 </div>
             </div>
         </div>
@@ -290,5 +301,10 @@
             document.body.style.overflow = 'auto';
         }
     </script>
+
+    <footer style="padding: 60px 0; color: rgba(255,255,255,0.03); font-size: 0.7rem; font-weight: 100; text-align: center; border-top: 1px solid rgba(255,255,255,0.02);">
+        &copy; 2026 LEE DEOK JUN. ALL RIGHTS RESERVED.
+    </footer>
+
 </body>
 </html>
