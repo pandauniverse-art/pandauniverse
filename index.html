@@ -77,15 +77,22 @@
         .project-meta { margin-bottom: 60px; border-left: 1px solid rgba(255,255,255,0.15); padding-left: 25px; margin-top: 40px; }
         .meta-group { margin-bottom: 30px; }
         .meta-group h4 { font-size: 0.75rem; font-weight: 400; color: var(--accent-color); letter-spacing: 2px; margin-bottom: 12px; text-transform: uppercase; }
-        .meta-group p { font-size: 1rem; font-weight: 100; line-height: 1.7; color: #fff; opacity: 0.9; white-space: pre-line; }
+        .meta-group p { font-size: 1rem; font-weight: 100; line-height: 1.7; color: #fff; opacity: 0.9; white-space: pre-line; word-break: keep-all; }
+        
+        /* 스페셜 텍스트 섹션 (청년주택 등) */
+        .special-text-block { background: #080808; padding: 30px; border: 1px solid #111; margin-bottom: 20px; }
+        .special-text-block h5 { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 15px; font-weight: 300; letter-spacing: 1px; }
+        .special-text-block p { font-size: 0.9rem; font-weight: 100; line-height: 1.6; color: rgba(255,255,255,0.6); white-space: pre-line; }
+
         .image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .image-grid img { width: 100%; height: auto; border: 1px solid #111; }
-        .close-btn { position: fixed; top: 30px; right: 50px; color: #fff; cursor: pointer; font-size: 0.8rem; letter-spacing: 2px; z-index: 3100; opacity: 0.4; }
+        .close-btn { position: fixed; top: 30px; right: 50px; color: #fff; cursor: pointer; font-size: 0.8rem; letter-spacing: 2px; z-index: 3100; opacity: 0.4; transition: 0.3s; }
+        .close-btn:hover { opacity: 1; }
 
         #contact { text-align: center; padding: 150px 60px; border-top: 1px solid rgba(255,255,255,0.05); }
         .contact-wrap p { font-size: 2.2rem; font-weight: 200; letter-spacing: -1.5px; margin-bottom: 10px; }
 
-        @media (max-width: 768px) { :root { --h1-size: 3.5rem; } .grid, .image-grid, .exp-container { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { :root { --h1-size: 3.5rem; } .grid, .image-grid, .exp-container { grid-template-columns: 1fr; } .close-btn { right: 20px; } }
     </style>
 </head>
 <body>
@@ -122,7 +129,7 @@
             <div class="card-info"><div class="card-title">랑콤 (LANCOME) Gala Dinner</div><div class="card-tag">A-Plan Company</div></div>
         </div>
         <div onclick="openProject('housing')">
-            <div class="card"><img src="images/Company/24.01_Youth Security Housing/Housing_01.png" alt="Youth Housing"></div>
+            <div class="card"><img src="images/Company/24.01_Youth Security Housing/Housing_20.png" alt="Youth Housing"></div>
             <div class="card-info"><div class="card-title">신풍역 청년주택 미디어 아트</div><div class="card-tag">A-Plan Company</div></div>
         </div>
         <div onclick="openProject('jeonju')">
@@ -130,15 +137,15 @@
             <div class="card-info"><div class="card-title">전주 전동성당 미디어 파사드</div><div class="card-tag">A-Plan Company</div></div>
         </div>
         <div onclick="openProject('unicef')">
-            <div class="card"><img src="images/Company/24.04_UNICEF-Asiana/UNICEF-Asiana_01.png" alt="UNICEF"></div>
+            <div class="card"><img src="images/Company/24.04_UNICEF-Asiana/UNICEF-Asiana_17.png" alt="UNICEF"></div>
             <div class="card-info"><div class="card-title">유니세프 X 아시아나 30주년</div><div class="card-tag">A-Plan Company</div></div>
         </div>
         <div onclick="openProject('pinkspring')">
-            <div class="card"><img src="images/Company/23.01_Pink Spring/Pink Spring_10.png" alt="Pink Spring"></div>
+            <div class="card"><img src="images/Company/23.01_Pink Spring/Pink Spring_17.png" alt="Pink Spring"></div>
             <div class="card-info"><div class="card-title">파라다이스 시티 (Pink Spring)</div><div class="card-tag">Paradise City</div></div>
         </div>
         <div onclick="openProject('purpool')">
-            <div class="card"><img src="images/Company/23.04_Purpool Party/Purpool Party_01.png" alt="Purpool Party"></div>
+            <div class="card"><img src="images/Company/23.04_Purpool Party/Purpool Party_04.png" alt="Purpool Party"></div>
             <div class="card-info"><div class="card-title">파라다이스 시티 (Purpool Party)</div><div class="card-tag">Paradise City</div></div>
         </div>
     </div>
@@ -180,20 +187,6 @@
                 </ul>
             </div>
             <div class="exp-item">
-                <h3>코스믹 블랙</h3>
-                <div class="comp-info">2021.05 - 2022.01 | 제작팀 주임</div>
-                <ul class="desc-list">
-                    <li>프로젝트 PD로서 이러닝 컨텐츠 촬영 및 편집 프로세스 관리, 외주 파트너사 관리</li>
-                </ul>
-            </div>
-            <div class="exp-item">
-                <h3>바이인터네셔널</h3>
-                <div class="comp-info">2020.07 - 2020.11 | 아트팀 사원</div>
-                <ul class="desc-list">
-                    <li>브랜드 SNS 콘텐츠 모션 그래픽 제작 및 홍보용 아트워크 그래픽 디자인</li>
-                </ul>
-            </div>
-            <div class="exp-item">
                 <h3>디피넛</h3>
                 <div class="comp-info">2019.04 - 2020.04 | 컨텐츠 제작팀 주임</div>
                 <ul class="desc-list">
@@ -201,26 +194,19 @@
                 </ul>
             </div>
         </div>
-
         <div>
             <span class="exp-category-title">Education & Achievement</span>
             <div class="exp-item">
                 <h3>Book Publication</h3>
                 <div class="comp-info">Author | 『CINEMA 4D & OctaneRender』</div>
-                <ul class="desc-list"><li>2025 세종도서 기술과학 부문 선정 우수도서 집필 및 마스터 가이드 제작</li></ul>
+                <ul class="desc-list"><li>2025 세종도서 기술과학 부문 선정</li></ul>
             </div>
             <div class="exp-item">
                 <h3>Online Education</h3>
                 <div class="comp-info">Instructor | Inflearn & YouTube (Panda Universe)</div>
                 <ul class="desc-list">
-                    <li>인프런 Cinema 4D 기초 강의 런칭 및 커리큘럼 설계</li>
-                    <li>유튜브 '판다유니버스' 채널 운영 (구독자 4,000명)</li>
+                    <li>Cinema 4D 기초 강의 런칭, 유튜브 채널 운영 (구독자 4,000명)</li>
                 </ul>
-            </div>
-            <div class="exp-item">
-                <h3>Academic</h3>
-                <div class="comp-info">Seoul Cyber University</div>
-                <ul class="desc-list"><li>멀티미디어 디자인학과 학사 과정 재학 (2026 졸업 예정)</li></ul>
             </div>
         </div>
     </div>
@@ -230,6 +216,7 @@
     <div class="modal-inner" onclick="event.stopPropagation()">
         <span class="close-btn" onclick="closeProject()">CLOSE</span>
         <div class="video-box"><iframe id="projectVideo" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        
         <div class="project-meta">
             <div class="meta-group">
                 <h4>참여 업무</h4>
@@ -239,7 +226,9 @@
                 <h4>제작 기획</h4>
                 <p id="projectDesc"></p>
             </div>
+            <div id="specialTextContainer"></div>
         </div>
+
         <div class="image-feed">
             <h3 style="font-weight:100; font-size:0.8rem; letter-spacing:3px; color:var(--accent-color); margin-bottom:30px;">PROJECT STILLS</h3>
             <div id="projectImages" class="image-grid"></div>
@@ -255,7 +244,7 @@
 </section>
 
 <script>
-    // 깃허브에 올라간 실제 폴더명과 파일명 리스트를 기반으로 구축된 데이터베이스
+    // 텍스트 데이터 복구 및 업데이트 완료
     const projectData = {
         science: {
             video: "a_dn_9OKv5I",
@@ -266,43 +255,51 @@
         },
         lancome: {
             video: "tM7U7Cmu9ZE",
-            role: "해당 프로젝트의 참여 업무 내용을 수정해주세요.",
-            desc: "해당 프로젝트의 제작 기획 내용을 수정해주세요.",
+            role: "컨텐츠 제작, 맵핑용 테크니컬 협의",
+            desc: "랑콤에서 서울에 갈라디너쇼를 개최하여 인플루언서들을 통한 행사를 기획했고, 에이플랜컴퍼니측에서 컨텐츠 제작과 하드웨어 시공, 맵핑을 담당했습니다.\n인플루언서들이 참여하는 디너쇼인만큼 컨텐츠 자체의 집중도가 아닌, 전반적인 저녁 행사 장소에서 잘 어울러지는 포인트에 집중했고, 랑콤 컨테츠의 특유의 세련된 황금빛과 우아한 매력을 집중적으로 표현했습니다.",
             folder: "24.12_LANCOME",
             images: ["LANCOME_01.png", "LANCOME_02.png", "LANCOME_03.png", "LANCOME_04.png", "LANCOME_05.png", "LANCOME_06.png"]
         },
         housing: {
             video: "FUOCDv6eNKo",
-            role: "해당 프로젝트의 참여 업무 내용을 수정해주세요.",
-            desc: "해당 프로젝트의 제작 기획 내용을 수정해주세요.",
+            role: "컬러퀸 : 전체 컨텐츠 중 샹들리에, 뒷면 투명 디스프레이 컨텐츠 제작 (참여율 40%)\n즐길락 : 원형 컨텐츠 중 샹들리에, 투명 디스플레이 일부 컨텐츠 제작 (참여율 30%)",
+            desc: "해당 컨텐츠는 랜드코퍼레이션에서 청년들을 위한 비스타동원 주택을 건설하며 시설 내의 거주자들에게 흥미로운 컨텐츠를 상영하기 위해 제작되었습니다. 에이플랜컴퍼니측에서 컨텐츠 관련 시설 및 컨텐츠를 제작했습니다.\n일정 시간마다 시작되는 \"시그널 넥서스\", \"즐길락\", \"컬러퀸\" 미디어쇼가 상영되며 해당 쇼들이 상영되지 않는 시간동안은 상시 컨텐츠로 비가 내리거나, 우주가 보이는 등 시청자들의 지루함을 달래는 컨텐츠가 기획되어 있으며 하단 원형 디스플레이의 경우 상시 컨텐츠에선 인터렉티브한 컨텐츠로 제작되었습니다.\n제작에 참여한 컬러퀸 컨텐츠의 경우 심심하고 반복적인 지루한 도심에서 색이 입혀지며 사람들이 지루함을 벗어나 활기를 되찾고, 더 재미있고 흥미있는 일상을 기대할 수 있게 기획됐으며, 즐길락 컨텐츠는 수묵화로 시작하여 사물놀이를 비롯한 현대미술의 모든 조화로움을 시청하게끔 기획했습니다. 투명 디스플레이와 상들리에의 경우 일정 위치에서 시청했을 때 원형 디스플레이와 잘 어울리는 부분을 많이 고려하여 제작했습니다.",
             folder: "24.01_Youth Security Housing",
-            images: ["Housing_01.png", "Housing_02.png", "Housing_03.png", "Housing_04.png", "Housing_05.png", "Housing_06.png", "Housing_07.png", "Housing_08.png", "Housing_09.png", "Housing_10.png", "Housing_11.png", "Housing_12.png", "Housing_14.png", "Housing_15.png", "Housing_16.png", "Housing_17.png", "Housing_18.png", "Housing_19.png", "Housing_20.png"]
+            images: ["Housing_01.png", "Housing_02.png", "Housing_03.png", "Housing_04.png", "Housing_05.png", "Housing_06.png", "Housing_07.png", "Housing_08.png", "Housing_09.png", "Housing_10.png", "Housing_11.png", "Housing_12.png", "Housing_14.png", "Housing_15.png", "Housing_16.png", "Housing_17.png", "Housing_18.png", "Housing_19.png", "Housing_20.png"],
+            special: {
+                title: "컨텐츠 정보",
+                content: "▪ 컨텐츠 종류: 상시 컨텐츠, 미디어 쇼 컨텐츠 (3가지 쇼 교차 상영)\n▪ 미디어 쇼 구성: 모객, 인트로, 후킹, 메인 순서\n▪ 하드웨어: 벽면 컨텐츠, 원형 컨텐츠, 투명 디스플레이, 샹들리에"
+            }
         },
         jeonju: {
             video: "_FiQtCwXH6M",
-            role: "해당 프로젝트의 참여 업무 내용을 수정해주세요.",
-            desc: "해당 프로젝트의 제작 기획 내용을 수정해주세요.",
+            role: "4부 전주의 빛으로 성당을 빚다 파트 기획 및 총 제작 담당.\n연출 포인트 및 맵핑용 모델링 디테일 수정 담당.",
+            desc: "해당 행사는 전주에서 진행한 미디어 파사드 행사이며 기초 틀을 잡아주신 성당 담당 신부님과 협의하여 스토리를 완성했습니다.\n과거부터 이어지는 성당의 건축 과정과 이야기를 행사에 녹아내는 것에 집중했으며, 진중하면서도 파사드 특유의 화려함을 앞뒤 순서와 조화롭게 연결하는 것에 염두를 두고 작업했습니다.",
             folder: "24.07_Jeonju Cathedral",
-            images: ["Jeonju Cathedral_01.gif", "Jeonju Cathedral_02.gif", "Jeonju Cathedral_03.gif", "Jeonju Cathedral_04.gif", "Jeonju Cathedral_05_1.gif", "Jeonju Cathedral_06.gif", "Jeonju Cathedral_07.gif", "Jeonju Cathedral_08_1.gif", "Jeonju Cathedral_10.jpg", "Jeonju Cathedral_11.jpg", "Jeonju Cathedral_12.jpg", "Jeonju Cathedral_13.jpg", "Jeonju Cathedral_14.jpg", "Jeonju Cathedral_15.jpg", "Jeonju Cathedral_16.jpg", "Jeonju Cathedral_17.jpg", "Jeonju Cathedral_18.jpg", "Jeonju Cathedral_19.jpg", "Jeonju Cathedral_20.jpg", "Jeonju Cathedral_21.jpg", "Jeonju Cathedral_22.jpg", "Jeonju Cathedral_23.jpg", "Jeonju Cathedral_24.jpg", "Jeonju Cathedral_25.jpg"]
+            images: ["Jeonju Cathedral_01.gif", "Jeonju Cathedral_02.gif", "Jeonju Cathedral_03.gif", "Jeonju Cathedral_04.gif", "Jeonju Cathedral_05_1.gif", "Jeonju Cathedral_06.gif", "Jeonju Cathedral_07.gif", "Jeonju Cathedral_08_1.gif", "Jeonju Cathedral_10.jpg", "Jeonju Cathedral_11.jpg", "Jeonju Cathedral_12.jpg", "Jeonju Cathedral_13.jpg", "Jeonju Cathedral_14.jpg", "Jeonju Cathedral_15.jpg", "Jeonju Cathedral_16.jpg", "Jeonju Cathedral_17.jpg", "Jeonju Cathedral_18.jpg", "Jeonju Cathedral_19.jpg", "Jeonju Cathedral_20.jpg", "Jeonju Cathedral_21.jpg", "Jeonju Cathedral_22.jpg", "Jeonju Cathedral_23.jpg", "Jeonju Cathedral_24.jpg", "Jeonju Cathedral_25.jpg"],
+            special: {
+                title: "행사 순서 (제작 파트: 4부)",
+                content: "1부 빛을 깨우다\n2부 전주를 즐기다\n3부 전주를 비비다\n4부 전주의 빛으로 성당을 빚다 ★\n5부 전주를 빛으로 그리다"
+            }
         },
         unicef: {
             video: "RQ2Z5zdNbLI",
-            role: "해당 프로젝트의 참여 업무 내용을 수정해주세요.",
-            desc: "해당 프로젝트의 제작 기획 내용을 수정해주세요.",
+            role: "해당 프로젝트의 참여 업무 내용을 나중에 추가해주세요.",
+            desc: "해당 행사는 아시아나와 유니세프의 동전 모으기 캠패인 30주년을 맞아 개최된 행사입니다.",
             folder: "24.04_UNICEF-Asiana",
             images: ["UNICEF-Asiana_01.png", "UNICEF-Asiana_02.png", "UNICEF-Asiana_03.png", "UNICEF-Asiana_04.png", "UNICEF-Asiana_05.gif", "UNICEF-Asiana_06.gif", "UNICEF-Asiana_07.gif", "UNICEF-Asiana_08.gif", "UNICEF-Asiana_09.gif", "UNICEF-Asiana_10.gif", "UNICEF-Asiana_11.png", "UNICEF-Asiana_12.png", "UNICEF-Asiana_13.png", "UNICEF-Asiana_14.png", "UNICEF-Asiana_15.png", "UNICEF-Asiana_16.png", "UNICEF-Asiana_17.png"]
         },
         pinkspring: {
             video: "kJtE4o17MqM",
-            role: "해당 프로젝트의 참여 업무 내용을 수정해주세요.",
-            desc: "해당 프로젝트의 제작 기획 내용을 수정해주세요.",
+            role: "전체 기획 및 그래픽 제작 총괄",
+            desc: "파라다이스 시티 호텔 내부의 3 Window Media에 봄 시즌을 컨셉으로 작업한 영상입니다.\n호텔의 아이덴티티와 봄의 분위기를 조화시켜 전체적으로 아름다운 장면을 연출하고자 했으며, 각 장면에서 파라다이스의 실제 건물들을 등장시켜 재미 요소를 추가했습니다.",
             folder: "23.01_Pink Spring",
             images: ["Pink Spring_01.gif", "Pink Spring_02.gif", "Pink Spring_03.gif", "Pink Spring_04.gif", "Pink Spring_05.gif", "Pink Spring_06.gif", "Pink Spring_07.gif", "Pink Spring_08.gif", "Pink Spring_09.gif", "Pink Spring_10.gif", "Pink Spring_10.png", "Pink Spring_11.png", "Pink Spring_12.gif", "Pink Spring_13.gif", "Pink Spring_14.gif", "Pink Spring_15.png", "Pink Spring_16.png"]
         },
         purpool: {
-            video: "kJtE4o17MqM", // 퍼풀파티 유튜브 링크 미제공으로 핑크스프링 임시 연결
-            role: "해당 프로젝트의 참여 업무 내용을 수정해주세요.",
-            desc: "해당 프로젝트의 제작 기획 내용을 수정해주세요.",
+            video: "kJtE4o17MqM", // 퍼풀파티 유튜브 링크 미제공으로 핑크스프링 임시 연결 (나중에 수정 가능)
+            role: "제작 비중 90% (기획, 제작, 사운드 총괄)\n*유튜브용 사운드는 행사 DJ 곡 활용",
+            desc: "파라다이스 시티 호텔의 여름 풀파티를 기념하여 신나는 음악과 '퍼풀파티'라는 보라색 컨셉에 맞춰 제작한 영상입니다.",
             folder: "23.04_Purpool Party",
             images: ["Purpool Party_01.png", "Purpool Party_02.gif", "Purpool Party_03.png", "Purpool Party_04.gif"]
         }
@@ -314,15 +311,27 @@
         const imageContainer = document.getElementById('projectImages');
         const roleText = document.getElementById('projectRole');
         const descText = document.getElementById('projectDesc');
+        const specialContainer = document.getElementById('specialTextContainer');
         const data = projectData[type];
         
         imageContainer.innerHTML = ''; 
+        specialContainer.innerHTML = ''; // 초기화
 
         if(data) {
+            // 유튜브 사운드 자동재생
             video.src = `https://www.youtube.com/embed/${data.video}?autoplay=1`;
             roleText.innerText = data.role;
             descText.innerText = data.desc;
 
+            // 스페셜 텍스트 섹션 (청년주택, 전동성당) 추가
+            if(data.special) {
+                const block = document.createElement('div');
+                block.className = 'special-text-block';
+                block.innerHTML = `<h5>${data.special.title}</h5><p>${data.special.content}</p>`;
+                specialContainer.appendChild(block);
+            }
+
+            // 이미지/GIF 리스트 생성
             data.images.forEach(fileName => {
                 const img = document.createElement('img');
                 img.src = `images/Company/${data.folder}/${fileName}`;
