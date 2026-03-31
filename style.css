@@ -1,1 +1,73 @@
 
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #ffffff;
+    --accent: #3d3d3d;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* 메인 쇼릴 배경 최적화 */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-background {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.video-background iframe {
+    width: 100vw;
+    height: 56.25vw; /* 16:9 비율 */
+    min-height: 100vh;
+    min-width: 177.77vh;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 프로젝트 그리드 */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px 0;
+}
+
+.card {
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.thumb {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.info { padding: 15px; }
+.info h3 { margin: 0; font-size: 1.1rem; }
+.info span { color: #888; font-size: 0.9rem; }
+.info p { font-size: 0.8rem; color: #555; margin-top: 10px; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
