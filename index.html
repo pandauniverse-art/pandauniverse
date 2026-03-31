@@ -11,7 +11,6 @@
             --bg-color: #000000;
             --text-color: rgba(255, 255, 255, 0.85); 
             --accent-color: rgba(255, 255, 255, 0.45);
-            /* 이름 폰트 사이즈 2.1rem 축소 유지 */
             --h1-size: 2.1rem;   
             --p-size: 1.2rem;    
             --letter-spacing: -1px; 
@@ -50,12 +49,10 @@
         section { padding: 100px 60px; max-width: 1600px; margin: 0 auto; }
         h2 { font-size: 2.2rem; font-weight: 200; letter-spacing: -1.5px; margin-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
         
-        /* Toolset Section Styles */
         .tool-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
         .tool-group h4 { font-size: 0.75rem; color: var(--accent-color); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; font-weight: 400; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 10px; }
         .tool-group p { font-size: 0.9rem; color: var(--text-color); font-weight: 200; line-height: 1.8; margin-left: 10px; }
 
-        /* Grid System */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 60px 30px; margin-bottom: 80px; }
         .card { background: #080808; border: 1px solid #111; aspect-ratio: 16/9; cursor: pointer; transition: 0.4s; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
         .card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-5px); }
@@ -66,7 +63,6 @@
         .card-title { font-size: 0.95rem; font-weight: 300; color: #fff; margin-bottom: 4px; }
         .card-tag { font-size: 0.75rem; font-weight: 100; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Experience Layout */
         .exp-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px 100px; }
         .exp-category-title { color: rgba(255,255,255,0.2); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 30px; display: block; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 10px; }
         .exp-item { margin-bottom: 40px; }
@@ -75,7 +71,6 @@
         .desc-list { list-style: none; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 15px; }
         .desc-list li { font-size: 0.85rem; font-weight: 100; color: var(--text-color); margin-bottom: 8px; line-height: 1.6; }
 
-        /* Modal Styles */
         .full-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 3000; overflow-y: auto; padding: 60px 0; }
         .modal-inner { width: 90%; max-width: 1400px; margin: 0 auto; }
         .video-box { width: 100%; aspect-ratio: 16/9; background: #000; margin-bottom: 40px; }
@@ -107,7 +102,6 @@
     <a href="#company">Company</a>
     <a href="#personal">Personal</a>
     <a href="#experience">Experience</a>
-    <a href="#about">About</a>
     <a href="#contact">Contact</a>
 </nav>
 
@@ -182,16 +176,22 @@
 <section id="personal" style="background: #050505;">
     <h2>PERSONAL ARTWORKS</h2>
     <div class="grid">
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">MULTIPLE DIMENSIONS</div><div class="card-tag">Personal</div></div></div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Isometric Daily Spaces</div><div class="card-tag">3D Design</div></div></div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Nothing to Prove</div><div class="card-tag">Personal</div></div></div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Golden Flower: A Rhythm of Form</div><div class="card-tag">Abstract Art</div></div></div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">A Media Art Odyssey</div><div class="card-tag">Media Art</div></div></div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Personal Media Art Wall</div><div class="card-tag">Personal</div></div></div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">World of Imagination</div><div class="card-tag">Space Art</div></div></div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Personal Space Art Work</div><div class="card-tag">Space Art</div></div></div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">World Travel</div><div class="card-tag">Personal</div></div></div>
-        <div class="card-wrap"><div class="card"></div><div class="card-info"><div class="card-title">Particles Media Art</div><div class="card-tag">Personal</div></div></div>
+        <div onclick="openProject('multiple')">
+            <div class="card"><img src="images/Personal/25.11_MULTIPLE DIMENSIONS/00_title_1.gif" alt="Multiple Dimensions"></div>
+            <div class="card-info"><div class="card-title">MULTIPLE DIMENSIONS</div><div class="card-tag">Personal Artwork</div></div>
+        </div>
+        <div onclick="openProject('golden')">
+            <div class="card"><img src="images/Personal/25.06_Golden Flower A Rhythm of Form/Golden Flower A Rhythm of Form_01.png" alt="Golden Flower"></div>
+            <div class="card-info"><div class="card-title">Golden Flower: A Rhythm of Form</div><div class="card-tag">Personal Artwork</div></div>
+        </div>
+        <div onclick="openProject('odyssey')">
+            <div class="card"><img src="images/Personal/25.01_A Media Art Odyssey/A Media Art Odyssey_01.png" alt="A Media Art Odyssey"></div>
+            <div class="card-info"><div class="card-title">A Media Art Odyssey</div><div class="card-tag">Personal Artwork</div></div>
+        </div>
+        <div onclick="openProject('particles')">
+            <div class="card"><img src="images/Personal/Particles Media Art/01.png" alt="Particles Media Art" onerror="this.src='https://via.placeholder.com/1600x900/080808/333333?text=Particles+Media+Art'"></div>
+            <div class="card-info"><div class="card-title">Particles Media Art</div><div class="card-tag">Personal Artwork</div></div>
+        </div>
     </div>
 </section>
 
@@ -290,15 +290,16 @@
 <div id="projectModal" class="full-modal" onclick="closeProject()">
     <div class="modal-inner" onclick="event.stopPropagation()">
         <span class="close-btn" onclick="closeProject()">CLOSE</span>
-        <div class="video-box"><iframe id="projectVideo" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        
+        <div id="videoContainer"></div>
         
         <div class="project-meta">
             <div class="meta-group">
-                <h4>참여 업무</h4>
+                <h4 id="roleTitle">참여 업무</h4>
                 <p id="projectRole"></p>
             </div>
             <div class="meta-group">
-                <h4>제작 기획</h4>
+                <h4 id="descTitle">제작 기획</h4>
                 <p id="projectDesc"></p>
             </div>
             <div id="specialTextContainer"></div>
@@ -320,25 +321,26 @@
 
 <script>
     const projectData = {
+        // --- Company Projects ---
         science: {
             video: "a_dn_9OKv5I",
             role: "그래픽팀 팀장 (업무 스케줄, 퀄리티 조율) / PM (클라이언트 소통)",
             desc: "01 : 차원의 문이 열리다\n02 : 1970년대 대전, 대한민국 과학이 깨어나다\n03 : 연결된 과학, 연결된 세상\n04 : 차원을 넘어, 새로운 세계로!",
-            folder: "25.03_Daejeon Science Festival",
+            folder: "Company/25.03_Daejeon Science Festival",
             images: Array.from({length: 21}, (_, i) => `Daejeon Science_${String(i+1).padStart(2, '0')}.png`)
         },
         lancome: {
             video: "tM7U7Cmu9ZE",
             role: "컨텐츠 제작, 맵핑용 테크니컬 협의",
             desc: "랑콤에서 서울에 갈라디너쇼를 개최하여 인플루언서들을 통한 행사를 기획했고, 에이플랜컴퍼니측에서 컨텐츠 제작과 하드웨어 시공, 맵핑을 담당했습니다.\n인플루언서들이 참여하는 디너쇼인만큼 컨텐츠 자체의 집중도가 아닌, 전반적인 저녁 행사 장소에서 잘 어울러지는 포인트에 집중했고, 랑콤 컨테츠의 특유의 세련된 황금빛과 우아한 매력을 집중적으로 표현했습니다.",
-            folder: "24.12_LANCOME",
+            folder: "Company/24.12_LANCOME",
             images: ["LANCOME_01.png", "LANCOME_02.png", "LANCOME_03.png", "LANCOME_04.png", "LANCOME_05.png", "LANCOME_06.png"]
         },
         housing: {
             video: "FUOCDv6eNKo",
             role: "컬러퀸 : 전체 컨텐츠 중 샹들리에, 뒷면 투명 디스프레이 컨텐츠 제작 (참여율 40%)\n즐길락 : 원형 컨텐츠 중 샹들리에, 투명 디스플레이 일부 컨텐츠 제작 (참여율 30%)",
             desc: "해당 컨텐츠는 랜드코퍼레이션에서 청년들을 위한 비스타동원 주택을 건설하며 시설 내의 거주자들에게 흥미로운 컨텐츠를 상영하기 위해 제작되었습니다. 에이플랜컴퍼니측에서 컨텐츠 관련 시설 및 컨텐츠를 제작했습니다.\n일정 시간마다 시작되는 \"시그널 넥서스\", \"즐길락\", \"컬러퀸\" 미디어쇼가 상영되며 해당 쇼들이 상영되지 않는 시간동안은 상시 컨텐츠로 비가 내리거나, 우주가 보이는 등 시청자들의 지루함을 달래는 컨텐츠가 기획되어 있으며 하단 원형 디스플레이의 경우 상시 컨텐츠에선 인터렉티브한 컨텐츠로 제작되었습니다.\n제작에 참여한 컬러퀸 컨텐츠의 경우 심심하고 반복적인 지루한 도심에서 색이 입혀지며 사람들이 지루함을 벗어나 활기를 되찾고, 더 재미있고 흥미있는 일상을 기대할 수 있게 기획됐으며, 즐길락 컨텐츠는 수묵화로 시작하여 사물놀이를 비롯한 현대미술의 모든 조화로움을 시청하게끔 기획했습니다. 투명 디스플레이와 상들리에의 경우 일정 위치에서 시청했을 때 원형 디스플레이와 잘 어울리는 부분을 많이 고려하여 제작했습니다.",
-            folder: "24.01_Youth Security Housing",
+            folder: "Company/24.01_Youth Security Housing",
             images: ["Housing_01.png", "Housing_02.png", "Housing_03.png", "Housing_04.png", "Housing_05.png", "Housing_06.png", "Housing_07.png", "Housing_08.png", "Housing_09.png", "Housing_10.png", "Housing_11.png", "Housing_12.png", "Housing_14.png", "Housing_15.png", "Housing_16.png", "Housing_17.png", "Housing_18.png", "Housing_19.png", "Housing_20.png"],
             special: {
                 title: "컨텐츠 정보",
@@ -349,7 +351,7 @@
             video: "_FiQtCwXH6M",
             role: "4부 전주의 빛으로 성당을 빚다 파트 기획 및 총 제작 담당.\n연출 포인트 및 맵핑용 모델링 디테일 수정 담당.",
             desc: "해당 행사는 전주에서 진행한 미디어 파사드 행사이며 기초 틀을 잡아주신 성당 담당 신부님과 협의하여 스토리를 완성했습니다.\n과거부터 이어지는 성당의 건축 과정과 이야기를 행사에 녹아내는 것에 집중했으며, 진중하면서도 파사드 특유의 화려함을 앞뒤 순서와 조화롭게 연결하는 것에 염두를 두고 작업했습니다.",
-            folder: "24.07_Jeonju Cathedral",
+            folder: "Company/24.07_Jeonju Cathedral",
             images: ["Jeonju Cathedral_01.gif", "Jeonju Cathedral_02.gif", "Jeonju Cathedral_03.gif", "Jeonju Cathedral_04.gif", "Jeonju Cathedral_05_1.gif", "Jeonju Cathedral_06.gif", "Jeonju Cathedral_07.gif", "Jeonju Cathedral_08_1.gif", "Jeonju Cathedral_10.jpg", "Jeonju Cathedral_11.jpg", "Jeonju Cathedral_12.jpg", "Jeonju Cathedral_13.jpg", "Jeonju Cathedral_14.jpg", "Jeonju Cathedral_15.jpg", "Jeonju Cathedral_16.jpg", "Jeonju Cathedral_17.jpg", "Jeonju Cathedral_18.jpg", "Jeonju Cathedral_19.jpg", "Jeonju Cathedral_20.jpg", "Jeonju Cathedral_21.jpg", "Jeonju Cathedral_22.jpg", "Jeonju Cathedral_23.jpg", "Jeonju Cathedral_24.jpg", "Jeonju Cathedral_25.jpg"],
             special: {
                 title: "행사 순서 (제작 파트: 4부)",
@@ -360,42 +362,102 @@
             video: "RQ2Z5zdNbLI",
             role: "해당 프로젝트의 참여 업무 내용을 나중에 추가해주세요.",
             desc: "해당 행사는 아시아나와 유니세프의 동전 모으기 캠패인 30주년을 맞아 개최된 행사입니다.",
-            folder: "24.04_UNICEF-Asiana",
+            folder: "Company/24.04_UNICEF-Asiana",
             images: ["UNICEF-Asiana_01.png", "UNICEF-Asiana_02.png", "UNICEF-Asiana_03.png", "UNICEF-Asiana_04.png", "UNICEF-Asiana_05.gif", "UNICEF-Asiana_06.gif", "UNICEF-Asiana_07.gif", "UNICEF-Asiana_08.gif", "UNICEF-Asiana_09.gif", "UNICEF-Asiana_10.gif", "UNICEF-Asiana_11.png", "UNICEF-Asiana_12.png", "UNICEF-Asiana_13.png", "UNICEF-Asiana_14.png", "UNICEF-Asiana_15.png", "UNICEF-Asiana_16.png", "UNICEF-Asiana_17.png"]
         },
         pinkspring: {
             video: "kJtE4o17MqM",
             role: "전체 기획 및 그래픽 제작 총괄",
             desc: "파라다이스 시티 호텔 내부의 3 Window Media에 봄 시즌을 컨셉으로 작업한 영상입니다.\n호텔의 아이덴티티와 봄의 분위기를 조화시켜 전체적으로 아름다운 장면을 연출하고자 했으며, 각 장면에서 파라다이스의 실제 건물들을 등장시켜 재미 요소를 추가했습니다.",
-            folder: "23.01_Pink Spring",
+            folder: "Company/23.01_Pink Spring",
             images: ["Pink Spring_01.gif", "Pink Spring_02.gif", "Pink Spring_03.gif", "Pink Spring_04.gif", "Pink Spring_05.gif", "Pink Spring_06.gif", "Pink Spring_07.gif", "Pink Spring_08.gif", "Pink Spring_09.gif", "Pink Spring_10.gif", "Pink Spring_10.png", "Pink Spring_11.png", "Pink Spring_12.gif", "Pink Spring_13.gif", "Pink Spring_14.gif", "Pink Spring_15.png", "Pink Spring_16.png"]
         },
         purpool: {
             video: "1qmuRc5dCho",
             role: "제작 비중 90% (기획, 제작, 사운드 총괄)\n*유튜브용 사운드는 행사 DJ 곡 활용",
             desc: "파라다이스 시티 호텔의 여름 풀파티를 기념하여 신나는 음악과 '퍼풀파티'라는 보라색 컨셉에 맞춰 제작한 영상입니다.",
-            folder: "23.04_Purpool Party",
+            folder: "Company/23.04_Purpool Party",
             images: ["Purpool Party_01.png", "Purpool Party_02.gif", "Purpool Party_03.png", "Purpool Party_04.gif"]
+        },
+
+        // --- Personal Projects ---
+        multiple: {
+            videos: ["4tavRr29Fmo", "pMBceJxxi0k"], // 2개의 영상 처리
+            role: "개인 작업 (Personal Artwork)",
+            desc: "MULTIPLE DIMENSIONS | Immersive Media Art Collection\n\nI'm making what I need to see exist. Panda Universe needed new dimensions—not for clients, not for algorithms, just because these worlds wanted to exist. MULTIPLE DIMENSIONS expands into multiple realms that live independently: frozen sanctuaries, golden labyrinths, collapsing black holes, regenerating waves, transcendent gardens. Each uses different techniques—traditional rendering craft, real-time engines, AI partnerships—because each dimension demanded its own visual language and answered only to its own logic. The ultra-wide panoramic format refuses to fit standard screens. Chapters that don't follow, don't connect, just exist on their own terms.\n\n제가 존재하길 원하는 것을 만듭니다. 판다유니버스는 새로운 차원이 필요했습니다. 클라이언트를 위해서도, 알고리즘을 위해서도 아니라, 단지 이 세계들이 존재하길 원했기 때문입니다. MULTIPLE DIMENSIONS는 독립적으로 살아가는 여러 차원으로 확장됩니다: 얼어붙은 성소, 황금 미궁, 붕괴하는 블랙홀, 재생하는 파도, 초월한 정원. 각 세계는 전통 렌더링 장인정신, 실시간 엔진, AI 파트너십 등 서로 다른 기법을 사용합니다. 각 차원이 고유한 시각 언어를 요구했고 오직 자신만의 논리에 답하기 때문입니다. 초광각 파노라마 포맷은 표준 화면에 맞춰지길 거부합니다. 따라가지도 않고, 연결되지도 않고, 각자의 방식으로 존재하는 챕터들입니다.\n\nChapter 1: Frozen Purity | 얼음의 순수\n무수한 얼음 입자들이 공간을 가로질러 끝없이 떨어지는 결정의 세계. 빛이 얼어붙은 물질을 통과하며 굴절되는 방식을 완성하는 데 몇 시간을 보냈고, 순수하고 손대지 않은 고요의 성소를 만들어냈습니다. 모든 것이 시작되는 곳—형태 이전, 의미 이전, 그저 결정화된 가능성만이 존재합니다.\n\nChapter 2: Golden Codex | 황금의 서사\n바로크 건축이 동양의 만다라 기하학과 충돌하며, 제가 금박 텍스처와 회전 패턴에 집착하며 지어올린 궁전을 만듭니다. 모든 표면이 숨쉬고 레이어를 드러내며, 인류의 성취와 우주적 질서를 동시에 암시합니다. 정점에 도달한 문명, 제가 항상 상상했던 장엄함이 느껴져야 하는 방식.\n\nChapter 3: Event Horizon | 사건의 지평선\n제가 실시간으로 렌더링한 압도적인 블랙홀, 궤적을 조정하며 수백만 개의 파티클이 소멸을 향해 나선을 그리는 것을 지켜봤습니다. 돌이킬 수 없는 지점을 넘는 순간입니다. 끝이 아니라, 이전 챕터에서 제가 만든 모든 것이 순수한 중력으로 녹아드는 변화의 정점.\n\nChapter 4: Cosmic Waves | 우주의 파도\nAI에게 \"우주 파도\"를 상상해달라고 요청했고, AI는 제가 스스로 디자인할 수 없었던 무언가를 돌려줬습니다—재생의 힘으로 맥동하는 유기적 패턴. 이것을 레이어로 쪼개고, 모션을 추가하고, 흐르게 만들었습니다. 파괴의 여파가 다시 살아있다고 느껴지는 무언가로 변모합니다.\n\nChapter 5: Celestial Garden | 천상의 정원\nAI가 존재하도록 꿈꾼 생물발광 식물들—지구의 것도, 외계의 것도 아닌, 제가 수년간 시각화하려 했던 그 사이 어딘가의 것. 이들은 무중력에 떠 있으며, 모션 AI로 생성한 부드러운 펄스로 숨을 쉽니다. 물질이 제가 정확히 이름 붙일 수 없는 무언가가 되는 최후의 차원.",
+            folder: "Personal/25.11_MULTIPLE DIMENSIONS",
+            images: ["00_title_1.gif", "01_1.gif", "01_2_1.gif", "01_floor_1_1.gif", "01_will_1_1.gif", "02_1.gif", "02_2_1.gif", "03_1.gif", "03_2_1.gif", "04_1.gif", "04_2_1.gif", "05_1.gif", "05_2_1.gif"]
+        },
+        golden: {
+            video: null, // 영상 없음
+            role: "개인 작업 (Personal Artwork)",
+            desc: "Golden Flower: A Rhythm of Form",
+            folder: "Personal/25.06_Golden Flower A Rhythm of Form",
+            images: ["Golden Flower A Rhythm of Form_01.png", "Golden Flower A Rhythm of Form_02.gif", "Golden Flower A Rhythm of Form_03.gif", "Golden Flower A Rhythm of Form_04.gif", "Golden Flower A Rhythm of Form_05.png", "Golden Flower A Rhythm of Form_06.png", "Golden Flower A Rhythm of Form_07.png", "Golden Flower A Rhythm of Form_08.png", "Golden Flower A Rhythm of Form_09.png", "Golden Flower A Rhythm of Form_10.png", "Golden Flower A Rhythm of Form_11.png", "Golden Flower A Rhythm of Form_12.png", "Golden Flower A Rhythm of Form_13.png", "Golden Flower A Rhythm of Form_14.png", "Golden Flower A Rhythm of Form_15.png", "Golden Flower A Rhythm of Form_16.png", "Golden Flower A Rhythm of Form_17.png", "Golden Flower A Rhythm of Form_18.png", "Golden Flower A Rhythm of Form_19.png", "Golden Flower A Rhythm of Form_20.png", "Golden Flower A Rhythm of Form_21.png"]
+        },
+        odyssey: {
+            video: "gtGRzHFRN5k",
+            role: "개인 작업 (Personal Artwork)",
+            desc: "A Media Art Odyssey",
+            folder: "Personal/25.01_A Media Art Odyssey",
+            images: Array.from({length: 18}, (_, i) => `A Media Art Odyssey_${String(i+1).padStart(2, '0')}.png`)
+        },
+        particles: {
+            video: "wjkUzeLqQjU",
+            role: "개인 작업 (Personal Artwork)",
+            desc: "Overview\n\nAs the first media art work, not the existing motion graphics, I started with the idea of\nmaintaining the existing style and decorating the space created by the graphics.\nI kept thinking about how it would feel to have such a space, and I made the most of the\nsenses that could be felt in those spaces.\n\n기존의 모션그래픽이 아닌 첫 미디어 아트 작업으로써 기존에 스타일을 유지하며\n직접 그래픽으로 제작한 공간을 꾸며보고 싶다는 생각으로 시작하게 되었습니다.\n실제로 저런 공간이 있으면 어떤 느낌이 날까 하는 고민을 계속 했으며, 그 공간에서\n느낄 수 있는 감각을 최대한 살려서 제작했습니다.",
+            folder: "Personal/Particles Media Art", /* [주의] 실제 깃허브의 Particles Media Art 폴더 경로를 맞춰주세요 */
+            images: ["01.png", "02.png"] /* [주의] 실제 해당 폴더 안의 이미지 파일명들로 변경해주세요 */
         }
     };
 
     function openProject(type) {
         const modal = document.getElementById('projectModal');
-        const video = document.getElementById('projectVideo');
+        const videoContainer = document.getElementById('videoContainer');
         const imageContainer = document.getElementById('projectImages');
         const roleText = document.getElementById('projectRole');
         const descText = document.getElementById('projectDesc');
         const specialContainer = document.getElementById('specialTextContainer');
+        
+        const roleTitle = document.getElementById('roleTitle');
+        const descTitle = document.getElementById('descTitle');
+
         const data = projectData[type];
         
+        videoContainer.innerHTML = ''; 
         imageContainer.innerHTML = ''; 
         specialContainer.innerHTML = ''; 
 
         if(data) {
-            video.src = `https://www.youtube.com/embed/${data.video}?autoplay=1`;
+            // 비디오 처리 (배열인 경우 여러 개 생성, 단일인 경우 1개, null인 경우 생성 안 함)
+            if (data.videos && data.videos.length > 0) {
+                data.videos.forEach(vid => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'video-box';
+                    // 여러 영상일 경우 사운드 충돌을 막기 위해 autoplay 제외 권장, 여기서는 기본 적용
+                    wrapper.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${vid}?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+                    videoContainer.appendChild(wrapper);
+                });
+            } else if (data.video) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'video-box';
+                wrapper.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${data.video}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+                videoContainer.appendChild(wrapper);
+            }
+
+            // 개인작업의 경우 타이틀 명칭을 다르게 처리할 수 있습니다.
+            if (type === 'multiple' || type === 'golden' || type === 'odyssey' || type === 'particles') {
+                roleTitle.innerText = "프로젝트 유형";
+                descTitle.innerText = "프로젝트 설명";
+            } else {
+                roleTitle.innerText = "참여 업무";
+                descTitle.innerText = "제작 기획";
+            }
+
             roleText.innerText = data.role;
             descText.innerText = data.desc;
 
+            // 스페셜 텍스트
             if(data.special) {
                 const block = document.createElement('div');
                 block.className = 'special-text-block';
@@ -403,11 +465,13 @@
                 specialContainer.appendChild(block);
             }
 
+            // 이미지 처리
             data.images.forEach(fileName => {
                 const img = document.createElement('img');
-                img.src = `images/Company/${data.folder}/${fileName}`;
+                img.src = `images/${data.folder}/${fileName}`;
                 img.loading = "lazy";
                 
+                // 퍼풀 파티 3번 이미지 꽉 차게 설정
                 if (fileName.includes("Purpool Party_03")) {
                     img.style.gridColumn = "1 / -1";
                 }
@@ -422,8 +486,8 @@
 
     function closeProject() {
         const modal = document.getElementById('projectModal');
-        const video = document.getElementById('projectVideo');
-        video.src = ""; 
+        const videoContainer = document.getElementById('videoContainer');
+        videoContainer.innerHTML = ''; // 모달 닫을 때 영상 요소 삭제 (사운드 중지)
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
