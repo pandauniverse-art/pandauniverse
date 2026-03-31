@@ -29,7 +29,6 @@
             overflow-x: hidden;
         }
 
-        /* Nav */
         nav {
             position: fixed; top: 0; width: 100%; padding: 35px 50px;
             display: flex; justify-content: flex-end; gap: 40px; z-index: 1000;
@@ -38,7 +37,6 @@
         nav a { color: var(--text-color); text-decoration: none; font-size: 0.85rem; font-weight: var(--fw-light); text-transform: uppercase; letter-spacing: 1px; transition: 0.4s; }
         nav a:hover { opacity: 0.3; }
 
-        /* Hero (Showreel) */
         .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
         .hero iframe { width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); z-index: -1; }
@@ -46,16 +44,15 @@
         .hero-content h1 { font-size: var(--h1-size); font-weight: 400; letter-spacing: var(--letter-spacing); }
         .hero-content p { font-size: 1.4rem; font-weight: var(--fw-thin); margin-top: -10px; }
 
-        /* Grid System */
         section { padding: 100px 60px; max-width: 1600px; margin: 0 auto; }
         h2 { font-size: var(--h2-size); font-weight: var(--fw-light); letter-spacing: -1.5px; margin-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
+        
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 30px; margin-bottom: 60px; }
         .card { background: #080808; border: 1px solid #111; aspect-ratio: 16/9; cursor: pointer; transition: 0.4s; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow: hidden; position: relative; }
         .card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-5px); }
         .card p { font-size: 0.9rem; font-weight: var(--fw-thin); opacity: 0.8; padding: 0 20px; }
         .card span { font-size: 0.7rem; opacity: 0.3; text-transform: uppercase; margin-top: 5px; }
 
-        /* About Section */
         .about-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; }
         .about-text p { font-size: 1.5rem; font-weight: 100; line-height: 1.7; color: rgba(255,255,255,0.9); word-break: keep-all; margin-bottom: 30px; }
         .highlight { color: #fff; font-weight: 300; }
@@ -64,7 +61,6 @@
         .exp-item p { color: var(--text-color); font-size: 0.85rem; font-weight: var(--fw-thin); line-height: 1.4; }
         .sub-title { color: rgba(255,255,255,0.15); text-transform: uppercase; margin-bottom: 20px; display: block; font-weight: 400; font-size: 0.75rem; letter-spacing: 2px; }
 
-        /* Modal */
         #modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 2000; align-items: center; justify-content: center; padding: 40px; }
         .modal-container { width: 90vw; max-width: 1700px; display: flex; flex-direction: column; gap: 20px; }
         .video-wrapper { width: 100%; aspect-ratio: 16/9; background: #000; position: relative; }
@@ -72,7 +68,6 @@
         .modal-info { color: #fff; }
         .close-btn { align-self: flex-end; color: rgba(255,255,255,0.4); cursor: pointer; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; }
 
-        /* Contact Area */
         #contact { text-align: center; padding: 150px 60px; }
         .contact-wrap p { font-size: 2.2rem; font-weight: var(--fw-light); letter-spacing: -1.5px; margin-bottom: 10px; }
 
@@ -132,9 +127,22 @@
 
         <div class="career-list">
             <span class="sub-title">Experience</span>
-            <div class="exp-item"><h3>(주)에이플랜컴퍼니</h3><p>2024.04 - 2025.09 | 미디어팀 사원 (팀장 업무 수행)</p></div>
-            <div class="exp-item"><h3>파라다이스세가사미</h3><p>2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</p></div>
-            <div class="exp-item"><h3>코스믹 블랙 / 디피넛</h3><p>2019.04 - 2022.01 | 제작팀 주임 / 컨텐츠 제작</p></div>
+            <div class="exp-item">
+                <h3>(주)에이플랜컴퍼니</h3>
+                <p>2024.04 - 2025.09 | 미디어팀 사원 (팀장 업무 수행)</p>
+            </div>
+            <div class="exp-item">
+                <h3>파라다이스세가사미</h3>
+                <p>2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</p>
+            </div>
+            <div class="exp-item">
+                <h3>코스믹 블랙</h3>
+                <p>2021.05 - 2022.01 | 제작팀 주임</p>
+            </div>
+            <div class="exp-item">
+                <h3>디피넛</h3>
+                <p>2019.04 - 2020.04 | 컨텐츠 제작팀 주임</p>
+            </div>
             
             <span class="sub-title" style="margin-top:40px;">Education</span>
             <div class="exp-item"><h3>서울 사이버대학교</h3><p>2023.03 - Present | 멀티미디어 디자인학과 재학</p></div>
