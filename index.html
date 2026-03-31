@@ -2,83 +2,136 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>LEE DEOK JUN | 3D Artist Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEE DEOK JUN | 3D Artist</title>
     <style>
-        :root { --main-bg: #050505; --accent: #fff; }
-        body { background: var(--main-bg); color: #fff; margin: 0; font-family: 'Pretendard', sans-serif; overflow-x: hidden; }
-        
-        /* 쇼릴 배경 섹션 */
-        .hero { height: 100vh; position: relative; overflow: hidden; }
-        .hero iframe { 
-            width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh;
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            pointer-events: none; opacity: 0.6;
-        }
-        .hero-title { 
-            position: absolute; z-index: 10; width: 100%; text-align: center; top: 50%; 
-            transform: translateY(-50%); letter-spacing: 10px;
+        /* 기본 설정 */
+        :root {
+            --bg-dark: #000;
+            --text-main: #ffffff;
+            /* 기존 대비 1.5배 커진 폰트 사이즈 및 50% 줄어든 자간 */
+            --font-size-hero: 6rem; 
+            --letter-spacing: -2px; 
         }
 
-        /* 워크 그리드 */
-        .section { padding: 80px 20px; max-width: 1400px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 30px; }
-        .work-item { 
-            position: relative; aspect-ratio: 16/9; background: #111; cursor: pointer; 
-            overflow: hidden; border: 1px solid #222;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-main); 
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth; /* 슬라이드 이동 효과 */
         }
-        .work-item:hover .overlay { opacity: 1; }
-        .overlay { 
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            background: rgba(0,0,0,0.8); display: flex; flex-direction: column; 
-            justify-content: center; align-items: center; opacity: 0; transition: 0.3s;
+
+        /* 상단 네비게이션 */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 30px 50px;
+            display: flex;
+            justify-content: flex-end;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
         }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 40px;
+            font-size: 1.2rem; /* 메뉴 글씨 크기 조정 */
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            transition: opacity 0.3s;
+        }
+        nav a:hover { opacity: 0.5; }
+
+        /* 메인 히어로 섹션 */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* 영상 배경 및 50% 어둡게 처리 */
+        .video-container {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -2;
+        }
+        .video-container iframe {
+            width: 100vw; height: 56.25vw;
+            min-height: 100vh; min-width: 177.77vh;
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* 배경 50% 더 어둡게 */
+            z-index: -1;
+        }
+
+        /* 텍스트 스타일 수정 (1.5배 크기, 자간 축소) */
+        .hero-content { text-align: center; }
+        .hero-content h1 {
+            font-size: var(--font-size-hero);
+            letter-spacing: var(--letter-spacing);
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .hero-content p {
+            font-size: 1.8rem; /* 기존 1.2rem에서 1.5배 */
+            letter-spacing: -1px;
+            opacity: 0.8;
+        }
+
+        /* 섹션 공통 스타일 */
+        section {
+            min-height: 100vh;
+            padding: 100px 50px;
+            border-top: 1px solid #222;
+        }
+        h2 { font-size: 3rem; margin-bottom: 50px; letter-spacing: -1.5px; }
+
     </style>
 </head>
 <body>
 
-<section class="hero">
-    <iframe src="https://www.youtube.com/embed/sxAyP7wK7DA?autoplay=1&mute=1&loop=1&playlist=sxAyP7wK7DA&controls=0" frameborder="0"></iframe>
-    <div class="hero-title">
-        <h1>LEE DEOK JUN</h1>
-        <p>3D MOTION GRAPHIC ARTIST</p>
-    </div>
-</section>
+    <nav>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<section id="work" class="section">
-    <h2>WORKS</h2>
-    <div class="grid" id="projectGrid">
+    <section class="hero">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/sxAyP7wK7DA?autoplay=1&mute=1&loop=1&playlist=sxAyP7wK7DA&controls=0&modestbranding=1" frameborder="0"></iframe>
         </div>
-</section>
+        <div class="video-overlay"></div>
+        
+        <div class="hero-content">
+            <h1>LEE DEOK JUN</h1>
+            <p>3D Motion Artist & Media Artist</p>
+        </div>
+    </section>
 
-<script>
-    // 구글 사이트의 WorkList 내용을 아래 배열에 추가하세요.
-    const projects = [
-        {
-            title: "2025 Showreel",
-            tools: "C4D / Octane / Redshift",
-            thumb: "thumb_reel.webp", 
-            link: "https://youtu.be/sxAyP7wK7DA"
-        },
-        {
-            title: "Project Name 01",
-            tools: "Unreal Engine / AE",
-            thumb: "project01.webp",
-            link: "#"
-        }
-    ];
+    <section id="work">
+        <h2>WORK</h2>
+        </section>
 
-    const grid = document.getElementById('projectGrid');
-    projects.forEach(p => {
-        grid.innerHTML += `
-            <div class="work-item" onclick="window.open('${p.link}')" style="background-image:url(${p.thumb}); background-size:cover;">
-                <div class="overlay">
-                    <h3>${p.title}</h3>
-                    <p>${p.tools}</p>
-                </div>
-            </div>
-        `;
-    });
-</script>
+    <section id="about">
+        <h2>ABOUT</h2>
+        <p>6th-year 3D Motion Graphics Designer...</p>
+    </section>
+
+    <section id="contact">
+        <h2>CONTACT</h2>
+        <p>Email: your-email@gmail.com</p>
+    </section>
 
 </body>
 </html>
