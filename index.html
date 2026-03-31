@@ -13,31 +13,32 @@
             --accent-color: rgba(255, 255, 255, 0.35);
             --h1-size: 8rem;
             --h2-size: 2.2rem;
-            --letter-spacing: -3px; 
-            --line-height-tight: 1.15;
+            --letter-spacing: -4px; 
             --fw-thin: 100; 
             --fw-light: 200;
         }
 
+        html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             background-color: var(--bg-color); 
             color: var(--text-color); 
             font-family: 'Inter', sans-serif;
-            line-height: var(--line-height-tight);
-            scroll-behavior: smooth;
+            line-height: 1.15;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
         /* Navigation */
         nav {
             position: fixed;
             top: 0; width: 100%;
-            padding: 30px 50px;
+            padding: 35px 50px;
             display: flex;
             justify-content: flex-end;
-            gap: 40px;
+            gap: 45px;
             z-index: 1000;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
         }
         nav a {
             color: var(--text-color);
@@ -45,9 +46,10 @@
             font-size: 0.85rem;
             font-weight: var(--fw-light);
             text-transform: uppercase;
-            transition: 0.3s;
+            letter-spacing: 1px;
+            transition: opacity 0.4s;
         }
-        nav a:hover { opacity: 0.4; }
+        nav a:hover { opacity: 0.3; }
 
         /* Hero Section */
         .hero {
@@ -76,31 +78,20 @@
             background: rgba(0, 0, 0, 0.75); 
             z-index: -1;
         }
+        .hero-content h1 { font-size: var(--h1-size); font-weight: 400; letter-spacing: var(--letter-spacing); opacity: 0.9; }
+        .hero-content p { font-size: 1.4rem; font-weight: var(--fw-thin); margin-top: -10px; text-align: center; }
 
-        .hero-content h1 {
-            font-size: var(--h1-size);
-            font-weight: 400; 
-            letter-spacing: var(--letter-spacing);
-        }
-        .hero-content p {
-            font-size: 1.4rem;
-            font-weight: var(--fw-thin);
-            margin-top: -10px;
-            text-align: center;
-        }
-
-        section { padding: 100px 50px; max-width: 1400px; margin: 0 auto; }
+        /* Work Section */
+        section { padding: 120px 60px; max-width: 1500px; margin: 0 auto; }
         h2 { 
             font-size: var(--h2-size); 
             font-weight: var(--fw-light);
-            letter-spacing: -1px; 
+            letter-spacing: -1.5px; 
             margin-bottom: 50px; 
             border-bottom: 1px solid rgba(255,255,255,0.08);
             padding-bottom: 15px;
         }
-
-        /* Work Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 35px; }
         .project-card {
             background: #080808;
             aspect-ratio: 16/9;
@@ -109,59 +100,65 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: 0.4s;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
             border: 1px solid #111;
-            text-align: center;
         }
-        .project-card:hover { border-color: rgba(255,255,255,0.2); }
-        .project-card p { font-weight: var(--fw-thin); font-size: 0.95rem; opacity: 0.7; margin-bottom: 5px; }
-        .project-card span { font-weight: var(--fw-thin); font-size: 0.7rem; opacity: 0.3; text-transform: uppercase; }
+        .project-card:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-5px); }
+        .project-card p { font-weight: var(--fw-thin); font-size: 0.95rem; opacity: 0.7; }
 
-        /* Modal Player */
+        /* Modal Player - 크기 대폭 확장 및 설명 추가 */
         #modal {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95);
+            background: rgba(0,0,0,0.98);
             z-index: 2000;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
-        .modal-content {
-            width: 80%;
-            max-width: 1200px;
+        .modal-container {
+            width: 90%; /* 화면의 90% 사용 */
+            max-width: 1600px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .video-wrapper {
+            width: 100%;
             aspect-ratio: 16/9;
             position: relative;
+            background: #000;
         }
-        .modal-content iframe { width: 100%; height: 100%; }
+        .video-wrapper iframe { width: 100%; height: 100%; border: none; }
+        
+        .modal-info {
+            color: #fff;
+            padding: 10px 0;
+        }
+        .modal-info h3 { font-size: 1.5rem; font-weight: 300; letter-spacing: -1px; margin-bottom: 8px; }
+        .modal-info p { font-size: 0.9rem; font-weight: 100; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
         .close-btn {
-            position: absolute;
-            top: -40px; right: 0;
-            color: white;
+            align-self: flex-end;
+            color: rgba(255,255,255,0.4);
             cursor: pointer;
-            font-weight: 100;
-            font-size: 1.5rem;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
         }
 
-        /* About Section 상세 업데이트 */
-        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; }
-        .exp-item { margin-bottom: 30px; }
-        .exp-item h3 { font-size: 1.3rem; font-weight: 300; margin-bottom: 4px; letter-spacing: -0.5px; }
-        .exp-item p { color: var(--accent-color); font-size: 0.85rem; font-weight: var(--fw-thin); line-height: 1.3; }
-        .sub-title { color: rgba(255,255,255,0.15); text-transform: uppercase; margin-bottom: 20px; display: block; font-weight: 400; font-size: 0.75rem; letter-spacing: 1px; }
+        /* About Section (이미지 기준 재정리) */
+        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 100px; }
+        .exp-item { margin-bottom: 35px; }
+        .exp-item h3 { font-size: 1.35rem; font-weight: 300; margin-bottom: 6px; color: rgba(255,255,255,0.9); }
+        .exp-item p { color: var(--accent-color); font-size: 0.85rem; font-weight: var(--fw-thin); line-height: 1.4; }
+        .sub-title { color: rgba(255,255,255,0.12); text-transform: uppercase; margin-bottom: 25px; display: block; font-weight: 400; font-size: 0.75rem; letter-spacing: 2px; }
+        .desc-list { margin-top: 8px; list-style: none; border-left: 1px solid rgba(255,255,255,0.05); padding-left: 15px; }
+        .desc-list li { font-size: 0.8rem; font-weight: var(--fw-thin); color: var(--accent-color); margin-bottom: 4px; }
 
-        .desc-list { margin-top: 5px; list-style: none; }
-        .desc-list li { font-size: 0.8rem; font-weight: var(--fw-thin); color: var(--accent-color); margin-bottom: 2px; }
-
-        .contact-info { text-align: center; padding: 60px 0; }
-        .contact-info p { font-size: 1.8rem; font-weight: var(--fw-light); letter-spacing: -1px; }
-
-        @media (max-width: 768px) {
-            :root { --h1-size: 3rem; --h2-size: 1.6rem; }
-            .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            section { padding: 60px 20px; }
-            .modal-content { width: 95%; }
-        }
+        .contact-info { text-align: center; padding: 80px 0; }
+        .contact-info p { font-size: 2.2rem; font-weight: var(--fw-light); letter-spacing: -1.5px; }
     </style>
 </head>
 <body>
@@ -174,7 +171,7 @@
 
     <section class="hero">
         <div class="video-background">
-            <iframe src="https://www.youtube.com/embed/sxAyP7wK7DA?autoplay=1&mute=1&loop=1&playlist=sxAyP7wK7DA&controls=0&modestbranding=1&rel=0" frameborder="0"></iframe>
+            <iframe src="https://www.youtube.com/embed/sxAyP7wK7DA?autoplay=1&mute=1&loop=1&playlist=sxAyP7wK7DA&controls=0" frameborder="0"></iframe>
         </div>
         <div class="video-overlay"></div>
         <div class="hero-content">
@@ -186,21 +183,17 @@
     <section id="work">
         <h2>SELECTED WORKS</h2>
         <div class="grid">
-            <div class="project-card" onclick="openModal('sxAyP7wK7DA')">
+            <div class="project-card" onclick="openModal('sxAyP7wK7DA', '2025 SHOWREEL', 'Full version of 3D Motion & Media Art Portfolio.')">
                 <p>2025 SHOWREEL</p>
-                <span>Full Version</span>
             </div>
-            <div class="project-card" onclick="openModal('_FiQtCwXH6M')">
+            <div class="project-card" onclick="openModal('_FiQtCwXH6M', 'JEONJU CATHEDRAL', 'Projection Mapping Project at Jeonju Cathedral. Role: 3D Motion Graphics')">
                 <p>JEONJU CATHEDRAL</p>
-                <span>Media Art / Projection Mapping</span>
             </div>
-            <div class="project-card" onclick="openModal('kJtE4o17MqM')">
+            <div class="project-card" onclick="openModal('kJtE4o17MqM', 'PARADISE CITY', 'Paradise City Internal LED Media Content. Role: 3D Artist')">
                 <p>PARADISE CITY</p>
-                <span>Internal Content / 3D Graphics</span>
             </div>
-            <div class="project-card" onclick="openModal('TLYGn5Se8sQ')">
+            <div class="project-card" onclick="openModal('TLYGn5Se8sQ', 'AI VISUALIZATION', 'Motion Graphics for AI System Visualization.')">
                 <p>AI VISUALIZATION</p>
-                <span>Motion Graphics</span>
             </div>
         </div>
     </section>
@@ -210,49 +203,28 @@
         <div class="about-grid">
             <div>
                 <span class="sub-title">Experience</span>
-                
                 <div class="exp-item">
                     <h3>(주)에이플랜컴퍼니</h3>
-                    <p>2024.04 - 2025.09 | 미디어팀 사원 (팀장, PM 업무 수행)</p>
+                    <p>2024.04 - 2025.09 | 미디어팀 사원 (팀장 업무 수행)</p>
                     <ul class="desc-list">
-                        <li>미디어 아트 프로젝트: 유니세프&아시아나, 신풍역 청년주택, 전주 전동성당, 랑콤 갈라디너쇼, 대전 사이언스 페스티벌 등</li>
+                        <li>유니세프&아시아나, 전주 전동성당, 랑콤 갈라디너쇼 등 미디어 아트 기획 및 제작</li>
                     </ul>
                 </div>
-
                 <div class="exp-item">
                     <h3>파라다이스세가사미</h3>
                     <p>2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</p>
                     <ul class="desc-list">
-                        <li>호텔 내부 컨텐츠 제작: 3Window media, cimer, 음식 촬영 및 편집, LED 전시용 3D 그래픽 제작</li>
+                        <li>3Window media, cimer, LED 전시용 3D 그래픽 제작 및 촬영/편집</li>
                     </ul>
                 </div>
-
-                <div class="exp-item">
-                    <h3>코스믹 블랙</h3>
-                    <p>2021.05 - 2022.01 | 제작팀 주임</p>
-                    <ul class="desc-list">
-                        <li>이러닝 프로젝트 PD: 촬영, 편집, 외주 관리, 인아웃트로 및 브릿지용 그래픽 제작</li>
-                    </ul>
-                </div>
-
-                <div class="exp-item">
-                    <h3>바이인터네셔널</h3>
-                    <p>2020.07 - 2020.11 | 아트팀 사원</p>
-                    <ul class="desc-list">
-                        <li>SNS 업로드용 그래픽 작업</li>
-                    </ul>
-                </div>
-
                 <div class="exp-item">
                     <h3>디피넛</h3>
                     <p>2019.04 - 2020.04 | 컨텐츠 제작팀 주임</p>
                     <ul class="desc-list">
-                        <li>이러닝 강의 및 그래픽 제작 (아이스크림 원격 교육 연수원 등)</li>
-                        <li>포스트 프로덕션: 던전앤파이터, 워너원 비타500, 잡코리아 광고 참여</li>
+                        <li>이러닝 강의 및 그래픽 제작, 던전앤파이터/잡코리아 광고 포스트 프로덕션 참여</li>
                     </ul>
                 </div>
             </div>
-
             <div>
                 <span class="sub-title">Education</span>
                 <div class="exp-item">
@@ -262,58 +234,45 @@
                 <div class="exp-item">
                     <h3>Training</h3>
                     <p>After Effect, C4D | 더블유컴퓨터아트 (2018.11 - 2019.03)</p>
-                    <p>방송영상편집 및 2D/3D 그래픽 양성 | IIBI (2017.12 - 2018.06)</p>
                 </div>
-
-                <span class="sub-title" style="margin-top:30px;">Intern & Award</span>
-                <div class="exp-item">
-                    <h3>엘리엇 (Elliot)</h3>
-                    <p>2018.06 - 2018.09 | 인턴 (로고 & 텍스트 애니메이션)</p>
-                </div>
-                <div class="exp-item">
-                    <h3>1종 보통 운전면허</h3>
-                    <p>2014.12 | 경찰청</p>
+                <span class="sub-title" style="margin-top:40px;">Contact</span>
+                <div class="contact-info" style="text-align: left; padding: 0;">
+                    <p style="font-size: 1.5rem;">010-8862-0286</p>
+                    <p style="font-size: 0.9rem; opacity: 0.4;">led3268@naver.com</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="contact-info">
-            <span class="sub-title">Contact</span>
-            <p>010-8862-0286</p>
-            <p style="font-size: 1rem; opacity: 0.5; font-weight:100; margin-top:5px;">led3268@naver.com</p>
-        </div>
-    </section>
-
     <div id="modal" onclick="closeModal()">
-        <div class="modal-content" onclick="event.stopPropagation()">
+        <div class="modal-container" onclick="event.stopPropagation()">
             <span class="close-btn" onclick="closeModal()">CLOSE</span>
-            <div id="player"></div>
+            <div class="video-wrapper">
+                <div id="player"></div>
+            </div>
+            <div class="modal-info">
+                <h3 id="modal-title"></h3>
+                <p id="modal-desc"></p>
+            </div>
         </div>
     </div>
 
     <script>
-        function openModal(videoId) {
+        function openModal(videoId, title, desc) {
             const modal = document.getElementById('modal');
             const player = document.getElementById('player');
-            player.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            player.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
             modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'; 
         }
-
         function closeModal() {
             const modal = document.getElementById('modal');
-            const player = document.getElementById('player');
-            player.innerHTML = '';
+            document.getElementById('player').innerHTML = '';
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
     </script>
-
-    <footer style="padding: 60px; color: rgba(255,255,255,0.05); font-size: 0.7rem; font-weight: 100; text-align: center;">
-        &copy; 2026 LEE DEOK JUN.
-    </footer>
-
 </body>
 </html>
