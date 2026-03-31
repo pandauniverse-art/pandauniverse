@@ -1,299 +1,77 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEE DEOK JUN | 3D Artist Portfolio</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
-
-        :root {
-            --bg-color: #000000;
-            --text-color: rgba(255, 255, 255, 0.85); 
-            --accent-color: rgba(255, 255, 255, 0.45);
-            --h1-size: 6.8rem;   
-            --p-size: 1.5rem;    
-            --letter-spacing: -4px; 
-            --fw-bold: 600;      
-            --fw-normal: 300;    
-        }
-
-        html { scroll-behavior: smooth; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background-color: var(--bg-color); 
-            color: var(--text-color); 
-            font-family: 'Inter', sans-serif;
-            line-height: 1.15;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-
-        nav {
-            position: fixed; top: 0; width: 100%; padding: 35px 50px;
-            display: flex; justify-content: flex-end; gap: 40px; z-index: 1000;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
-        }
-        nav a { color: var(--text-color); text-decoration: none; font-size: 0.85rem; font-weight: 200; text-transform: uppercase; letter-spacing: 1px; transition: 0.4s; }
-        nav a:hover { opacity: 0.3; }
-
-        /* Hero Section */
-        .hero { width: 100%; position: relative; background: #000; display: flex; align-items: center; justify-content: center; }
-        .hero-video-container { width: 100%; position: relative; padding-top: 56.25%; overflow: hidden; }
-        .hero-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; }
-        .hero-content { position: absolute; z-index: 2; text-align: center; width: 100%; }
-        .hero-content h1 { font-size: var(--h1-size); font-weight: var(--fw-bold); letter-spacing: var(--letter-spacing); margin-bottom: 8px; text-transform: uppercase; }
-        .hero-content p { font-size: var(--p-size); font-weight: var(--fw-normal); letter-spacing: -0.5px; }
-        .hero-content span { display: block; font-size: 0.95rem; font-weight: 100; margin-top: 20px; letter-spacing: 6px; opacity: 0.6; }
-
-        /* Grid System */
-        section { padding: 80px 60px; max-width: 1600px; margin: 0 auto; }
-        h2 { font-size: 2.2rem; font-weight: 200; letter-spacing: -1.5px; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 40px 30px; margin-bottom: 80px; }
-        .card { background: #080808; border: 1px solid #111; aspect-ratio: 16/9; cursor: pointer; transition: 0.4s; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow: hidden; position: relative; }
-        .card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-5px); }
-        
-        /* 작업물 이름 및 설명란 */
-        .card-info { margin-top: 15px; text-align: left; }
-        .card-title { font-size: 0.95rem; font-weight: 300; color: #fff; margin-bottom: 4px; }
-        .card-tag { font-size: 0.75rem; font-weight: 100; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Experience Section */
-        .exp-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 100px; }
-        .exp-category-title { color: rgba(255,255,255,0.2); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 30px; display: block; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 10px; }
-        .exp-item { margin-bottom: 25px; }
-        .exp-item h3 { font-size: 1.25rem; font-weight: 300; margin-bottom: 4px; color: #fff; }
-        .desc-list { list-style: none; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 15px; }
-        .desc-list li { font-size: 0.8rem; font-weight: 100; color: var(--text-color); margin-bottom: 6px; line-height: 1.4; }
-
-        /* About & Contact */
-        .about-intro { max-width: 600px; }
-        .about-intro p { font-size: 1.05rem; font-weight: 100; line-height: 1.6; color: rgba(255,255,255,0.8); word-break: keep-all; margin-bottom: 20px; }
-        .highlight { color: #fff; font-weight: 300; }
-        #contact { text-align: center; padding: 120px 60px; border-top: 1px solid rgba(255,255,255,0.05); }
-        .contact-wrap p { font-size: 2.2rem; font-weight: 200; letter-spacing: -1.5px; margin-bottom: 10px; }
-
-        /* Modal */
-        #modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 2000; align-items: center; justify-content: center; padding: 40px; }
-        .modal-container { width: 90vw; max-width: 1700px; display: flex; flex-direction: column; gap: 20px; }
-        .video-wrapper { width: 100%; aspect-ratio: 16/9; background: #000; position: relative; }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        .close-btn { align-self: flex-end; color: rgba(255,255,255,0.4); cursor: pointer; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; }
-
-        @media (max-width: 1024px) { .exp-container { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { :root { --h1-size: 3.2rem; --p-size: 1.1rem; } .grid { grid-template-columns: 1fr; } }
-    </style>
-</head>
-<body>
-
-<nav>
-    <a href="#work">Work</a>
-    <a href="#experience">Experience</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<section class="hero">
-    <div class="hero-video-container">
-        <iframe src="https://www.youtube.com/embed/sxAyP7wK7DA?autoplay=1&mute=1&loop=1&playlist=sxAyP7wK7DA&controls=0&modestbranding=1&rel=0" frameborder="0"></iframe>
-        <div class="hero-overlay"></div>
+<div onclick="openScienceModal()">
+    <div class="card">
+        <img src="images/25.03_Daejeon Science Festival/Daejeon Science_02.png" alt="대전 사이언스 페스티벌 썸네일">
     </div>
-    <div class="hero-content">
-        <h1>LEE DEOK JUN</h1>
-        <p>6th Year 3D Motion & Media Artist</p>
-        <span>시각적 경계를 허무는 3D 모션 & 미디어 아트</span>
-    </div>
-</section>
-
-<section id="work">
-    <h2>COMPANY PROJECTS</h2>
-    <div class="grid">
-        <div onclick="openModal('_FiQtCwXH6M')">
-            <div class="card"><p>IMAGE/GIF AREA</p></div>
-            <div class="card-info">
-                <div class="card-title">전주 전동성당 미디어 파사드</div>
-                <div class="card-tag">(주)에이플랜컴퍼니</div>
-            </div>
-        </div>
-        <div onclick="openModal('kJtE4o17MqM')">
-            <div class="card"><p>IMAGE/GIF AREA</p></div>
-            <div class="card-info">
-                <div class="card-title">파라다이스 시티 호텔 (Pink Spring)</div>
-                <div class="card-tag">파라다이스세가사미</div>
-            </div>
-        </div>
-        <div onclick="openModal('sxAyP7wK7DA')">
-            <div class="card"><p>IMAGE/GIF AREA</p></div>
-            <div class="card-info">
-                <div class="card-title">랑콤 (LANCOME) Gala Dinner</div>
-                <div class="card-tag">(주)에이플랜컴퍼니</div>
-            </div>
-        </div>
-        <div onclick="openModal('sxAyP7wK7DA')">
-            <div class="card"><p>IMAGE/GIF AREA</p></div>
-            <div class="card-info">
-                <div class="card-title">대전 사이언스 페스티벌 (사이언스 오디세이)</div>
-                <div class="card-tag">(주)에이플랜컴퍼니</div>
-            </div>
-        </div>
-        <div onclick="openModal('sxAyP7wK7DA')">
-            <div class="card"><p>IMAGE/GIF AREA</p></div>
-            <div class="card-info">
-                <div class="card-title">신풍역 청년주택 미디어 아트</div>
-                <div class="card-tag">(주)에이플랜컴퍼니</div>
-            </div>
-        </div>
-        <div onclick="openModal('kJtE4o17MqM')">
-            <div class="card"><p>IMAGE/GIF AREA</p></div>
-            <div class="card-info">
-                <div class="card-title">파라다이스 시티 호텔 (Purpool Party)</div>
-                <div class="card-tag">파라다이스세가사미</div>
-            </div>
-        </div>
-    </div>
-
-    <h2>PERSONAL & AI WORK</h2>
-    <div class="grid">
-        <div onclick="openModal('TLYGn5Se8sQ')">
-            <div class="card"><p>IMAGE/GIF AREA</p></div>
-            <div class="card-info">
-                <div class="card-title">AI VISUALIZATION (Vibe Coding)</div>
-                <div class="card-tag">AI Project</div>
-            </div>
-        </div>
-        <div onclick="openModal('sxAyP7wK7DA')">
-            <div class="card"><p>IMAGE/GIF AREA</p></div>
-            <div class="card-info">
-                <div class="card-title">MULTIPLE DIMENSIONS</div>
-                <div class="card-tag">Personal Work</div>
-            </div>
-        </div>
-        <div onclick="openModal('sxAyP7wK7DA')">
-            <div class="card"><p>IMAGE/GIF AREA</p></div>
-            <div class="card-info">
-                <div class="card-title">Isometric Daily Spaces</div>
-                <div class="card-tag">3D Design</div>
-            </div>
-        </div>
-        <div onclick="openModal('sxAyP7wK7DA')">
-            <div class="card"><p>IMAGE/GIF AREA</p></div>
-            <div class="card-info">
-                <div class="card-title">Golden Flower: A Rhythm of Form</div>
-                <div class="card-tag">Personal Work</div>
-            </div>
-        </div>
-        <div onclick="openModal('sxAyP7wK7DA')">
-            <div class="card"><p>IMAGE/GIF AREA</p></div>
-            <div class="card-info">
-                <div class="card-title">World of Imagination</div>
-                <div class="card-tag">Personal Space Art</div>
-            </div>
-        </div>
-        <div onclick="openModal('sxAyP7wK7DA')">
-            <div class="card"><p>IMAGE/GIF AREA</p></div>
-            <div class="card-info">
-                <div class="card-title">Personal Space Art Work (Blackhole)</div>
-                <div class="card-tag">Space Art</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="experience">
-    <h2>EXPERIENCE</h2>
-    <div class="exp-container">
-        <div>
-            <span class="exp-category-title">Corporate Experience</span>
-            <div class="exp-item">
-                <h3>(주)에이플랜컴퍼니</h3>
-                <div class="comp-info">2024.04 - 2025.09 | 미디어팀 사원 (팀장, PM 업무 수행)</div>
-                <ul class="desc-list"><li>유니세프&아시아나, 신풍역 청년주택, 전주 전동성당, 랑콤 등 총괄</li></ul>
-            </div>
-            <div class="exp-item">
-                <h3>파라다이스세가사미</h3>
-                <div class="comp-info">2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</div>
-                <ul class="desc-list"><li>3Window media, cimer 프로젝트 제작, F&B 촬영/편집</li></ul>
-            </div>
-            <div class="exp-item">
-                <h3>코스믹 블랙</h3>
-                <div class="comp-info">2021.05 - 2022.01 | 제작팀 주임</div>
-                <ul class="desc-list"><li>이러닝 프로젝트 PD: 촬영 및 편집 총괄, 외주 관리</li></ul>
-            </div>
-            <div class="exp-item">
-                <h3>바이인터네셔널</h3>
-                <div class="comp-info">2020.07 - 2020.11 | 아트팀 사원</div>
-                <ul class="desc-list"><li>브랜드 SNS 콘텐츠 그래픽 디자인 제작</li></ul>
-            </div>
-            <div class="exp-item">
-                <h3>디피넛</h3>
-                <div class="comp-info">2019.04 - 2020.04 | 컨텐츠 제작팀 주임</div>
-                <ul class="desc-list"><li>광고(던전앤파이터, 비타500, 잡코리아 등) 포스트 프로덕션</li></ul>
-            </div>
-        </div>
-        <div>
-            <span class="exp-category-title">Publication & Education</span>
-            <div class="exp-item">
-                <h3>Book Publication</h3>
-                <div class="comp-info">Author | 『CINEMA 4D & OctaneRender』</div>
-                <ul class="desc-list"><li>3D 렌더링 튜토리얼 북 집필 (세종도서 선정)</li></ul>
-            </div>
-            <div class="exp-item" style="cursor:pointer;" onclick="window.open('https://www.inflearn.com/course/%EC%8B%9C%EB%84%A4%EB%A7%88-4d-%EA%B8%B0%EC%B4%88?inst=8517607e&utm_source=instructor&utm_medium=referral&utm_campaign=inflearn_%ED%8A%B8%EB%9E%98%ED%94%BD_promotion-link')">
-                <h3>Inflearn (인프런)</h3>
-                <div class="comp-info">Online Instructor | 실무 3D 그래픽 교육</div>
-                <ul class="desc-list"><li>Cinema 4D 기초 및 실무 온라인 강의 진행</li></ul>
-            </div>
-            <div class="exp-item">
-                <h3>YouTube</h3>
-                <div class="comp-info">Content Creator | Panda Universe</div>
-                <ul class="desc-list"><li>4,000명 이상의 구독자와 소통하며 튜토리얼 연재</li></ul>
-            </div>
-            <div class="exp-item">
-                <h3>Education</h3>
-                <div class="comp-info">Seoul Cyber University</div>
-                <ul class="desc-list"><li>멀티미디어 디자인학과 학사 과정 재학 중</li></ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="about">
-    <h2>ABOUT</h2>
-    <div class="about-intro">
-        <p>안녕하세요, 6년 차 3D 모션 그래픽 아티스트 <span class="highlight">이덕준</span>입니다.<br><br>Cinema 4D와 Unreal Engine을 활용해 상업 프로젝트를 성공적으로 완수해왔으며, 저서와 강의를 통해 업계 발전에 기여하고 있습니다.</p>
-    </div>
-</section>
-
-<section id="contact">
-    <div class="contact-wrap">
-        <span class="sub-title" style="color:rgba(255,255,255,0.2); text-transform:uppercase; font-size:0.7rem; letter-spacing:2px; margin-bottom:15px; display:block;">Get in touch</span>
-        <p>010-8862-0286</p>
-        <p style="font-size: 1.1rem; opacity: 0.5;">led3268@naver.com</p>
-    </div>
-</section>
-
-<div id="modal" onclick="closeModal()">
-    <div class="modal-container" onclick="event.stopPropagation()">
-        <span class="close-btn" onclick="closeModal()">CLOSE</span>
-        <div class="video-wrapper"><div id="player"></div></div>
+    <div class="card-info">
+        <div class="card-title">대전 사이언스 페스티벌 (사이언스 오디세이)</div>
+        <div class="card-tag">(주)에이플랜컴퍼니 | Media Art</div>
     </div>
 </div>
 
+<div id="scienceModal" class="full-modal" onclick="closeScienceModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeScienceModal()">CLOSE</span>
+        
+        <div class="video-container">
+            <iframe id="scienceVideo" width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <div class="project-detail-images">
+            <h3>PROJECT IMAGES</h3>
+            <div class="image-list" id="imageList">
+                </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* 전용 모달 스타일 */
+    .full-modal {
+        display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.95); z-index: 3000; overflow-y: auto; padding: 60px 0;
+    }
+    .modal-content { width: 90%; max-width: 1400px; margin: 0 auto; }
+    .video-container { width: 100%; aspect-ratio: 16/9; margin-bottom: 50px; background: #000; }
+    
+    .project-detail-images { margin-top: 80px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px; }
+    .project-detail-images h3 { font-weight: 200; letter-spacing: 2px; margin-bottom: 30px; opacity: 0.5; }
+    
+    .image-list { display: flex; flex-direction: column; gap: 20px; }
+    .image-list img { width: 100%; height: auto; display: block; border: 1px solid #111; }
+
+    .close-btn { position: fixed; top: 30px; right: 50px; color: #fff; cursor: pointer; font-size: 0.8rem; letter-spacing: 2px; z-index: 3100; }
+</style>
+
 <script>
-    function openModal(id) {
-        document.getElementById('player').innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
-        document.getElementById('modal').style.display = 'flex';
+    function openScienceModal() {
+        const modal = document.getElementById('scienceModal');
+        const video = document.getElementById('scienceVideo');
+        const list = document.getElementById('imageList');
+        
+        // 유튜브 링크에 autoplay=1과 사운드를 위해 mute=0(기본값) 설정
+        video.src = "https://www.youtube.com/embed/a_dn_9OKv5I?autoplay=1&si=ZOAvHCXW-w7nh_pA";
+        
+        // 이미지 21장 동적 생성
+        if(list.innerHTML === "") {
+            for(let i=1; i<=21; i++) {
+                const imgNum = i < 10 ? '0' + i : i;
+                const img = document.createElement('img');
+                img.src = `images/25.03_Daejeon Science Festival/Daejeon Science_${imgNum}.png`;
+                img.loading = "lazy";
+                list.appendChild(img);
+            }
+        }
+        
+        modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
     }
-    function closeModal() {
-        document.getElementById('player').innerHTML = '';
-        document.getElementById('modal').style.display = 'none';
+
+    function closeScienceModal() {
+        const modal = document.getElementById('scienceModal');
+        const video = document.getElementById('scienceVideo');
+        
+        video.src = ""; // 영상 정지
+        modal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
 </script>
-
-<footer style="padding: 40px; text-align: center; opacity: 0.1; font-size: 0.7rem;">&copy; 2026 LEE DEOK JUN.</footer>
-
-</body>
-</html>
