@@ -497,6 +497,50 @@
             letter-spacing: -1.5px;
             margin-bottom: 10px;
         }
+        .about-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 24px 0 40px;
+        }
+
+        .about-link,
+        .works-link,
+        .contact-social {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 16px;
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.82);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: 0.3s ease;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .about-link:hover,
+        .works-link:hover,
+        .contact-social:hover {
+            border-color: rgba(255,255,255,0.35);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .works-link-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 30px;
+        }
+
+        .contact-socials {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
 
         @media (max-width: 768px) {
             :root { --h1-size: 1.8rem; }
