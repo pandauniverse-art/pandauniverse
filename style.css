@@ -71,3 +71,47 @@ body {
 .info p { font-size: 0.8rem; color: #555; margin-top: 10px; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.about-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 24px 0 40px;
+}
+
+.about-link,
+.works-link,
+.contact-social {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    background: rgba(255,255,255,0.02);
+}
+
+.about-link:hover,
+.works-link:hover,
+.contact-social:hover {
+    border-color: rgba(255,255,255,0.35);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.works-link-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.contact-socials {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
