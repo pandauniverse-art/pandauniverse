@@ -541,6 +541,20 @@
             gap: 12px;
             flex-wrap: wrap;
         }
+.ai-card-stack {
+    display: grid;
+    gap: 20px;
+}
+
+.ai-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: #111;
+}
 
         @media (max-width: 768px) {
             :root { --h1-size: 1.8rem; }
@@ -690,14 +704,26 @@
     <h2>AI / INTERACTIVE MEDIA</h2>
 
     <div class="ai-feature">
-        <div class="ai-card" onclick="openAIModal()">
-            <span class="ai-badge">Interactive / Generative</span>
-            <h3>Interactive Media Experience</h3>
-            <p>
-                AI 기반 생성형 비주얼, 인터랙티브한 공간감, 실험적 모션 흐름을 통해
-                기존 3D 작업을 확장한 별도 프로젝트입니다.
-            </p>
-            <div class="ai-link">Open Experience ↗</div>
+        <div class="ai-card-stack">
+            <div class="ai-card" onclick="openAIModal()">
+                <span class="ai-badge">Interactive / Generative</span>
+                <h3>Interactive Media Experience</h3>
+                <p>
+                    AI 기반 생성형 비주얼, 인터랙티브한 공간감, 실험적 모션 흐름을 통해
+                    기존 3D 작업을 확장한 별도 프로젝트입니다.
+                </p>
+                <div class="ai-link">Open Experience ↗</div>
+            </div>
+
+            <a class="ai-card" href="docs/production-workflow.pdf" target="_blank" rel="noopener noreferrer">
+                <img class="ai-thumb" src="images/AI/workflow-thumb-04.jpg" alt="Production Workflow Deck Thumbnail 04">
+                <span class="ai-badge">AI / Process Deck</span>
+                <h3>Production Workflow Deck</h3>
+                <p>
+                    AI 기반으로 정리한 작업 공정표와 제작 프로세스를 PDF로 확인할 수 있는 문서입니다.
+                </p>
+                <div class="ai-link">View PDF ↗</div>
+            </a>
         </div>
 
         <div class="ai-meta">
@@ -714,10 +740,10 @@
                 AI Workflow<br>
                 Experimental Media
             </p>
-
         </div>
     </div>
 </section>
+
 
 <section id="experience">
     <h2>EXPERIENCE</h2>
