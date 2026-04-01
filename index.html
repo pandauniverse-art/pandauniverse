@@ -9,20 +9,21 @@
 
         :root {
             --bg-color: #000000;
-            --text-color: rgba(255, 255, 255, 0.85); 
+            --text-color: rgba(255, 255, 255, 0.85);
             --accent-color: rgba(255, 255, 255, 0.45);
-            --h1-size: 2.1rem;   
-            --p-size: 1.2rem;    
-            --letter-spacing: -1px; 
-            --fw-bold: 600;      
-            --fw-normal: 300;    
+            --h1-size: 2.1rem;
+            --p-size: 1.2rem;
+            --letter-spacing: -1px;
+            --fw-bold: 600;
+            --fw-normal: 300;
         }
 
         html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background-color: var(--bg-color); 
-            color: var(--text-color); 
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
             font-family: 'Inter', sans-serif;
             line-height: 1.15;
             -webkit-font-smoothing: antialiased;
@@ -146,7 +147,7 @@
             line-height: 1.8;
             color: rgba(255,255,255,0.78);
         }
-        
+
         .tool-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -263,6 +264,7 @@
             text-decoration: none;
             color: #fff;
             transition: 0.35s ease;
+            cursor: pointer;
         }
 
         .ai-card:hover {
@@ -322,6 +324,13 @@
             color: rgba(255,255,255,0.7);
             font-weight: 200;
             margin-bottom: 22px;
+        }
+
+        .ai-modal-frame {
+            width: 100%;
+            height: 80vh;
+            border: none;
+            background: #000;
         }
 
         .exp-container {
@@ -424,7 +433,7 @@
             white-space: pre-line;
             word-break: keep-all;
         }
-        
+
         .special-text-block {
             background: #080808;
             padding: 30px;
@@ -460,7 +469,7 @@
             border: 1px solid #111;
             display: block;
         }
-        
+
         .close-btn {
             position: fixed;
             top: 30px;
@@ -495,6 +504,7 @@
             .close-btn { right: 20px; }
             nav { padding: 24px 20px; gap: 18px; }
             section { padding: 80px 20px; }
+            .ai-modal-frame { height: 70vh; }
         }
     </style>
 </head>
@@ -616,7 +626,7 @@
     <h2>AI / INTERACTIVE MEDIA</h2>
 
     <div class="ai-feature">
-        <a class="ai-card" href="https://pandauniverse-art.github.io/Interactive-Media/" target="_blank" rel="noopener noreferrer">
+        <div class="ai-card" onclick="openAIModal()">
             <span class="ai-badge">Interactive / Generative</span>
             <h3>Interactive Media Experience</h3>
             <p>
@@ -624,7 +634,7 @@
                 기존 3D 작업을 확장한 별도 프로젝트입니다.
             </p>
             <div class="ai-link">Open Experience ↗</div>
-        </a>
+        </div>
 
         <div class="ai-meta">
             <h4>Section Note</h4>
@@ -655,7 +665,7 @@
     <div class="exp-container">
         <div>
             <span class="exp-category-title">Work Experience</span>
-            
+
             <div class="exp-item">
                 <h3>(주)에이플랜컴퍼니</h3>
                 <div class="comp-info">2024.04 - 2025.09 | 미디어팀 사원</div>
@@ -713,7 +723,7 @@
 
         <div>
             <span class="exp-category-title">Education & Achievement</span>
-            
+
             <div class="exp-item">
                 <h3>Book Publication</h3>
                 <div class="comp-info">Author | 『CINEMA 4D & OctaneRender』</div>
@@ -745,9 +755,9 @@
 <div id="projectModal" class="full-modal" onclick="closeProject()">
     <div class="modal-inner" onclick="event.stopPropagation()">
         <span class="close-btn" onclick="closeProject()">CLOSE</span>
-        
+
         <div id="videoContainer"></div>
-        
+
         <div class="project-meta">
             <div class="meta-group">
                 <h4 id="roleTitle">참여 업무</h4>
@@ -764,6 +774,20 @@
             <h3 style="font-weight:100; font-size:0.8rem; letter-spacing:3px; color:var(--accent-color); margin-bottom:30px;">PROJECT STILLS</h3>
             <div id="projectImages" class="image-grid"></div>
         </div>
+    </div>
+</div>
+
+<div id="aiModal" class="full-modal" onclick="closeAIModal()">
+    <div class="modal-inner" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeAIModal()">CLOSE</span>
+        <iframe
+            id="aiFrame"
+            class="ai-modal-frame"
+            src=""
+            loading="lazy"
+            allow="fullscreen; autoplay"
+            referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
     </div>
 </div>
 
@@ -812,14 +836,13 @@
                 content: "1부 빛을 깨우다\n2부 전주를 즐기다\n3부 전주를 비비다\n4부 전주의 빛으로 성당을 빚다 ★\n5부 전주를 빛으로 그리다"
             }
         },
-                unicef: {
+        unicef: {
             video: "RQ2Z5zdNbLI",
             role: "전체 스토리보드 제작, 리드 아티스트 (전체 70% 비중 담당), 맵핑 프로세스 정리",
             desc: "아시아나 항공사와 유니세프의 모금 활동 20주년을 기념한 행사로, 비행기의 리얼한 모습부터 조명이 들어오는 연출과 객실 내부 빛, 사람들이 직접 모금하는 장면을 그림자 아트로 표현했습니다.\n이후에는 예술 기획사의 연출적인 포인트에 집중하여 작업을 진행했습니다.\n\n맵핑 단계에서는 몸통, 엔진, 날개 부분들을 별도로 제작했으며, 블루라이트라는 중요한 행사 키워드가 있었기 때문에 전체 색감이 화려하면서도 푸른 계열과 잘 어울리도록 구성했습니다.\n실제 행사까지 고려하여 사운드 아티스트와 많은 컨택을 하며 진행했습니다.",
             folder: "Company/24.04_UNICEF-Asiana",
             images: ["UNICEF-Asiana_01.png", "UNICEF-Asiana_02.png", "UNICEF-Asiana_03.png", "UNICEF-Asiana_04.png", "UNICEF-Asiana_05.gif", "UNICEF-Asiana_06.gif", "UNICEF-Asiana_07.gif", "UNICEF-Asiana_08.gif", "UNICEF-Asiana_09.gif", "UNICEF-Asiana_10.gif", "UNICEF-Asiana_11.png", "UNICEF-Asiana_12.png", "UNICEF-Asiana_13.png", "UNICEF-Asiana_14.png", "UNICEF-Asiana_15.png", "UNICEF-Asiana_16.png", "UNICEF-Asiana_17.png"]
         },
-
         pinkspring: {
             video: "kJtE4o17MqM",
             role: "전체 기획 및 그래픽 제작 총괄",
@@ -888,17 +911,17 @@
         const roleText = document.getElementById('projectRole');
         const descText = document.getElementById('projectDesc');
         const specialContainer = document.getElementById('specialTextContainer');
-        
+
         const roleTitle = document.getElementById('roleTitle');
         const descTitle = document.getElementById('descTitle');
 
         const data = projectData[type];
-        
-        videoContainer.innerHTML = ''; 
-        imageContainer.innerHTML = ''; 
-        specialContainer.innerHTML = ''; 
 
-        if(data) {
+        videoContainer.innerHTML = '';
+        imageContainer.innerHTML = '';
+        specialContainer.innerHTML = '';
+
+        if (data) {
             if (data.videos && data.videos.length > 0) {
                 data.videos.forEach((vid, index) => {
                     const wrapper = document.createElement('div');
@@ -925,7 +948,7 @@
             roleText.innerText = data.role;
             descText.innerText = data.desc;
 
-            if(data.special) {
+            if (data.special) {
                 const block = document.createElement('div');
                 block.className = 'special-text-block';
                 block.innerHTML = `<h5>${data.special.title}</h5><p>${data.special.content}</p>`;
@@ -936,7 +959,7 @@
                 const img = document.createElement('img');
                 img.src = `images/${data.folder}/${fileName}`;
                 img.loading = "lazy";
-                
+
                 if (fileName.includes("Purpool Party_03")) {
                     img.style.gridColumn = "1 / -1";
                 }
@@ -944,7 +967,7 @@
                 imageContainer.appendChild(img);
             });
         }
-        
+
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
     }
@@ -952,8 +975,26 @@
     function closeProject() {
         const modal = document.getElementById('projectModal');
         const videoContainer = document.getElementById('videoContainer');
-        videoContainer.innerHTML = ''; 
+        videoContainer.innerHTML = '';
         modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    function openAIModal() {
+        const aiModal = document.getElementById('aiModal');
+        const aiFrame = document.getElementById('aiFrame');
+
+        aiFrame.src = "https://pandauniverse-art.github.io/Interactive-Media/";
+        aiModal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeAIModal() {
+        const aiModal = document.getElementById('aiModal');
+        const aiFrame = document.getElementById('aiFrame');
+
+        aiFrame.src = '';
+        aiModal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
 </script>
