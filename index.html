@@ -249,12 +249,9 @@
             letter-spacing: 1px;
         }
 
-        .ai-feature {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 30px;
-            align-items: stretch;
-        }
+     .ai-feature {
+    display: block;
+}
 
         .ai-card {
             display: block;
@@ -304,10 +301,15 @@
         }
 
         .ai-meta {
-            background: #080808;
-            border: 1px solid #111;
-            padding: 30px;
-        }
+    margin-top: 28px;
+    max-width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 20px;
+    background: #080808;
+    border: 1px solid #111;
+    padding: 30px;
+}
+
 
         .ai-meta h4 {
             font-size: 0.75rem;
@@ -543,8 +545,11 @@
         }
 .ai-card-stack {
     display: grid;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: start;
 }
+
 
 .ai-thumb {
     width: 100%;
@@ -558,11 +563,16 @@
 
         @media (max-width: 768px) {
             :root { --h1-size: 1.8rem; }
-            .grid, .image-grid, .exp-container, .ai-feature { grid-template-columns: 1fr; }
+            .grid, .image-grid, .exp-container { grid-template-columns: 1fr; }
             .close-btn { right: 20px; }
             nav { padding: 24px 20px; gap: 18px; }
             section { padding: 80px 20px; }
             .ai-modal-frame { height: 70vh; }
+            .ai-card-stack {
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
         }
     </style>
 </head>
