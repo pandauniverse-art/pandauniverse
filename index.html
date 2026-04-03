@@ -696,6 +696,11 @@
                 <div class="card"><img src="images/Personal/24.04_Particles universe Media Artv/Particles universe Media Art_04.png" alt="Particles universe Media Art"></div>
                 <div class="card-info"><div class="card-title">Particles universe Media Art</div><div class="card-tag">Personal Artwork</div></div>
             </div>
+            <div onclick="openProject('casual')">
+    <div class="card"><img src="images/Personal/25.07_casual/casual_02.png" alt="Isometric Daily Spaces"></div>
+    <div class="card-info"><div class="card-title">Isometric Daily Spaces</div><div class="card-tag">Personal Artwork</div></div>
+</div>
+
         </div>
     </div>
 </section>
@@ -968,7 +973,7 @@
             folder: "Personal/25.01_A Media Art Odyssey",
             images: Array.from({length: 18}, (_, i) => `A Media Art Odyssey_${String(i+1).padStart(2, '0')}.png`)
         },
-        particles: {
+               particles: {
             video: "wjkUzeLqQjU",
             role: "개인 작업 (Personal Artwork)",
             desc: "Overview\n\nAs the first media art work, not the existing motion graphics, I started with the idea of\nmaintaining the existing style and decorating the space created by the graphics.\nI kept thinking about how it would feel to have such a space, and I made the most of the\nsenses that could be felt in those spaces.\n\n기존의 모션그래픽이 아닌 첫 미디어 아트 작업으로써 기존에 스타일을 유지하며\n직접 그래픽으로 제작한 공간을 꾸며보고 싶다는 생각으로 시작하게 되었습니다.\n실제로 저런 공간이 있으면 어떤 느낌이 날까 하는 고민을 계속 했으며, 그 공간에서\n느낄 수 있는 감각을 최대한 살려서 제작했습니다.",
@@ -990,8 +995,50 @@
                 "Particles universe Media Art_14.png",
                 "Particles universe Media Art_15.png"
             ]
+        },
+        casual: {
+            video: null,
+            role: "개인 작업 (Personal Artwork)",
+            desc: `Isometric Daily Spaces
+
+As a media artist and 3D motion graphics designer, I'm constantly exploring the intersection between everyday experiences and imaginative worlds. "Isometric Daily Spaces" represents my personal journey through the environments where I spend most of my time and wish to linger longer. Each scene is a carefully crafted miniature world within the Panda Universe—transforming familiar spaces like cafes, creative studios, and gyms into stylized 3D narratives.
+
+Through isometric design and stylized rendering techniques, I blur the boundaries between reality and fantasy, creating spaces that feel both intimate and dreamlike. Every element, from lighting to color palette, reflects the warm and playful identity that defines the Panda Universe aesthetic. This collection showcases not just technical precision in 3D modeling, but a design philosophy: that the most meaningful art emerges from the spaces we call home.
+
+This project shows six daily spaces from my routine. These are places where I spend most of my time or want to spend more time. Each space is created with isometric 3D style to represent different parts of my day.
+
+미디어 아티스트이자 3D 모션그래픽 디자이너로서, 저는 일상의 경험과 상상의 세계가 만나는 지점을 탐구합니다.
+
+"Isometric Daily Spaces"는 제가 실제로 많은 시간을 보내고, 더 오래 머물고 싶은 공간들에 대한 개인적인 여정을 담았습니다. 각 씬은 판다유니버스 안에서 정교하게 제작된 미니어처 세계로, 카페, 창작 스튜디오, 헬스장 같은 익숙한 공간들을 스타일라이즈드 3D 내러티브로 변환했습니다.
+
+아이소메트릭 디자인과 스타일라이즈드 렌더링 기법을 통해 현실과 판타지의 경계를 흐리며, 친밀하면서도 몽환적인 공간들을 창조했습니다. 조명부터 컬러 팔레트까지 모든 요소는 판다유니버스 미학을 정의하는 따뜻하고 유쾌한 아이덴티티를 반영합니다.
+
+이 컬렉션은 3D 모델링의 기술적 정밀함뿐만 아니라, 하나의 디자인 철학을 보여줍니다: 가장 의미 있는 예술은 우리가 '집'이라고 부르는 공간에서 탄생한다는 것입니다.
+
+제 일상 루틴에서 나온 6가지 공간을 보여주는 프로젝트입니다. 제가 가장 많은 시간을 보내거나 더 많은 시간을 보내고 싶은 장소들입니다. 각 공간은 아이소메트릭 3D 스타일로 제작했습니다.`,
+            folder: "Personal/25.07_casual",
+            images: [
+                "casual_01.gif",
+                "casual_02.png",
+                "casual_03.gif",
+                "casual_03.png",
+                "casual_04.png",
+                "casual_05.png",
+                "casual_06.png",
+                "casual_07.png",
+                "casual_08.png",
+                "casual_09.png",
+                "casual_10.png",
+                "casual_11.png",
+                "casual_12.png",
+                "casual_13.png",
+                "casual_14.png",
+                "casual_15.png",
+                "casual_16.png"
+            ]
         }
     };
+
 
     function openProject(type) {
         const modal = document.getElementById('projectModal');
@@ -1026,7 +1073,8 @@
                 videoContainer.appendChild(wrapper);
             }
 
-            if (type === 'multiple' || type === 'golden' || type === 'odyssey' || type === 'particles') {
+            if (type === 'multiple' || type === 'golden' || type === 'odyssey' || type === 'particles' || type === 'casual') {
+
                 roleTitle.innerText = "프로젝트 유형";
                 descTitle.innerText = "프로젝트 설명";
             } else {
