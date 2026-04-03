@@ -1017,25 +1017,24 @@ This project shows six daily spaces from my routine. These are places where I sp
 
 제 일상 루틴에서 나온 6가지 공간을 보여주는 프로젝트입니다. 제가 가장 많은 시간을 보내거나 더 많은 시간을 보내고 싶은 장소들입니다. 각 공간은 아이소메트릭 3D 스타일로 제작했습니다.`,
             folder: "Personal/25.07_casual",
-            images: [
-                "casual_01.gif",
-                "casual_02.png",
-                "casual_03.gif",
-                "casual_03.png",
-                "casual_04.png",
-                "casual_05.png",
-                "casual_06.png",
-                "casual_07.png",
-                "casual_08.png",
-                "casual_09.png",
-                "casual_10.png",
-                "casual_11.png",
-                "casual_12.png",
-                "casual_13.png",
-                "casual_14.png",
-                "casual_15.png",
-                "casual_16.png"
-            ]
+       images: [
+    "casual_02.png",
+    "casual_03.png",
+    "casual_04.png",
+    "casual_05.png",
+    "casual_06.png",
+    "casual_07.png",
+    "casual_08.png",
+    "casual_09.png",
+    "casual_10.png",
+    "casual_11.png",
+    "casual_12.png",
+    "casual_13.png",
+    "casual_14.png",
+    "casual_15.png",
+    "casual_16.png"
+]
+
         }
     };
 
@@ -1054,8 +1053,15 @@ This project shows six daily spaces from my routine. These are places where I sp
         const data = projectData[type];
 
         videoContainer.innerHTML = '';
-        imageContainer.innerHTML = '';
-        specialContainer.innerHTML = '';
+imageContainer.innerHTML = '';
+specialContainer.innerHTML = '';
+
+if (type === 'casual') {
+    imageContainer.style.gridTemplateColumns = '1fr';
+} else {
+    imageContainer.style.gridTemplateColumns = '1fr 1fr';
+}
+
 
         if (data) {
             if (data.videos && data.videos.length > 0) {
