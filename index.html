@@ -709,28 +709,48 @@
     <h2>AI / INTERACTIVE MEDIA</h2>
 
     <div class="ai-feature">
-       <div class="ai-card-stack">
-    <div class="ai-card" onclick="openAIModal('https://pandauniverse-art.github.io/Interactive-Media/')">
-        <span class="ai-badge">Interactive / Generative</span>
-        <h3>Interactive Media Experience</h3>
-        <p>
-            AI 기반 생성형 비주얼, 인터랙티브한 공간감, 실험적 모션 흐름을 통해
-            기존 3D 작업을 확장한 별도 프로젝트입니다.
-        </p>
-        <div class="ai-link">Open Experience ↗</div>
-    </div>
+        <div class="ai-card-stack">
+            <div class="ai-card" onclick="openProject('car_drive')">
+    <img class="ai-thumb" src="images/Personal/25.07_car_drive/car_drive_02.gif" alt="AI Generated Lamborghini">
 
-    <div class="ai-card" onclick="openAIModal('Work_Process/Work_Process.pdf')">
-        <img class="ai-thumb" src="Work_Process/Process_04.PNG" alt="Production Workflow Deck Thumbnail 04">
-        <span class="ai-badge">AI / Process Deck</span>
-        <h3>Production Workflow Deck</h3>
-        <p>
-            AI 기반으로 정리한 작업 공정표와 제작 프로세스를 사이트 안에서 바로 확인할 수 있는 문서입니다.
-        </p>
-        <div class="ai-link">Open PDF In Site ↗</div>
-    </div>
-</div>
+                <span class="ai-badge">AI / Cinematic</span>
+                <h3>AI Generated Lamborghini | Sora × Genspark Cinematic Experience</h3>
+                <p>
+                    Sora와 Genspark를 활용한 AI 기반 시네마틱 자동차 비주얼 프로젝트입니다.
+                </p>
+                <div class="ai-link">Open Portfolio ↗</div>
+            </div>
 
+            <div class="ai-card" onclick="openProject('ai_flower')">
+                <img class="ai-thumb" src="images/Personal/24.05_ai_flower/ai_flower_01.gif" alt="A Flower Holds Light">
+                <span class="ai-badge">AI / Visual Series</span>
+                <h3>A Flower Holds Light</h3>
+                <p>
+                    빛을 품은 꽃의 이미지를 중심으로 전개한 AI 비주얼 시리즈입니다.
+                </p>
+                <div class="ai-link">Open Portfolio ↗</div>
+            </div>
+
+            <div class="ai-card" onclick="openAIModal('https://pandauniverse-art.github.io/Interactive-Media/')">
+                <span class="ai-badge">Interactive / Generative</span>
+                <h3>Interactive Media Experience</h3>
+                <p>
+                    AI 기반 생성형 비주얼, 인터랙티브한 공간감, 실험적 모션 흐름을 통해
+                    기존 3D 작업을 확장한 별도 프로젝트입니다.
+                </p>
+                <div class="ai-link">Open Experience ↗</div>
+            </div>
+
+            <div class="ai-card" onclick="openAIModal('Work_Process/Work_Process.pdf')">
+                <img class="ai-thumb" src="Work_Process/Process_04.PNG" alt="Production Workflow Deck Thumbnail 04">
+                <span class="ai-badge">AI / Process Deck</span>
+                <h3>Production Workflow Deck</h3>
+                <p>
+                    AI 기반으로 정리한 작업 공정표와 제작 프로세스를 사이트 안에서 바로 확인할 수 있는 문서입니다.
+                </p>
+                <div class="ai-link">Open PDF In Site ↗</div>
+            </div>
+        </div>
 
         <div class="ai-meta">
             <h4>Section Note</h4>
@@ -749,6 +769,7 @@
         </div>
     </div>
 </section>
+
 
 
 
@@ -1035,8 +1056,56 @@ This project shows six daily spaces from my routine. These are places where I sp
     "casual_16.png"
 ]
 
+                },
+            car_drive: {
+            video: "TLYGn5Se8sQ",
+            role: "AI 포트폴리오 (Sora × Genspark Cinematic Experience)",
+            desc: "AI Generated Lamborghini | Sora × Genspark Cinematic Experience\n\nSora와 Genspark를 활용한 AI 기반 시네마틱 자동차 비주얼 포트폴리오입니다.",
+            folder: "Personal/25.07_car_drive",
+            images: Array.from({ length: 17 }, (_, i) => `car_drive_${String(i + 1).padStart(2, '0')}.gif`)
+        },
+
+        ai_flower: {
+            video: null,
+            role: "AI 포트폴리오 (Visual Series)",
+            desc: "A Flower Holds Light\n\n빛을 품은 꽃의 이미지를 중심으로 전개한 AI 비주얼 시리즈입니다.",
+            folder: "Personal/24.05_ai_flower",
+            images: [
+                "ai_flower_01.gif",
+                "ai_flower_02.gif",
+                "ai_flower_03.gif",
+                "ai_flower_04.gif",
+                "ai_flower_05.gif",
+                "ai_flower_06.gif",
+                "ai_flower_07.gif",
+                "ai_flower_08.gif",
+                "ai_flower_09.gif",
+                "ai_flower_10.gif",
+                "ai_flower_11.gif",
+                "ai_flower_12.gif",
+                "ai_flower_13.gif",
+                "ai_flower_14.gif",
+                "ai_flower_17.gif",
+                "ai_flower_18.gif",
+                "ai_flower_19.gif",
+                "ai_flower_20.gif",
+                "ai_flower_21.gif",
+                "ai_flower_22.gif",
+                "ai_flower_23.gif",
+                "ai_flower_24.gif",
+                "ai_flower_25.gif",
+                "ai_flower_26.gif",
+                "ai_flower_27.gif",
+                "ai_flower_28.gif",
+                "ai_flower_29.gif",
+                "ai_flower_30_2.gif",
+                "ai_flower_31_2.gif",
+                "ai_flower_32_2.gif",
+                "ai_flower_33.gif"
+            ]
         }
     };
+
 
 
     function openProject(type) {
@@ -1079,7 +1148,16 @@ if (type === 'casual') {
                 videoContainer.appendChild(wrapper);
             }
 
-            if (type === 'multiple' || type === 'golden' || type === 'odyssey' || type === 'particles' || type === 'casual') {
+           if (
+    type === 'multiple' ||
+    type === 'golden' ||
+    type === 'odyssey' ||
+    type === 'particles' ||
+    type === 'casual' ||
+    type === 'car_drive' ||
+    type === 'ai_flower'
+) {
+
 
                 roleTitle.innerText = "프로젝트 유형";
                 descTitle.innerText = "프로젝트 설명";
