@@ -59,8 +59,21 @@
 
 .ai-card-stack {
     display: grid;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: start;
 }
+.ai-feature {
+    display: block;
+}
+
+.ai-meta {
+    margin-top: 28px;
+    max-width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 20px;
+}
+
 
 .ai-thumb {
     width: 100%;
@@ -101,9 +114,11 @@
         gap: 10px;
     }
 
-    .ai-card-stack {
+       .ai-card-stack {
+        grid-template-columns: 1fr;
         gap: 16px;
     }
+
 
     .ai-thumb {
         margin-bottom: 16px;
