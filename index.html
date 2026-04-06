@@ -484,11 +484,13 @@
 
 
 
-        .image-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
+       .image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    grid-auto-flow: dense;
+}
+
 
         .image-grid img {
             width: 100%;
@@ -1287,17 +1289,22 @@ if (type === 'casual') {
 
 
 
-            data.images.forEach(fileName => {
-                const img = document.createElement('img');
-                img.src = `images/${data.folder}/${fileName}`;
-                img.loading = "lazy";
+            data.images.forEach((fileName, index) => {
+    const img = document.createElement('img');
+    img.src = `images/${data.folder}/${fileName}`;
+    img.loading = "lazy";
 
-                if (fileName.includes("Purpool Party_03")) {
-                    img.style.gridColumn = "1 / -1";
-                }
+    if (fileName.includes("Purpool Party_03")) {
+        img.style.gridColumn = "1 / -1";
+    }
 
-                imageContainer.appendChild(img);
-            });
+    if (type === 'key_creativity' && [0, 3, 7].includes(index)) {
+        img.style.gridColumn = "1 / -1";
+    }
+
+    imageContainer.appendChild(img);
+});
+
         }
 
         modal.style.display = 'block';
