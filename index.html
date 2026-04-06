@@ -740,6 +740,12 @@
     <div class="card-info"><div class="card-title">Isometric Daily Spaces</div><div class="card-tag">Personal Artwork</div></div>
 </div>
 
+<div onclick="openProject('key_creativity')">
+    <div class="card"><img src="images/Personal/24.12_Personal Title Sequence (Key to creativity)/Key to creativity_02.gif" alt="Personal Title Sequence (Key to creativity)"></div>
+    <div class="card-info"><div class="card-title">Personal Title Sequence (Key to creativity)</div><div class="card-tag">Personal Artwork</div></div>
+</div>
+
+
         </div>
     </div>
 </section>
@@ -1094,6 +1100,46 @@ This project shows six daily spaces from my routine. These are places where I sp
 ]
 
                 },
+        key_creativity: {
+    video: "zkKS_xdVRxg",
+    role: "개인 작업 (Personal Artwork)",
+    desc: `This project started with a desire to do things that I wanted to do. I worked on it based on the keywords I wanted, such as machines, metals, robots, explosions, and freedom, and aimed at producing dense cuts from any angle.
+
+평소에 해보고 싶던 작업들을 해보고 싶은 욕심에서 시작한 프로젝트 입니다. 기계, 금속, 로봇, 폭발, 자유 등 원하는 키워드를 토대로 진행했으며, 어느 각도에서도 밀도 있는 컷이 나오는 것에 목적을 두고 작업했습니다.`,
+    folder: "Personal/24.12_Personal Title Sequence (Key to creativity)",
+    images: [
+        "Key to creativity_01.png",
+        "Key to creativity_02.gif",
+        "Key to creativity_03.gif",
+        "Key to creativity_04.gif",
+        "Key to creativity_05.gif",
+        "Key to creativity_06.gif",
+        "Key to creativity_07.gif",
+        "Key to creativity_08.gif",
+        "Key to creativity_09.gif",
+        "Key to creativity_11.png",
+        "Key to creativity_12.png",
+        "Key to creativity_13.png",
+        "Key to creativity_14.png",
+        "Key to creativity_15.png",
+        "Key to creativity_16.png",
+        "Key to creativity_17.png",
+        "Key to creativity_18.png",
+        "Key to creativity_19.png",
+        "Key to creativity_20.png",
+        "Key to creativity_21.png",
+        "Key to creativity_22.png",
+        "Key to creativity_23.png",
+        "Key to creativity_24.png",
+        "Key to creativity_25.png",
+        "Key to creativity_26.png",
+        "Key to creativity_27.png",
+        "Key to creativity_28.png",
+        "Key to creativity_29.png",
+        "unnamed.jpg"
+    ]
+},
+
             car_drive: {
             video: "TLYGn5Se8sQ",
             role: "AI 포트폴리오 (Sora × Genspark Cinematic Experience)",
@@ -1185,15 +1231,17 @@ if (type === 'casual') {
                 videoContainer.appendChild(wrapper);
             }
 
-           if (
+                     if (
     type === 'multiple' ||
     type === 'golden' ||
     type === 'odyssey' ||
     type === 'particles' ||
     type === 'casual' ||
+    type === 'key_creativity' ||
     type === 'car_drive' ||
     type === 'ai_flower'
 ) {
+
 
 
                 roleTitle.innerText = "프로젝트 유형";
