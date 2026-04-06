@@ -300,15 +300,14 @@
             color: rgba(255,255,255,0.9);
         }
 
-        .ai-meta {
-    margin-top: 28px;
-    max-width: 100%;
-    border-top: 1px solid rgba(255,255,255,0.12);
-    padding-top: 20px;
-    background: #080808;
-    border: 1px solid #111;
-    padding: 30px;
-}
+               .ai-meta {
+            margin-top: 28px;
+            max-width: 100%;
+            background: #080808;
+            border: 1px solid #111;
+            padding: 30px;
+        }
+
 
 
         .ai-meta h4 {
@@ -458,6 +457,36 @@
             color: rgba(255,255,255,0.6);
             white-space: pre-line;
         }
+        .project-link-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.project-link-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.02);
+    transition: 0.3s ease;
+}
+
+.project-link-btn:hover {
+    border-color: rgba(255,255,255,0.35);
+    color: #fff;
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.05);
+}
+
 
         .image-grid {
             display: grid;
@@ -922,16 +951,32 @@
             images: ["LANCOME_01.png", "LANCOME_02.png", "LANCOME_03.png", "LANCOME_04.png", "LANCOME_05.png", "LANCOME_06.png"]
         },
         housing: {
-            video: "FUOCDv6eNKo",
-            role: "컬러퀸 : 전체 컨텐츠 중 샹들리에, 뒷면 투명 디스프레이 컨텐츠 제작 (참여율 40%)\n즐길락 : 원형 컨텐츠 중 샹들리에, 투명 디스플레이 일부 컨텐츠 제작 (참여율 30%)",
-            desc: "해당 컨텐츠는 랜드코퍼레이션에서 청년들을 위한 비스타동원 주택을 건설하며 시설 내의 거주자들에게 흥미로운 컨텐츠를 상영하기 위해 제작되었습니다. 에이플랜컴퍼니측에서 컨텐츠 관련 시설 및 컨텐츠를 제작했습니다.\n일정 시간마다 시작되는 \"시그널 넥서스\", \"즐길락\", \"컬러퀸\" 미디어쇼가 상영되며 해당 쇼들이 상영되지 않는 시간동안은 상시 컨텐츠로 비가 내리거나, 우주가 보이는 등 시청자들의 지루함을 달래는 컨텐츠가 기획되어 있으며 하단 원형 디스플레이의 경우 상시 컨텐츠에선 인터렉티브한 컨텐츠로 제작되었습니다.\n제작에 참여한 컬러퀸 컨텐츠의 경우 심심하고 반복적인 지루한 도심에서 색이 입혀지며 사람들이 지루함을 벗어나 활기를 되찾고, 더 재미있고 흥미있는 일상을 기대할 수 있게 기획됐으며, 즐길락 컨텐츠는 수묵화로 시작하여 사물놀이를 비롯한 현대미술의 모든 조화로움을 시청하게끔 기획했습니다. 투명 디스플레이와 상들리에의 경우 일정 위치에서 시청했을 때 원형 디스플레이와 잘 어울리는 부분을 많이 고려하여 제작했습니다.",
-            folder: "Company/24.01_Youth Security Housing",
-            images: ["Housing_01.png", "Housing_02.png", "Housing_03.png", "Housing_04.png", "Housing_05.png", "Housing_06.png", "Housing_07.png", "Housing_08.png", "Housing_09.png", "Housing_10.png", "Housing_11.png", "Housing_12.png", "Housing_14.png", "Housing_15.png", "Housing_16.png", "Housing_17.png", "Housing_18.png", "Housing_19.png", "Housing_20.png"],
-            special: {
-                title: "컨텐츠 정보",
-                content: "▪ 컨텐츠 종류: 상시 컨텐츠, 미디어 쇼 컨텐츠 (3가지 쇼 교차 상영)\n▪ 미디어 쇼 구성: 모객, 인트로, 후킹, 메인 순서\n▪ 하드웨어: 벽면 컨텐츠, 원형 컨텐츠, 투명 디스플레이, 샹들리에"
-            }
+    video: "FUOCDv6eNKo",
+    role: "컬러퀸 : 전체 컨텐츠 중 샹들리에, 뒷면 투명 디스프레이 컨텐츠 제작 (참여율 40%)\n즐길락 : 원형 컨텐츠 중 샹들리에, 투명 디스플레이 일부 컨텐츠 제작 (참여율 30%)",
+    desc: "해당 컨텐츠는 랜드코퍼레이션에서 청년들을 위한 비스타동원 주택을 건설하며 시설 내의 거주자들에게 흥미로운 컨텐츠를 상영하기 위해 제작되었습니다. 에이플랜컴퍼니측에서 컨텐츠 관련 시설 및 컨텐츠를 제작했습니다.\n일정 시간마다 시작되는 \"시그널 넥서스\", \"즐길락\", \"컬러퀸\" 미디어쇼가 상영되며 해당 쇼들이 상영되지 않는 시간동안은 상시 컨텐츠로 비가 내리거나, 우주가 보이는 등 시청자들의 지루함을 달래는 컨텐츠가 기획되어 있으며 하단 원형 디스플레이의 경우 상시 컨텐츠에선 인터렉티브한 컨텐츠로 제작되었습니다.\n제작에 참여한 컬러퀸 컨텐츠의 경우 심심하고 반복적인 지루한 도심에서 색이 입혀지며 사람들이 지루함을 벗어나 활기를 되찾고, 더 재미있고 흥미있는 일상을 기대할 수 있게 기획됐으며, 즐길락 컨텐츠는 수묵화로 시작하여 사물놀이를 비롯한 현대미술의 모든 조화로움을 시청하게끔 기획했습니다. 투명 디스플레이와 상들리에의 경우 일정 위치에서 시청했을 때 원형 디스플레이와 잘 어울리는 부분을 많이 고려하여 제작했습니다.",
+    folder: "Company/24.01_Youth Security Housing",
+    images: [
+        "Housing_01.png", "Housing_02.png", "Housing_03.png", "Housing_04.png", "Housing_05.png",
+        "Housing_06.png", "Housing_07.png", "Housing_08.png", "Housing_09.png", "Housing_10.png",
+        "Housing_11.png", "Housing_12.png", "Housing_14.png", "Housing_15.png", "Housing_16.png",
+        "Housing_17.png", "Housing_18.png", "Housing_19.png", "Housing_20.png"
+    ],
+    special: {
+        title: "컨텐츠 정보",
+        content: "▪ 컨텐츠 종류: 상시 컨텐츠, 미디어 쇼 컨텐츠 (3가지 쇼 교차 상영)\n▪ 미디어 쇼 구성: 모객, 인트로, 후킹, 메인 순서\n▪ 하드웨어: 벽면 컨텐츠, 원형 컨텐츠, 투명 디스플레이, 샹들리에"
+    },
+    extraVideos: [
+        {
+            title: "청년주택 참여 영상 01",
+            url: "https://www.youtube.com/watch?v=4S83hplBnjI"
         },
+        {
+            title: "청년주택 참여 영상 02",
+            url: "https://www.youtube.com/watch?v=8xgPYrSDor4"
+        }
+    ]
+},
+
         jeonju: {
             video: "_FiQtCwXH6M",
             role: "4부 전주의 빛으로 성당을 빚다 파트 기획 및 총 제작 담당.\n연출 포인트 및 맵핑용 모델링 디테일 수정 담당.",
@@ -1120,7 +1165,7 @@ specialContainer.innerHTML = '';
 if (type === 'casual') {
     imageContainer.style.gridTemplateColumns = '1fr';
 } else {
-    imageContainer.style.gridTemplateColumns = '1fr 1fr';
+    imageContainer.style.gridTemplateColumns = '';
 }
 
 
@@ -1161,12 +1206,29 @@ if (type === 'casual') {
             roleText.innerText = data.role;
             descText.innerText = data.desc;
 
-            if (data.special) {
+                       if (data.special) {
                 const block = document.createElement('div');
                 block.className = 'special-text-block';
                 block.innerHTML = `<h5>${data.special.title}</h5><p>${data.special.content}</p>`;
                 specialContainer.appendChild(block);
             }
+
+            if (data.extraVideos && data.extraVideos.length > 0) {
+                const linkBlock = document.createElement('div');
+                linkBlock.className = 'special-text-block';
+                linkBlock.innerHTML = `
+                    <h5>추가 참여 영상</h5>
+                    <div class="project-link-list">
+                        ${data.extraVideos.map(item => `
+                            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                                ${item.title} ↗
+                            </a>
+                        `).join('')}
+                    </div>
+                `;
+                specialContainer.appendChild(linkBlock);
+            }
+
 
             data.images.forEach(fileName => {
                 const img = document.createElement('img');
