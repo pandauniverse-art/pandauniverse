@@ -457,35 +457,31 @@
             color: rgba(255,255,255,0.6);
             white-space: pre-line;
         }
-        .project-link-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 10px;
+            .extra-video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
 }
 
-.project-link-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 16px;
-    border: 1px solid rgba(255,255,255,0.12);
-    color: rgba(255,255,255,0.82);
-    text-decoration: none;
+.extra-video-item iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    display: block;
+    background: #000;
+}
+
+.extra-video-caption {
+    margin-top: 10px;
     font-size: 0.78rem;
     font-weight: 300;
     letter-spacing: 1px;
+    color: rgba(255,255,255,0.72);
     text-transform: uppercase;
-    background: rgba(255,255,255,0.02);
-    transition: 0.3s ease;
 }
 
-.project-link-btn:hover {
-    border-color: rgba(255,255,255,0.35);
-    color: #fff;
-    transform: translateY(-2px);
-    background: rgba(255,255,255,0.05);
-}
+
 
 
         .image-grid {
@@ -590,19 +586,23 @@
     background: #111;
 }
 
-        @media (max-width: 768px) {
-            :root { --h1-size: 1.8rem; }
-            .grid, .image-grid, .exp-container { grid-template-columns: 1fr; }
-            .close-btn { right: 20px; }
-            nav { padding: 24px 20px; gap: 18px; }
-            section { padding: 80px 20px; }
-            .ai-modal-frame { height: 70vh; }
-            .ai-card-stack {
-    grid-template-columns: 1fr;
-    gap: 16px;
+              @media (max-width: 768px) {
+    :root { --h1-size: 1.8rem; }
+    .grid, .image-grid, .exp-container { grid-template-columns: 1fr; }
+    .close-btn { right: 20px; }
+    nav { padding: 24px 20px; gap: 18px; }
+    section { padding: 80px 20px; }
+    .ai-modal-frame { height: 70vh; }
+    .ai-card-stack {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .extra-video-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-        }
     </style>
 </head>
 <body>
@@ -1213,21 +1213,30 @@ if (type === 'casual') {
                 specialContainer.appendChild(block);
             }
 
-            if (data.extraVideos && data.extraVideos.length > 0) {
-                const linkBlock = document.createElement('div');
-                linkBlock.className = 'special-text-block';
-                linkBlock.innerHTML = `
+                       if (data.extraVideos && data.extraVideos.length > 0) {
+                const videoBlock = document.createElement('div');
+                videoBlock.className = 'special-text-block';
+                videoBlock.innerHTML = `
                     <h5>추가 참여 영상</h5>
-                    <div class="project-link-list">
+                    <div class="extra-video-grid">
                         ${data.extraVideos.map(item => `
-                            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="project-link-btn">
-                                ${item.title} ↗
-                            </a>
+                            <div class="extra-video-item">
+                                <iframe
+                                    src="${item.url.replace('watch?v=', 'embed/')}"
+                                    title="${item.title}"
+                                    loading="lazy"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen>
+                                </iframe>
+                                <div class="extra-video-caption">${item.title}</div>
+                            </div>
                         `).join('')}
                     </div>
                 `;
-                specialContainer.appendChild(linkBlock);
+                specialContainer.appendChild(videoBlock);
             }
+
 
 
             data.images.forEach(fileName => {
