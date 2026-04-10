@@ -739,9 +739,10 @@
 </div>
 
 <div onclick="openProject('world_travel')">
-    <div class="card"><img src="images/Personal/24.07_World Travel Media Art/World Travel_43" alt="World Travel Media Art"></div>
+    <div class="card"><img src="images/Personal/24.07_World Travel Media Art/World Travel_43.png" alt="World Travel Media Art"></div>
     <div class="card-info"><div class="card-title">World Travel Media Art</div><div class="card-tag">Personal Artwork</div></div>
 </div>
+
 
 <div onclick="openProject('casual')">
 
@@ -1285,11 +1286,12 @@ This project shows six daily spaces from my routine. These are places where I sp
 imageContainer.innerHTML = '';
 specialContainer.innerHTML = '';
 
-if (type === 'casual') {
+if (type === 'casual' || type === 'world_travel') {
     imageContainer.style.gridTemplateColumns = '1fr';
 } else {
     imageContainer.style.gridTemplateColumns = '';
 }
+
 
 
            if (data) {
