@@ -733,11 +733,18 @@
                 <div class="card"><img src="images/Personal/25.01_A Media Art Odyssey/A Media Art Odyssey_01.png" alt="A Media Art Odyssey"></div>
                 <div class="card-info"><div class="card-title">A Media Art Odyssey</div><div class="card-tag">Personal Artwork</div></div>
             </div>
-            <div onclick="openProject('particles')">
-                <div class="card"><img src="images/Personal/24.04_Particles universe Media Artv/Particles universe Media Art_04.png" alt="Particles universe Media Art"></div>
-                <div class="card-info"><div class="card-title">Particles universe Media Art</div><div class="card-tag">Personal Artwork</div></div>
-            </div>
-            <div onclick="openProject('casual')">
+           <div onclick="openProject('particles')">
+    <div class="card"><img src="images/Personal/24.04_Particles universe Media Artv/Particles universe Media Art_04.png" alt="Particles universe Media Art"></div>
+    <div class="card-info"><div class="card-title">Particles universe Media Art</div><div class="card-tag">Personal Artwork</div></div>
+</div>
+
+<div onclick="openProject('world_travel')">
+    <div class="card"><img src="images/Personal/24.07_World Travel Media Art/World Travel_43" alt="World Travel Media Art"></div>
+    <div class="card-info"><div class="card-title">World Travel Media Art</div><div class="card-tag">Personal Artwork</div></div>
+</div>
+
+<div onclick="openProject('casual')">
+
     <div class="card"><img src="images/Personal/25.07_casual/casual_02.png" alt="Isometric Daily Spaces"></div>
     <div class="card-info"><div class="card-title">Isometric Daily Spaces</div><div class="card-tag">Personal Artwork</div></div>
 </div>
@@ -1039,7 +1046,7 @@
             folder: "Personal/25.01_A Media Art Odyssey",
             images: Array.from({length: 18}, (_, i) => `A Media Art Odyssey_${String(i+1).padStart(2, '0')}.png`)
         },
-               particles: {
+                     particles: {
             video: "wjkUzeLqQjU",
             role: "개인 작업 (Personal Artwork)",
             desc: "Overview\n\nAs the first media art work, not the existing motion graphics, I started with the idea of\nmaintaining the existing style and decorating the space created by the graphics.\nI kept thinking about how it would feel to have such a space, and I made the most of the\nsenses that could be felt in those spaces.\n\n기존의 모션그래픽이 아닌 첫 미디어 아트 작업으로써 기존에 스타일을 유지하며\n직접 그래픽으로 제작한 공간을 꾸며보고 싶다는 생각으로 시작하게 되었습니다.\n실제로 저런 공간이 있으면 어떤 느낌이 날까 하는 고민을 계속 했으며, 그 공간에서\n느낄 수 있는 감각을 최대한 살려서 제작했습니다.",
@@ -1062,7 +1069,75 @@
                 "Particles universe Media Art_15.png"
             ]
         },
+
+        world_travel: {
+            embedVideos: [
+                "https://www.youtube.com/embed/dktR2GlvwyY?autoplay=1&rel=0",
+                "https://player.vimeo.com/video/980975483?h=f08a428212"
+            ],
+            role: "개인 작업 (Personal Artwork)",
+            desc: `My own media art
+
+Overview
+
+인위적으로 제작한 저의 공간에 저만의 세계관을 표현하고 싶었습니다.
+개인적으로 운영하는 유튜브 채널, 개인의 아이덴티티와
+저만의 모든 세계관과 질서를 표현하여 그 공간들이 서로 이어져있음을
+표현하며 제작했습니다.
+
+I wanted to express my own worldview in my artificially created space.
+I created a YouTube channel that I run personally, my identity,
+and all my own worldview and order to express that the spaces
+are connected to each other.`,
+            folder: "Personal/24.07_World Travel Media Art",
+            images: [
+                "World Travel_01.png",
+                "World Travel_02.gif",
+                "World Travel_03.png",
+                "World Travel_04.png",
+                "World Travel_05.png",
+                "World Travel_06.png",
+                "World Travel_07.gif",
+                "World Travel_08.gif",
+                "World Travel_09.gif",
+                "World Travel_10.gif",
+                "World Travel_11.gif",
+                "World Travel_12.gif",
+                "World Travel_13.jpg",
+                "World Travel_14.jpg",
+                "World Travel_15.jpg",
+                "World Travel_16.jpg",
+                "World Travel_17.jpg",
+                "World Travel_18.jpg",
+                "World Travel_19.jpg",
+                "World Travel_20.jpg",
+                "World Travel_21.jpg",
+                "World Travel_22.jpg",
+                "World Travel_23.jpg",
+                "World Travel_24.jpg",
+                "World Travel_25.jpg",
+                "World Travel_26.jpg",
+                "World Travel_27.jpg",
+                "World Travel_28.jpg",
+                "World Travel_29.jpg",
+                "World Travel_30.jpg",
+                "World Travel_31.jpg",
+                "World Travel_32.jpg",
+                "World Travel_33.jpg",
+                "World Travel_34.jpg",
+                "World Travel_35.PNG",
+                "World Travel_36.PNG",
+                "World Travel_37.PNG",
+                "World Travel_38.gif",
+                "World Travel_39.gif",
+                "World Travel_40.gif",
+                "World Travel_41.gif",
+                "World Travel_42.gif"
+            ]
+        },
+
         casual: {
+
             video: null,
             role: "개인 작업 (Personal Artwork)",
             desc: `Isometric Daily Spaces
@@ -1217,8 +1292,15 @@ if (type === 'casual') {
 }
 
 
-        if (data) {
-            if (data.videos && data.videos.length > 0) {
+           if (data) {
+            if (data.embedVideos && data.embedVideos.length > 0) {
+                data.embedVideos.forEach((url) => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'video-box';
+                    wrapper.innerHTML = `<iframe width="100%" height="100%" src="${url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+                    videoContainer.appendChild(wrapper);
+                });
+            } else if (data.videos && data.videos.length > 0) {
                 data.videos.forEach((vid, index) => {
                     const wrapper = document.createElement('div');
                     wrapper.className = 'video-box';
@@ -1233,16 +1315,19 @@ if (type === 'casual') {
                 videoContainer.appendChild(wrapper);
             }
 
-                     if (
+
+if (
     type === 'multiple' ||
     type === 'golden' ||
     type === 'odyssey' ||
     type === 'particles' ||
+    type === 'world_travel' ||
     type === 'casual' ||
     type === 'key_creativity' ||
     type === 'car_drive' ||
     type === 'ai_flower'
 ) {
+
 
 
 
