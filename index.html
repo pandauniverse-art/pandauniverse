@@ -401,11 +401,22 @@
         }
 
         .video-box {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: #000;
-            margin-bottom: 40px;
-        }
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000;
+    margin-bottom: 40px;
+}
+
+#videoContainer.video-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+#videoContainer.video-grid-2 .video-box {
+    margin-bottom: 0;
+}
+
 
         .project-meta {
             margin-bottom: 60px;
@@ -600,10 +611,15 @@
         gap: 16px;
     }
 
-    .extra-video-grid {
+     .extra-video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #videoContainer.video-grid-2 {
         grid-template-columns: 1fr;
     }
 }
+
 
     </style>
 </head>
@@ -773,15 +789,23 @@
                 <div class="ai-link">Open Portfolio ↗</div>
             </div>
 
-            <div class="ai-card" onclick="openProject('ai_flower')">
-                <img class="ai-thumb" src="images/Personal/24.05_ai_flower/ai_flower_01.gif" alt="A Flower Holds Light">
-                <span class="ai-badge">AI / Visual Series</span>
-                <h3>A Flower Holds Light</h3>
-                <p>빛을 품은 꽃의 이미지를 중심으로 전개한 AI 비주얼 시리즈입니다.</p>
-                <div class="ai-link">Open Portfolio ↗</div>
-            </div>
+          <div class="ai-card" onclick="openProject('ai_flower')">
+    <img class="ai-thumb" src="images/Personal/24.05_ai_flower/ai_flower_01.gif" alt="A Flower Holds Light">
+    <span class="ai-badge">AI / Visual Series</span>
+    <h3>A Flower Holds Light</h3>
+    <p>빛을 품은 꽃의 이미지를 중심으로 전개한 AI 비주얼 시리즈입니다.</p>
+    <div class="ai-link">Open Portfolio ↗</div>
+</div>
 
-            <div class="ai-card" onclick="openAIModal('https://pandauniverse-art.github.io/Interactive-Media/')">
+<div class="ai-card" onclick="openProject('musical_artwork')">
+    <span class="ai-badge">AI / Musical Artwork</span>
+    <h3>Musical Artwork</h3>
+    <p>앰비언트 음악에서 출발한 AI 아트워크 컬렉션입니다.</p>
+    <div class="ai-link">Open Portfolio ↗</div>
+</div>
+
+<div class="ai-card" onclick="openAIModal('https://pandauniverse-art.github.io/Interactive-Media/')">
+
                 <span class="ai-badge">Interactive / Generative</span>
                 <h3>Interactive Media Experience</h3>
                 <p>AI 기반 생성형 비주얼, 인터랙티브한 공간감, 실험적 모션 흐름을 통해 기존 3D 작업을 확장한 별도 프로젝트입니다.</p>
@@ -1218,7 +1242,7 @@ This project shows six daily spaces from my routine. These are places where I sp
     ]
 },
 
-            car_drive: {
+                  car_drive: {
             video: "TLYGn5Se8sQ",
             role: "AI 포트폴리오 (Sora × Genspark Cinematic Experience)",
             desc: "AI Generated Lamborghini | Sora × Genspark Cinematic Experience\n\nSora와 Genspark를 활용한 AI 기반 시네마틱 자동차 비주얼 포트폴리오입니다.",
@@ -1226,7 +1250,29 @@ This project shows six daily spaces from my routine. These are places where I sp
             images: Array.from({ length: 17 }, (_, i) => `car_drive_${String(i + 1).padStart(2, '0')}.gif`)
         },
 
+        musical_artwork: {
+            videos: [
+                "Oo3iJvMze04",
+                "U79DwsSRwbA",
+                "L_ZkFZvBC90",
+                "Or7iBGOZysw",
+                "KtlUyH_JE2w",
+                "BQ6zKudFWpc"
+            ],
+            videoLayout: "grid-2",
+            role: "AI 포트폴리오 (Musical Artwork Collection)",
+            desc: `Musical Artwork Collection
+
+A collection of AI artworks inspired by ambient music.
+
+Visual interpretations of everyday moments and peaceful atmospheres.
+
+앰비언트 음악을 들으며 떠오른 이미지들을 담은 개인 컬렉션입니다.`,
+            images: []
+        },
+
         ai_flower: {
+
             video: null,
             role: "AI 포트폴리오 (Visual Series)",
             desc: "A Flower Holds Light\n\n빛을 품은 꽃의 이미지를 중심으로 전개한 AI 비주얼 시리즈입니다.",
@@ -1268,6 +1314,57 @@ This project shows six daily spaces from my routine. These are places where I sp
     };
 
 
+let ytPlayers = [];
+let ytApiRequested = false;
+
+function destroyYouTubePlayers() {
+    ytPlayers.forEach(player => {
+        try { player.destroy(); } catch (e) {}
+    });
+    ytPlayers = [];
+}
+
+function bindYouTubePlayers() {
+    if (!(window.YT && window.YT.Player)) return;
+
+    ytPlayers = [];
+    const frames = document.querySelectorAll('#videoContainer iframe[data-youtube-player="true"]');
+
+    frames.forEach(frame => {
+        const player = new YT.Player(frame, {
+            events: {
+                onStateChange: function (event) {
+                    if (event.data === YT.PlayerState.PLAYING) {
+                        ytPlayers.forEach(otherPlayer => {
+                            if (otherPlayer !== player) {
+                                try { otherPlayer.pauseVideo(); } catch (e) {}
+                            }
+                        });
+                    }
+                }
+            }
+        });
+        ytPlayers.push(player);
+    });
+}
+
+function ensureYouTubeAPI() {
+    if (window.YT && window.YT.Player) {
+        bindYouTubePlayers();
+        return;
+    }
+
+    if (!ytApiRequested) {
+        ytApiRequested = true;
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        document.head.appendChild(tag);
+    }
+}
+
+window.onYouTubeIframeAPIReady = function () {
+    bindYouTubePlayers();
+};
 
     function openProject(type) {
         const modal = document.getElementById('projectModal');
@@ -1280,42 +1377,89 @@ This project shows six daily spaces from my routine. These are places where I sp
         const roleTitle = document.getElementById('roleTitle');
         const descTitle = document.getElementById('descTitle');
 
-        const data = projectData[type];
+       const data = projectData[type];
+if (!data) return;
 
-        videoContainer.innerHTML = '';
+destroyYouTubePlayers();
+videoContainer.innerHTML = '';
 imageContainer.innerHTML = '';
 specialContainer.innerHTML = '';
+videoContainer.className = '';
 
-if (type === 'casual' || type === 'world_travel') {
-    imageContainer.style.gridTemplateColumns = '1fr';
-} else {
-    imageContainer.style.gridTemplateColumns = '';
+
+        if (type === 'casual' || type === 'world_travel') {
+            imageContainer.style.gridTemplateColumns = '1fr';
+        } else {
+            imageContainer.style.gridTemplateColumns = '';
+        }
+
+
+
+
+                 if (data) {
+    if (data.videoLayout === 'grid-2') {
+        videoContainer.classList.add('video-grid-2');
+    }
+
+    if (data.embedVideos && data.embedVideos.length > 0) {
+        data.embedVideos.forEach(url => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'video-box';
+            wrapper.innerHTML = `
+                <iframe
+                    width="100%"
+                    height="100%"
+                    src="${url}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                    allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin">
+                </iframe>
+            `;
+            videoContainer.appendChild(wrapper);
+        });
+    } else if (data.videos && data.videos.length > 0) {
+        data.videos.forEach((vid, i) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'video-box';
+            wrapper.innerHTML = `
+                <iframe
+                    data-youtube-player="true"
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/${vid}?autoplay=${i === 0 ? 1 : 0}&enablejsapi=1&rel=0"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            `;
+            videoContainer.appendChild(wrapper);
+        });
+
+        ensureYouTubeAPI();
+    } else if (data.video) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'video-box';
+        wrapper.innerHTML = `
+            <iframe
+                data-youtube-player="true"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/${data.video}?autoplay=1&enablejsapi=1&rel=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        `;
+        videoContainer.appendChild(wrapper);
+
+        ensureYouTubeAPI();
+    }
 }
 
 
-
-           if (data) {
-            if (data.embedVideos && data.embedVideos.length > 0) {
-                data.embedVideos.forEach((url) => {
-                    const wrapper = document.createElement('div');
-                    wrapper.className = 'video-box';
-                    wrapper.innerHTML = `<iframe width="100%" height="100%" src="${url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
-                    videoContainer.appendChild(wrapper);
-                });
-            } else if (data.videos && data.videos.length > 0) {
-                data.videos.forEach((vid, index) => {
-                    const wrapper = document.createElement('div');
-                    wrapper.className = 'video-box';
-                    const autoPlayParam = (index === 0) ? "?autoplay=1" : "?autoplay=0";
-                    wrapper.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${vid}${autoPlayParam}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-                    videoContainer.appendChild(wrapper);
-                });
-            } else if (data.video) {
-                const wrapper = document.createElement('div');
-                wrapper.className = 'video-box';
-                wrapper.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${data.video}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-                videoContainer.appendChild(wrapper);
-            }
 
 
 if (
@@ -1327,8 +1471,10 @@ if (
     type === 'casual' ||
     type === 'key_creativity' ||
     type === 'car_drive' ||
+    type === 'musical_artwork' ||
     type === 'ai_flower'
 ) {
+
 
 
 
@@ -1398,13 +1544,22 @@ if (
         document.body.style.overflow = 'hidden';
     }
 
-    function closeProject() {
-        const modal = document.getElementById('projectModal');
-        const videoContainer = document.getElementById('videoContainer');
-        videoContainer.innerHTML = '';
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
+function closeProject() {
+    const modal = document.getElementById('projectModal');
+    const videoContainer = document.getElementById('videoContainer');
+    const imageContainer = document.getElementById('projectImages');
+    const specialContainer = document.getElementById('specialTextContainer');
+
+    destroyYouTubePlayers();
+    videoContainer.innerHTML = '';
+    videoContainer.className = '';
+    imageContainer.innerHTML = '';
+    specialContainer.innerHTML = '';
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+
 
    function openAIModal(url) {
     const aiModal = document.getElementById('aiModal');
