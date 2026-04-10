@@ -1378,8 +1378,9 @@ window.onYouTubeIframeAPIReady = function () {
         const roleTitle = document.getElementById('roleTitle');
         const descTitle = document.getElementById('descTitle');
 
-       const data = projectData[type];
+     const data = projectData[type];
 if (!data) return;
+
 
 destroyYouTubePlayers();
 videoContainer.innerHTML = '';
@@ -1439,7 +1440,7 @@ videoContainer.className = '';
         });
 
         ensureYouTubeAPI();
-    } else if (data.video) {
+       } else if (data.video) {
         const wrapper = document.createElement('div');
         wrapper.className = 'video-box';
         wrapper.innerHTML = `
@@ -1458,13 +1459,10 @@ videoContainer.className = '';
 
         ensureYouTubeAPI();
     }
-}
 
+    if (
+        type === 'multiple' ||
 
-
-
-if (
-    type === 'multiple' ||
     type === 'golden' ||
     type === 'odyssey' ||
     type === 'particles' ||
