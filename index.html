@@ -1768,22 +1768,27 @@ Visual interpretations of everyday moments and peaceful atmospheres.
             specialContainer.appendChild(videoBlock);
         }
 
-        (data.images || []).forEach((fileName, index) => {
-            const img = document.createElement('img');
-            img.src = `images/${data.folder}/${fileName}`;
-            img.loading = 'lazy';
-            img.alt = `${type} still ${index + 1}`;
+       (data.images || []).forEach((fileName, index) => {
+    const img = document.createElement('img');
+    img.src = `images/${data.folder}/${fileName}`;
+    img.loading = 'lazy';
+    img.alt = `${type} still ${index + 1}`;
 
-            if (fileName.includes('Purpool Party_03')) {
-                img.style.gridColumn = '1 / -1';
-            }
+    if (fileName.includes('Purpool Party_03')) {
+        img.style.gridColumn = '1 / -1';
+    }
 
-            if (type === 'key_creativity' && [0, 3, 7].includes(index)) {
-                img.style.gridColumn = '1 / -1';
-            }
+    if (type === 'key_creativity' && [0, 3, 7].includes(index)) {
+        img.style.gridColumn = '1 / -1';
+    }
 
-            imageContainer.appendChild(img);
-        });
+    if (type === 'particles' && [0, 1].includes(index)) {
+        img.style.gridColumn = '1 / -1';
+    }
+
+    imageContainer.appendChild(img);
+});
+
 
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
