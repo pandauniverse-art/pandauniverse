@@ -738,6 +738,70 @@
 }
 
 .interactive-thumb {
+    .interactive-card-thumb {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.interactive-card-thumb .ai-thumb {
+    margin-bottom: 0;
+    display: block;
+    width: 100%;
+    transition: transform 0.45s ease;
+}
+
+.interactive-card:hover .interactive-card-thumb .ai-thumb {
+    transform: scale(1.04);
+}
+
+.interactive-card-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.95) 0%,
+        rgba(0,0,0,0.65) 45%,
+        rgba(0,0,0,0.1) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.interactive-card:hover .interactive-card-overlay {
+    opacity: 1;
+}
+
+.interactive-card-overlay .ic-desc {
+    font-size: 0.84rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 12px;
+}
+
+.interactive-card-overlay .ic-tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.interactive-card-overlay .ic-tags li {
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 3px 8px;
+}
+
     object-position: center 20%;
 }
 
@@ -1021,13 +1085,23 @@
 </div>
 
 
-<div class="ai-card" onclick="openAIModal('https://pandauniverse-art.github.io/Interactive-Media/')">
-    <img class="ai-thumb interactive-thumb" src="images/Personal/26.04_Interactive-Media/Interactive-Media_01.png" alt="Interactive Media Experience">
+<div class="ai-card interactive-card" onclick="openAIModal('https://pandauniverse-art.github.io/Interactive-Media/')">
+    <div class="interactive-card-thumb">
+        <img class="ai-thumb interactive-thumb" src="images/Personal/26.04_Interactive-Media/Interactive-Media_01.png" alt="Interactive Media Experience">
+        <div class="interactive-card-overlay">
+            <p class="ic-desc">클릭할수록 에너지가 쌓이고, 터지며 반응하는<br>실시간 인터랙티브 미디어 아트</p>
+            <ul class="ic-tags">
+                <li>Click → Energy → Explosion</li>
+                <li>Real-time Reaction</li>
+                <li>Generative Visual</li>
+            </ul>
+        </div>
+    </div>
     <span class="ai-badge">Interactive / Generative</span>
     <h3>Interactive Media Experience</h3>
-    <p>AI 기반 생성형 비주얼, 인터랙티브한 공간감, 실험적 모션 흐름을 통해 기존 3D 작업을 확장한 별도 프로젝트입니다.</p>
     <div class="ai-link">Open Experience ↗</div>
 </div>
+
 
 
 
