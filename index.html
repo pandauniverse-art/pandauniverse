@@ -543,6 +543,144 @@
             flex-wrap: wrap;
             margin: 24px 0 40px;
         }
+        .featured-proof {
+    margin: 18px 0 42px;
+}
+
+.featured-proof-title {
+    font-size: 0.78rem;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+
+.featured-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.featured-proof-card {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(10,10,10,1);
+    border: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.featured-proof-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,0.24);
+}
+
+.featured-proof-thumb {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.featured-proof-thumb img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+    background: #111;
+}
+
+.featured-proof-card:hover .featured-proof-thumb img {
+    transform: scale(1.04);
+}
+
+.featured-proof-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.92) 0%,
+        rgba(0,0,0,0.7) 42%,
+        rgba(0,0,0,0.15) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.featured-proof-card:hover .featured-proof-overlay {
+    opacity: 1;
+}
+
+.featured-proof-badge {
+    font-size: 0.68rem;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.58);
+    margin-bottom: 10px;
+}
+
+.featured-proof-overlay h4 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.35;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.featured-proof-overlay p {
+    font-size: 0.84rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.84);
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+
+.featured-proof-meta-list {
+    list-style: none;
+    margin: 0 0 14px 0;
+    padding: 0;
+}
+
+.featured-proof-meta-list li {
+    font-size: 0.76rem;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.76);
+    margin-bottom: 4px;
+    font-weight: 300;
+}
+
+.featured-proof-cta {
+    font-size: 0.76rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.94);
+}
+
+.featured-proof-body {
+    padding: 16px 16px 18px;
+}
+
+.featured-proof-label {
+    font-size: 0.72rem;
+    color: var(--accent-color);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.featured-proof-body h3 {
+    font-size: 0.98rem;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #fff;
+}
+
 
         .about-link,
         .works-link,
@@ -605,6 +743,14 @@
 
 
               @media (max-width: 768px) {
+                  .featured-proof-grid {
+    grid-template-columns: 1fr;
+}
+
+.featured-proof-overlay {
+    opacity: 1;
+}
+
     :root { --h1-size: 1.8rem; }
     .grid, .image-grid, .exp-container { grid-template-columns: 1fr; }
     .close-btn { right: 20px; }
@@ -662,24 +808,87 @@
         </p>
     </div>
  
+<div class="featured-proof">
+    <div class="featured-proof-title">Featured Credentials</div>
+
+    <div class="featured-proof-grid">
+        <a class="featured-proof-card" href="https://www.yes24.com/Product/Goods/136904341" target="_blank" rel="noopener noreferrer">
+            <div class="featured-proof-thumb">
+                <img src="images/Personal/Tutorial/Book.jpg" alt="CINEMA 4D & OctaneRender Book">
+                <div class="featured-proof-overlay">
+                    <div class="featured-proof-badge">Book Publication</div>
+                    <h4>CINEMA 4D & OctaneRender</h4>
+                    <p>기초부터 마스터하는 3D 렌더링 가이드</p>
+                    <ul class="featured-proof-meta-list">
+                        <li>저자: 이덕준</li>
+                        <li>출간일: 2024.11.15</li>
+                        <li>평점 10.0 · 리뷰 8건</li>
+                        <li>세종도서 우수도서 선정</li>
+                    </ul>
+                    <span class="featured-proof-cta">도서 상세 보기 ↗</span>
+                </div>
+            </div>
+            <div class="featured-proof-body">
+                <div class="featured-proof-label">Book Publication</div>
+                <h3>CINEMA 4D & OctaneRender</h3>
+            </div>
+        </a>
+
+        <a class="featured-proof-card" href="https://www.inflearn.com/course/%EC%8B%9C%EB%84%A4%EB%A7%88-4d-%EA%B8%B0%EC%B4%88?inst=8517607e&utm_source=instructor&utm_medium=referral&utm_campaign=inflearn_%ED%8A%B8%EB%9E%98%ED%94%BD_promotion-link&cid=327721" target="_blank" rel="noopener noreferrer">
+            <div class="featured-proof-thumb">
+                <img src="images/Personal/Tutorial/Inflear.png" alt="Inflearn Cinema 4D Basic">
+                <div class="featured-proof-overlay">
+                    <div class="featured-proof-badge">Lecture / Inflearn</div>
+                    <h4>Cinema 4D의 기초</h4>
+                    <p>C4D를 함께 익히며 실제 작업물을 만드는 입문 강의</p>
+                    <ul class="featured-proof-meta-list">
+                        <li>평점 4.9 · 수강평 19개</li>
+                        <li>수강생 2,122명</li>
+                        <li>강사: 판다유니버스</li>
+                        <li>태그: Cinema 4D</li>
+                    </ul>
+                    <span class="featured-proof-cta">강의 보러가기 ↗</span>
+                </div>
+            </div>
+            <div class="featured-proof-body">
+                <div class="featured-proof-label">Lecture / Inflearn</div>
+                <h3>Cinema 4D Basic Class</h3>
+            </div>
+        </a>
+
+        <a class="featured-proof-card" href="https://www.youtube.com/@C4DUnreal" target="_blank" rel="noopener noreferrer">
+            <div class="featured-proof-thumb">
+                <img src="images/Personal/Tutorial/youtube.jpg" alt="Panda Universe YouTube Channel">
+                <div class="featured-proof-overlay">
+                    <div class="featured-proof-badge">YouTube Channel</div>
+                    <h4>Panda Universe</h4>
+                    <p>C4D, Unreal Engine, AE 중심의 3D 실무형 튜토리얼 채널</p>
+                    <ul class="featured-proof-meta-list">
+                        <li>구독자 4,240명</li>
+                        <li>영상 475개</li>
+                        <li>튜토리얼 / 프로세스 / 실험 작업 기록</li>
+                        <li>지속 운영 중인 개인 크리에이터 채널</li>
+                    </ul>
+                    <span class="featured-proof-cta">채널 보러가기 ↗</span>
+                </div>
+            </div>
+            <div class="featured-proof-body">
+                <div class="featured-proof-label">YouTube Channel</div>
+                <h3>Panda Universe</h3>
+            </div>
+        </a>
+    </div>
+</div>
 
 <div class="about-links">
-    <a class="about-link" href="https://www.youtube.com/@C4DUnreal" target="_blank" rel="noopener noreferrer">
-        YouTube — Tutorials & Process
-    </a>
     <a class="about-link" href="https://www.behance.net/led32684792a3" target="_blank" rel="noopener noreferrer">
         Behance — Selected Projects
     </a>
     <a class="about-link" href="https://www.instagram.com/panda.univ/" target="_blank" rel="noopener noreferrer">
         Instagram — Visual Archive
     </a>
-    <a class="about-link" href="https://www.inflearn.com/course/%EC%8B%9C%EB%84%A4%EB%A7%88-4d-%EA%B8%B0%EC%B4%88?inst=8517607e&utm_source=instructor&utm_medium=referral&utm_campaign=inflearn_%ED%8A%B8%EB%9E%98%ED%94%BD_promotion-link&cid=327721" target="_blank" rel="noopener noreferrer">
-        Inflearn — Cinema 4D Class
-    </a>
-    <a class="about-link" href="https://www.yes24.com/Product/Goods/136904341" target="_blank" rel="noopener noreferrer">
-        Book — Tutorial Guide
-    </a>
 </div>
+
 
     <div class="tool-container">
         <div class="tool-group">
@@ -1414,23 +1623,49 @@ videoContainer.className = '';
     }
 
     if (data.embedVideos && data.embedVideos.length > 0) {
-        data.embedVideos.forEach(url => {
-            const wrapper = document.createElement('div');
-            wrapper.className = 'video-box';
-            wrapper.innerHTML = `
-                <iframe
-                    width="100%"
-                    height="100%"
-                    src="${url}"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-                    allowfullscreen
-                    referrerpolicy="strict-origin-when-cross-origin">
-                </iframe>
-            `;
-            videoContainer.appendChild(wrapper);
-        });
-    } else if (data.videos && data.videos.length > 0) {
+    let hasYouTubeEmbed = false;
+
+    data.embedVideos.forEach((url, i) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'video-box';
+
+        const isYouTube = url.includes('youtube.com/embed/');
+        let finalUrl = url;
+
+        if (isYouTube) {
+            hasYouTubeEmbed = true;
+
+            if (!finalUrl.includes('enablejsapi=')) {
+                finalUrl += (finalUrl.includes('?') ? '&' : '?') + 'enablejsapi=1';
+            }
+            if (!finalUrl.includes('rel=')) {
+                finalUrl += '&rel=0';
+            }
+            if (!finalUrl.includes('autoplay=')) {
+                finalUrl += `&autoplay=${i === 0 ? 1 : 0}`;
+            }
+        }
+
+        wrapper.innerHTML = `
+            <iframe
+                ${isYouTube ? 'data-youtube-player="true"' : ''}
+                width="100%"
+                height="100%"
+                src="${finalUrl}"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                allowfullscreen
+                referrerpolicy="strict-origin-when-cross-origin">
+            </iframe>
+        `;
+        videoContainer.appendChild(wrapper);
+    });
+
+    if (hasYouTubeEmbed) {
+        ensureYouTubeAPI();
+    }
+}
+ else if (data.videos && data.videos.length > 0) {
         data.videos.forEach((vid, i) => {
             const wrapper = document.createElement('div');
             wrapper.className = 'video-box';
@@ -1531,7 +1766,23 @@ videoContainer.className = '';
 
 
 
-            data.images.forEach((fileName, index) => {
+            (data.images || []).forEach((fileName, index) => {
+    const img = document.createElement('img');
+    img.src = `images/${data.folder}/${fileName}`;
+    img.loading = "lazy";
+    img.alt = `${type} still ${index + 1}`;
+
+    if (fileName.includes("Purpool Party_03")) {
+        img.style.gridColumn = "1 / -1";
+    }
+
+    if (type === 'key_creativity' && [0, 3, 7].includes(index)) {
+        img.style.gridColumn = "1 / -1";
+    }
+
+    imageContainer.appendChild(img);
+});
+
     const img = document.createElement('img');
     img.src = `images/${data.folder}/${fileName}`;
     img.loading = "lazy";
