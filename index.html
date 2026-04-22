@@ -1084,6 +1084,14 @@
     <div class="ai-link">Open Portfolio ↗</div>
 </div>
 
+            <div class="ai-card" onclick="openProject('ai_source')">
+    <img class="ai-thumb" src="images/Personal/AI_source/thum.gif" alt="AI Source Archive">
+    <span class="ai-badge">AI / Source Archive</span>
+    <h3>AI Source Archive</h3>
+    <p>AI만으로 제작한 비주얼 소스와 실험 결과물을 모아둔 아카이브입니다.</p>
+    <div class="ai-link">Open Source Archive ↗</div>
+</div>
+
 
 <div class="ai-card interactive-card" onclick="openAIModal('https://pandauniverse-art.github.io/Interactive-Media/')">
     <div class="interactive-card-thumb">
@@ -1562,6 +1570,22 @@ Visual interpretations of everyday moments and peaceful atmospheres.
             images: []
         },
 
+        ai_source: {
+    video: null,
+    role: "AI 소스 아카이브 (AI Only)",
+    desc: `AI만으로 제작한 비주얼 소스와 실험 결과물을 정리한 아카이브입니다.
+
+생성형 이미지와 모션 기반 결과물을 모아, 비주얼 스타일 탐색과 확장 가능성을 보여주는 별도 컬렉션입니다.`,
+    folder: "Personal/AI_source",
+    images: [
+        "01.gif",
+        "02.gif",
+        "03.gif",
+        "04.gif",
+        "05.gif"
+    ]
+},
+
         ai_flower: {
             video: null,
             role: "AI 포트폴리오 (Visual Series)",
@@ -1696,9 +1720,10 @@ Visual interpretations of everyday moments and peaceful atmospheres.
         const data = projectData[type];
         if (!data) return;
 
-        if (type === 'casual' || type === 'world_travel') {
-            imageContainer.style.gridTemplateColumns = '1fr';
-        }
+       if (type === 'casual' || type === 'world_travel' || type === 'ai_source') {
+    imageContainer.style.gridTemplateColumns = '1fr';
+}
+
 
         if (data.videoLayout === 'grid-2') {
             videoContainer.classList.add('video-grid-2');
@@ -1787,18 +1812,20 @@ Visual interpretations of everyday moments and peaceful atmospheres.
             ensureYouTubeAPI();
         }
 
-        const personalTypes = [
-            'multiple',
-            'golden',
-            'odyssey',
-            'particles',
-            'world_travel',
-            'casual',
-            'key_creativity',
-            'car_drive',
-            'musical_artwork',
-            'ai_flower'
-        ];
+       const personalTypes = [
+    'multiple',
+    'golden',
+    'odyssey',
+    'particles',
+    'world_travel',
+    'casual',
+    'key_creativity',
+    'car_drive',
+    'musical_artwork',
+    'ai_flower',
+    'ai_source'
+];
+
 
         if (personalTypes.includes(type)) {
             roleTitle.innerText = '프로젝트 유형';
