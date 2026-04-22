@@ -1888,9 +1888,23 @@ if (type === 'ai_source') {
         img.style.gridColumn = '1 / -1';
     }
 
-    if (type === 'particles' && [0, 1].includes(index)) {
-        img.style.gridColumn = '1 / -1';
-    }
+  if (type === 'particles' && [0, 1].includes(index)) {
+    img.style.gridColumn = '1 / -1';
+}
+
+if (
+    type === 'multiple' &&
+    (
+        fileName.includes('00_title') ||
+        fileName.includes('01_floor') ||
+        fileName.includes('01_will')
+    )
+) {
+    img.style.gridColumn = '1 / -1';
+}
+
+imageContainer.appendChild(img);
+
 
     imageContainer.appendChild(img);
 });
