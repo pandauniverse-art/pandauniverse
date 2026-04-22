@@ -1720,9 +1720,14 @@ Visual interpretations of everyday moments and peaceful atmospheres.
         const data = projectData[type];
         if (!data) return;
 
-       if (type === 'casual' || type === 'world_travel' || type === 'ai_source') {
+   if (type === 'casual' || type === 'world_travel') {
     imageContainer.style.gridTemplateColumns = '1fr';
 }
+
+if (type === 'ai_source') {
+    imageContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
+}
+
 
 
         if (data.videoLayout === 'grid-2') {
