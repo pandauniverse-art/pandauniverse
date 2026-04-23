@@ -1570,7 +1570,8 @@ Visual interpretations of everyday moments and peaceful atmospheres.
             images: []
         },
 
-        ai_source: {
+        images: ["01.gif", "02.gif", "03.gif", "04.gif", "05.gif", "06.gif", "06_1.gif"]
+
     video: null,
     role: "AI 소스 아카이브 (AI Only)",
     desc: `AI만으로 제작한 비주얼 소스와 실험 결과물을 정리한 아카이브입니다.
@@ -1720,13 +1721,14 @@ Visual interpretations of everyday moments and peaceful atmospheres.
         const data = projectData[type];
         if (!data) return;
 
-   if (type === 'casual' || type === 'world_travel') {
+if (type === 'casual' || type === 'world_travel') {
     imageContainer.style.gridTemplateColumns = '1fr';
 }
 
 if (type === 'ai_source') {
     imageContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
 }
+
 
 
 
