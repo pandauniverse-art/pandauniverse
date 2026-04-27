@@ -98,30 +98,7 @@
             color: var(--accent-color);
         }
 
-        .filter-bar {
-            padding: 40px 60px 0;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .filter-btn {
-            background: none;
-            border: 1px solid rgba(255,255,255,0.12);
-            color: rgba(255,255,255,0.5);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.72rem;
-            font-weight: 300;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            padding: 8px 16px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .filter-btn:hover,
-        .filter-btn.active {
-            border-color: rgba(255,255,255,0.4);
-            color: #fff;
-        }
+       
 
         .lab-grid {
             padding: 30px 60px 120px;
@@ -284,12 +261,6 @@
     </div>
 </div>
 
-<div class="filter-bar">
-    <button class="filter-btn active" onclick="filterItems('all', this)">All</button>
-    <button class="filter-btn" onclick="filterItems('series-a', this)">Series A</button>
-    <button class="filter-btn" onclick="filterItems('series-b', this)">Series B</button>
-    <button class="filter-btn" onclick="filterItems('series-c', this)">Series C</button>
-</div>
 
 <div class="lab-grid" id="labGrid">
     <div class="lab-item" data-category="series-c" data-index="0" onclick="openLightbox(0)">
@@ -428,17 +399,7 @@
         document.getElementById('lightboxCounter').textContent =
             `${String(pos + 1).padStart(2, '0')} / ${String(visibleIndices.length).padStart(2, '0')}`;
     }
-    function filterItems(cat, btn) {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        visibleIndices = [];
-        document.querySelectorAll('.lab-item').forEach(item => {
-            const match = cat === 'all' || item.dataset.category === cat;
-            item.style.display = match ? 'block' : 'none';
-            if (match) visibleIndices.push(parseInt(item.dataset.index));
-        });
-        document.getElementById('totalCount').textContent = visibleIndices.length;
-    }
+ 
     document.addEventListener('keydown', e => {
         if (!document.getElementById('lightbox').classList.contains('open')) return;
         if (e.key === 'ArrowRight') navigate(1);
