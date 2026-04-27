@@ -78,10 +78,10 @@
             max-width: 640px;
         }
 
-        .archive-grid {
+     .archive-grid {
             padding: 40px 60px 120px;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
 
@@ -223,7 +223,8 @@
 
 <div class="archive-grid">
 
-    <div class="archive-item" data-index="0" onclick="openLightbox(0)">
+    <!-- 01_1 : 전체 너비 -->
+    <div class="archive-item" style="grid-column: span 2;" data-index="0" onclick="openLightbox(0)">
         <img src="images/Personal/ARCHIVE/01_1.png" alt="Archive 01-1" loading="lazy">
         <div class="archive-item-overlay">
             <div class="archive-item-tag">Archive</div>
@@ -231,6 +232,7 @@
         </div>
     </div>
 
+    <!-- 01_2 + 01_3 : 나란히 2열 -->
     <div class="archive-item" data-index="1" onclick="openLightbox(1)">
         <img src="images/Personal/ARCHIVE/01_2.png" alt="Archive 01-2" loading="lazy">
         <div class="archive-item-overlay">
@@ -238,7 +240,6 @@
             <div class="archive-item-title">No. 01 — 2</div>
         </div>
     </div>
-
     <div class="archive-item" data-index="2" onclick="openLightbox(2)">
         <img src="images/Personal/ARCHIVE/01_3.png" alt="Archive 01-3" loading="lazy">
         <div class="archive-item-overlay">
@@ -247,7 +248,8 @@
         </div>
     </div>
 
-    <div class="archive-item" data-index="3" onclick="openLightbox(3)">
+    <!-- 02 : 전체 너비 -->
+    <div class="archive-item" style="grid-column: span 2;" data-index="3" onclick="openLightbox(3)">
         <img src="images/Personal/ARCHIVE/02.png" alt="Archive 02" loading="lazy">
         <div class="archive-item-overlay">
             <div class="archive-item-tag">Archive</div>
@@ -255,7 +257,8 @@
         </div>
     </div>
 
-    <div class="archive-item" data-index="4" onclick="openLightbox(4)">
+    <!-- 03 : 전체 너비 -->
+    <div class="archive-item" style="grid-column: span 2;" data-index="4" onclick="openLightbox(4)">
         <img src="images/Personal/ARCHIVE/03.png" alt="Archive 03" loading="lazy">
         <div class="archive-item-overlay">
             <div class="archive-item-tag">Archive</div>
@@ -263,7 +266,8 @@
         </div>
     </div>
 
-    <div class="archive-item" data-index="5" onclick="openLightbox(5)">
+    <!-- 04 : 전체 너비 -->
+    <div class="archive-item" style="grid-column: span 2;" data-index="5" onclick="openLightbox(5)">
         <img src="images/Personal/ARCHIVE/04.png" alt="Archive 04" loading="lazy">
         <div class="archive-item-overlay">
             <div class="archive-item-tag">Archive</div>
@@ -271,6 +275,7 @@
         </div>
     </div>
 
+    <!-- 04_1 + 04_2 : 나란히 2열 -->
     <div class="archive-item" data-index="6" onclick="openLightbox(6)">
         <img src="images/Personal/ARCHIVE/04_1.png" alt="Archive 04-1" loading="lazy">
         <div class="archive-item-overlay">
@@ -278,120 +283,7 @@
             <div class="archive-item-title">No. 04 — 1</div>
         </div>
     </div>
-
-    <div class="archive-item" data-index="7" onclick="openLightbox(7)">
-        <img src="images/Personal/ARCHIVE/04_2.png" alt="Archive 04-2" loading="lazy">
-        <div class="archive-item-overlay">
-            <div class="archive-item-tag">Archive</div>
-            <div class="archive-item-title">No. 04 — 2</div>
-        </div>
-    </div>
-
-    <div class="archive-item" data-index="8" onclick="openLightbox(8)">
-        <img src="images/Personal/ARCHIVE/05.png" alt="Archive 05" loading="lazy">
-        <div class="archive-item-overlay">
-            <div class="archive-item-tag">Archive</div>
-            <div class="archive-item-title">No. 05</div>
-        </div>
-    </div>
-
-    <div class="archive-item" data-index="9" onclick="openLightbox(9)">
-        <img src="images/Personal/ARCHIVE/06.png" alt="Archive 06" loading="lazy">
-        <div class="archive-item-overlay">
-            <div class="archive-item-tag">Archive</div>
-            <div class="archive-item-title">No. 06</div>
-        </div>
-    </div>
-
-    <div class="archive-item" data-index="10" onclick="openLightbox(10)">
-        <img src="images/Personal/ARCHIVE/07.png" alt="Archive 07" loading="lazy">
-        <div class="archive-item-overlay">
-            <div class="archive-item-tag">Archive</div>
-            <div class="archive-item-title">No. 07</div>
-        </div>
-    </div>
-
-    <div class="archive-item" data-index="11" onclick="openLightbox(11)">
-        <img src="images/Personal/ARCHIVE/08.png" alt="Archive 08" loading="lazy">
-        <div class="archive-item-overlay">
-            <div class="archive-item-tag">Archive</div>
-            <div class="archive-item-title">No. 08</div>
-        </div>
-    </div>
-
-    <div class="archive-item" data-index="12" onclick="openLightbox(12)">
-        <img src="images/Personal/ARCHIVE/09.png" alt="Archive 09" loading="lazy">
-        <div class="archive-item-overlay">
-            <div class="archive-item-tag">Archive</div>
-            <div class="archive-item-title">No. 09</div>
-        </div>
-    </div>
-
-    <div class="archive-item" data-index="13" onclick="openLightbox(13)">
-        <img src="images/Personal/ARCHIVE/09_1.png" alt="Archive 09-1" loading="lazy">
-        <div class="archive-item-overlay">
-            <div class="archive-item-tag">Archive</div>
-            <div class="archive-item-title">No. 09 — 1</div>
-        </div>
-    </div>
-
-    <div class="archive-item" data-index="14" onclick="openLightbox(14)">
-        <img src="images/Personal/ARCHIVE/09_2.png" alt="Archive 09-2" loading="lazy">
-        <div class="archive-item-overlay">
-            <div class="archive-item-tag">Archive</div>
-            <div class="archive-item-title">No. 09 — 2</div>
-        </div>
-    </div>
-
-    <div class="archive-item" data-index="15" onclick="openLightbox(15)">
-        <img src="images/Personal/ARCHIVE/10.png" alt="Archive 10" loading="lazy">
-        <div class="archive-item-overlay">
-            <div class="archive-item-tag">Archive</div>
-            <div class="archive-item-title">No. 10</div>
-        </div>
-    </div>
-
-    <div class="archive-item" data-index="16" onclick="openLightbox(16)">
-        <img src="images/Personal/ARCHIVE/11.png" alt="Archive 11" loading="lazy">
-        <div class="archive-item-overlay">
-            <div class="archive-item-tag">Archive</div>
-            <div class="archive-item-title">No. 11</div>
-        </div>
-    </div>
-
-    <div class="archive-item" data-index="17" onclick="openLightbox(17)">
-        <img src="images/Personal/ARCHIVE/12.png" alt="Archive 12" loading="lazy">
-        <div class="archive-item-overlay">
-            <div class="archive-item-tag">Archive</div>
-            <div class="archive-item-title">No. 12</div>
-        </div>
-    </div>
-
-    <div class="archive-item" data-index="18" onclick="openLightbox(18)">
-        <img src="images/Personal/ARCHIVE/13.png" alt="Archive 13" loading="lazy">
-        <div class="archive-item-overlay">
-            <div class="archive-item-tag">Archive</div>
-            <div class="archive-item-title">No. 13</div>
-        </div>
-    </div>
-
-    <div class="archive-item" data-index="19" onclick="openLightbox(19)">
-        <img src="images/Personal/ARCHIVE/14.png" alt="Archive 14" loading="lazy">
-        <div class="archive-item-overlay">
-            <div class="archive-item-tag">Archive</div>
-            <div class="archive-item-title">No. 14</div>
-        </div>
-    </div>
-
-    <div class="archive-item" data-index="20" onclick="openLightbox(20)">
-        <img src="images/Personal/ARCHIVE/15.png" alt="Archive 15" loading="lazy">
-        <div class="archive-item-overlay">
-            <div class="archive-item-tag">Archive</div>
-            <div class="archive-item-title">No. 15</div>
-        </div>
-    </div>
-
-</div>
+    <div class="archive-item" data-index="7" oncli
 
 <div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
     <button class="lightbox-close" onclick="closeLightbox()">Close</button>
