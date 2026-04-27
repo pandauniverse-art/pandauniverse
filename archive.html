@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCHIVE | LEE DEOK JUN</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+
+        :root {
+            --bg-color: #000000;
+            --text-color: rgba(255, 255, 255, 0.85);
+            --accent-color: rgba(255, 255, 255, 0.45);
+        }
+
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.15;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 35px 50px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 40px;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+        }
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 200;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.4s;
+        }
+        nav a:hover { opacity: 0.3; }
+        nav a.active {
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            padding-bottom: 2px;
+        }
+
+        .page-header {
+            padding: 160px 60px 80px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .page-header-label {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            display: block;
+        }
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 200;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        .page-header p {
+            font-size: 1rem;
+            font-weight: 200;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.6);
+            max-width: 640px;
+        }
+
+        .archive-grid {
+            padding: 40px 60px 120px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .archive-item {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #111;
+            cursor: pointer;
+        }
+        .archive-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+            background: #0a0a0a;
+        }
+        .archive-item:hover img { transform: scale(1.04); }
+
+        .archive-item-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 40%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+        .archive-item:hover .archive-item-overlay { opacity: 1; }
+        .archive-item-tag {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 6px;
+        }
+        .archive-item-title {
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: #fff;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.97);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox.open { display: flex; }
+        .lightbox-close {
+            position: fixed;
+            top: 30px;
+            right: 50px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            opacity: 0.4;
+            transition: 0.3s;
+            text-transform: uppercase;
+            z-index: 3100;
+            background: none;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+        .lightbox-close:hover { opacity: 1; }
+        .lightbox-img-wrap img {
+            max-width: 90vw;
+            max-height: 85vh;
+            object-fit: contain;
+            display: block;
+        }
+        .lightbox-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: 1px solid rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.6);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            padding: 14px 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .lightbox-nav:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
+        .lightbox-prev { left: 30px; }
+        .lightbox-next { right: 30px; }
+        .lightbox-counter {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.3);
+        }
+
+        footer { padding: 40px; text-align: center; opacity: 0.1; font-size: 0.7rem; }
+
+        @media (max-width: 768px) {
+            nav { padding: 24px 20px; gap: 18px; }
+            .page-header { padding: 120px 20px 60px; }
+            .page-header h1 { font-size: 2.4rem; }
+            .archive-grid { padding: 20px 20px 80px; grid-template-columns: 1fr; }
+            .lightbox-prev { left: 10px; }
+            .lightbox-next { right: 10px; }
+            .lightbox-close { right: 20px; }
+        }
+        @media (min-width: 769px) and (max-width: 1200px) {
+            .archive-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html#about">About</a>
+    <a href="index.html#works">Works</a>
+    <a href="index.html#ai">AI</a>
+    <a href="ai-lab.html">AI Lab</a>
+    <a href="archive.html" class="active">Archive</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#contact">Contact</a>
+</nav>
+
+<div class="page-header">
+    <span class="page-header-label">Panda Universe — Selected Works</span>
+    <h1>ARCHIVE</h1>
+    <p>기존 작업들 중 선별한 비주얼 아카이브입니다.</p>
+</div>
+
+<div class="archive-grid">
+
+    <div class="archive-item" data-index="0" onclick="openLightbox(0)">
+        <img src="images/Personal/ARCHIVE/01_1.png" alt="Archive 01-1" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 01 — 1</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="1" onclick="openLightbox(1)">
+        <img src="images/Personal/ARCHIVE/01_2.png" alt="Archive 01-2" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 01 — 2</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="2" onclick="openLightbox(2)">
+        <img src="images/Personal/ARCHIVE/01_3.png" alt="Archive 01-3" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 01 — 3</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="3" onclick="openLightbox(3)">
+        <img src="images/Personal/ARCHIVE/02.png" alt="Archive 02" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 02</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="4" onclick="openLightbox(4)">
+        <img src="images/Personal/ARCHIVE/03.png" alt="Archive 03" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 03</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="5" onclick="openLightbox(5)">
+        <img src="images/Personal/ARCHIVE/04.png" alt="Archive 04" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 04</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="6" onclick="openLightbox(6)">
+        <img src="images/Personal/ARCHIVE/04_1.png" alt="Archive 04-1" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 04 — 1</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="7" onclick="openLightbox(7)">
+        <img src="images/Personal/ARCHIVE/04_2.png" alt="Archive 04-2" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 04 — 2</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="8" onclick="openLightbox(8)">
+        <img src="images/Personal/ARCHIVE/05.png" alt="Archive 05" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 05</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="9" onclick="openLightbox(9)">
+        <img src="images/Personal/ARCHIVE/06.png" alt="Archive 06" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 06</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="10" onclick="openLightbox(10)">
+        <img src="images/Personal/ARCHIVE/07.png" alt="Archive 07" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 07</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="11" onclick="openLightbox(11)">
+        <img src="images/Personal/ARCHIVE/08.png" alt="Archive 08" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 08</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="12" onclick="openLightbox(12)">
+        <img src="images/Personal/ARCHIVE/09.png" alt="Archive 09" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 09</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="13" onclick="openLightbox(13)">
+        <img src="images/Personal/ARCHIVE/09_1.png" alt="Archive 09-1" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 09 — 1</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="14" onclick="openLightbox(14)">
+        <img src="images/Personal/ARCHIVE/09_2.png" alt="Archive 09-2" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 09 — 2</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="15" onclick="openLightbox(15)">
+        <img src="images/Personal/ARCHIVE/10.png" alt="Archive 10" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 10</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="16" onclick="openLightbox(16)">
+        <img src="images/Personal/ARCHIVE/11.png" alt="Archive 11" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 11</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="17" onclick="openLightbox(17)">
+        <img src="images/Personal/ARCHIVE/12.png" alt="Archive 12" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 12</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="18" onclick="openLightbox(18)">
+        <img src="images/Personal/ARCHIVE/13.png" alt="Archive 13" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 13</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="19" onclick="openLightbox(19)">
+        <img src="images/Personal/ARCHIVE/14.png" alt="Archive 14" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 14</div>
+        </div>
+    </div>
+
+    <div class="archive-item" data-index="20" onclick="openLightbox(20)">
+        <img src="images/Personal/ARCHIVE/15.png" alt="Archive 15" loading="lazy">
+        <div class="archive-item-overlay">
+            <div class="archive-item-tag">Archive</div>
+            <div class="archive-item-title">No. 15</div>
+        </div>
+    </div>
+
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+    <button class="lightbox-close" onclick="closeLightbox()">Close</button>
+    <button class="lightbox-nav lightbox-prev" onclick="navigate(-1)">Prev</button>
+    <div class="lightbox-img-wrap">
+        <img id="lightboxImg" src="" alt="">
+    </div>
+    <button class="lightbox-nav lightbox-next" onclick="navigate(1)">Next</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<footer>&copy; 2026 LEE DEOK JUN.</footer>
+
+<script>
+    const allSources = [
+        "images/Personal/ARCHIVE/01_1.png",
+        "images/Personal/ARCHIVE/01_2.png",
+        "images/Personal/ARCHIVE/01_3.png",
+        "images/Personal/ARCHIVE/02.png",
+        "images/Personal/ARCHIVE/03.png",
+        "images/Personal/ARCHIVE/04.png",
+        "images/Personal/ARCHIVE/04_1.png",
+        "images/Personal/ARCHIVE/04_2.png",
+        "images/Personal/ARCHIVE/05.png",
+        "images/Personal/ARCHIV
