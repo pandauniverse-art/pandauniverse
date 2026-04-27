@@ -159,24 +159,6 @@
             object-fit: contain;
             display: block;
         }
-        .lightbox-nav {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: 1px solid rgba(255,255,255,0.15);
-            color: rgba(255,255,255,0.6);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            padding: 14px 18px;
-            cursor: pointer;
-            transition: 0.3s;
-            text-transform: uppercase;
-        }
-        .lightbox-nav:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
-        .lightbox-prev { left: 30px; }
-        .lightbox-next { right: 30px; }
         .lightbox-counter {
             position: fixed;
             bottom: 30px;
@@ -287,11 +269,9 @@
 
 <div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
     <button class="lightbox-close" onclick="closeLightbox()">Close</button>
-    <button class="lightbox-nav lightbox-prev" onclick="navigate(-1)">Prev</button>
     <div class="lightbox-img-wrap">
         <img id="lightboxImg" src="" alt="">
     </div>
-    <button class="lightbox-nav lightbox-next" onclick="navigate(1)">Next</button>
     <div class="lightbox-counter" id="lightboxCounter"></div>
 </div>
 
