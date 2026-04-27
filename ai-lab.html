@@ -78,25 +78,7 @@
             max-width: 640px;
         }
 
-        .stats-bar {
-            padding: 50px 60px 60px;
-            display: flex;
-            gap: 60px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .stat-num {
-            font-size: 2rem;
-            font-weight: 200;
-            letter-spacing: -1px;
-            display: block;
-            margin-bottom: 4px;
-        }
-        .stat-label {
-            font-size: 0.72rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--accent-color);
-        }
+      
 
        
 
@@ -246,131 +228,136 @@
     생성형 이미지, 모션 기반 결과물을 통한 비주얼 스타일 탐색과 확장 가능성을 기록합니다.</p>
 </div>
 
-<div class="stats-bar">
-    <div>
-        <span class="stat-num" id="totalCount">11</span>
-        <span class="stat-label">Total Experiments</span>
-    </div>
-    <div>
-        <span class="stat-num">AI Only</span>
-        <span class="stat-label">Production Method</span>
-    </div>
-    <div>
-        <span class="stat-num">GIF</span>
-        <span class="stat-label">Primary Format</span>
-    </div>
-</div>
+
 
 
 <div class="lab-grid" id="labGrid">
-    <div class="lab-item" data-category="series-c" data-index="0" onclick="openLightbox(0)">
-        <img src="images/Personal/AI_source/06.gif" alt="AI Source 06" loading="lazy">
-        <div class="lab-item-overlay">
-            <div class="lab-item-tag">Series C · 01</div>
-            <div class="lab-item-title">Generative Motion — 06</div>
+
+    <!-- 06 + 06_1 한 행 -->
+    <div style="break-inside:avoid; margin-bottom:20px; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <div class="lab-item" data-index="0" onclick="openLightbox(0)">
+            <img src="images/Personal/AI_source/06.gif" alt="AI Source 06" loading="lazy">
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">AI Source</div>
+                <div class="lab-item-title">No. 06</div>
+            </div>
+        </div>
+        <div class="lab-item" data-index="1" onclick="openLightbox(1)">
+            <img src="images/Personal/AI_source/06_1.gif" alt="AI Source 06_1" loading="lazy">
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">AI Source</div>
+                <div class="lab-item-title">No. 06 — 1</div>
+            </div>
         </div>
     </div>
-    <div class="lab-item" data-category="series-c" data-index="1" onclick="openLightbox(1)">
-        <img src="images/Personal/AI_source/06_1.gif" alt="AI Source 06_1" loading="lazy">
-        <div class="lab-item-overlay">
-            <div class="lab-item-tag">Series C · 02</div>
-            <div class="lab-item-title">Generative Motion — 06 Variant</div>
+
+    <!-- 07 + 07_1 한 행 -->
+    <div style="break-inside:avoid; margin-bottom:20px; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <div class="lab-item" data-index="2" onclick="openLightbox(2)">
+            <img src="images/Personal/AI_source/07.gif" alt="AI Source 07" loading="lazy">
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">AI Source</div>
+                <div class="lab-item-title">No. 07</div>
+            </div>
+        </div>
+        <div class="lab-item" data-index="3" onclick="openLightbox(3)">
+            <img src="images/Personal/AI_source/07_1.gif" alt="AI Source 07_1" loading="lazy">
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">AI Source</div>
+                <div class="lab-item-title">No. 07 — 1</div>
+            </div>
         </div>
     </div>
-    <div class="lab-item" data-category="series-b" data-index="2" onclick="openLightbox(2)">
-        <img src="images/Personal/AI_source/07.gif" alt="AI Source 07" loading="lazy">
-        <div class="lab-item-overlay">
-            <div class="lab-item-tag">Series B · 01</div>
-            <div class="lab-item-title">Visual Experiment — 07</div>
+
+    <!-- 08 + 08_1 한 행 -->
+    <div style="break-inside:avoid; margin-bottom:20px; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <div class="lab-item" data-index="4" onclick="openLightbox(4)">
+            <img src="images/Personal/AI_source/08.gif" alt="AI Source 08" loading="lazy">
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">AI Source</div>
+                <div class="lab-item-title">No. 08</div>
+            </div>
+        </div>
+        <div class="lab-item" data-index="5" onclick="openLightbox(5)">
+            <img src="images/Personal/AI_source/08_1.gif" alt="AI Source 08_1" loading="lazy">
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">AI Source</div>
+                <div class="lab-item-title">No. 08 — 1</div>
+            </div>
         </div>
     </div>
-    <div class="lab-item" data-category="series-b" data-index="3" onclick="openLightbox(3)">
-        <img src="images/Personal/AI_source/07_1.gif" alt="AI Source 07_1" loading="lazy">
-        <div class="lab-item-overlay">
-            <div class="lab-item-tag">Series B · 02</div>
-            <div class="lab-item-title">Visual Experiment — 07 Variant</div>
-        </div>
-    </div>
-    <div class="lab-item" data-category="series-b" data-index="4" onclick="openLightbox(4)">
-        <img src="images/Personal/AI_source/08.gif" alt="AI Source 08" loading="lazy">
-        <div class="lab-item-overlay">
-            <div class="lab-item-tag">Series B · 03</div>
-            <div class="lab-item-title">Visual Experiment — 08</div>
-        </div>
-    </div>
-    <div class="lab-item" data-category="series-b" data-index="5" onclick="openLightbox(5)">
-        <img src="images/Personal/AI_source/08_1.gif" alt="AI Source 08_1" loading="lazy">
-        <div class="lab-item-overlay">
-            <div class="lab-item-tag">Series B · 04</div>
-            <div class="lab-item-title">Visual Experiment — 08 Variant</div>
-        </div>
-    </div>
-    <div class="lab-item" data-category="series-a" data-index="6" onclick="openLightbox(6)">
+
+    <!-- 01 ~ 05, 09, 10 개별 -->
+    <div class="lab-item" data-index="6" onclick="openLightbox(6)">
         <img src="images/Personal/AI_source/01.gif" alt="AI Source 01" loading="lazy">
         <div class="lab-item-overlay">
-            <div class="lab-item-tag">Series A · 01</div>
-            <div class="lab-item-title">AI Source — 01</div>
+            <div class="lab-item-tag">AI Source</div>
+            <div class="lab-item-title">No. 01</div>
         </div>
     </div>
-    <div class="lab-item" data-category="series-a" data-index="7" onclick="openLightbox(7)">
+    <div class="lab-item" data-index="7" onclick="openLightbox(7)">
         <img src="images/Personal/AI_source/02.gif" alt="AI Source 02" loading="lazy">
         <div class="lab-item-overlay">
-            <div class="lab-item-tag">Series A · 02</div>
-            <div class="lab-item-title">AI Source — 02</div>
+            <div class="lab-item-tag">AI Source</div>
+            <div class="lab-item-title">No. 02</div>
         </div>
     </div>
-    <div class="lab-item" data-category="series-a" data-index="8" onclick="openLightbox(8)">
+    <div class="lab-item" data-index="8" onclick="openLightbox(8)">
         <img src="images/Personal/AI_source/03.gif" alt="AI Source 03" loading="lazy">
         <div class="lab-item-overlay">
-            <div class="lab-item-tag">Series A · 03</div>
-            <div class="lab-item-title">AI Source — 03</div>
+            <div class="lab-item-tag">AI Source</div>
+            <div class="lab-item-title">No. 03</div>
         </div>
     </div>
-    <div class="lab-item" data-category="series-a" data-index="9" onclick="openLightbox(9)">
+    <div class="lab-item" data-index="9" onclick="openLightbox(9)">
         <img src="images/Personal/AI_source/04.gif" alt="AI Source 04" loading="lazy">
         <div class="lab-item-overlay">
-            <div class="lab-item-tag">Series A · 04</div>
-            <div class="lab-item-title">AI Source — 04</div>
+            <div class="lab-item-tag">AI Source</div>
+            <div class="lab-item-title">No. 04</div>
         </div>
     </div>
-    <div class="lab-item" data-category="series-a" data-index="10" onclick="openLightbox(10)">
+    <div class="lab-item" data-index="10" onclick="openLightbox(10)">
         <img src="images/Personal/AI_source/05.gif" alt="AI Source 05" loading="lazy">
         <div class="lab-item-overlay">
-            <div class="lab-item-tag">Series A · 05</div>
-            <div class="lab-item-title">AI Source — 05</div>
+            <div class="lab-item-tag">AI Source</div>
+            <div class="lab-item-title">No. 05</div>
         </div>
     </div>
-</div>
-
-<div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
-    <button class="lightbox-close" onclick="closeLightbox()">Close</button>
-    <button class="lightbox-nav lightbox-prev" onclick="navigate(-1)">Prev</button>
-    <div class="lightbox-img-wrap">
-        <img id="lightboxImg" src="" alt="">
+    <div class="lab-item" data-index="11" onclick="openLightbox(11)">
+        <img src="images/Personal/AI_source/09.gif" alt="AI Source 09" loading="lazy">
+        <div class="lab-item-overlay">
+            <div class="lab-item-tag">AI Source</div>
+            <div class="lab-item-title">No. 09</div>
+        </div>
     </div>
-    <button class="lightbox-nav lightbox-next" onclick="navigate(1)">Next</button>
-    <div class="lightbox-counter" id="lightboxCounter"></div>
+    <div class="lab-item" data-index="12" onclick="openLightbox(12)">
+        <img src="images/Personal/AI_source/10.gif" alt="AI Source 10" loading="lazy">
+        <div class="lab-item-overlay">
+            <div class="lab-item-tag">AI Source</div>
+            <div class="lab-item-title">No. 10</div>
+        </div>
+    </div>
+
 </div>
 
 <footer>&copy; 2026 LEE DEOK JUN.</footer>
 
 <script>
-    const allSources = [
-        "images/Personal/AI_source/06.gif",
-        "images/Personal/AI_source/06_1.gif",
-        "images/Personal/AI_source/07.gif",
-        "images/Personal/AI_source/07_1.gif",
-        "images/Personal/AI_source/08.gif",
-        "images/Personal/AI_source/08_1.gif",
-        "images/Personal/AI_source/01.gif",
-        "images/Personal/AI_source/02.gif",
-        "images/Personal/AI_source/03.gif",
-        "images/Personal/AI_source/04.gif",
-        "images/Personal/AI_source/05.gif",
-        "images/Personal/AI_source/09.gif",
-        "images/Personal/AI_source/10.gif"
-        
-    ];
+const allSources = [
+    "images/Personal/AI_source/06.gif",
+    "images/Personal/AI_source/06_1.gif",
+    "images/Personal/AI_source/07.gif",
+    "images/Personal/AI_source/07_1.gif",
+    "images/Personal/AI_source/08.gif",
+    "images/Personal/AI_source/08_1.gif",
+    "images/Personal/AI_source/01.gif",
+    "images/Personal/AI_source/02.gif",
+    "images/Personal/AI_source/03.gif",
+    "images/Personal/AI_source/04.gif",
+    "images/Personal/AI_source/05.gif",
+    "images/Personal/AI_source/09.gif",
+    "images/Personal/AI_source/10.gif"
+];
 
     let currentIndex = 0;
     let visibleIndices = [...Array(allSources.length).keys()];
