@@ -82,10 +82,11 @@
 
        
 
-        .lab-grid {
+     .lab-grid {
             padding: 30px 60px 120px;
-            columns: 3;
-            column-gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
         .lab-item {
             break-inside: avoid;
@@ -199,7 +200,7 @@
             .page-header { padding: 120px 20px 60px; }
             .page-header h1 { font-size: 2.4rem; }
             .filter-bar { padding: 30px 20px 0; }
-            .lab-grid { padding: 20px 20px 80px; columns: 1; }
+            .lab-grid { padding: 20px 20px 80px; grid-template-columns: 1fr; }
             .stats-bar { padding: 30px 20px 40px; gap: 30px; flex-wrap: wrap; }
             .lightbox-prev { left: 10px; }
             .lightbox-next { right: 10px; }
@@ -233,8 +234,8 @@
 
 <div class="lab-grid" id="labGrid">
 
-    <!-- 06 + 06_1 한 행 -->
-    <div style="break-inside:avoid; margin-bottom:20px; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+    <!-- 06 + 06_1 : 2칸 차지, 내부 2열 -->
+    <div style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
         <div class="lab-item" data-index="0" onclick="openLightbox(0)">
             <img src="images/Personal/AI_source/06.gif" alt="AI Source 06" loading="lazy">
             <div class="lab-item-overlay">
@@ -251,8 +252,17 @@
         </div>
     </div>
 
-    <!-- 07 + 07_1 한 행 -->
-    <div style="break-inside:avoid; margin-bottom:20px; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+    <!-- 나머지 1칸짜리 -->
+    <div class="lab-item" data-index="6" onclick="openLightbox(6)">
+        <img src="images/Personal/AI_source/01.gif" alt="AI Source 01" loading="lazy">
+        <div class="lab-item-overlay">
+            <div class="lab-item-tag">AI Source</div>
+            <div class="lab-item-title">No. 01</div>
+        </div>
+    </div>
+
+    <!-- 07 + 07_1 -->
+    <div style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
         <div class="lab-item" data-index="2" onclick="openLightbox(2)">
             <img src="images/Personal/AI_source/07.gif" alt="AI Source 07" loading="lazy">
             <div class="lab-item-overlay">
@@ -269,8 +279,16 @@
         </div>
     </div>
 
-    <!-- 08 + 08_1 한 행 -->
-    <div style="break-inside:avoid; margin-bottom:20px; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+    <div class="lab-item" data-index="7" onclick="openLightbox(7)">
+        <img src="images/Personal/AI_source/02.gif" alt="AI Source 02" loading="lazy">
+        <div class="lab-item-overlay">
+            <div class="lab-item-tag">AI Source</div>
+            <div class="lab-item-title">No. 02</div>
+        </div>
+    </div>
+
+    <!-- 08 + 08_1 -->
+    <div style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
         <div class="lab-item" data-index="4" onclick="openLightbox(4)">
             <img src="images/Personal/AI_source/08.gif" alt="AI Source 08" loading="lazy">
             <div class="lab-item-overlay">
@@ -287,21 +305,6 @@
         </div>
     </div>
 
-    <!-- 01 ~ 05, 09, 10 개별 -->
-    <div class="lab-item" data-index="6" onclick="openLightbox(6)">
-        <img src="images/Personal/AI_source/01.gif" alt="AI Source 01" loading="lazy">
-        <div class="lab-item-overlay">
-            <div class="lab-item-tag">AI Source</div>
-            <div class="lab-item-title">No. 01</div>
-        </div>
-    </div>
-    <div class="lab-item" data-index="7" onclick="openLightbox(7)">
-        <img src="images/Personal/AI_source/02.gif" alt="AI Source 02" loading="lazy">
-        <div class="lab-item-overlay">
-            <div class="lab-item-tag">AI Source</div>
-            <div class="lab-item-title">No. 02</div>
-        </div>
-    </div>
     <div class="lab-item" data-index="8" onclick="openLightbox(8)">
         <img src="images/Personal/AI_source/03.gif" alt="AI Source 03" loading="lazy">
         <div class="lab-item-overlay">
@@ -309,6 +312,7 @@
             <div class="lab-item-title">No. 03</div>
         </div>
     </div>
+
     <div class="lab-item" data-index="9" onclick="openLightbox(9)">
         <img src="images/Personal/AI_source/04.gif" alt="AI Source 04" loading="lazy">
         <div class="lab-item-overlay">
@@ -316,6 +320,7 @@
             <div class="lab-item-title">No. 04</div>
         </div>
     </div>
+
     <div class="lab-item" data-index="10" onclick="openLightbox(10)">
         <img src="images/Personal/AI_source/05.gif" alt="AI Source 05" loading="lazy">
         <div class="lab-item-overlay">
@@ -323,6 +328,7 @@
             <div class="lab-item-title">No. 05</div>
         </div>
     </div>
+
     <div class="lab-item" data-index="11" onclick="openLightbox(11)">
         <img src="images/Personal/AI_source/09.gif" alt="AI Source 09" loading="lazy">
         <div class="lab-item-overlay">
@@ -330,6 +336,7 @@
             <div class="lab-item-title">No. 09</div>
         </div>
     </div>
+
     <div class="lab-item" data-index="12" onclick="openLightbox(12)">
         <img src="images/Personal/AI_source/10.gif" alt="AI Source 10" loading="lazy">
         <div class="lab-item-overlay">
