@@ -78,7 +78,6 @@
             max-width: 640px;
         }
 
-        /* 섹션 */
         .lab-section {
             padding: 60px 60px 0;
         }
@@ -100,7 +99,6 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            margin-bottom: 0;
         }
 
         .lab-item {
@@ -110,14 +108,15 @@
             cursor: pointer;
             display: block;
         }
-        .lab-item img {
+
+        .lab-item video {
             width: 100%;
             height: auto;
             display: block;
             transition: transform 0.5s ease;
             background: #0a0a0a;
         }
-        .lab-item:hover img { transform: scale(1.04); }
+        .lab-item:hover video { transform: scale(1.04); }
 
         .lab-item-overlay {
             position: absolute;
@@ -144,7 +143,6 @@
             color: #fff;
         }
 
-        /* Lightbox */
         .lightbox {
             display: none;
             position: fixed;
@@ -172,11 +170,16 @@
             font-family: 'Inter', sans-serif;
         }
         .lightbox-close:hover { opacity: 1; }
-        .lightbox-img-wrap img {
-            max-width: 90vw;
+        .lightbox-video-wrap {
+            width: 90vw;
+            max-width: 1200px;
+        }
+        .lightbox-video-wrap video {
+            width: 100%;
+            height: auto;
+            display: block;
             max-height: 85vh;
             object-fit: contain;
-            display: block;
         }
         .lightbox-nav {
             position: fixed;
@@ -243,21 +246,25 @@
 </div>
 
 
-<!-- 드론샷 -->
+<!-- 드론샷 (Drone Shot) -->
 <div class="lab-section">
     <div class="lab-section-title">드론샷 (Drone Shot)</div>
     <div class="lab-grid">
 
         <div style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
             <div class="lab-item" data-index="0" onclick="openLightbox(0)">
-                <img src="images/Personal/AI_source/07.gif" alt="Drone Shot 07" loading="lazy">
+                <video autoplay loop muted playsinline>
+                    <source src="images/Personal/AI_source/07.mp4" type="video/mp4">
+                </video>
                 <div class="lab-item-overlay">
                     <div class="lab-item-tag">드론샷 (Drone Shot)</div>
                     <div class="lab-item-title">City Aerial View</div>
                 </div>
             </div>
             <div class="lab-item" data-index="1" onclick="openLightbox(1)">
-                <img src="images/Personal/AI_source/07_1.gif" alt="Drone Shot 07_1" loading="lazy">
+                <video autoplay loop muted playsinline>
+                    <source src="images/Personal/AI_source/07_1.mp4" type="video/mp4">
+                </video>
                 <div class="lab-item-overlay">
                     <div class="lab-item-tag">드론샷 (Drone Shot)</div>
                     <div class="lab-item-title">City Aerial View — Variant</div>
@@ -266,7 +273,9 @@
         </div>
 
         <div class="lab-item" data-index="2" onclick="openLightbox(2)">
-            <img src="images/Personal/AI_source/03.gif" alt="Drone Shot 03" loading="lazy">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/03.mp4" type="video/mp4">
+            </video>
             <div class="lab-item-overlay">
                 <div class="lab-item-tag">드론샷 (Drone Shot)</div>
                 <div class="lab-item-title">Greenhouse Drone</div>
@@ -284,14 +293,18 @@
 
         <div style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
             <div class="lab-item" data-index="3" onclick="openLightbox(3)">
-                <img src="images/Personal/AI_source/08.gif" alt="FX 08" loading="lazy">
+                <video autoplay loop muted playsinline>
+                    <source src="images/Personal/AI_source/08.mp4" type="video/mp4">
+                </video>
                 <div class="lab-item-overlay">
                     <div class="lab-item-tag">FX</div>
                     <div class="lab-item-title">Smoke FX</div>
                 </div>
             </div>
             <div class="lab-item" data-index="4" onclick="openLightbox(4)">
-                <img src="images/Personal/AI_source/08_1.gif" alt="FX 08_1" loading="lazy">
+                <video autoplay loop muted playsinline>
+                    <source src="images/Personal/AI_source/08_1.mp4" type="video/mp4">
+                </video>
                 <div class="lab-item-overlay">
                     <div class="lab-item-tag">FX</div>
                     <div class="lab-item-title">Smoke FX — Variant</div>
@@ -300,7 +313,9 @@
         </div>
 
         <div class="lab-item" data-index="5" onclick="openLightbox(5)">
-            <img src="images/Personal/AI_source/01.gif" alt="FX 01" loading="lazy">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/01.mp4" type="video/mp4">
+            </video>
             <div class="lab-item-overlay">
                 <div class="lab-item-tag">FX</div>
                 <div class="lab-item-title">Planet Explosion</div>
@@ -308,7 +323,9 @@
         </div>
 
         <div class="lab-item" data-index="6" onclick="openLightbox(6)">
-            <img src="images/Personal/AI_source/10.gif" alt="FX 10" loading="lazy">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/10.mp4" type="video/mp4">
+            </video>
             <div class="lab-item-overlay">
                 <div class="lab-item-tag">FX</div>
                 <div class="lab-item-title">Space Light Stream</div>
@@ -319,21 +336,25 @@
 </div>
 
 
-<!-- 시네마틱 -->
+<!-- 시네마틱 (Cinematic) -->
 <div class="lab-section">
     <div class="lab-section-title">시네마틱 (Cinematic)</div>
     <div class="lab-grid">
 
         <div style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
             <div class="lab-item" data-index="7" onclick="openLightbox(7)">
-                <img src="images/Personal/AI_source/06.gif" alt="Cinematic 06" loading="lazy">
+                <video autoplay loop muted playsinline>
+                    <source src="images/Personal/AI_source/06.mp4" type="video/mp4">
+                </video>
                 <div class="lab-item-overlay">
                     <div class="lab-item-tag">시네마틱 (Cinematic)</div>
                     <div class="lab-item-title">Mechanic Cinematic</div>
                 </div>
             </div>
             <div class="lab-item" data-index="8" onclick="openLightbox(8)">
-                <img src="images/Personal/AI_source/06_1.gif" alt="Cinematic 06_1" loading="lazy">
+                <video autoplay loop muted playsinline>
+                    <source src="images/Personal/AI_source/06_1.mp4" type="video/mp4">
+                </video>
                 <div class="lab-item-overlay">
                     <div class="lab-item-tag">시네마틱 (Cinematic)</div>
                     <div class="lab-item-title">Mechanic Cinematic — Variant</div>
@@ -342,7 +363,9 @@
         </div>
 
         <div class="lab-item" data-index="9" onclick="openLightbox(9)">
-            <img src="images/Personal/AI_source/05.gif" alt="Cinematic 05" loading="lazy">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/05.mp4" type="video/mp4">
+            </video>
             <div class="lab-item-overlay">
                 <div class="lab-item-tag">시네마틱 (Cinematic)</div>
                 <div class="lab-item-title">Vinyl Recorder</div>
@@ -353,13 +376,15 @@
 </div>
 
 
-<!-- 자연 / 광고 소재 -->
+<!-- 자연 / 광고 소재 (Nature / Ad Source) -->
 <div class="lab-section">
     <div class="lab-section-title">자연 / 광고 소재 (Nature / Ad Source)</div>
     <div class="lab-grid">
 
         <div class="lab-item" data-index="10" onclick="openLightbox(10)">
-            <img src="images/Personal/AI_source/02.gif" alt="Nature 02" loading="lazy">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/02.mp4" type="video/mp4">
+            </video>
             <div class="lab-item-overlay">
                 <div class="lab-item-tag">자연 / 광고 소재 (Nature / Ad Source)</div>
                 <div class="lab-item-title">Water Drop on Leaf</div>
@@ -367,7 +392,9 @@
         </div>
 
         <div class="lab-item" data-index="11" onclick="openLightbox(11)">
-            <img src="images/Personal/AI_source/04.gif" alt="Nature 04" loading="lazy">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/04.mp4" type="video/mp4">
+            </video>
             <div class="lab-item-overlay">
                 <div class="lab-item-tag">자연 / 광고 소재 (Nature / Ad Source)</div>
                 <div class="lab-item-title">Cosmetic Water & Plant</div>
@@ -375,7 +402,9 @@
         </div>
 
         <div class="lab-item" data-index="12" onclick="openLightbox(12)">
-            <img src="images/Personal/AI_source/09.gif" alt="Blueprint 09" loading="lazy">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/09.mp4" type="video/mp4">
+            </video>
             <div class="lab-item-overlay">
                 <div class="lab-item-tag">자연 / 광고 소재 (Nature / Ad Source)</div>
                 <div class="lab-item-title">Blueprint</div>
@@ -386,21 +415,25 @@
 </div>
 
 
-<!-- 화장품 모델 -->
+<!-- 화장품 모델 (Cosmetic Model) -->
 <div class="lab-section">
     <div class="lab-section-title">화장품 모델 (Cosmetic Model)</div>
     <div class="lab-grid">
 
         <div style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
             <div class="lab-item" data-index="13" onclick="openLightbox(13)">
-                <img src="images/Personal/AI_source/11.gif" alt="Model 11" loading="lazy">
+                <video autoplay loop muted playsinline>
+                    <source src="images/Personal/AI_source/11.mp4" type="video/mp4">
+                </video>
                 <div class="lab-item-overlay">
                     <div class="lab-item-tag">화장품 모델 (Cosmetic Model)</div>
                     <div class="lab-item-title">Cosmetic Model</div>
                 </div>
             </div>
             <div class="lab-item" data-index="14" onclick="openLightbox(14)">
-                <img src="images/Personal/AI_source/11_1.gif" alt="Model 11_1" loading="lazy">
+                <video autoplay loop muted playsinline>
+                    <source src="images/Personal/AI_source/11_1.mp4" type="video/mp4">
+                </video>
                 <div class="lab-item-overlay">
                     <div class="lab-item-tag">화장품 모델 (Cosmetic Model)</div>
                     <div class="lab-item-title">Cosmetic Model — Variant</div>
@@ -415,8 +448,10 @@
 <div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
     <button class="lightbox-close" onclick="closeLightbox()">Close</button>
     <button class="lightbox-nav lightbox-prev" onclick="navigate(-1)">Prev</button>
-    <div class="lightbox-img-wrap">
-        <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-video-wrap">
+        <video id="lightboxVideo" autoplay loop muted playsinline>
+            <source id="lightboxSource" src="" type="video/mp4">
+        </video>
     </div>
     <button class="lightbox-nav lightbox-next" onclick="navigate(1)">Next</button>
     <div class="lightbox-counter" id="lightboxCounter"></div>
@@ -426,35 +461,41 @@
 
 <script>
     const allSources = [
-        "images/Personal/AI_source/07.gif",
-        "images/Personal/AI_source/07_1.gif",
-        "images/Personal/AI_source/03.gif",
-        "images/Personal/AI_source/08.gif",
-        "images/Personal/AI_source/08_1.gif",
-        "images/Personal/AI_source/01.gif",
-        "images/Personal/AI_source/10.gif",
-        "images/Personal/AI_source/06.gif",
-        "images/Personal/AI_source/06_1.gif",
-        "images/Personal/AI_source/05.gif",
-        "images/Personal/AI_source/02.gif",
-        "images/Personal/AI_source/04.gif",
-        "images/Personal/AI_source/09.gif",
-        "images/Personal/AI_source/11.gif",
-        "images/Personal/AI_source/11_1.gif"
+        "images/Personal/AI_source/07.mp4",
+        "images/Personal/AI_source/07_1.mp4",
+        "images/Personal/AI_source/03.mp4",
+        "images/Personal/AI_source/08.mp4",
+        "images/Personal/AI_source/08_1.mp4",
+        "images/Personal/AI_source/01.mp4",
+        "images/Personal/AI_source/10.mp4",
+        "images/Personal/AI_source/06.mp4",
+        "images/Personal/AI_source/06_1.mp4",
+        "images/Personal/AI_source/05.mp4",
+        "images/Personal/AI_source/02.mp4",
+        "images/Personal/AI_source/04.mp4",
+        "images/Personal/AI_source/09.mp4",
+        "images/Personal/AI_source/11.mp4",
+        "images/Personal/AI_source/11_1.mp4"
     ];
 
     let currentIndex = 0;
 
     function openLightbox(idx) {
         currentIndex = idx;
-        document.getElementById('lightboxImg').src = allSources[idx];
+        const video = document.getElementById('lightboxVideo');
+        const source = document.getElementById('lightboxSource');
+        source.src = allSources[idx];
+        video.load();
+        video.play();
         updateCounter();
         document.getElementById('lightbox').classList.add('open');
         document.body.style.overflow = 'hidden';
     }
     function closeLightbox() {
+        const video = document.getElementById('lightboxVideo');
+        video.pause();
+        document.getElementById('lightboxSource').src = '';
         document.getElementById('lightbox').classList.remove('open');
-        document.getElementById('lightboxImg').src = '';
         document.body.style.overflow = 'auto';
     }
     function closeLightboxOnBg(e) {
@@ -462,7 +503,11 @@
     }
     function navigate(dir) {
         currentIndex = (currentIndex + dir + allSources.length) % allSources.length;
-        document.getElementById('lightboxImg').src = allSources[currentIndex];
+        const video = document.getElementById('lightboxVideo');
+        const source = document.getElementById('lightboxSource');
+        source.src = allSources[currentIndex];
+        video.load();
+        video.play();
         updateCounter();
     }
     function updateCounter() {
