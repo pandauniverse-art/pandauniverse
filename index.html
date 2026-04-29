@@ -839,12 +839,51 @@
 
 
     </style>
+    .nav-dropdown {
+            position: relative;
+        }
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            padding-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .nav-dropdown-menu a {
+            font-size: 0.75rem;
+            font-weight: 200;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            white-space: nowrap;
+            transition: 0.3s;
+        }
+        .nav-dropdown-menu a:hover {
+            color: #fff;
+            opacity: 1;
+        }
 </head>
 <body>
 
 <nav>
     <a href="#about">About</a>
-    <a href="#works">Works</a>
+    <div class="nav-dropdown">
+        <a href="#works">Works</a>
+        <div class="nav-dropdown-menu">
+            <a href="#company">Company</a>
+            <a href="#personal">Personal</a>
+        </div>
+    </div>
     <a href="#ai">AI</a>
     <a href="ai-lab.html">AI Lab</a> 
     <a href="archive.html">Archive</a> 
@@ -1168,20 +1207,22 @@
 
             <div class="exp-item">
                 <h3>(주)에이플랜컴퍼니</h3>
-                <div class="comp-info">2024.04 - 2025.09 | 미디어팀 사원</div>
+             <div class="comp-info">2024.04 - 2025.09 | 미디어팀 사원</div>
                 <ul class="desc-list">
                     <li>미디어 아트용 그래픽 기획 및 제작</li>
-                    <li>테크니컬 팀 협업</li>
+                    <li>유니세프 × 아시아나, 랑콤, 전동성당 등 상업 프로젝트 참여</li>
+                    <li>테크니컬 팀 협업 및 맵핑 프로세스 정리</li>
                     <li>클라이언트 소통, 프로젝트 매니징</li>
                 </ul>
             </div>
 
             <div class="exp-item">
                 <h3>파라다이스세가사미</h3>
-                <div class="comp-info">2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</div>
+               <div class="comp-info">2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</div>
                 <ul class="desc-list">
-                    <li>호텔 내부 행사, 음식 촬영 및 편집</li>
+                    <li>Pink Spring, Purpool Party 등 호텔 시즌 행사 3D 그래픽 기획 및 제작 총괄</li>
                     <li>LED 전시용 3D 그래픽 제작</li>
+                    <li>호텔 내부 행사, 음식 촬영 및 편집</li>
                 </ul>
             </div>
 
@@ -1295,8 +1336,13 @@
     <div class="contact-wrap">
         <p>010-8862-0286</p>
         <p style="font-size: 1.1rem; opacity: 0.5;">led3268@naver.com</p>
-            
-
+        <div class="contact-socials">
+            <a class="contact-social" href="https://www.youtube.com/@C4DUnreal" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a class="contact-social" href="https://www.instagram.com/panda.univ/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a class="contact-social" href="https://www.behance.net/led32684792a3" target="_blank" rel="noopener noreferrer">Behance</a>
+            <a class="contact-social" href="https://www.inflearn.com/course/%EC%8B%9C%EB%84%A4%EB%A7%88-4d-%EA%B8%B0%EC%B4%88?inst=8517607e" target="_blank" rel="noopener noreferrer">Inflearn</a>
+            <a class="contact-social" href="https://www.yes24.com/Product/Goods/136904341" target="_blank" rel="noopener noreferrer">Book</a>
+        </div>
     </div>
 </section>
 
