@@ -1431,11 +1431,14 @@
             folder: "Personal/25.11_MULTIPLE DIMENSIONS",
             images: ["00_title_1.gif", "01_1.gif", "01_2_1.gif", "01_floor_1_1.gif", "01_will_1_1.gif", "02_1.gif", "02_2_1.gif", "03_1.gif", "03_2_1.gif", "04_1.gif", "04_2_1.gif", "05_1.gif", "05_2_1.gif"]
         },
-        golden: {
+       golden: {
             video: null,
             role: "개인 작업 (Personal Artwork)",
-            desc: "Golden Flower: A Rhythm of Form",
-            folder: "Personal/25.06_Golden Flower A Rhythm of Form",
+            desc: `Golden Flower: A Rhythm of Form
+
+The Golden Flower: A Rhythm of Form is a visual exploration of balance—between structure and spontaneity, stillness and growth. The golden flower, rendered in luminous material, symbolizes a form born from quiet tension and evolving rhythm. Its petals express both fragility and strength, inviting the viewer into a world where design meets emotion and the form pulses with quiet energy. This piece reflects on how beauty can emerge not only from planning, but from the subtle rhythm of becoming.
+
+《황금꽃: 형태의 리듬》은 구조와 우연, 정지와 성장 사이의 균형을 시각적으로 탐구하는 작품입니다. 빛나는 재질로 표현된 황금꽃은 고요한 긴장감과 변화하는 리듬 속에서 피어난 형태를 상징합니다. 그 꽃잎은 연약함과 강인함을 동시에 담고 있으며, 디자인과 감정이 만나는 세계로 관람자를 초대합니다. 이 작품은 치밀한 기획뿐 아니라, 서서히 생성되는 리듬 속에서도 아름다움이 피어날 수 있음을 보여줍니다.`,
             images: ["Golden Flower A Rhythm of Form_01.png", "Golden Flower A Rhythm of Form_02.gif", "Golden Flower A Rhythm of Form_03.gif", "Golden Flower A Rhythm of Form_04.gif", "Golden Flower A Rhythm of Form_05.png", "Golden Flower A Rhythm of Form_06.png", "Golden Flower A Rhythm of Form_07.png", "Golden Flower A Rhythm of Form_08.png", "Golden Flower A Rhythm of Form_09.png", "Golden Flower A Rhythm of Form_10.png", "Golden Flower A Rhythm of Form_11.png", "Golden Flower A Rhythm of Form_12.png", "Golden Flower A Rhythm of Form_13.png", "Golden Flower A Rhythm of Form_14.png", "Golden Flower A Rhythm of Form_15.png", "Golden Flower A Rhythm of Form_16.png", "Golden Flower A Rhythm of Form_17.png", "Golden Flower A Rhythm of Form_18.png", "Golden Flower A Rhythm of Form_19.png", "Golden Flower A Rhythm of Form_20.png", "Golden Flower A Rhythm of Form_21.png"]
         },
         odyssey: {
@@ -1982,6 +1985,10 @@ if (
         fileName.includes('01_will')
     )
 ) {
+    img.style.gridColumn = '1 / -1';
+}
+
+if (type === 'golden' && index === 0) {
     img.style.gridColumn = '1 / -1';
 }
 
