@@ -91,35 +91,55 @@
         }
 
         .hero-content {
-            position: absolute;
-            z-index: 2;
-            text-align: center;
-            width: 100%;
-        }
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    max-width: 980px;
+    padding: 0 24px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 
-        .hero-content h1 {
-            font-size: var(--h1-size);
-            font-weight: var(--fw-bold);
-            letter-spacing: var(--letter-spacing);
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
+.hero-name {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.62);
+    margin-bottom: 18px;
+}
 
-        .hero-content p {
-            font-size: var(--p-size);
-            font-weight: var(--fw-normal);
-            letter-spacing: -0.5px;
-            color: rgba(255, 255, 255, 0.8);
-        }
+.hero-headline {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 600;
+    letter-spacing: -1.5px;
+    line-height: 1.08;
+    color: #fff;
+    margin-bottom: 18px;
+}
 
-        .hero-content span {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 100;
-            margin-top: 20px;
-            letter-spacing: 4px;
-            opacity: 0.6;
-        }
+.hero-subcopy {
+    font-size: clamp(0.98rem, 1.4vw, 1.15rem);
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.82);
+    max-width: 760px;
+    margin: 0 auto 20px;
+    word-break: keep-all;
+}
+
+.hero-proof {
+    font-size: 0.82rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.62);
+    text-transform: uppercase;
+}
+
 
         section {
             padding: 100px 60px;
@@ -808,14 +828,14 @@
 
 
 
-              @media (max-width: 768px) {
-                  .featured-proof-grid {
-    grid-template-columns: 1fr;
-}
+             @media (max-width: 768px) {
+    .featured-proof-grid {
+        grid-template-columns: 1fr;
+    }
 
-.featured-proof-overlay {
-    opacity: 1;
-}
+    .featured-proof-overlay {
+        opacity: 1;
+    }
 
     :root { --h1-size: 1.8rem; }
     .grid, .image-grid, .exp-container { grid-template-columns: 1fr; }
@@ -823,19 +843,47 @@
     nav { padding: 24px 20px; gap: 18px; }
     section { padding: 80px 20px; }
     .ai-modal-frame { height: 70vh; }
+
     .ai-card-stack {
         grid-template-columns: 1fr;
         gap: 16px;
     }
 
-     .extra-video-grid {
+    .extra-video-grid {
         grid-template-columns: 1fr;
     }
 
     #videoContainer.video-grid-2 {
         grid-template-columns: 1fr;
     }
+
+    .hero-content {
+        padding: 0 20px;
+    }
+
+    .hero-name {
+        font-size: 0.72rem;
+        letter-spacing: 2px;
+        margin-bottom: 14px;
+    }
+
+    .hero-headline {
+        line-height: 1.15;
+        margin-bottom: 16px;
+    }
+
+    .hero-subcopy {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 18px;
+    }
+
+    .hero-proof {
+        font-size: 0.72rem;
+        line-height: 1.7;
+    }
 }
+
 
 
 .nav-dropdown {
@@ -896,11 +944,18 @@
         <iframe src="https://www.youtube.com/embed/7qYDcnBwBlo?autoplay=1&mute=1&loop=1&playlist=7qYDcnBwBlo&controls=0&modestbranding=1&rel=0" frameborder="0"></iframe>
         <div class="hero-overlay"></div>
     </div>
-    <div class="hero-content">
-        <h1>LEE DEOK JUN</h1>
-        <p>3D Motion & Media Artist</p>
-        <span>시각적 경계를 허무는 3D 모션 & 미디어 아트</span>
+  <div class="hero-content">
+    <span class="hero-name">LEE DEOK JUN</span>
+    <h1 class="hero-headline">3D Motion Designer for Event, Exhibition & Media Art</h1>
+    <p class="hero-subcopy">
+        전시·행사·브랜드 프로젝트를 위한 3D 모션 및 미디어 콘텐츠를 제작합니다.<br>
+        Cinema 4D, Unreal Engine, Render, AI workflow 기반으로 작업합니다.
+    </p>
+    <div class="hero-proof">
+        6년+ Experience · 2,000+ Students · 4,600+ Subscribers · 500+ Videos
     </div>
+</div>
+
 </section>
 
 <section id="about" style="background: #050505;">
