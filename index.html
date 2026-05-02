@@ -578,8 +578,8 @@
 
 .featured-proof-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 24px;
 }
 
 .featured-proof-card {
@@ -605,12 +605,13 @@
 
 .featured-proof-thumb img {
     width: 100%;
-    aspect-ratio: 16/10;
+    height: 220px;
     object-fit: cover;
     display: block;
     transition: transform 0.45s ease;
     background: #111;
 }
+
 
 .featured-proof-card:hover .featured-proof-thumb img {
     transform: scale(1.04);
@@ -1176,84 +1177,79 @@
 
 
 <section id="credentials" style="background: #050505;">
+    <h2>FEATURED CREDENTIALS</h2>
+
     <div class="featured-proof">
-        <div class="featured-proof-title">Featured Credentials</div>
-
         <div class="featured-proof-grid">
-           <div class="featured-proof">
-    <div class="featured-proof-title">Featured Credentials</div>
-
-    <div class="featured-proof-grid">
-        <a class="featured-proof-card" href="https://www.yes24.com/Product/Goods/136904341" target="_blank" rel="noopener noreferrer">
-            <div class="featured-proof-thumb">
-                <img src="images/Personal/Tutorial/Book.jpg" alt="CINEMA 4D & OctaneRender Book">
-                <div class="featured-proof-overlay">
-                    <div class="featured-proof-badge">Book Publication</div>
-                    <h4>CINEMA 4D & OctaneRender</h4>
-                    <p>기초부터 마스터하는 3D 렌더링 가이드</p>
-                    <ul class="featured-proof-meta-list">
-                        <li>저자: 이덕준</li>
-                        <li>출간일: 2024.11.15</li>
-                        <li>평점 10.0 · 리뷰 8건</li>
-                        <li>세종도서 우수도서 선정</li>
-                    </ul>
-                    <span class="featured-proof-cta">도서 상세 보기 ↗</span>
+            <a class="featured-proof-card" href="https://www.yes24.com/Product/Goods/136904341" target="_blank" rel="noopener noreferrer">
+                <div class="featured-proof-thumb">
+                    <img src="images/Personal/Tutorial/Book.jpg" alt="CINEMA 4D & OctaneRender Book">
+                    <div class="featured-proof-overlay">
+                        <div class="featured-proof-badge">Book Publication</div>
+                        <h4>CINEMA 4D & OctaneRender</h4>
+                        <p>기초부터 마스터하는 3D 렌더링 가이드</p>
+                        <ul class="featured-proof-meta-list">
+                            <li>저자: 이덕준</li>
+                            <li>출간일: 2024.11.15</li>
+                            <li>평점 10.0 · 리뷰 8건</li>
+                            <li>세종도서 우수도서 선정</li>
+                        </ul>
+                        <span class="featured-proof-cta">도서 상세 보기 ↗</span>
+                    </div>
                 </div>
-            </div>
-            <div class="featured-proof-body">
-                <div class="featured-proof-label">Book Publication</div>
-                <h3>CINEMA 4D & OctaneRender</h3>
-            </div>
-        </a>
-
-        <a class="featured-proof-card" href="https://www.inflearn.com/course/%EC%8B%9C%EB%84%A4%EB%A7%88-4d-%EA%B8%B0%EC%B4%88?inst=8517607e&utm_source=instructor&utm_medium=referral&utm_campaign=inflearn_%ED%8A%B8%EB%9E%98%ED%94%BD_promotion-link&cid=327721" target="_blank" rel="noopener noreferrer">
-            <div class="featured-proof-thumb">
-                <img src="images/Personal/Tutorial/Inflear.png" alt="Inflearn Cinema 4D Basic">
-                <div class="featured-proof-overlay">
-                    <div class="featured-proof-badge">Lecture / Inflearn</div>
-                    <h4>Cinema 4D의 기초</h4>
-                    <p>C4D를 함께 익히며 실제 작업물을 만드는 입문 강의</p>
-                    <ul class="featured-proof-meta-list">
-                        <li>평점 4.9 · 수강평 19개</li>
-                        <li>수강생 2,122명</li>
-                        <li>강사: 판다유니버스</li>
-                        <li>태그: Cinema 4D</li>
-                    </ul>
-                    <span class="featured-proof-cta">강의 보러가기 ↗</span>
+                <div class="featured-proof-body">
+                    <div class="featured-proof-label">Book Publication</div>
+                    <h3>CINEMA 4D & OctaneRender</h3>
                 </div>
-            </div>
-            <div class="featured-proof-body">
-                <div class="featured-proof-label">Lecture / Inflearn</div>
-                <h3>Cinema 4D Basic Class</h3>
-            </div>
-        </a>
+            </a>
 
-        <a class="featured-proof-card" href="https://www.youtube.com/@C4DUnreal" target="_blank" rel="noopener noreferrer">
-            <div class="featured-proof-thumb">
-                <img src="images/Personal/Tutorial/youtube.jpg" alt="Panda Universe YouTube Channel">
-                <div class="featured-proof-overlay">
-                    <div class="featured-proof-badge">YouTube Channel</div>
-                    <h4>Panda Universe</h4>
-                    <p>C4D, Unreal Engine, AE 중심의 3D 실무형 튜토리얼 채널</p>
-                    <ul class="featured-proof-meta-list">
-                        <li>구독자 4,600명+</li>
-                        <li>영상 533개+</li>
-                        <li>튜토리얼 / 프로세스 / 실험 작업 기록</li>
-                        <li>지속 운영 중인 개인 크리에이터 채널</li>
-                    </ul>
-                    <span class="featured-proof-cta">채널 보러가기 ↗</span>
+            <a class="featured-proof-card" href="https://www.inflearn.com/course/%EC%8B%9C%EB%84%A4%EB%A7%88-4d-%EA%B8%B0%EC%B4%88?inst=8517607e&utm_source=instructor&utm_medium=referral&utm_campaign=inflearn_%ED%8A%B8%EB%9E%98%ED%94%BD_promotion-link&cid=327721" target="_blank" rel="noopener noreferrer">
+                <div class="featured-proof-thumb">
+                    <img src="images/Personal/Tutorial/Inflear.png" alt="Inflearn Cinema 4D Basic">
+                    <div class="featured-proof-overlay">
+                        <div class="featured-proof-badge">Lecture / Inflearn</div>
+                        <h4>Cinema 4D의 기초</h4>
+                        <p>C4D를 함께 익히며 실제 작업물을 만드는 입문 강의</p>
+                        <ul class="featured-proof-meta-list">
+                            <li>평점 4.9 · 수강평 19개</li>
+                            <li>수강생 2,122명</li>
+                            <li>강사: 판다유니버스</li>
+                            <li>태그: Cinema 4D</li>
+                        </ul>
+                        <span class="featured-proof-cta">강의 보러가기 ↗</span>
+                    </div>
                 </div>
-            </div>
-            <div class="featured-proof-body">
-                <div class="featured-proof-label">YouTube Channel</div>
-                <h3>Panda Universe</h3>
-            </div>
-        </a>
-    </div>
-</div>
+                <div class="featured-proof-body">
+                    <div class="featured-proof-label">Lecture / Inflearn</div>
+                    <h3>Cinema 4D Basic Class</h3>
+                </div>
+            </a>
+
+            <a class="featured-proof-card" href="https://www.youtube.com/@C4DUnreal" target="_blank" rel="noopener noreferrer">
+                <div class="featured-proof-thumb">
+                    <img src="images/Personal/Tutorial/youtube.jpg" alt="Panda Universe YouTube Channel">
+                    <div class="featured-proof-overlay">
+                        <div class="featured-proof-badge">YouTube Channel</div>
+                        <h4>Panda Universe</h4>
+                        <p>C4D, Unreal Engine, AE 중심의 3D 실무형 튜토리얼 채널</p>
+                        <ul class="featured-proof-meta-list">
+                            <li>구독자 4,600명+</li>
+                            <li>영상 533개+</li>
+                            <li>튜토리얼 / 프로세스 / 실험 작업 기록</li>
+                            <li>지속 운영 중인 개인 크리에이터 채널</li>
+                        </ul>
+                        <span class="featured-proof-cta">채널 보러가기 ↗</span>
+                    </div>
+                </div>
+                <div class="featured-proof-body">
+                    <div class="featured-proof-label">YouTube Channel</div>
+                    <h3>Panda Universe</h3>
+                </div>
+            </a>
         </div>
     </div>
 </section>
+
 
 <section id="experience">
 
