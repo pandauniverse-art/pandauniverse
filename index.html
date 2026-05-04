@@ -132,6 +132,33 @@
 }
 
 .hero-proof {
+    .hero-reel-link-wrap {
+    padding: 22px 0 34px;
+    text-align: center;
+    background: #000;
+}
+
+.hero-reel-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border: 1px solid rgba(255,255,255,0.16);
+    color: rgba(255,255,255,0.88);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.02);
+    transition: 0.3s ease;
+}
+
+.hero-reel-btn:hover {
+    border-color: rgba(255,255,255,0.35);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
     font-size: 0.82rem;
     font-weight: 300;
     letter-spacing: 1px;
@@ -952,6 +979,11 @@
 
 
 </section>
+<div class="hero-reel-link-wrap">
+    <a class="hero-reel-btn" href="javascript:void(0);" onclick="openShowreelModal()">
+        Watch Full Reel
+    </a>
+</div>
 
 <section id="about" style="background: #050505;">
     <h2>ABOUT</h2>
@@ -1450,6 +1482,23 @@
         </iframe>
     </div>
 </div>
+<div id="showreelModal" class="full-modal" onclick="closeShowreelModal()">
+    <div class="modal-inner" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeShowreelModal()">CLOSE</span>
+        <div class="video-box" style="margin-top:40px;">
+            <iframe
+                id="showreelFrame"
+                width="100%"
+                height="100%"
+                src=""
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
 
 <section id="contact">
     <div class="contact-wrap">
@@ -1928,6 +1977,8 @@ images: [
         const projectModal = document.getElementById('projectModal');
         const aiModal = document.getElementById('aiModal');
         const aiFrame = document.getElementById('aiFrame');
+        const showreelModal = document.getElementById('showreelModal');
+        const showreelFrame = document.getElementById('showreelFrame');
         const videoContainer = document.getElementById('videoContainer');
         const imageContainer = document.getElementById('projectImages');
         const specialContainer = document.getElementById('specialTextContainer');
@@ -1943,10 +1994,10 @@ images: [
         specialContainer.innerHTML = '';
 
         aiFrame.src = '';
-
+        if (showreelFrame) showreelFrame.src = '';
         projectModal.style.display = 'none';
         aiModal.style.display = 'none';
-
+        if (showreelModal) showreelModal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
 
@@ -2181,6 +2232,21 @@ imageContainer.appendChild(img);
     function closeAIModal() {
         resetAllModals();
     }
+    function openShowreelModal() {
+    resetAllModals();
+
+    const showreelModal = document.getElementById('showreelModal');
+    const showreelFrame = document.getElementById('showreelFrame');
+
+    showreelFrame.src = "https://www.youtube.com/embed/7qYDcnBwBlo?autoplay=1&rel=0";
+    showreelModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeShowreelModal() {
+    resetAllModals();
+}
+
 </script>
 
 
