@@ -1456,6 +1456,7 @@
         <span class="close-btn" onclick="closeProject()">CLOSE</span>
 
         <div id="videoContainer"></div>
+<div id="videoExtraContainer"></div>
 
         <div class="project-meta">
             <div class="meta-group">
@@ -1572,12 +1573,23 @@
             desc: "해당 행사는 전주에서 진행한 미디어 파사드 행사이며 기초 틀을 잡아주신 성당 담당 신부님과 협의하여 스토리를 완성했습니다.\n과거부터 이어지는 성당의 건축 과정과 이야기를 행사에 녹아내는 것에 집중했으며, 진중하면서도 파사드 특유의 화려함을 앞뒤 순서와 조화롭게 연결하는 것에 염두를 두고 작업했습니다.",
             folder: "Company/24.07_Jeonju Cathedral",
             images: ["Jeonju Cathedral_01.gif", "Jeonju Cathedral_02.gif", "Jeonju Cathedral_03.gif", "Jeonju Cathedral_04.gif", "Jeonju Cathedral_05_1.gif", "Jeonju Cathedral_06.gif", "Jeonju Cathedral_07.gif", "Jeonju Cathedral_08_1.gif", "Jeonju Cathedral_10.jpg", "Jeonju Cathedral_11.jpg", "Jeonju Cathedral_12.jpg", "Jeonju Cathedral_13.jpg", "Jeonju Cathedral_14.jpg", "Jeonju Cathedral_15.jpg", "Jeonju Cathedral_16.jpg", "Jeonju Cathedral_17.jpg", "Jeonju Cathedral_18.jpg", "Jeonju Cathedral_19.jpg", "Jeonju Cathedral_20.jpg", "Jeonju Cathedral_21.jpg", "Jeonju Cathedral_22.jpg", "Jeonju Cathedral_23.jpg", "Jeonju Cathedral_24.jpg", "Jeonju Cathedral_25.jpg"],
-            special: {
-                title: "행사 순서 (제작 파트: 4부)",
-                content: "1부 빛을 깨우다\n2부 전주를 즐기다\n3부 전주를 비비다\n4부 전주의 빛으로 성당을 빚다 ★\n5부 전주를 빛으로 그리다"
-            }
-        },
-        unicef: {
+       special: {
+    title: "행사 순서 (제작 파트: 4부)",
+    content: "1부 빛을 깨우다\n2부 전주를 즐기다\n3부 전주를 비비다\n4부 전주의 빛으로 성당을 빚다 ★\n5부 전주를 빛으로 그리다"
+},
+extraVideosBelowMain: [
+    {
+        title: "전주 전동성당 전체 영상 01",
+        videoId: "zeKmvg6YWcQ"
+    },
+    {
+        title: "전주 전동성당 전체 영상 02",
+        videoId: "J2dDsaTVOlc"
+    }
+]
+},
+unicef: {
+
             video: "RQ2Z5zdNbLI",
             role: "전체 스토리보드 제작, 리드 아티스트 (전체 70% 비중 담당), 맵핑 프로세스 정리",
             desc: "아시아나 항공사와 유니세프의 모금 활동 20주년을 기념한 행사로, 비행기의 리얼한 모습부터 조명이 들어오는 연출과 객실 내부 빛, 사람들이 직접 모금하는 장면을 그림자 아트로 표현했습니다.\n이후에는 예술 기획사의 연출적인 포인트에 집중하여 작업을 진행했습니다.\n\n맵핑 단계에서는 몸통, 엔진, 날개 부분들을 별도로 제작했으며, 블루라이트라는 중요한 행사 키워드가 있었기 때문에 전체 색감이 화려하면서도 푸른 계열과 잘 어울리도록 구성했습니다.\n실제 행사까지 고려하여 사운드 아티스트와 많은 컨택을 하며 진행했습니다.",
@@ -1942,7 +1954,8 @@ images: [
         if (!(window.YT && window.YT.Player)) return;
 
         ytPlayers = [];
-        const frames = document.querySelectorAll('#videoContainer iframe[data-youtube-player="true"]');
+      const frames = document.querySelectorAll('#projectModal iframe[data-youtube-player="true"]');
+
 
         frames.forEach(frame => {
             const player = new YT.Player(frame, {
@@ -1987,13 +2000,19 @@ images: [
         const showreelModal = document.getElementById('showreelModal');
         const showreelFrame = document.getElementById('showreelFrame');
         const videoContainer = document.getElementById('videoContainer');
+        const videoExtraContainer = document.getElementById('videoExtraContainer');
         const imageContainer = document.getElementById('projectImages');
         const specialContainer = document.getElementById('specialTextContainer');
+    
+
 
         destroyYouTubePlayers();
 
         videoContainer.innerHTML = '';
         videoContainer.className = '';
+
+        videoExtraContainer.innerHTML = '';
+        videoExtraContainer.className = '';
 
         imageContainer.innerHTML = '';
         imageContainer.style.gridTemplateColumns = '';
@@ -2015,6 +2034,7 @@ images: [
         const roleText = document.getElementById('projectRole');
         const descText = document.getElementById('projectDesc');
         const specialContainer = document.getElementById('specialTextContainer');
+        const videoExtraContainer = document.getElementById('videoExtraContainer');
         const roleTitle = document.getElementById('roleTitle');
         const descTitle = document.getElementById('descTitle');
 
@@ -2135,6 +2155,30 @@ if (type === 'ai_source') {
     'ai_source'
 ];
 
+
+        if (data.extraVideosBelowMain && data.extraVideosBelowMain.length > 0) {
+    videoExtraContainer.innerHTML = `
+        <div class="extra-video-grid">
+            ${data.extraVideosBelowMain.map(item => `
+                <div class="extra-video-item">
+                    <iframe
+                        data-youtube-player="true"
+                        src="https://www.youtube.com/embed/${item.videoId}?enablejsapi=1&rel=0"
+                        title="${item.title}"
+                        loading="lazy"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="extra-video-caption">${item.title}</div>
+                </div>
+            `).join('')}
+        </div>
+    `;
+
+    ensureYouTubeAPI();
+}
 
         if (personalTypes.includes(type)) {
             roleTitle.innerText = '프로젝트 유형';
