@@ -1215,9 +1215,16 @@
 <section id="ai" style="background: #050505;">
     <h2>AI / INTERACTIVE MEDIA</h2>
 
-    <div class="ai-feature">
-        <div class="ai-card-stack">
-            <div class="ai-card" onclick="openProject('car_drive')">
+<div class="ai-feature">
+    <div class="ai-card-stack">
+        <div class="ai-card" onclick="openProject('ai_nature')">
+            <img class="ai-thumb" src="images/Personal/25.10_AI Creates STUNNIN/AI Creates STUNNING Nature Journey_thum.png" alt="AI Creates STUNNING Nature Journey">
+            <span class="ai-badge">AI / Cinematic Visuals</span>
+            <h3>AI Creates STUNNING Nature Journey</h3>
+            <p>AI를 활용하여 압도적인 대자연의 여정을 표현한 시네마틱 비주얼 프로젝트입니다.</p>
+            <div class="ai-link">Open Portfolio ↗</div>
+        </div>
+        <div class="ai-card" onclick="openProject('car_drive')">
                 <img class="ai-thumb" src="images/Personal/25.07_car_drive/car_drive_02.gif" alt="AI Generated Lamborghini">
                 <span class="ai-badge">AI / Cinematic</span>
                 <h3>AI Generated Lamborghini | Sora × Genspark Cinematic Experience</h3>
@@ -1539,7 +1546,14 @@
 </section>
 
 <script>
-    const projectData = {
+   const projectData = {
+        ai_nature: {
+            video: "i73Yz3Ff6Fg", 
+            role: "AI 포트폴리오 (Nature Journey)",
+            desc: "AI Creates STUNNING Nature Journey\n\nAI를 활용하여 대자연의 경이로운 풍경과 여정을 담아낸 시네마틱 영상입니다.",
+            folder: "Personal/25.10_AI Creates STUNNIN",
+            images: [] 
+        },
         science: {
             video: "a_dn_9OKv5I",
             role: "그래픽팀 팀장 (업무 스케줄, 퀄리티 조율) / PM (클라이언트 소통)",
@@ -2132,9 +2146,10 @@ if (type === 'ai_source') {
         }
 
        const personalTypes = [
-    'multiple',
-    'golden',
-    'odyssey',
+            'ai_nature',
+            'multiple',
+            'golden',
+            'odyssey',
     'particles',
     'world_travel',
     'casual',
