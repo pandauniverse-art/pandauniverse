@@ -97,24 +97,11 @@
 
 .lab-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
+    align-items: stretch;
 }
 
-/* 새로 추가: lab-grid 바로 밑에 아래 코드를 추가하세요 */
-.lab-grid > div:not(.lab-item) {
-    display: contents;
-}
-
-/* 아래 3줄을 lab-grid 바로 밑에 새로 추가하세요 */
-.lab-grid > div:not(.lab-item) {
-    display: contents;
-}
-
-        /* 큰 박스를 만들기 위한 CSS 추가 완료 */
-        .lab-item.wide {
-            grid-column: span 2;
-        }
 
 .lab-item {
     position: relative;
@@ -122,17 +109,21 @@
     border: 1px solid #111;
     cursor: pointer;
     display: block;
-    aspect-ratio: 16 / 9; /* 새로 추가: 16:9 비율로 박스 크기 강제 고정 */
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #0a0a0a;
 }
+
 
 .lab-item video {
     width: 100%;
-    height: 100%; /* 수정: auto에서 100%로 변경 */
-    object-fit: cover; /* 새로 추가: 영상을 박스 비율에 맞춰 꽉 채움 */
+    height: 100%;
+    object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
     background: #0a0a0a;
 }
+
         .lab-item:hover video { transform: scale(1.04); }
 
         .lab-item-overlay {
@@ -238,9 +229,10 @@
             .lightbox-next { right: 10px; }
             .lightbox-close { right: 20px; }
         }
-        @media (min-width: 769px) and (max-width: 1200px) {
-            .lab-grid { grid-template-columns: repeat(2, 1fr); }
-        }
+     @media (min-width: 769px) and (max-width: 1200px) {
+    .lab-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
     </style>
 </head>
 <body>
@@ -266,7 +258,7 @@
 <div class="lab-section">
     <div class="lab-section-title">드론샷 (Drone Shot)</div>
     <div class="lab-grid">
-        <div class="lab-item wide" data-index="0" onclick="openLightbox(0)">
+        <div class="lab-item" data-index="0" onclick="openLightbox(0)">
             <video autoplay loop muted playsinline>
                 <source src="images/Personal/AI_source/07.mp4" type="video/mp4">
             </video>
@@ -300,7 +292,7 @@
 <div class="lab-section">
     <div class="lab-section-title">FX</div>
     <div class="lab-grid">
-        <div class="lab-item wide" data-index="3" onclick="openLightbox(3)">
+        <div class="lab-item" data-index="3" onclick="openLightbox(3)">
             <video autoplay loop muted playsinline>
                 <source src="images/Personal/AI_source/08.mp4" type="video/mp4">
             </video>
@@ -352,7 +344,7 @@
 <div class="lab-section">
     <div class="lab-section-title">시네마틱 (Cinematic)</div>
     <div class="lab-grid">
-        <div class="lab-item wide" data-index="7" onclick="openLightbox(7)">
+        <div class="lab-item" data-index="7" onclick="openLightbox(7)">
             <video autoplay loop muted playsinline>
                 <source src="images/Personal/AI_source/06.mp4" type="video/mp4">
             </video>
@@ -424,7 +416,7 @@
                 <div class="lab-item-title">Snow to City Transition</div>
             </div>
         </div>
-        <div class="lab-item wide" data-index="16" onclick="openLightbox(16)">
+        <div class="lab-item" data-index="16" onclick="openLightbox(16)">
             <video autoplay loop muted playsinline>
                 <source src="images/Personal/AI_source/13.mp4" type="video/mp4">
             </video>
@@ -442,7 +434,7 @@
                 <div class="lab-item-title">Compositing Process</div>
             </div>
         </div>
-        <div class="lab-item wide" data-index="19" onclick="openLightbox(19)">
+        <div class="lab-item" data-index="19" onclick="openLightbox(19)">
             <video autoplay loop muted playsinline>
                 <source src="images/Personal/AI_source/15.mp4" type="video/mp4">
             </video>
@@ -501,7 +493,7 @@
 <div class="lab-section">
     <div class="lab-section-title">화장품 모델 (Cosmetic Model)</div>
     <div class="lab-grid">
-        <div class="lab-item wide" data-index="13" onclick="openLightbox(13)">
+       <div class="lab-item" data-index="13" onclick="openLightbox(13)">
             <video autoplay loop muted playsinline>
                 <source src="images/Personal/AI_source/11.mp4" type="video/mp4">
             </video>
