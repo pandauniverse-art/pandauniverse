@@ -95,10 +95,15 @@
             font-weight: 400;
         }
 
-   .lab-grid {
+.lab-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+/* 새로 추가: lab-grid 바로 밑에 아래 코드를 추가하세요 */
+.lab-grid > div:not(.lab-item) {
+    display: contents;
 }
 
 /* 아래 3줄을 lab-grid 바로 밑에 새로 추가하세요 */
@@ -111,19 +116,19 @@
             grid-column: span 2;
         }
 
-  .lab-item {
+.lab-item {
     position: relative;
     overflow: hidden;
     border: 1px solid #111;
     cursor: pointer;
     display: block;
-    aspect-ratio: 16 / 9; /* 추가: 모든 박스 크기를 16:9 비율로 무조건 똑같이 고정 */
+    aspect-ratio: 16 / 9; /* 새로 추가: 16:9 비율로 박스 크기 강제 고정 */
 }
 
 .lab-item video {
     width: 100%;
-    height: 100%; /* auto에서 100%로 변경 */
-    object-fit: cover; /* 추가: 영상이 찌그러지지 않고 박스에 꽉 차게 맞춤 */
+    height: 100%; /* 수정: auto에서 100%로 변경 */
+    object-fit: cover; /* 새로 추가: 영상을 박스 비율에 맞춰 꽉 채움 */
     display: block;
     transition: transform 0.5s ease;
     background: #0a0a0a;
