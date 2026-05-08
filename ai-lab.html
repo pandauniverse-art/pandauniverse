@@ -99,6 +99,12 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
+            grid-auto-flow: dense;
+        }
+
+        /* 큰 박스를 만들기 위한 CSS 추가 완료 */
+        .lab-item.wide {
+            grid-column: span 2;
         }
 
         .lab-item {
@@ -111,7 +117,8 @@
 
         .lab-item video {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
             transition: transform 0.5s ease;
             background: #0a0a0a;
@@ -246,33 +253,27 @@
 </div>
 
 
-<!-- 드론샷 (Drone Shot) -->
 <div class="lab-section">
     <div class="lab-section-title">드론샷 (Drone Shot)</div>
     <div class="lab-grid">
-
-      
-        <div style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div class="lab-item" data-index="0" onclick="openLightbox(0)">
-                <video autoplay loop muted playsinline>
-                    <source src="images/Personal/AI_source/07.mp4" type="video/mp4">
-                </video>
-                <div class="lab-item-overlay">
-                    <div class="lab-item-tag">드론샷 (Drone Shot)</div>
-                    <div class="lab-item-title">City Aerial View</div>
-                </div>
-            </div>
-            <div class="lab-item" data-index="1" onclick="openLightbox(1)">
-                <video autoplay loop muted playsinline>
-                    <source src="images/Personal/AI_source/07_1.mp4" type="video/mp4">
-                </video>
-                <div class="lab-item-overlay">
-                    <div class="lab-item-tag">드론샷 (Drone Shot)</div>
-                    <div class="lab-item-title">City Aerial View — Variant</div>
-                </div>
+        <div class="lab-item wide" data-index="0" onclick="openLightbox(0)">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/07.mp4" type="video/mp4">
+            </video>
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">드론샷 (Drone Shot)</div>
+                <div class="lab-item-title">City Aerial View</div>
             </div>
         </div>
-
+        <div class="lab-item" data-index="1" onclick="openLightbox(1)">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/07_1.mp4" type="video/mp4">
+            </video>
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">드론샷 (Drone Shot)</div>
+                <div class="lab-item-title">City Aerial View — Variant</div>
+            </div>
+        </div>
         <div class="lab-item" data-index="2" onclick="openLightbox(2)">
             <video autoplay loop muted playsinline>
                 <source src="images/Personal/AI_source/03.mp4" type="video/mp4">
@@ -282,37 +283,31 @@
                 <div class="lab-item-title">Greenhouse Drone</div>
             </div>
         </div>
-
     </div>
 </div>
 
 
-<!-- FX -->
 <div class="lab-section">
     <div class="lab-section-title">FX</div>
     <div class="lab-grid">
-
-        <div style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div class="lab-item" data-index="3" onclick="openLightbox(3)">
-                <video autoplay loop muted playsinline>
-                    <source src="images/Personal/AI_source/08.mp4" type="video/mp4">
-                </video>
-                <div class="lab-item-overlay">
-                    <div class="lab-item-tag">FX</div>
-                    <div class="lab-item-title">Smoke FX</div>
-                </div>
-            </div>
-            <div class="lab-item" data-index="4" onclick="openLightbox(4)">
-                <video autoplay loop muted playsinline>
-                    <source src="images/Personal/AI_source/08_1.mp4" type="video/mp4">
-                </video>
-                <div class="lab-item-overlay">
-                    <div class="lab-item-tag">FX</div>
-                    <div class="lab-item-title">Smoke FX — Variant</div>
-                </div>
+        <div class="lab-item wide" data-index="3" onclick="openLightbox(3)">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/08.mp4" type="video/mp4">
+            </video>
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">FX</div>
+                <div class="lab-item-title">Smoke FX</div>
             </div>
         </div>
-
+        <div class="lab-item" data-index="4" onclick="openLightbox(4)">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/08_1.mp4" type="video/mp4">
+            </video>
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">FX</div>
+                <div class="lab-item-title">Smoke FX — Variant</div>
+            </div>
+        </div>
         <div class="lab-item" data-index="5" onclick="openLightbox(5)">
             <video autoplay loop muted playsinline>
                 <source src="images/Personal/AI_source/01.mp4" type="video/mp4">
@@ -322,58 +317,50 @@
                 <div class="lab-item-title">Planet Explosion</div>
             </div>
         </div>
-
         <div class="lab-item" data-index="6" onclick="openLightbox(6)">
-    <video autoplay loop muted playsinline>
-        <source src="images/Personal/AI_source/10.mp4" type="video/mp4">
-    </video>
-    <div class="lab-item-overlay">
-        <div class="lab-item-tag">FX</div>
-        <div class="lab-item-title">Space Light Stream</div>
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/10.mp4" type="video/mp4">
+            </video>
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">FX</div>
+                <div class="lab-item-title">Space Light Stream</div>
+            </div>
+        </div>
+        <div class="lab-item" data-index="18" onclick="openLightbox(18)">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/14.mp4" type="video/mp4">
+            </video>
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">FX</div>
+                <div class="lab-item-title">FX 14</div>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="lab-item" data-index="18" onclick="openLightbox(18)">
-    <video autoplay loop muted playsinline>
-        <source src="images/Personal/AI_source/14.mp4" type="video/mp4">
-    </video>
-    <div class="lab-item-overlay">
-        <div class="lab-item-tag">FX</div>
-        <div class="lab-item-title">FX 14</div>
-    </div>
-</div>
 
-
-    </div>
-</div>
-
-
-<!-- 시네마틱 (Cinematic) -->
 <div class="lab-section">
     <div class="lab-section-title">시네마틱 (Cinematic)</div>
     <div class="lab-grid">
-
-        <div style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div class="lab-item" data-index="7" onclick="openLightbox(7)">
-                <video autoplay loop muted playsinline>
-                    <source src="images/Personal/AI_source/06.mp4" type="video/mp4">
-                </video>
-                <div class="lab-item-overlay">
-                    <div class="lab-item-tag">시네마틱 (Cinematic)</div>
-                    <div class="lab-item-title">Mechanic Cinematic</div>
-                </div>
-            </div>
-            <div class="lab-item" data-index="8" onclick="openLightbox(8)">
-                <video autoplay loop muted playsinline>
-                    <source src="images/Personal/AI_source/06_1.mp4" type="video/mp4">
-                </video>
-                <div class="lab-item-overlay">
-                    <div class="lab-item-tag">시네마틱 (Cinematic)</div>
-                    <div class="lab-item-title">Mechanic Cinematic — Variant</div>
-                </div>
+        <div class="lab-item wide" data-index="7" onclick="openLightbox(7)">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/06.mp4" type="video/mp4">
+            </video>
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">시네마틱 (Cinematic)</div>
+                <div class="lab-item-title">Mechanic Cinematic</div>
             </div>
         </div>
-<div class="lab-item" data-index="24" onclick="openLightbox(24)">
+        <div class="lab-item" data-index="8" onclick="openLightbox(8)">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/06_1.mp4" type="video/mp4">
+            </video>
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">시네마틱 (Cinematic)</div>
+                <div class="lab-item-title">Mechanic Cinematic — Variant</div>
+            </div>
+        </div>
+        <div class="lab-item" data-index="24" onclick="openLightbox(24)">
             <video autoplay loop muted playsinline>
                 <source src="images/Personal/AI_source/19.mp4" type="video/mp4">
             </video>
@@ -382,64 +369,34 @@
                 <div class="lab-item-title">Cinematic 19</div>
             </div>
         </div>
-         <div class="lab-item" data-index="21" onclick="openLightbox(21)">
-
+        <div class="lab-item" data-index="21" onclick="openLightbox(21)">
             <video autoplay loop muted playsinline>
-
                 <source src="images/Personal/AI_source/16.mp4" type="video/mp4">
-
             </video>
-
             <div class="lab-item-overlay">
-
                 <div class="lab-item-tag">시네마틱 (Cinematic)</div>
-
                 <div class="lab-item-title">Cinematic 16</div>
-
             </div>
-
         </div>
-
-
-
         <div class="lab-item" data-index="22" onclick="openLightbox(22)">
-
             <video autoplay loop muted playsinline>
-
                 <source src="images/Personal/AI_source/17.mp4" type="video/mp4">
-
             </video>
-
             <div class="lab-item-overlay">
-
                 <div class="lab-item-tag">시네마틱 (Cinematic)</div>
-
                 <div class="lab-item-title">Cinematic 17</div>
-
             </div>
-
         </div>
-
-
-
         <div class="lab-item" data-index="23" onclick="openLightbox(23)">
-
             <video autoplay loop muted playsinline>
-
                 <source src="images/Personal/AI_source/18.mp4" type="video/mp4">
-
             </video>
-
             <div class="lab-item-overlay">
-
                 <div class="lab-item-tag">시네마틱 (Cinematic)</div>
-
                 <div class="lab-item-title">Cinematic 18</div>
-
             </div>
-
         </div>
-       <div class="lab-item" data-index="9" onclick="openLightbox(9)">
+        <div class="lab-item" data-index="9" onclick="openLightbox(9)">
             <video autoplay loop muted playsinline>
                 <source src="images/Personal/AI_source/05.mp4" type="video/mp4">
             </video>
@@ -448,8 +405,7 @@
                 <div class="lab-item-title">Vinyl Recorder</div>
             </div>
         </div>
-
-       <div class="lab-item" data-index="15" onclick="openLightbox(15)">
+        <div class="lab-item" data-index="15" onclick="openLightbox(15)">
             <video autoplay loop muted playsinline>
                 <source src="images/Personal/AI_source/12.mp4" type="video/mp4">
             </video>
@@ -458,60 +414,49 @@
                 <div class="lab-item-title">Snow to City Transition</div>
             </div>
         </div>
-
-        <div style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div class="lab-item" data-index="16" onclick="openLightbox(16)">
-                <video autoplay loop muted playsinline>
-                    <source src="images/Personal/AI_source/13.mp4" type="video/mp4">
-                </video>
-                <div class="lab-item-overlay">
-                    <div class="lab-item-tag">시네마틱 (Cinematic)</div>
-                    <div class="lab-item-title">Keyhole to Temple Transition</div>
-                </div>
-            </div>
-            <div class="lab-item" data-index="17" onclick="openLightbox(17)">
-                <video autoplay loop muted playsinline>
-                    <source src="images/Personal/AI_source/13_2.mp4" type="video/mp4">
-                </video>
-                <div class="lab-item-overlay">
-                    <div class="lab-item-tag">시네마틱 (Cinematic)</div>
-                    <div class="lab-item-title">Compositing Process</div>
-                </div>
+        <div class="lab-item wide" data-index="16" onclick="openLightbox(16)">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/13.mp4" type="video/mp4">
+            </video>
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">시네마틱 (Cinematic)</div>
+                <div class="lab-item-title">Keyhole to Temple Transition</div>
             </div>
         </div>
-<div style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-    <div class="lab-item" data-index="19" onclick="openLightbox(19)">
-        <video autoplay loop muted playsinline>
-            <source src="images/Personal/AI_source/15.mp4" type="video/mp4">
-        </video>
-        <div class="lab-item-overlay">
-            <div class="lab-item-tag">시네마틱 (Cinematic)</div>
-            <div class="lab-item-title">Cinematic 15</div>
+        <div class="lab-item" data-index="17" onclick="openLightbox(17)">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/13_2.mp4" type="video/mp4">
+            </video>
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">시네마틱 (Cinematic)</div>
+                <div class="lab-item-title">Compositing Process</div>
+            </div>
         </div>
-    </div>
-    <div class="lab-item" data-index="20" onclick="openLightbox(20)">
-        <video autoplay loop muted playsinline>
-            <source src="images/Personal/AI_source/15_2.mp4" type="video/mp4">
-        </video>
-        <div class="lab-item-overlay">
-            <div class="lab-item-tag">시네마틱 (Cinematic)</div>
-            <div class="lab-item-title">Cinematic 15 — Variant</div>
+        <div class="lab-item wide" data-index="19" onclick="openLightbox(19)">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/15.mp4" type="video/mp4">
+            </video>
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">시네마틱 (Cinematic)</div>
+                <div class="lab-item-title">Cinematic 15</div>
+            </div>
+        </div>
+        <div class="lab-item" data-index="20" onclick="openLightbox(20)">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/15_2.mp4" type="video/mp4">
+            </video>
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">시네마틱 (Cinematic)</div>
+                <div class="lab-item-title">Cinematic 15 — Variant</div>
+            </div>
         </div>
     </div>
 </div>
 
-    </div>
-</div>
 
-
-<!-- 자연 / 광고 소재 (Nature / Ad Source) -->
-
-
-<!-- 자연 / 광고 소재 (Nature / Ad Source) -->
 <div class="lab-section">
     <div class="lab-section-title">자연 / 광고 소재 (Nature / Ad Source)</div>
     <div class="lab-grid">
-
         <div class="lab-item" data-index="10" onclick="openLightbox(10)">
             <video autoplay loop muted playsinline>
                 <source src="images/Personal/AI_source/02.mp4" type="video/mp4">
@@ -521,7 +466,6 @@
                 <div class="lab-item-title">Water Drop on Leaf</div>
             </div>
         </div>
-
         <div class="lab-item" data-index="11" onclick="openLightbox(11)">
             <video autoplay loop muted playsinline>
                 <source src="images/Personal/AI_source/04.mp4" type="video/mp4">
@@ -531,7 +475,6 @@
                 <div class="lab-item-title">Cosmetic Water & Plant</div>
             </div>
         </div>
-
         <div class="lab-item" data-index="12" onclick="openLightbox(12)">
             <video autoplay loop muted playsinline>
                 <source src="images/Personal/AI_source/09.mp4" type="video/mp4">
@@ -541,37 +484,31 @@
                 <div class="lab-item-title">Blueprint</div>
             </div>
         </div>
-
     </div>
 </div>
 
 
-<!-- 화장품 모델 (Cosmetic Model) -->
 <div class="lab-section">
     <div class="lab-section-title">화장품 모델 (Cosmetic Model)</div>
     <div class="lab-grid">
-
-        <div style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div class="lab-item" data-index="13" onclick="openLightbox(13)">
-                <video autoplay loop muted playsinline>
-                    <source src="images/Personal/AI_source/11.mp4" type="video/mp4">
-                </video>
-                <div class="lab-item-overlay">
-                    <div class="lab-item-tag">화장품 모델 (Cosmetic Model)</div>
-                    <div class="lab-item-title">Cosmetic Model</div>
-                </div>
-            </div>
-            <div class="lab-item" data-index="14" onclick="openLightbox(14)">
-                <video autoplay loop muted playsinline>
-                    <source src="images/Personal/AI_source/11_1.mp4" type="video/mp4">
-                </video>
-                <div class="lab-item-overlay">
-                    <div class="lab-item-tag">화장품 모델 (Cosmetic Model)</div>
-                    <div class="lab-item-title">Cosmetic Model — Variant</div>
-                </div>
+        <div class="lab-item wide" data-index="13" onclick="openLightbox(13)">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/11.mp4" type="video/mp4">
+            </video>
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">화장품 모델 (Cosmetic Model)</div>
+                <div class="lab-item-title">Cosmetic Model</div>
             </div>
         </div>
-
+        <div class="lab-item" data-index="14" onclick="openLightbox(14)">
+            <video autoplay loop muted playsinline>
+                <source src="images/Personal/AI_source/11_1.mp4" type="video/mp4">
+            </video>
+            <div class="lab-item-overlay">
+                <div class="lab-item-tag">화장품 모델 (Cosmetic Model)</div>
+                <div class="lab-item-title">Cosmetic Model — Variant</div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -618,7 +555,6 @@
         "images/Personal/AI_source/18.mp4",
         "images/Personal/AI_source/19.mp4"
     ];
-
 
     let currentIndex = 0;
 
